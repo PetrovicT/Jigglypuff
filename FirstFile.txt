@@ -1,2 +1,3 @@
 Zdravo, ja sam prvi fajl.
 ----
+Dodata treca test linija
