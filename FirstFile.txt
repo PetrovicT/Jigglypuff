@@ -1,1 +1,2 @@
 Zdravo, ja sam prvi fajl.
+----
