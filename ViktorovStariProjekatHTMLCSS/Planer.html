@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>IS1: Planer</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+	</head>
+	<body>
+
+	<!-- Header -->
+		<div id="header">
+			<div id="nav-wrapper"> 
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li class="active"><a href="index.html">Homepage</a></li>
+						<li><a href="MusicPlayer.html">Music player</a></li>
+                                                <li><a href="Alarm.html">Alarm</a></li>
+						<li><a href="Planer.html">Planer</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	<!-- Header --> 
+
+	<!-- Main -->
+		<div id="main">
+			<div class="container">
+				<div class="row">
+					<!-- Sidebar -->
+					<div id="sidebar" class="4u">
+						<section>
+							<div class="row">
+								<section class="12u">
+									<ul class="default">
+										<li><a href="#addAlarm">Dodaj event</a></li>
+										<li><a href="#changesong">Izbrisi event</a></li>
+                                                                                <li><a href="#distanceCalc">Kalkulator distance</a></li>
+									</ul>
+								</section>
+							</div>
+						</section>
+					</div>
+					
+					<!-- Content -->
+					<div id="content" class="8u skel-cell-important">
+                                            <section id="playsongsect">
+                                                    <header>
+                                                            <h2>Login info:</h2>
+                                                            <br><br>
+                                                            <label for="username">Username:</label><br>
+                                                            <input type="text" id="username" name="username" ><br>
+                                                            <label for="password">Password:</label><br>
+                                                            <input type="password" id="password" name="password" ><br>
+                                                            <button onclick="getAll()">Display your events</button><br><br>
+                                                            <table class="12u" id="myEvents"></table>
+                                                    </header>
+                                            </section>
+                                            
+						<section id="addalarm">
+							<header>
+								<h2>Dodavanje eventa</h2>
+                                                                <br><br>
+                                                                <label for="time">Date and time (yyyy:mm:dd:hh:mm):</label><br>
+                                                                <input type="datetime" id="starttime" name="starttime" ><br><br>
+                                                                <label for="location">Location:</label><br>
+                                                                <input type="text" id="location" name="location" ><br><br>
+                                                                <label for="duration">Duration in minutes:</label><br>
+                                                                <input type="number" id="duration" name="duration" ><br><br>
+                                                                
+                                                                <button onclick="addEvent()">Add</button>
+                                                              
+							</header>
+						</section>
+                                                <section id="changesong">
+							<header>
+								<h2>Izbrisi event</h2>
+                                                                <span class="byline">Ukucajte id za removal</span>
+                                                                <br>
+                                                                <label for="removeid">ID:</label><br>
+                                                                <input type="number" id="removeid" name="removeid" ><br><br>
+                                                                <button onclick="removeById()">Izbrisi iz baze</button>
+                                                        </header>
+						</section>
+                                                <section id="distanceCalc">
+							<header>
+								<h2>Kalkulator razdaljine</h2>
+                                                                <span class="byline"></span>
+                                                                <br>
+                                                                <label for="placefrom">Od:</label>
+                                                                <input type="text" id="placefrom" name="placefrom" >
+                                                                <label for="placeto">Do:</label>
+                                                                <input type="text" id="placeto" name="placeto" ><br><br>
+                                                                <button onclick="updateDirs()">Prikazi putanju</button>
+                                                                
+                                                                
+                                                        </header>
+						</section>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+        <script>
+            function addEvent() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            var datetime = document.getElementById("starttime").value;
+            var location = document.getElementById("location").value;
+            var duration = document.getElementById("duration").value;
+            
+            var origin   = window.location.origin;
+            
+            //alert(origin + "/WebServer/api/planer/add?location=" + location + "&start=" + datetime + "&duration=" + duration);
+            
+            $.ajax({
+                type:"POST",
+                url: origin + "/WebServer/api/planer/add?location=" + location + "&start=" + datetime + "&duration=" + duration,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader ("Authorization", "Basic " + btoa(user + ":" + pass));
+                },
+ 
+                success:function(responsedata){
+                       // process on data
+                       alert("Uspesno dodat event! "+ responsedata);
+                }
+                
+             });
+            }
+            
+            function updateDirs() {            
+            var from = document.getElementById("placefrom").value;
+            var to = document.getElementById("placeto").value;
+            
+            //<iframe src="https://www.google.com/maps/dir/?api=1&origin=Belgrade&destination=Novi%20Sad" title="Direkcije" id="dirsframe" width="800px" height="600px" /> 
+            
+            window.open("https://www.google.com/maps/dir/?api=1&origin="+ from +"&destination=" + to);
+            }
+            
+            function removeById() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            var id = document.getElementById("removeid").value;
+            
+            var origin   = window.location.origin;
+            
+            //alert(origin + "/WebServer/api/planer/add?location=" + location + "&start=" + datetime + "&duration=" + duration);
+            
+            $.ajax({
+                type:"DELETE",
+                url: origin + "/WebServer/api/planer/delete?id=" + id,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader ("Authorization", "Basic " + btoa(user + ":" + pass));
+                },
+ 
+                success:function(responsedata){
+                       // process on data
+                       alert("Uspesno izbrisan event ukoliko ga je bilo! "+ responsedata);
+                }
+                
+             });
+            }
+            
+            function getAll() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            
+            var origin   = window.location.origin;
+            
+            $.ajax({
+                type:"GET",
+                url: origin + "/WebServer/api/planer/getAll",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader ("Authorization", "Basic " + btoa(user + ":" + pass));
+                },
+ 
+                success:function(responsedata){
+                        
+                        var alarms = responsedata.split(";");
+                        document.getElementById("myEvents").innerHTML = "";
+                    
+                        for (i = 0; i < alarms.length; ++i) {
+                            
+                            var row = document.createElement('tr');
+
+                            var alarmInfo = alarms[i].split("|");
+                            
+                            for(j = 0; j< alarmInfo.length; ++j){
+                                var field = document.createElement("td");
+                                    
+                                field.innerHTML = alarmInfo[j];
+                                
+                                row.appendChild(field);
+                            }
+                            
+                            document.getElementById("myEvents").appendChild(row);
+                        }
+                }
+             });
+            }
+            
+            function changeSong() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            var song = document.getElementById("newsongname").value;
+            var time = document.getElementById("alarmtime").value;
+            
+            var origin   = window.location.origin;
+            
+            $.ajax({
+                type:"POST",
+                url: origin + "/WebServer/api/alarm/changeSong?songname=" + song + "&time=" + time,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader ("Authorization", "Basic " + btoa(user + ":" + pass));
+                },
+ 
+                success:function(responsedata){
+                       // process on data
+                       alert("Uspesno izmenjena pesma! "+ responsedata);
+                }
+             });
+            };
+        </script>
+
+	</body>
+</html>

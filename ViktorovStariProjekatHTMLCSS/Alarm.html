@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>IS1: Alarm</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+	</head>
+	<body>
+
+	<!-- Header -->
+		<div id="header">
+			<div id="nav-wrapper"> 
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li class="active"><a href="index.html">Homepage</a></li>
+						<li><a href="MusicPlayer.html">Music player</a></li>
+                                                <li><a href="Alarm.html">Alarm</a></li>
+						<li><a href="Planer.html">Planer</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	<!-- Header --> 
+
+	<!-- Main -->
+		<div id="main">
+			<div class="container">
+				<div class="row">
+					<!-- Sidebar -->
+					<div id="sidebar" class="4u">
+						<section>
+							<div class="row">
+								<section class="12u">
+									<ul class="default">
+										<li><a href="#addAlarm">Dodaj alarm</a></li>
+										<li><a href="#changesong">Promeni pesmu alarma</a></li>
+									</ul>
+								</section>
+							</div>
+						</section>
+					</div>
+					
+					<!-- Content -->
+					<div id="content" class="8u skel-cell-important">
+                                            <section id="playsongsect">
+                                                    <header>
+                                                            <h2>Login info:</h2>
+                                                            <br><br>
+                                                            <label for="username">Username:</label><br>
+                                                            <input type="text" id="username" name="username" ><br>
+                                                            <label for="password">Password:</label><br>
+                                                            <input type="password" id="password" name="password" ><br>
+                                                            <button onclick="getAll()">Display your alarms</button><br><br>
+                                                            <table class="12u" id="myAlarms"></table>
+                                                    </header>
+                                            </section>
+                                            
+						<section id="addalarm">
+							<header>
+								<h2>Dodavanje alarma</h2>
+                                                                <br><br>
+                                                                <label for="time">Time:</label><br>
+                                                                <input type="time" id="time" name="time" ><br><br>
+                                                                <label for="songname">Song name:</label><br>
+                                                                <input type="text" id="songname" name="songname" ><br><br>
+                                                                <label for="repeat">Repeat:</label><br>
+                                                                <select id="repeat" name="repeat">
+                                                                    <option value="0" selected>Never</option>
+                                                                    <option value="1">Monday</option>
+                                                                    <option value="2">Tuesday</option>
+                                                                    <option value="3">Wednesday</option>
+                                                                    <option value="4">Thursday</option>
+                                                                    <option value="5">Friday</option>
+                                                                    <option value="6">Saturday</option>
+                                                                    <option value="7">Sunday</option>
+                                                                    <option value="8">Every day</option>
+                                                                </select>
+                                                                <button onclick="addAlarm()">Add</button>
+                                                              
+							</header>
+						</section>
+                                                <section id="changesong">
+							<header>
+								<h2>Promena tona</h2>
+                                                                <span class="byline">Ukucajte svoje kredencijale i prikazite alarme kako biste znali koji mozete da promenite</span>
+                                                                <br><br>
+                                                                <label for="alarmtime">Time:</label><br>
+                                                                <input type="time" id="alarmtime" name="alarmtime" ><br><br>
+                                                                <label for="songname">New song name:</label><br>
+                                                                <input type="text" id="newsongname" name="newsongname" ><br><br>
+                                                        </header>
+                                                        <button onclick="changeSong()">Change song</button>
+                                                        <section class="12u">
+                                                            <ul class="default" id="historyPlaceholder"></ul>
+                                                        </section>
+							
+						</section>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+        <script>
+            function addAlarm() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            var song = document.getElementById("songname").value;
+            var time = document.getElementById("time").value;
+            var rep = document.getElementById("repeat").value;
+            
+            var origin   = window.location.origin;
+            
+            $.ajax({
+                type:"POST",
+                url: origin + "/WebServer/api/alarm/add?songname=" + song + "&time=" + time + "&repetition=" + rep,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader ("Authorization", "Basic " + btoa(user + ":" + pass));
+                },
+ 
+                success:function(responsedata){
+                       // process on data
+                       alert("Uspesno dodat alarm! "+ responsedata);
+                }
+             });
+            }
+            
+            function getAll() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            
+            var origin   = window.location.origin;
+            
+            $.ajax({
+                type:"GET",
+                url: origin + "/WebServer/api/alarm/getAll",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader ("Authorization", "Basic " + btoa(user + ":" + pass));
+                },
+ 
+                success:function(responsedata){                        
+                        var alarms = responsedata.split(";");
+                        document.getElementById("myAlarms").innerHTML = "";
+                    
+                        for (i = 0; i < alarms.length; ++i) {
+                            
+                            var row = document.createElement('tr');
+
+                            var alarmInfo = alarms[i].split("|");
+                            
+                            for(j = 0; j< alarmInfo.length; ++j){
+                                var field = document.createElement("td");
+                                
+                                if(j==0)
+                                    field.hidden = true;
+                                
+                                if(j==3){
+                                    if(alarmInfo[j]=="0")
+                                        alarmInfo[j]="Not repeated";
+                                    if(alarmInfo[j]=="1")
+                                        alarmInfo[j]="Mon";
+                                    if(alarmInfo[j]=="2")
+                                        alarmInfo[j]="Tue";
+                                    if(alarmInfo[j]=="3")
+                                        alarmInfo[j]="Wed";
+                                    if(alarmInfo[j]=="4")
+                                        alarmInfo[j]="Thu";
+                                    if(alarmInfo[j]=="5")
+                                        alarmInfo[j]="Fri";
+                                    if(alarmInfo[j]=="6")
+                                        alarmInfo[j]="Sat";
+                                    if(alarmInfo[j]=="7")
+                                        alarmInfo[j]="Sun";
+                                    if(alarmInfo[j]=="8")
+                                        alarmInfo[j]="Every day";
+                                }
+                                    
+                                field.innerHTML = alarmInfo[j];
+                                
+                                row.appendChild(field);
+                            }
+                            
+                            document.getElementById("myAlarms").appendChild(row);
+                        }
+                }
+             });
+            }
+            
+            function changeSong() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            var song = document.getElementById("newsongname").value;
+            var time = document.getElementById("alarmtime").value;
+            
+            var origin   = window.location.origin;
+            
+            $.ajax({
+                type:"POST",
+                url: origin + "/WebServer/api/alarm/changeSong?songname=" + song + "&time=" + time,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader ("Authorization", "Basic " + btoa(user + ":" + pass));
+                },
+ 
+                success:function(responsedata){
+                       // process on data
+                       alert("Uspesno izmenjena pesma! "+ responsedata);
+                }
+             });
+            };
+        </script>
+
+	</body>
+</html>
