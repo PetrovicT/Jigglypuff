@@ -17,7 +17,7 @@ body {
 }
 
 header{
-	z-index:99999;
+	z-index:9998;
 }
 article,
 aside,
@@ -475,7 +475,6 @@ a {
 .w3-bar {
 	position:fixed;
     width: 100%;
-    overflow: hidden;
 }
 .w3-center .w3-bar {
     display: inline-block;
