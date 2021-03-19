@@ -3,3 +3,10 @@
 	top: 38px;
 	right: 0px;
 }
+
+#JigglypuffFooterImage{
+	position: relative;
+	width: 100px;
+	height: 100px;
+	top: 100px;
+}
