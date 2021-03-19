@@ -15,6 +15,10 @@ html {
 body {
     margin: 0;
 }
+
+header{
+	z-index:99999;
+}
 article,
 aside,
 details,
@@ -469,6 +473,7 @@ a {
     width: 600px;
 }
 .w3-bar {
+	position:fixed;
     width: 100%;
     overflow: hidden;
 }
@@ -670,6 +675,7 @@ a {
     margin-right: auto;
 }
 .w3-content {
+	padding-top: 25px;
     max-width: 980px;
 }
 .w3-auto {
