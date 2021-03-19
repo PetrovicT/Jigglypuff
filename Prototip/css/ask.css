@@ -1,0 +1,59 @@
+#notes div.suggestions {
+    border-radius: 5px;
+    border:deepskyblue;
+    border-width:thick;
+    border-style: groove;
+    }
+
+#notes ol {
+list-style: disc;    
+
+}
+
+ol{
+    list-style: disc;    
+    font-size: 16px;
+    }
+
+.buttons {
+display: flex;
+flex-direction: row;
+justify-content: right;
+align-self:flex-end;
+width: 120px;
+}
+
+#left {
+padding-top: 5%;
+width: calc(70% - 3px);
+border-right: 3px solid darkblue;
+float: left;
+background-color: #63a4ff;
+background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+}
+
+#right {
+    padding-top:0;
+    width: calc(30% + 3px);
+    float: right;
+    background-color: #63a4ff;
+    background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+}
+
+
+.input {
+width: 80%;
+display: flex;
+flex-direction: column;
+align-items: left;
+padding-left: 5%;
+
+}
+
+
+
+.color-blue {        
+    background-color: #63a4ff;
+    background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+    }
+
