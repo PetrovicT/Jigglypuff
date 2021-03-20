@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/ask.css">
-    <title>Postavi pitanje</title>
+    <title>Pregled pitanja</title>
 		<style>h1,h2,h3,h4,h5,h6 {font-family: "Oswald"} body {font-family: "Open Sans"}</style>
 		<script src = "js/script.js"></script>
 	</head>
@@ -16,37 +16,38 @@
 	<body class="w3-light-grey">
 	  
 	 <!-- Header -->
-     <header class="w3-bar w3-padding-12 w3-deep-blue w3-mobile">
+     <header class="w3-bar w3-padding-12 color-dark-blue w3-mobile">
 		<!-- S leva nadesno -->
-		<a href="homepage.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Home</a>
+		<a href="homepage.html" class="w3-bar-item w3-button letters"><i class="fa fa-home"></i> Home</a>
 
 
 		<div class="w3-dropdown-hover w3">
-			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-question-circle-o"></i> Kategorije</a>
+			<a href="view_questions.html" class="w3-bar-item w3-button letters"><i class="fa fa-question-circle-o"></i> Kategorije</a>
 			<div id="CategoryDropdownMenu" class="w3-dropdown-content w3-bar-block w3-card-4">
-				<a href="view_questions.html" class="w3-bar-item w3-button"><i class="fa fa-angle-double-right"></i> Anksioznost</a>
-			  <a href="view_questions.html" class="w3-bar-item w3-button"><i class="fa fa-angle-double-right"></i> Depresija</a>
-			  <a href="view_questions.html" class="w3-bar-item w3-button"><i class="fa fa-angle-double-right"></i> Panični napadi</a>
-			  <a href="view_questions.html" class="w3-bar-item w3-button"><i class="fa fa-angle-double-right"></i> Kontrola stresa</a>
-			  <a href="view_questions.html" class="w3-bar-item w3-button"><i class="fa fa-angle-double-right"></i> Problemi sa besom</a>
-			  <a href="view_questions.html" class="w3-bar-item w3-button"><i class="fa fa-angle-double-right"></i> Porodični problemi</a>
-			  <a href="view_questions.html" class="w3-bar-item w3-button"><i class="fa fa-angle-double-right"></i> Manjak samopouzdanja</a>
-			  <a href="view_questions.html" class="w3-bar-item w3-button"><i class="fa fa-angle-double-right"></i> <b>Nijedno od ponuđenog</b></a>
+				<a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Anksioznost</a>
+			  <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Depresija</a>
+        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Panični napadi</a>
+			  <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Kontrola stresa</a>
+			  <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Problemi sa besom</a>
+			  <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Porodični problemi</a>
+			  <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Manjak samopouzdanja</a>
+			  <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> <b>Nijedno od ponuđenog</b></a>
 			 
 			</div>
 		</div>
 
-		<a href="#" class="w3-bar-item w3-button"><i class="fa fa-fire"></i> Seanse</a>
+		<a href="#" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-fire"></i> Seanse</a>
+        <a href="question_ask.html" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-plus-circle"></i> Postavi pitanje</a>
 		<!-- S desna nalevo -->
 		<div class="w3-dropdown-hover w3-right">
-			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Ana Jovanović</a>
+			<a href="#" class="w3-bar-item w3-button letters"><i class="fa fa-user"></i> Ana Jovanović</a>
 			<div id="UserDropdownMenu" class="w3-dropdown-content w3-bar-block w3-card-4">
 			  <a href="template.html" class="w3-bar-item w3-button"><i class="fa fa-gear"></i> Podešavanja naloga</a>
 			  <a href="template.html" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i> Moje seanse</a>
 			</div>
 		</div>
 		<div id="SearchBar" class="w3-right" style="width:346px; max-width: 100%;">
-			<a href="template.html" class="w3-bar-item w3-button w3-right"><i class="fa fa-search"></i></a>
+			<a href="view_questions.html" class="w3-bar-item w3-button w3-right letters"><i class="fa fa-search"></i></a>
 			<input id="SearchField" class="w3-bar-item w3-right" type="text" placeholder="Pretraži" style="width:300px; max-width:calc(100% - 46px);">
 		</div>
 	  </header>
@@ -63,70 +64,74 @@
             <br> 
 
 		  <!-- Blog entry -->
-		  <div class="w3-container w3-white w3-margin w3-padding-large w3-card-4 color-blue">
-			<div class="w3-center" >
-			  <h3>Saveti i preporuke prilikom postavljanja pitanja</h3>
-			</div>
-
-			<div class="w3-justify">
-                <ol> 
-                    <li>Pre nego što postavite pitanje proverite da li je neko drugi ranije postavio isto ili slično pitanje</li>
-                    <li>Prilikom formulacije pitanja trudite se da pitanje bude što jasnije i preciznije</li>
-                    <li>Pre nego što pošaljete pitanje pročitajte ga još jednom i ispravite eventualne greške</li>
-                    <li>Vodite računa da je podrazumevano javno postavljanje pitanja. Ukoliko želite da anonimno postavite pitanje, molimo Vas da to i naznačite u odgovarajućem polju.</li>
-                </ol>
-			</div>
-		  </div>
-
-		
-
-          <div class="w3-container w3-white w3-margin w3-padding-large w3-card-4 color-blue">
-
-            <div class="w3-center">
-                <h3><b>Postavi pitanje</b></h3>
-              </div>
-
-			<!-- Input section -->
-	<div class="input ">
-        <h5>Izaberite kategoriju pitanja</h5>
-        <select name="categories">
-        <option value="">Anksioznost</option>
-        <option value="">Depresija</option>
-        <option value="">Panični napadi</option>
-        <option value="">Kontrola stresa</option>
-        <option value="">Problemi sa besom</option>
-        <option value="">Porodični problemi</option>
-        <option value="">Manjak samopouzdanja</option>
-        <option value="">Ništa od ponuđenog</option>
-        </select> 
-        <br> 
-
-    <!-- Question input -->
-    <input class="w3-input" type="text" placeholder="Naslov pitanja"> <br> <br>
-    <textarea name="" id="" cols="355" rows="10" placeholder=" Tekst pitanja"></textarea>
-     <br>
-
-     <!-- Public/private -->
-    <div><input type="checkbox" id="anonimus" name="anonimus" value="Bike">
-    <label for="anonimus"> Želim anonimno da postavim pitanje</label></div>
-    <br>
-
-    <!-- Who can anwser -->
-    <h5>Na ovo pitanje će moći da odgovore &nbsp&nbsp</h5>
-    <select name="anwser">
-    <option value="" >Svi korisnici</option>
-    <option value="">Samo psiholozi</option>
-    </select>
-    <br> 
-
-    <!-- Buttons -->
-    <div class="buttons">
-    <p><button class="w3-button w3-deep-blue w3-round-xxlarge buttons">Odustani</button></p>   &nbsp  &nbsp &nbsp
-    <p><button class="w3-button w3-deep-blue w3-round-xxlarge buttons">Pošalji</button></p>
-     </div>
-</div>
-		  </div>
+        
 		  
+
+<div class="w3-container w3-white w3-margin w3-padding-large w3-card-4 color-blue">
+
+    <div class="w3-left" style="padding-left: 5%;"> <br>
+         <h3 class="letters_dark_blue"><b>Problemi sa paničnim napadima</b></h3>
+    </div>
+
+	<!-- Input section -->
+	<div class="input letters_dark_blue">
+    <p>Vec unazad 5 godina imam probleme sa okp-om i panicnim napadima, na neki nacin okp nemam vise u nazad godinu dana , al panicni napadi i stezanje u grlu su postali problem sad , uzimao sam seroxat,eftil i onzapin kao terapiju sto mi je psihijatar prepisao i na svoju ruku sam prestao da ih uzimam u zadnjih godinu dana samo onzapin uzimam i recimo u avgustu 2020 sam imao bas probleme i sve do pre mesec dana mi nije bilo sta, u nazad 2-3 nedelje posebno zadnjih 5 dana su postali bas uzasni i sad se pitam dal da opet uzmem te tablete a imam ih kuci ili sta da radim nzm ni ja vise. i problem je sto imam fizicke probleme kao stezanje u grlu i srcani udar da imam a inace znam i sam da je to sve iluzija i da ne treba da se opterecujem al opet ne vredi, i tako na momente me smara recimo juce nista, danas problem opet, takodje jako retko izlazim napolje i pokusavam da pronadjem neko resenje da se izvucem iz ovoga.</p>  <br>
+    </div>  
+
+<!-- Anwser input -->
+<div class="input ">
+       
+    <!-- Buttons -->
+    <div id="like">
+    
+    <div>
+    <button class="w3-button w3-white w3-border " onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up letters_dark_blue"></i> Like</b></button>
+    <button class="w3-button w3-white w3-border " onclick="dislikeFunction(this)"><b><i class="fa fa-thumbs-down letters_dark_blue"></i> Dislike</b></button>
+    </div>
+
+    <div class="buttons">        
+    <p><button onclick="window.location.href='anwsers.html';" class="w3-button w3-white w3-round-xxlarge buttons"><b> Pogledaj odgovore</b></button></p>   &nbsp  &nbsp &nbsp
+    <p><button onclick="window.location.href='anwser.html';" class="w3-button w3-white w3-round-xxlarge buttons"><b>Odgovori</b></button></p>
+    </div>
+</div>
+    </div>
+
+</div>
+
+
+<div class="w3-container w3-white w3-margin w3-padding-large w3-card-4 color-blue">
+
+  <div class="w3-left" style="padding-left: 5%;"> <br>
+       <h3 class="letters_dark_blue"><b>Problemi sa paničnim napadima</b></h3>
+  </div>
+
+<!-- Input section -->
+<div class="input letters_dark_blue">
+  <p>Vec unazad 5 godina imam probleme sa okp-om i panicnim napadima, na neki nacin okp nemam vise u nazad godinu dana , al panicni napadi i stezanje u grlu su postali problem sad , uzimao sam seroxat,eftil i onzapin kao terapiju sto mi je psihijatar prepisao i na svoju ruku sam prestao da ih uzimam u zadnjih godinu dana samo onzapin uzimam i recimo u avgustu 2020 sam imao bas probleme i sve do pre mesec dana mi nije bilo sta, u nazad 2-3 nedelje posebno zadnjih 5 dana su postali bas uzasni i sad se pitam dal da opet uzmem te tablete a imam ih kuci ili sta da radim nzm ni ja vise. i problem je sto imam fizicke probleme kao stezanje u grlu i srcani udar da imam a inace znam i sam da je to sve iluzija i da ne treba da se opterecujem al opet ne vredi, i tako na momente me smara recimo juce nista, danas problem opet, takodje jako retko izlazim napolje i pokusavam da pronadjem neko resenje da se izvucem iz ovoga.</p>  <br>
+  </div>  
+
+<!-- Anwser input -->
+<div class="input ">
+     
+  <!-- Buttons -->
+  <div id="like">
+  
+  <div>
+  <button class="w3-button w3-white w3-border " onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up letters_dark_blue"></i> Like</b></button>
+  <button class="w3-button w3-white w3-border " onclick="dislikeFunction(this)"><b><i class="fa fa-thumbs-down letters_dark_blue"></i> Dislike</b></button>
+  </div>
+
+  <div class="buttons">        
+  <p><button class="w3-button w3-white w3-round-xxlarge buttons"><b> Pogledaj odgovore</b></button></p>   &nbsp  &nbsp &nbsp
+  <p><button onclick="window.location.href='anwser.html';" class="w3-button w3-white w3-round-xxlarge buttons"><b>Odgovori</b></button></p>
+  </div>
+</div>
+  </div>
+
+</div>
+
+
+
 		<!-- END BLOG ENTRIES -->
 		</div>
 
@@ -208,12 +213,12 @@
 	</div>
 
 	<!-- Footer -->
-	<footer class="w3-container w3-dark-gray" style="padding:32px">
+	<footer class="w3-container color-dark-blue" style="padding:32px">
 		<div class="w3-left">
-			<a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-			<p>Web portal za psihološko savetovanje</p>
-			<p>Projekat iz predmeta "Principi softverskog inženjerstva"</p>
-			<p>Taj i taj datum. Tim Jigglypuff <i class="fa fa-copyright"></i> all rights reserved</p>
+			<a href="#" class="w3-button w3-white w3-padding-large w3-margin-bottom letters_dark_blue"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+			<p style="color: white;">Web portal za psihološko savetovanje</p>
+			<p style="color: white;">Projekat iz predmeta "Principi softverskog inženjerstva"</p>
+			<p style="color: white;">Taj i taj datum. Tim Jigglypuff <i class="fa fa-copyright"></i> all rights reserved</p>
 		</div>
 		<img id="JigglypuffFooterImage" class="w3-right" src="https://upload.wikimedia.org/wikipedia/en/2/22/Pok%C3%A9mon_Jigglypuff_art.png"></img>
 	</footer>

@@ -20,8 +20,17 @@ display: flex;
 flex-direction: row;
 justify-content: right;
 align-self:flex-end;
-width: 120px;
+padding-right: 34%;
+width: 160px;
+color: #021B79 !important;  
 }
+
+#like {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    }
 
 #left {
 padding-top: 5%;
@@ -42,11 +51,12 @@ background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
 
 
 .input {
-width: 80%;
+width: 100%;
 display: flex;
 flex-direction: column;
 align-items: left;
 padding-left: 5%;
+padding-right: 6%;
 
 }
 
@@ -57,3 +67,22 @@ padding-left: 5%;
     background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
     }
 
+.color-dark-blue {        
+        background: #0575E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+.letters_dark_blue{        
+    color: #021B79;
+    }
+    
+.letters {        
+    color: white;
+    }
+
+
+   
+      
+ 
