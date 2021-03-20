@@ -10,3 +10,14 @@
 	height: 100px;
 	top: 100px;
 }
+
+#Mouth{
+	position: relative;
+	right:74px;
+	top:112px;
+	display:none;
+}
+
+#JigglypuffFooterImage:hover + #Mouth{
+	display:inline;
+}
