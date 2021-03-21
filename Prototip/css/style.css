@@ -11,6 +11,17 @@
 	top: 100px;
 }
 
+#Mouth{
+	position: relative;
+	right:74px;
+	top:112px;
+	display:none;
+}
+
+#JigglypuffFooterImage:hover + #Mouth{
+	display:inline;
+}
+
 .buttons {
 	width: 160px;
 	background-color: #021B79 !important;
