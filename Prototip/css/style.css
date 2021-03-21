@@ -10,3 +10,17 @@
 	height: 100px;
 	top: 100px;
 }
+
+.buttons {
+	width: 160px;
+	background-color: #021B79 !important;
+	color:white !important;  
+}
+
+.blue {
+	background-color: rgb(58, 80, 148);
+}
+
+.letters_blue {
+	color: rgb(58, 80, 148);
+}

@@ -42,15 +42,5 @@ div.polaroid {
       ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
         color:  #021B79;
     }
-
-    .blue {
-background-color: rgb(58, 80, 148);
-
-    }
-
-    .letters_blue {
-      color: rgb(58, 80, 148);
-      
-          }
     
     
