@@ -1142,7 +1142,7 @@ a {
     border-bottom: 6px solid #ccc !important;
 }
 .w3-leftbar {
-    border-left: 6px solid #ccc !important;
+    border-left: 12px solid rgb(58, 80, 148) !important;
 }
 .w3-rightbar {
     border-right: 6px solid #ccc !important;

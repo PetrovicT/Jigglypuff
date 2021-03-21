@@ -16,72 +16,78 @@
 	
 	<body class="w3-light-grey">
 	  
-	  <!-- Header -->
-	  <header >
-		
-	  </header>
+	<!-- Header -->
+	<header >
+	</header>
 	  
-	<!-- w3-content defines a container for fixed size centered content, 
-	and is wrapped around the whole page content, except for the footer in this example -->
-	<div class="w3-content" style="max-width:1700px; padding-top: 0;">
+	<div class="w3-content" style="max-width:85%; padding-top: 0; ">
 
 	  <!-- Grid -->
-	  <div class="w3-row w3-padding w3-border"  style="background-image: url(photos/sky3.jpg);">
+	  <div class="w3-row w3-padding w3-border sky" style="background-image: url(photos/sky3.jpg); background-repeat: no-repeat; background-attachment: fixed;">
 
 		<!-- Blog entries -->
 		<div class="w3-col l12 s12" style="padding-left: 5%; padding-right: 5%;">
 		
 		  <!-- Blog entry -->
 		  <div class="w3-container w3-white w3-margin w3-padding-large w3-card-4">
-			<div class="w3-center">
-			  <h3>Dobrodošli na veb portal za psihološko savetovanje! </h3>
+			<div class="w3-center letters_blue" style="font-size: 30px;">
+			  Dobrodošli na veb portal za psihološko savetovanje! 
+        <br>
          <img src="photos/logo.png" alt="">
-			</div>		
+			</div>	
+      <div class=" w3-left">
+
+        <div class="overlay letters_blue" style="font-size: 30px;"><i class="fa fa-user"></i> Već imate nalog? <a href="">LOGIN</a></div>
+        <div class="overlay letters_blue" style="font-size: 30px;"><i class="fa fa-user"></i> Nemate nalog? <a href="">REGISTRUJ SE</a></div>
+        <br>
+      </div>	
 		  </div>
 		  <hr>
 
-      <div class="w3-container w3-white w3-margin w3-padding-large w3-card-4">
+      <div class="w3-container w3-center w3-white w3-margin w3-padding-large w3-card-4">
         <div class="w3-center">
-            <div class="container">
-
-            <div class="overlay" style="font-size: 40px;"><i class="fa fa-user"></i> Već imate nalog? <a href="anwser.html">LOGIN</a></div>
-            <div class="overlay" style="font-size: 40px;"><i class="fa fa-user"></i> Nemate nalog? <a href="anwser.html">REGISTRUJ SE</a></div>
-            <br>
-          </div>
-
-
-
-          <div class="w3-dropdown-hover w3-center" >
-            <a href="#" class="w3-bar-item w3-button w3-xxlarge"><i class="fa fa-user"></i> Korisnik</a>
-            <div id="UserDropdownMenu" class="w3-dropdown-content w3-bar-block w3-card-4">
-              <a href="#" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i> Registracija</a>
-              <a href="#" class="w3-bar-item w3-button"><i class="fa fa-gear"></i> Logovanje</a>
-             
-            </div>
-          </div>
-
-          <div id="SearchBar" class="w3-center" style="width:100%; max-width: 100%;">
             
-            <input id="SearchField" class="w3-bar-item w3-center" type="text" placeholder="Pretraži..." style="width:60%; height: 40px; font-size: 20px;">
-            <a href="view_questions.html" class="w3-bar-item w3-button w3-center"><i class="fa fa-search" style="font-size: 20px;"></i></a>
+
+          <div id="SearchBar" class="w3-center" style="width:100%; max-width: 100%; padding-top: 30px; padding-bottom: 20px; border-color: #021B79;">
+            <input id="SearchField" class="w3-bar-item w3-center letters_dark_blue" type="text" placeholder="Pretraži..." style="width: 40%;">
+            <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-search letters_dark_blue" style="font-size: 20px; "></i></a>
           </div>
 
-          <br>
+       
+         
 
-          <div class="w3-dropdown-hover w3 w3-deep-blue" style="width: 60%;">
-            <a href="view_questions.html" class="w3-bar-item w3-button" ><i class="fa fa-question-circle-o"></i> Kategorije</a>
-            <div id="CategoryDropdownMenu" class="w3-dropdown-content w3-bar-block w3-card-4">
-              <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Anksioznost</a>
-              <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Depresija</a>
-              <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Panični napadi</a>
-              <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Kontrola stresa</a>
-              <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Problemi sa besom</a>
-              <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Porodični problemi</a>
-              <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Manjak samopouzdanja</a>
-              <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> <b>Nijedno od ponuđenog</b></a>
+
+        </div>	
+
+        <hr style="border-top-color: #021B79;">
+
+
+        <div class="w3-center">
+            
+
+          <div class="w3-white">
+            
+            <div class=" w3-white" style="padding-left: 10%; padding-right: 10%; width: 100%; align-items: center;">
+              
+              <span onclick="window.location.href='view_questions.html';" class="w3-tag blue w3-margin-bottom w3-xlarge w3-card-4" style="width: 300px; cursor: pointer;">Anksioznost</span> 
+              <span onclick="window.location.href='view_questions.html';" class="w3-tag blue w3-margin-bottom w3-xlarge w3-card-4" style="width: 300px; cursor: pointer;">Depresija</span>
+              <span onclick="window.location.href='view_questions.html';" class="w3-tag blue w3-margin-bottom w3-xlarge w3-card-4" style="width: 300px; cursor: pointer;">Napad panike</span>
+              <span onclick="window.location.href='view_questions.html';" class="w3-tag blue w3-margin-bottom w3-xlarge w3-card-4" style="width: 300px; cursor: pointer;">Kontrola stresa</span>
+              <span onclick="window.location.href='view_questions.html';" class="w3-tag blue w3-margin-bottom w3-xlarge w3-card-4" style="width: 300px; cursor: pointer;">Kontrola besa</span>
+              <span onclick="window.location.href='view_questions.html';" class="w3-tag blue w3-margin-bottom w3-xlarge w3-card-4" style="width: 300px; cursor: pointer;">Porodični problemi</span>
+              <span onclick="window.location.href='view_questions.html';" class="w3-tag blue w3-margin-bottom w3-xlarge w3-card-4" style="width: 300px; cursor: pointer;">Manjak samopouzdanja</span>
+              <span onclick="window.location.href='view_questions.html';" class="w3-tag blue w3-margin-bottom w3-xlarge w3-card-4" style="width: 300px; cursor: pointer;">OKP</span>
+              <span onclick="window.location.href='view_questions.html';" class="w3-tag blue w3-margin-bottom w3-xlarge w3-card-4" style="width: 300px; cursor: pointer;">Depersonalizacija</span>
+            
+              
              
+            
+              
             </div>
-          </div>
+            </div>
+
+       
+         
 
 
         </div>	
@@ -92,21 +98,11 @@
 
      
 
-        <div class="w3-panel w3-leftbar w3-white w3-margin w3-padding-large">
-          <p class="w3-xxlarge w3-serif"><i>"Ovo je neka motivaciona poruka."</i></p>
-          <p>Psiholog X</p>
-        </div>
-   
-        <div class="w3-panel w3-leftbar w3-white w3-margin w3-padding-large">
-          <p class="w3-xxlarge w3-serif"><i>"Ovo je neka motivaciona poruka."</i></p>
-          <p>Psiholog X</p>
-        </div>
-   
-   <hr>
+      
 
         
         <div class="w3-container w3-white w3-margin w3-padding-large w3-card-4" style="padding-top: 5%; padding-bottom: 5%;">
-          <div class="w3-center">
+          <div class="w3-center letters_blue">
             <h3>Pogledajte neke od najčešćih simptoma: </h3>
     
             
@@ -114,93 +110,87 @@
           
         
           </div>
+         
+        
+         
           <br>
-        
+
+          <div class="w3-row-padding" >
+            <div class="w3-col s4" >
+              <img src="photos/panic_atack.jpg" style="width:100%;">
+              
+              <p class="blue" onclick="window.location.href='view_questions.html';" style="margin-top: 0px; margin-bottom: 0px; font-size: 22px; color: white; text-align: center; cursor: pointer;"> NAPAD PANIKE</p>
+            </div>
+            <div class="w3-col s4">
+              <img src="photos/new/ocd.png" style="width:100%;">
+              <p class="blue" onclick="window.location.href='view_questions.html';" style="margin-top: 0px; margin-bottom: 0px; font-size: 22px; color: white; text-align: center; cursor: pointer;"> OKP</p>
+              
+            </div>
+            <div class="w3-col s4">
+              <img src="photos/new/shape.jpg" style="width:100%; ">
+              <p class="blue" onclick="window.location.href='view_questions.html';" style="margin-top: 0px; margin-bottom: 0px; font-size: 22px; color: white; text-align: center; cursor: pointer;"> PORODIČNI PROBLEMI</p>
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+          <div class="w3-row-padding">
+            <div class="w3-col s4">
+              <img src="photos/new/angrer.png" style="width:100%">
+              <p class="blue" onclick="window.location.href='view_questions.html';" style="margin-top: 0px; margin-bottom: 0px; font-size: 22px; color: white; text-align: center; cursor: pointer;"> PROBLEMI SA BESOM</p>
+              
+            </div>
+            <div class="w3-col s4">
+              <img src="photos/new/stress.png" style="width:100%">
+              <p class="blue" onclick="window.location.href='view_questions.html';" style="margin-top: 0px; margin-bottom: 0px; font-size: 22px; color: white; text-align: center; cursor: pointer;"> STRES</p>
+            
+            </div>
+            <div class="w3-col s4">
+              <img src="photos/new/depersonalisation.jpg" style="width:100%">
+              <p class="blue" onclick="window.location.href='view_questions.html';" style="margin-top: 0px; margin-bottom: 0px; font-size: 22px; color: white; text-align: center; cursor: pointer;"> DEPERSONALIZACIJA</p>
+              
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+          <div class="w3-row-padding">
+            <div class="w3-col s4">
+              <img src="photos/new/depression.jpg" style="width:100%">
+              <p class="blue" onclick="window.location.href='view_questions.html';" style="margin-top: 0px; margin-bottom: 0px; font-size: 22px; color: white; text-align: center; cursor: pointer;"> DEPRESIJA</p>
+             
+            </div>
+            <div class="w3-col s4">
+              <img src="photos/NEW/samopouzdanje.jpg" style="width:100%">
+              <p class="blue" onclick="window.location.href='view_questions.html';" style="margin-top: 0px; margin-bottom: 0px; font-size: 22px; color: white; text-align: center; cursor: pointer;"> MANJAK SAMOPOUZDANJA</p>
+          
+            </div>
+            <div class="w3-col s4">
+              <img src="photos/new/anxiety.png" style="width:100%">
+              <p class="blue" onclick="window.location.href='view_questions.html';" style="margin-top: 0px; margin-bottom: 0px; font-size: 22px; color: white; text-align: center; cursor: pointer;"> ANKSIOZNOST</p>
+           
+            </div>
+          </div>
 
 
-        
-
-
-
-<div class="grid-container" style="padding-left: 1%; padding-right: 1%;">
-  <div class="grid-item "> 
-    <div class="polaroid">
-      <img src="photos/panic_atack.jpg" alt="5 Terre" style="max-width:415px; max-height:320px">
-      <div class="container">
-      <p class="color-dark-blue" style="margin-top: 0px; margin-bottom: 0px;">NAPAD PANIKE</p>
+          <br>
+          <br>
+		
+<hr>
+<br>
+      <div class="w3-panel w3-leftbar w3-white w3-margin w3-padding-large">
+        <p class="w3-xxlarge  letters_blue" style="padding-right: 12px;"><i>"Život nema nikakvog smisla bez međuzavisnosti. Potrebni smo jedni drugima i što pre to naučimo, tim bolje za sve nas."</i></p>
+        <p class="letters_blue" style="font-size: 25px;">Erik Erikson</p>
       </div>
-    </div>
-  </div>
-  <div class="grid-item">
-    <div class="polaroid">
-      <img src="photos/new/ocd.png" alt="5 Terre" style="max-width:415px; max-height:320px">
-      <div class="container">
-        <p class="color-dark-blue" style="margin-top: 0px; margin-bottom: 0px;">OKP</p>
+ 
+      <div class="w3-panel w3-leftbar w3-white w3-margin w3-padding-large">
+        <p class="w3-xxlarge  letters_blue" style="padding-right: 12px;"><i>"Mi smo ono što jesmo jer smo bili ono što smo bili i ono što je potrebno za rešavanje problema ljudskog života i motiva nisu moralne procene već više znanja."</i></p>
+        <p class="letters_blue "style="font-size: 25px;">Zigmund Freud</p>
       </div>
-    </div>
-  </div>
-  <div class="grid-item">
-    <div class="polaroid">
-      <img src="photos/new/shape.jpg" alt="5 Terre" style="max-width:415px; max-height:320px">
-      <div class="container">
-        <p class="color-dark-blue" style="margin-top: 0px; margin-bottom: 0px;">UZOCI/OKIDAČI</p>
-      </div>
-    </div>  
-    
-  </div>  
-  <div class="grid-item">
-    <div class="polaroid">
-      <img src="photos/new/angrer.png" alt="5 Terre" style="max-width:415px; max-height:320px">
-      <div class="container">
-        <p class="color-dark-blue" style="margin-top: 0px; margin-bottom: 0px;">PROBLEMI SA BESOM</p>
-      </div>
-    </div>
-  </div>
-  <div class="grid-item">
-    <div class="polaroid">
-      <img src="photos/new/stress.png" alt="5 Terre" style="max-width:415px; max-height:320px">
-      <div class="container">
-        <p class="color-dark-blue" style="margin-top: 0px; margin-bottom: 0px;">STRES</p>
-      </div>
-    </div>
-  </div>
-  <div class="grid-item">
-    <div class="polaroid">
-      <img src="photos/NEW/depersonalisation.jpg" alt="5 Terre" style="max-width:415px; max-height:320px">
-      <div class="container">
-        <p class="color-dark-blue" style="margin-top: 0px; margin-bottom: 0px;">DEPERSONALIZACIJA</p>
-      </div>
-    </div>
-  </div>  
-  <div class="grid-item">
-    <div class="polaroid">
-      <img src="photos/new/depression.jpg" alt="5 Terre" style="max-width:415px; max-height:320px">
-      <div class="container">
-        <p class="color-dark-blue" style="margin-top: 0px; margin-bottom: 0px;">DEPRESIJA</p>
-      </div>
-    </div>
-  </div>
-  <div class="grid-item">
-    <div class="polaroid">
-      <img src="photos/new/samopouzdanje.jpg" alt="5 Terre" style="max-width:415px; max-height:320px">
-      <div class="container">
-        <p class="color-dark-blue" style="margin-top: 0px; margin-bottom: 0px;">MANJAK SAMOPOUZDANJA</p>
-      </div>
-    </div>
-  </div>
-  <div class="grid-item">
-    <div class="polaroid">
-      <img src="photos/new/anxiety.png" alt="5 Terre" style="max-width:415px; max-height:320px">
-      <div class="container">
-        <p class="color-dark-blue" style="margin-top: 0px; margin-bottom: 0px;">ANKSIOZNOST</p>
-      </div>
-    </div>
-  </div>  
-</div>
-
-
-
-		  <br>
+ 
+ <hr>
 		<!-- END BLOG ENTRIES -->
 		</div>
 
@@ -218,7 +208,7 @@
 		<!-- Footer -->
     <footer class="w3-container color-dark-blue" style="padding:32px; margin-top: 5%;">
       <div class="w3-left">
-        <a href="#" class="w3-button w3-white w3-padding-large w3-margin-bottom letters_dark_blue"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+        <a href="#" class="w3-button w3-light-grey w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right" style="color: #021B79;"></i>To the top</a>
         <p style="color: white;">Web portal za psihološko savetovanje</p>
         <p style="color: white;">Projekat iz predmeta "Principi softverskog inženjerstva"</p>
         <p style="color: white;">Tim Jigglypuff <i class="fa fa-copyright"></i> all rights reserved</p>

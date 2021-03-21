@@ -31,7 +31,7 @@ div.polaroid {
 
     .grid-container {
         display: grid;
-        grid-column-gap: 50px;
+        
         grid-template-columns: auto auto auto;
         background-color: inherit;
         padding: 0px;
@@ -39,5 +39,18 @@ div.polaroid {
         grid-row-gap: 60px;
       }
 
+      ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:  #021B79;
+    }
 
+    .blue {
+background-color: rgb(58, 80, 148);
 
+    }
+
+    .letters_blue {
+      color: rgb(58, 80, 148);
+      
+          }
+    
+    

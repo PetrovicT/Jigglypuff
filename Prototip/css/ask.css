@@ -16,13 +16,9 @@ ol{
     }
 
 .buttons {
-display: flex;
-flex-direction: row;
-justify-content: right;
-align-self:flex-end;
-padding-right: 34%;
 width: 160px;
-color: #021B79 !important;  
+background-color: #021B79 !important;
+color:white !important;  
 }
 
 #like {
@@ -70,11 +66,21 @@ padding-right: 6%;
 .color-dark-blue {        
         background: #0575E6;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #021B79, #0a63bd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-        }
+}
 
-.letters_dark_blue{        
+
+.gradient_literature {        
+    background: #0575E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, rgb(7,73,165), #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, rgb(7,73,165), #0a63bd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+
+.letters_dark_blue, #text_input{        
     color: #021B79;
     }
     
@@ -84,5 +90,3 @@ background: linear-gradient(to right, #021B79, #0575E6); /* W3C, IE 10+/ Edge, F
 
 
    
-      
- 
