@@ -22,6 +22,10 @@
 	display:inline;
 }
 
+.close-button:hover{
+	background-color:red !important;
+}
+
 .buttons {
 	width: 160px;
 	background-color: #021B79 !important;

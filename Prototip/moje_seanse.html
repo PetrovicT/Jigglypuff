@@ -60,18 +60,64 @@ h1,h2,h3,h4,h5,h6 {font-family: "Oswald"} body {font-family: "Open Sans"}
     <!-- w3-content defines a container for fixed size centered content, 
 	and is wrapped around the whole page content, except for the footer in this example -->
     <div class="w3-content" style="max-width:90%">
-		
 	  <h1 class="w3-center">Moje seanse</h1>
-	  <!-- Filtriranje -->
+	  
+	  <!-- Nova seansa -->
 	  <div class="w3-row w3-padding w3-border">
 		<div class="w3-col l12 s12">
 			<div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
 				<div class="w3-left">
 					<h3 class="">Vi ste psiholog i možete da organizujete seansu <i class="fa fa-check" style="color:green"></i></h3>
 				</div>
-					<button class = "w3-right w3-button buttons" style="position:relative;width: auto;top: 9px;">Organizuj novu seansu</button>
+					<button class = "w3-right w3-button buttons" style="position:relative;width: auto;top: 9px;"
+						onclick="document.getElementById('NovaSeansaModal').style.display='block'">
+						Organizuj novu seansu
+					</button>
 			</div>
 		</div>
+	  </div>
+	  
+	  <div id="NovaSeansaModal" class="w3-modal">
+		<br><br>
+		<div class="w3-modal-content w3-animate-top w3-card-4">
+			<header class="w3-container color-dark-blue"> 
+			  <span onclick="document.getElementById('NovaSeansaModal').style.display='none'" class="w3-button w3-large w3-display-topright close-button">×</span>
+			  <h2 class="w3-text-white">Nova seansa</h2>
+			</header>
+			 <form class="w3-container">
+				
+				<br>
+				<div style="display: inline-block; min-width:60% ">
+					<label>Naziv seanse</label>
+					<input id="novaSeansaNaziv" name="novaSeansaNaziv" class="w3-input" type="text">
+				</div>
+				
+				<div style="display: inline-block; width:30%">
+					<label>Maksimalan broj prijavljenih</label>
+					<input id="novaSeansaBrojLjudi" name="novaSeansaBrojLjudi" class="w3-input" type="number">
+				</div>
+				
+				<br><br>
+				<label>Opis</label>
+				<textarea id="novaSeansaOpis" name="novaSeansaOpis" class="w3-input" style="max-width:100%;"></textarea>
+				
+				<br>
+				<label>Vreme održavanja</label>
+				<div>
+					<input id="novaSeansaDatum" name="novaSeansaDatum" class="w3-input" type="date" style="display:inline; width:40%"></input>
+					<input id="novaSeansaVreme" name="novaSeansaVreme" class="w3-input" type="time" style="display:inline; width:40%"></input>
+				</div>
+				
+				<br>
+				<label>Zoom link</label>
+				<input id="novaSeansaZoomLink" name="novaSeansaZoomLink" class="w3-input" type="url">
+
+				<br>
+				<input id="novaSeansaSubmit" name="novaSeansaSubmit" class="w3-input w3-button buttons" type="submit" value="Organizuj!">
+				
+			</form> 
+			<br><br>
+	    </div>
 	  </div>
 	
       <!-- Grid -->
