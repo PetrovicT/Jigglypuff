@@ -1,286 +1,330 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="icon" href="photos/logo.png"/>
-		<link rel="stylesheet" href="css/w3.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/ask.css">
-    <title>Pregled pitanja</title>
-		<style>h1,h2,h3,h4,h5,h6 {font-family: "Oswald"} body {font-family: "Open Sans"}</style>
-		<script src = "js/script.js"></script>
-	</head>
-	
-	<body class="w3-light-grey">
-	  
-	 <!-- Header -->
-     <header class="w3-bar w3-padding-12 color-dark-blue w3-mobile">
-		<!-- S leva nadesno -->
-		<a href="homepage.html" class="w3-bar-item w3-button letters"><i class="fa fa-home"></i> Home</a>
+
+<head>
+  <link rel="icon" href="photos/logo.png" />
+  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ask.css">
+  <title>Pregled pitanja</title>
+  <style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Oswald"
+    }
+
+    body {
+      font-family: "Open Sans"
+    }
+  </style>
+  <script src="js/script.js"></script>
+</head>
+
+<body class="w3-light-grey">
+
+  <!-- Header -->
+  <header class="w3-bar w3-padding-12 color-dark-blue w3-mobile">
+    <!-- S leva nadesno -->
+    <a href="homepage.html" class="w3-bar-item w3-button letters"><i class="fa fa-home"></i> Home</a>
 
 
-		<div class="w3-dropdown-hover w3">
-			<a href="view_questions.html" class="w3-bar-item w3-button letters"><i class="fa fa-question-circle-o"></i> Kategorije</a>
-			<div id="CategoryDropdownMenu" class="w3-dropdown-content w3-bar-block w3-card-4">
-				<a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Anksioznost</a>
-			  <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Depresija</a>
-        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Napad panike</a>
-			  <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Kontrola stresa</a>
-			  <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Kontrola besa</a>
-			  <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Porodični problemi</a>
-			  <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Manjak samopouzdanja</a>
+    <div class="w3-dropdown-hover w3">
+      <a href="view_questions.html" class="w3-bar-item w3-button letters"><i class="fa fa-question-circle-o"></i>
+        Kategorije</a>
+      <div id="CategoryDropdownMenu" class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i>
+          Anksioznost</a>
+        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i>
+          Depresija</a>
+        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Napad
+          panike</a>
+        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Kontrola
+          stresa</a>
+        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Kontrola
+          besa</a>
+        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Porodični
+          problemi</a>
+        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Manjak
+          samopouzdanja</a>
         <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> OKP</a>
-        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Depersonalizacija</a>
-			  <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> <b>Nijedno od ponuđenog</b></a>
-			 
-			</div>
-		</div>
-
-		<a href="#" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-fire"></i> Seanse</a>
-        <a href="ask_final.html" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-plus-circle"></i> Postavi pitanje</a>
-		<!-- S desna nalevo -->
-		<div class="w3-dropdown-hover w3-right">
-			<a href="#" class="w3-bar-item w3-button letters"><i class="fa fa-user"></i> Ana Jovanović</a>
-			<div id="UserDropdownMenu" class="w3-dropdown-content w3-bar-block w3-card-4">
-			  <a href="template.html" class="w3-bar-item w3-button"><i class="fa fa-gear"></i> Podešavanja naloga</a>
-			  <a href="template.html" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i> Moje seanse</a>
-			</div>
-		</div>
-		<div id="SearchBar" class="w3-right" style="width:346px; max-width: 100%;">
-			<a href="view_questions.html" class="w3-bar-item w3-button w3-right letters"><i class="fa fa-search"></i></a>
-			<input id="SearchField" class="w3-bar-item w3-right" type="text" placeholder="Pretraži" style="width:300px; max-width:calc(100% - 46px);">
-		</div>
-	  </header>
-	  
-	<!-- w3-content defines a container for fixed size centered content, 
-	and is wrapped around the whole page content, except for the footer in this example -->
-	<div class="w3-content" style="max-width:90%">
-
-	  <!-- Grid -->
-	  <div class="w3-row  w3-padding w3-border">
-
-		<!-- Blog entries -->
-		<div class="w3-col l8 s12" >
-            <br> 
-
-		  <!-- Blog entry -->
-        
-		  
-
-<div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
-
-    <div class="w3-left" style="padding-left: 5%;"> <br>
-         <h3 class="letters_dark_blue"><b>Problemi sa paničnim napadima</b></h3>
+        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i>
+          Depersonalizacija</a>
+        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> <b>Nijedno
+            od ponuđenog</b></a>
+      </div>
     </div>
 
-    <div class="w3-right" style="padding-right: 6%;"> <br>
-      <h3 class="letters_dark_blue"><a href="" style="text-decoration: none;"><b>Autor: Marko Ivanović</b></a> </h3>
-  </div>
+    <a href="view_seanse.html" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-fire"></i> Seanse</a>
+    <a href="ask_final.html" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-plus-circle"></i>
+      Postavi pitanje</a>
 
-	<!-- Input section -->
-	<div class="input letters_dark_blue">
-    <p style="text-align: justify;">Vec unazad 5 godina imam probleme sa okp-om i panicnim napadima, na neki nacin okp nemam vise u nazad godinu dana , al panicni napadi i stezanje u grlu su postali problem sad , uzimao sam seroxat,eftil i onzapin kao terapiju sto mi je psihijatar prepisao i na svoju ruku sam prestao da ih uzimam u zadnjih godinu dana samo onzapin uzimam i recimo u avgustu 2020 sam imao bas probleme i sve do pre mesec dana mi nije bilo sta, u nazad 2-3 nedelje posebno zadnjih 5 dana su postali bas uzasni i sad se pitam dal da opet uzmem te tablete a imam ih kuci ili sta da radim nzm ni ja vise. i problem je sto imam fizicke probleme kao stezanje u grlu i srcani udar da imam a inace znam i sam da je to sve iluzija i da ne treba da se opterecujem al opet ne vredi, i tako na momente me smara recimo juce nista, danas problem opet, takodje jako retko izlazim napolje i pokusavam da pronadjem neko resenje da se izvucem iz ovoga.</p>  <br>
-    </div>  
-
-<!-- Anwser input -->
-<div class="input ">
-       
-  <!-- Buttons -->
-  <div id="like">
-    
-    <div >
-    <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Korisno (16)</b></button>  &nbsp 
-    <button class="w3-button buttons" onclick="dislikeFunction(this)"><b><i class="fa fa-thumbs-down  "></i> Nije korisno (7)</b></button>
+    <div class="w3-dropdown-hover w3-right">
+      <a href="profil.html" class="w3-bar-item w3-button letters"><i class="fa fa-user"></i> Ana Jovanović</a>
+      <div id="UserDropdownMenu" class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="profilIzmena.html" class="w3-bar-item w3-button"><i class="fa fa-gear"></i> Podešavanja naloga</a>
+        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i><u onclick="alert('Prikaz mojih seansi')" style="text-decoration: none;">Moje seanse</u></a>
+      </div>
     </div>
 
-    <div style="float: right;">        
-    <button onclick="window.location.href='anwsers.html';" class="w3-button buttons"><b> Pogledaj odgovore</b></button>   &nbsp 
-    <button onclick="window.location.href='anwsers.html#text_input';" class="w3-button buttons"><b>Odgovori</b></button>
+    <div id="SearchBar" class="w3-right" style="width:346px; max-width: 100%;">
+      <a href="view_questions.html" class="w3-bar-item w3-button w3-right letters"><i class="fa fa-search"></i></a>
+      <input id="SearchField" class="w3-bar-item w3-right" type="text" placeholder="Pretraži"
+        style="width:300px; max-width:calc(100% - 46px);">
     </div>
-</div>
-    </div>
-<br>
-</div>
+  </header>
 
-<div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
+  <div class="w3-content" style="max-width:90%">
+    <!-- Background -->
+    <div class="w3-row  w3-padding w3-border">
 
-  <div class="w3-left" style="padding-left: 5%;"> <br>
-       <h3 class="letters_dark_blue"><b>Anksioznost</b></h3>
-  </div>
+      <!-- Entries -->
+      <div class="w3-col l8 s12"> <br>
 
-  <div class="w3-right" style="padding-right: 6%;"> <br>
-    <h3 class="letters_dark_blue"><b>Autor: Anonimno</b></h3>
-</div>
+        <!-- Entry -->
+        <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
+          <div class="w3-left" style="padding-left: 5%;"> <br>
+            <h3 class="letters_dark_blue"><b>Problemi sa paničnim napadima</b></h3>
+          </div>
 
-<!-- Input section -->
-<div class="input letters_dark_blue">
-  <p style="text-align: justify;">Zdravo, dugo mi je trebalo da uopšte progovorim o ovoj temi. Anksioznost osjećam već nekih 5/6 godina. Dugo sam odbijala bilo kakav vid pomoći, nijesam htjela da me drugi vide “ludom”, plašila se da me psiholozi neće razumjeti, da će misliti ko zna šta, da će me ljudi okolo osudjivati.. o svakoj situaciji u životu previše razmišljam unaprijed. I najkraći razgovor ja u svojoj glavi razradim unaprijed, stalno strepim od gluposti, muči me kako ću reći ovo, kako ću uraditi ono… Strah od javnog govora da ni ne pominjem, a nekad sam bila toliko slobodna i opuštena, sve ovo previše crpi energiju iz mene. Takodje, imam jako dobro pamćenje, ali toliko puta ponovim određene aktivnosti tipa provjeravam da li sam zaključala stan, da li sam prepisala nešto tačno iako znam da jesam.. Takodje pranje ruku, operem ruke i imam neki osjećaj nenormalno neprijatan da automatski moram opet da ih operem i tako više puta.. još kao mala obožavam neku pravilnost i organizovanost, u ormaru sve mora da bude savršeno složeno sve u kocku, čim jedna stvar nije po tom iznerviram se… Takodje imam jako čudne misli dok hodam tipa predjem preko stepenica i shvatim da sam ih prošla i više ne mogu to da uradim i vratim se još jednom tuda… Da ne nabrajam više… Interesuje me šta ja sama mogu da uradim povodom toga. Hvala Vam puno, već mi je lakše.
+          <div class="w3-right" style="padding-right: 6%;"> <br>
+            <h3 class="letters_dark_blue"><a href="profil.html" style="text-decoration: none;"><b>Autor: Marko Ivanović</b></a>
+            </h3>
+          </div>
 
-  </p>  <br>
-  </div>  
+          <!-- Question text -->
+          <div class="input letters_dark_blue">
+            <p style="text-align: justify; font-weight: normal;">Vec unazad 5 godina imam probleme sa okp-om i panicnim napadima, na neki
+              nacin okp nemam vise u nazad godinu dana , al panicni napadi i stezanje u grlu su postali problem sad ,
+              uzimao sam seroxat,eftil i onzapin kao terapiju sto mi je psihijatar prepisao i na svoju ruku sam prestao
+              da ih uzimam u zadnjih godinu dana samo onzapin uzimam i recimo u avgustu 2020 sam imao bas probleme i sve
+              do pre mesec dana mi nije bilo sta, u nazad 2-3 nedelje posebno zadnjih 5 dana su postali bas uzasni i sad
+              se pitam dal da opet uzmem te tablete a imam ih kuci ili sta da radim nzm ni ja vise. i problem je sto
+              imam fizicke probleme kao stezanje u grlu i srcani udar da imam a inace znam i sam da je to sve iluzija i
+              da ne treba da se opterecujem al opet ne vredi, i tako na momente me smara recimo juce nista, danas
+              problem opet, takodje jako retko izlazim napolje i pokusavam da pronadjem neko resenje da se izvucem iz
+              ovoga.</p> <br>
+          </div>
 
-<!-- Anwser input -->
-<div class="input ">
-     
-<!-- Buttons -->
-<div id="like">
-  
-  <div >
-  <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Korisno (3)</b></button>  &nbsp 
-  <button class="w3-button buttons" onclick="dislikeFunction(this)"><b><i class="fa fa-thumbs-down  "></i> Nije korisno (15)</b></button>
-  </div>
+          <!-- Buttons -->
+          <div class="input ">  
+            <div id="like">
+              <div>
+                <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> <u onclick="alert('Povećali ste broj lajkova za 1')" style="text-decoration: none; font-weight: normal;">Korisno (16)</u></button> &nbsp
+                  <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-down"></i> <u onclick="alert('Povećali ste broj dislajkova za 1')" style="text-decoration: none;font-weight: normal;">Nije korisno (7)</u></button>
+              </div>
 
-  <div style="float: right;">        
-  <button onclick="window.location.href='anwsers.html';" class="w3-button buttons"><b> Pogledaj odgovore</b></button>   &nbsp 
-  <button onclick="window.location.href='anwsers.html#text_input';" class="w3-button buttons"><b>Odgovori</b></button>
-  </div>
-</div>
-  </div>
-<br>
-</div>
+              <div style="float: right;">
+                <button onclick="window.location.href='anwsers.html';"style="font-weight: normal;" class="w3-button buttons"> Pogledaj
+                    odgovore</button> &nbsp
+                <button onclick="window.location.href='anwsers.html#text_input';"
+                  class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
+              </div>
+            </div>
+          </div>
+          <br>
+        </div>
 
+        <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
 
+          <div class="w3-left" style="padding-left: 5%;"> <br>
+            <h3 class="letters_dark_blue"><b>Anksioznost</b></h3>
+          </div>
 
+          <div class="w3-right" style="padding-right: 6%;"> <br>
+            <h3 class="letters_dark_blue"><b>Autor: Anonimno</b></h3>
+          </div>
 
+          <!-- Input section -->
+          <div class="input letters_dark_blue">
+            <p style="text-align: justify; font-weight: normal;">Zdravo, dugo mi je trebalo da uopšte progovorim o ovoj temi. Anksioznost
+              osjećam već nekih 5/6 godina. Dugo sam odbijala bilo kakav vid pomoći, nijesam htjela da me drugi vide
+              “ludom”, plašila se da me psiholozi neće razumjeti, da će misliti ko zna šta, da će me ljudi okolo
+              osudjivati.. o svakoj situaciji u životu previše razmišljam unaprijed. I najkraći razgovor ja u svojoj
+              glavi razradim unaprijed, stalno strepim od gluposti, muči me kako ću reći ovo, kako ću uraditi ono… Strah
+              od javnog govora da ni ne pominjem, a nekad sam bila toliko slobodna i opuštena, sve ovo previše crpi
+              energiju iz mene. Takodje, imam jako dobro pamćenje, ali toliko puta ponovim određene aktivnosti tipa
+              provjeravam da li sam zaključala stan, da li sam prepisala nešto tačno iako znam da jesam.. Takodje pranje
+              ruku, operem ruke i imam neki osjećaj nenormalno neprijatan da automatski moram opet da ih operem i tako
+              više puta.. još kao mala obožavam neku pravilnost i organizovanost, u ormaru sve mora da bude savršeno
+              složeno sve u kocku, čim jedna stvar nije po tom iznerviram se… Takodje imam jako čudne misli dok hodam
+              tipa predjem preko stepenica i shvatim da sam ih prošla i više ne mogu to da uradim i vratim se još jednom
+              tuda… Da ne nabrajam više… Interesuje me šta ja sama mogu da uradim povodom toga. Hvala Vam puno, već mi
+              je lakše.
 
+            </p> <br>
+          </div>
 
-		<!-- END BLOG ENTRIES -->
-		</div>
+          <!-- Buttons -->
+          <div class="input ">     
+            <div id="like">
+              <div>
+                <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> <u onclick="alert('Povećali ste broj lajkova za 1')" style="text-decoration: none; font-weight: normal;">Korisno (3)</u></button> &nbsp
+                  <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-down"></i> <u onclick="alert('Povećali ste broj dislajkova za 1')" style="text-decoration: none; font-weight: normal;">Nije korisno (11)</u></button>
+              </div>
 
-        <br> 
-	<!-- About/Information menu -->
-    <div class="w3-col l4">
-        <!-- Posts -->
+              <div style="float: right;">
+                <button onclick="window.location.href='anwsers.html';" class="w3-button buttons" style="font-weight: normal;"> Pogledaj
+                    odgovore</button> &nbsp
+                <button onclick="window.location.href='anwsers.html#text_input';"
+                  class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
+              </div>
+            </div>
+          </div>
+          <br>
+        </div>
+
+        <!-- End of entries -->
+      </div>
+
+      <br>
+
+      <!-- Literature -->
+      <div class="w3-col l4">
         <div class="w3-white w3-margin">
-          <div class="w3-container w3-padding gradient_literature letters" >
+          <div class="w3-container w3-padding gradient_literature letters">
             <h4>Preporučena literatura za sve ljubitelje psihologije</h4>
           </div>
           <ul class="w3-ul w3-hoverable w3-white">
 
-             <li>
+            <li>
               <div class="w3-row">
                 <div class="w3-col s2 w3-white w3-center">
-                  <img src="photos/50_ideja_koje_bi_stvarno_trebalo_da_znate_psihologija-adrijan_fernam_s.jpg" style="width:100%;">
+                  <img src="photos/50_ideja_koje_bi_stvarno_trebalo_da_znate_psihologija-adrijan_fernam_s.jpg"
+                    style="width:100%;">
                 </div>
-                <div class="w3-col s10 w3-left" style="padding-left: 10px;">
-                  <span class="w3-medium"><b>50 ideja koje bi stvarno trebalo da znate - Adrijan Fernam</b></span>  <br>
-                  <span>Kolika je razlika između muškog i ženskog mozga? Postoji li zaista altruizam? Da li je naš um, odmah po rođenju, neispisana tablica?</span>
+                <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
+                  <span class="w3-medium"><b>50 ideja koje bi stvarno trebalo da znate - Adrijan Fernam</b></span> <br>
+                  <span style="font-weight: 500;"> Kolika je razlika između muškog i ženskog mozga? Postoji li zaista altruizam? Da li je naš um,
+                    odmah po rođenju, neispisana tablica?</span>
+                    
                 </div>
               </div>
-             </li>
+            </li>
 
-             <li>
+            <li>
               <div class="w3-row">
                 <div class="w3-col s2 w3-white w3-center">
                   <img src="photos/bez_granica-dzim_kvik_s.jpg" style="width:100%;">
                 </div>
-                <div class="w3-col s10 w3-left" style="padding-left: 10px;">
-                  <span class="w3-medium"><b>Bez granica - Džim Kvik</b></span>  <br>
-                  <span>Usavršite svoj mozak, učite brže i otključajte pristup izuzetnom životu za koji ste sposobni.</span>
+                <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
+                  <span class="w3-medium"><b>Bez granica - Džim Kvik</b></span> <br>
+                  <span style="font-weight: 500;">Usavršite svoj mozak, učite brže i otključajte pristup izuzetnom životu za koji ste
+                    sposobni.</span>
                 </div>
               </div>
-             </li>
+            </li>
 
 
-             <li>
+            <li>
               <div class="w3-row">
                 <div class="w3-col s2 w3-white w3-center">
                   <img src="photos/dete_u_tebi_mora_da_pronadje_svoj_zavicaj-stefani_stal_s.jpg" style="width:100%;">
                 </div>
-                <div class="w3-col s10 w3-left" style="padding-left: 10px;">
-                  <span class="w3-medium"><b>Dete u tebi mora da pronađe svoj zavičaj - Štefani Štal</b></span>  <br>
-                  <span>Ključ za rešavanje (skoro) svih problema. Svetski bestseler iz oblasti psihologije</span>
+                <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
+                  <span class="w3-medium"><b>Dete u tebi mora da pronađe svoj zavičaj - Štefani Štal</b></span> <br>
+                  <span style="font-weight: 500;">Ključ za rešavanje (skoro) svih problema. Svetski bestseler iz oblasti psihologije</span>
                 </div>
               </div>
-             </li>
+            </li>
 
-             <li>
+            <li>
               <div class="w3-row">
                 <div class="w3-col s2 w3-white w3-center">
                   <img src="photos/emocionalni_prtljag-vivijan_ditmar_s.jpg" style="width:100%;">
                 </div>
-                <div class="w3-col s10 w3-left" style="padding-left: 10px;">
-                  <span class="w3-medium"><b>Emocionalni prtljag - Vivijan Ditmar</b></span>  <br>
-                  <span>Svako može, ako želi, da pronađe nešto dragoceno u ovoj knjizi i da naposletku nauči da se bolje nosi s negativnim emocijama.</span>
+                <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
+                  <span class="w3-medium"><b>Emocionalni prtljag - Vivijan Ditmar</b></span> <br>
+                  <span style="font-weight: 500;">Svako može, ako želi, da pronađe nešto dragoceno u ovoj knjizi i da naposletku nauči da se bolje
+                    nosi s negativnim emocijama.</span>
                 </div>
               </div>
-             </li>
+            </li>
 
-             <li>
+            <li>
               <div class="w3-row">
                 <div class="w3-col s2 w3-white w3-center">
                   <img src="photos/izgubljene_veze-johan_hari_s.jpg" style="width:100%;">
                 </div>
-                <div class="w3-col s10 w3-left" style="padding-left: 10px;">
-                  <span class="w3-medium"><b>Izgubljene veze - Johan Hari</b></span>  <br>
-                  <span> Naučnici širom sveta otkrili su dokaze za devet različitih uzroka depresije. Neki od njih su ukorenjeni u našoj biologiji, ali većina ih je u načinu na koji danas živimo.</span>
+                <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
+                  <span class="w3-medium"><b>Izgubljene veze - Johan Hari</b></span> <br>
+                  <span style="font-weight: 500;"> Naučnici širom sveta otkrili su dokaze za devet različitih uzroka depresije. Neki od njih su
+                    ukorenjeni u našoj biologiji, ali većina ih je u načinu na koji danas živimo.</span>
                 </div>
               </div>
-             </li>
+            </li>
 
-             <li>
+            <li>
               <div class="w3-row">
                 <div class="w3-col s2 w3-white w3-center">
                   <img src="photos/sta_nam_svako_telo_govori-dzo_navaro_s.jpg" style="width:100%;">
                 </div>
-                <div class="w3-col s10 w3-left" style="padding-left: 10px;">
-                  <span class="w3-medium"><b>Šta nam svako telo govori-Džo Navaro</b></span>  <br>
-                  <span>Priručnik bivšeg agenta FBI-a za brzo „čitanje“ ljudi. Zašto je lice poslednje mesto na kojem treba tražiti znake iskrenih emocija?</span>
+                <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
+                  <span class="w3-medium"><b>Šta nam svako telo govori-Džo Navaro</b></span> <br>
+                  <span style="font-weight: 500;">Priručnik bivšeg agenta FBI-a za brzo „čitanje“ ljudi. Zašto je lice poslednje mesto na kojem
+                    treba tražiti znake iskrenih emocija?</span>
                 </div>
               </div>
-             </li>
+            </li>
 
-             <li>
+            <li>
               <div class="w3-row">
                 <div class="w3-col s2 w3-white w3-center">
                   <img src="photos/vise_se_ne_razumemo-izabel_fijioza_v.jpg" style="width:100%;">
                 </div>
-                <div class="w3-col s10 w3-left" style="padding-left: 10px;">
-                  <span class="w3-medium"><b>Više se ne razumemo - Izabel Fijioza</b></span>  <br>
-                  <span>U knjizi Više se ne razumemo otkrićemo šta se dešava u glavi i telu naših tinejdžera.</span>
+                <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
+                  <span class="w3-medium"><b>Više se ne razumemo - Izabel Fijioza</b></span> <br>
+                  <span style="font-weight: 500;">U knjizi Više se ne razumemo otkrićemo šta se dešava u glavi i telu naših tinejdžera.</span>
                 </div>
               </div>
-             </li>
+            </li>
 
-             <li>
+            <li>
               <div class="w3-row">
                 <div class="w3-col s2 w3-white w3-center">
-                  <img src="photos/borba_do_pobede_knjiga_za_sve_one_kojima_je_tesko-srdjan_krstic_v.jpg" style="width:100%;">
+                  <img src="photos/borba_do_pobede_knjiga_za_sve_one_kojima_je_tesko-srdjan_krstic_v.jpg"
+                    style="width:100%;">
                 </div>
-                <div class="w3-col s10 w3-left" style="padding-left: 10px;">
-                  <span class="w3-medium"><b>Borba do pobede - Srđan Krstić</b></span>  <br>
-                  <span>Ova knjiga je napisana s namerom da pomogne ljudima kojima je teško, onima koji ne vide izlaz.</span>
+                <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
+                  <span class="w3-medium"><b>Borba do pobede - Srđan Krstić</b></span> <br>
+                  <span style="font-weight: 500;">Ova knjiga je napisana s namerom da pomogne ljudima kojima je teško, onima koji ne vide
+                    izlaz.</span>
                 </div>
               </div>
-             </li>
+            </li>
 
           </ul>
         </div>
         <hr>
 
-        
-
-      <!-- END About/Intro Menu -->
+        <!-- End of literature -->
       </div>
 
-	  <!-- END GRID -->
-	  </div>
+      <!-- End background -->
+    </div>
 
-	<!-- END w3-content -->
-	</div>
+    <!-- End content -->
+  </div>
 
-	<!-- Footer -->
+  <!-- Footer -->
   <footer class="w3-container color-dark-blue" style="padding:32px; margin-top: 5%;">
     <div class="w3-left">
-      <a href="#" class="w3-button w3-light-grey w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right" style="color: #021B79;"></i>To the top</a>
+      <a href="#" class="w3-button w3-light-grey w3-padding-large w3-margin-bottom"><i
+          class="fa fa-arrow-up w3-margin-right" style="color: #021B79;"></i>To the top</a>
       <p style="color: white;">Web portal za psihološko savetovanje</p>
       <p style="color: white;">Projekat iz predmeta "Principi softverskog inženjerstva"</p>
       <p style="color: white;">Tim Jigglypuff <i class="fa fa-copyright"></i> all rights reserved</p>
     </div>
-    <img id="JigglypuffFooterImage" class="w3-right" src="https://upload.wikimedia.org/wikipedia/en/2/22/Pok%C3%A9mon_Jigglypuff_art.png"></img>
+    <img id="JigglypuffFooterImage" class="w3-right"
+      src="https://upload.wikimedia.org/wikipedia/en/2/22/Pok%C3%A9mon_Jigglypuff_art.png"></img>
   </footer>
 
-	</body>
+</body>
+
 </html>
