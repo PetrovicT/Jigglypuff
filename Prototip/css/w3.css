@@ -598,6 +598,9 @@ a {
     .w3-col.m5 {
         width: 41.66666%;
     }
+	.w3-col.m5ipo {
+        width: 49%;
+    }
     .w3-col.m6,
     .w3-half {
         width: 49.99999%;
@@ -632,6 +635,9 @@ a {
     }
     .w3-col.l3 {
         width: 24.99999%;
+    }
+	.w3-col.l3ipo {
+        width: 32.3%;
     }
     .w3-col.l4 {
         width: 33.33333%;
@@ -1166,6 +1172,9 @@ a {
 }
 .w3-margin-right {
     margin-right: 16px !important;
+}
+.w3-margin-small-adaptive {
+    margin: 0.5% !important;
 }
 .w3-padding-small {
     padding: 4px 8px !important;
