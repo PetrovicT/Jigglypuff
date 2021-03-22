@@ -3,7 +3,8 @@ body{
 }
 
 .picture{
-    width:50%;
+    width:900px;
+	max-width: 95%;
     margin-bottom: 20%;
     margin:auto;
     background: #f1f1f1;
