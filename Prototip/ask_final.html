@@ -120,22 +120,27 @@
           <br>
           <div class="input letters_dark_blue">
             <h4 class="letters_dark_blue">Izaberite kategoriju pitanja</h4>
-            <select style="color: #021B79; border-color: #021B79; font-size: 16px; " name="categories">
-              <option style="color: #021B79;" value="">Anksioznost</option>
-              <option style="color: #021B79;" value="">Depresija</option>
-              <option style="color: #021B79;" value="">Panični napadi</option>
-              <option style="color: #021B79;" value="">Kontrola stresa</option>
-              <option style="color: #021B79;" value="">Problemi sa besom</option>
-              <option style="color: #021B79;" value="">Porodični problemi</option>
-              <option style="color: #021B79;" value="">Manjak samopouzdanja</option>
-              <option style="color: #021B79;" value="">Ništa od ponuđenog</option>
-            </select>
-            <br>
+
+            <form action="">
+              <label for="category"></label>
+              <select style="color: #021B79; border-color: #021B79; font-size: 16px; width: 100%;" name="category" id="category" required>
+                <option style="color: #021B79;" value="">-</option>
+                <option style="color: #021B79;" value="">Anksioznost</option>
+                <option style="color: #021B79;" value="">Depresija</option>
+                <option style="color: #021B79;" value="">Panični napadi</option>
+                <option style="color: #021B79;" value="">Kontrola stresa</option>
+                <option style="color: #021B79;" value="">Problemi sa besom</option>
+                <option style="color: #021B79;" value="">Porodični problemi</option>
+                <option style="color: #021B79;" value="">Manjak samopouzdanja</option>
+                <option style="color: #021B79;" value="">Ništa od ponuđenog</option>
+              </select>
+              <br><br>
+         
 
             <!-- Question input -->
             <input style="color: #021B79; border-color: #021B79; font-size: 16px; " class="w3-input" type="text"
               placeholder="Naslov pitanja"> <br> <br>
-            <textarea style="color: #021B79; border-color: #021B79; font-size: 16px; resize: none;" name="" id=""
+            <textarea style="color: #021B79; border-color: #021B79; font-size: 16px; resize: none; width: 100%;" name="" id=""
               cols="355" rows="10" placeholder=" Tekst pitanja"></textarea>
             <br>
 
@@ -160,12 +165,13 @@
               <div style="float: right;">
                 <button onclick="window.location.href='homepage.html';" class="w3-button buttons">
                     Odustani</button> &nbsp
-                    <button  class="w3-button buttons"><u onclick="alert('Odgovor je poslat!')" style="text-decoration: none;">Pošalji</u></button>
+                    <button type="submit" class="w3-button buttons">Pošalji</button>
               </div>
             </div>
-
+      
             <br>
           </div>
+        </form>
         </div>
 
         <!-- End of entries -->
