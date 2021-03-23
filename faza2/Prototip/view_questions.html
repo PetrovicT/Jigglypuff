@@ -1,3 +1,6 @@
+
+<!-- Petrovic Teodora -->
+
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/ask.css">
-  <title>Odgovori</title>
+  <title>Pregled pitanja</title>
   <style>
     h1,
     h2,
@@ -82,32 +85,25 @@
     </div>
   </header>
 
-
   <div class="w3-content" style="max-width:90%">
-
     <!-- Background -->
     <div class="w3-row  w3-padding w3-border">
 
       <!-- Entries -->
-      <div class="w3-col l8 s12">
-        <br>
+      <div class="w3-col l8 s12"> <br>
+
         <!-- Entry -->
         <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
-
-          <div class="w3-center" style="padding-right: 5%; padding-left: 5%;"> <br>
-            <h3 class="letters_dark_blue" style="font-size: 26px;"><b>PITANJE</b></h3>
-            <hr style="border-top-color: #021B79;">
-          </div>
-
           <div class="w3-left" style="padding-left: 5%;"> <br>
-            <h3 class="letters_dark_blue" style="font-size: 20px;"><b>Problemi sa paničnim napadima</b></h3>
+            <h3 class="letters_dark_blue"><b>Problemi sa paničnim napadima</b></h3>
           </div>
 
           <div class="w3-right" style="padding-right: 6%;"> <br>
-            <h3 class="letters_dark_blue"><a href="profil.html" style="text-decoration: none; font-size: 20px;"><b>Autor: Marko
-                  Ivanović</b></a> </h3>
+            <h3 class="letters_dark_blue"><a href="profil.html" style="text-decoration: none;"><b>Autor: Marko Ivanović</b></a>
+            </h3>
           </div>
 
+          <!-- Question text -->
           <div class="input letters_dark_blue">
             <p style="text-align: justify; font-weight: normal;">Vec unazad 5 godina imam probleme sa okp-om i panicnim napadima, na neki
               nacin okp nemam vise u nazad godinu dana , al panicni napadi i stezanje u grlu su postali problem sad ,
@@ -122,68 +118,18 @@
           </div>
 
           <!-- Buttons -->
-          <div class="input ">
+          <div class="input ">  
             <div id="like">
               <div>
                 <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> <u onclick="alert('Povećali ste broj lajkova za 1')" style="text-decoration: none; font-weight: normal;">Korisno (16)</u></button> &nbsp
-                  <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-down"></i> <u onclick="alert('Povećali ste broj dislajkova za 1')" style="text-decoration: none; font-weight: normal;">Nije korisno (7)</u></button>
+                  <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-down"></i> <u onclick="alert('Povećali ste broj dislajkova za 1')" style="text-decoration: none;font-weight: normal;">Nije korisno (7)</u></button>
               </div>
+
               <div style="float: right;">
-                <button onclick="window.location.href='#text_input';" class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
-              </div>
-            </div>
-          </div>
-          <br>
-        </div>
-
-
-        <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
-          <div class="w3-right" style="padding-right: 6%;"> <br>
-            <h3 class="letters_dark_blue" style="font-size: 20px;"><b>Autor odgovora: Anonimno</b></h3>
-          </div>
-
-          <div class="input letters_dark_blue">
-            <p style="text-align: justify; font-weight: normal;">Zdravo! I sam sam se borio sa istim problemom, ali sam ga uspešno rešio uz
-              pomoć psihologa. Preporučujem ti da ne uzimaš sam na svoju ruku nijednu vrstu leka, jer posledice mogu
-              biti opasne. Proslo je 2 godine od kada sam imao fizičke probleme odsnosno stezanje u grlo i znam kako ti
-              je. Srećno!</p> <br>
-          </div>
-
-            <!-- Buttons -->
-          <div class="input ">
-            <div id="like">
-              <div>
-                <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> <u onclick="alert('Povećali ste broj lajkova za 1')" style="text-decoration: none; font-weight: normal;">Korisno (23)</u></button> &nbsp
-                  <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-down"></i> <u onclick="alert('Povećali ste broj dislajkova za 1')" style="text-decoration: none; font-weight: normal;">Nije korisno (3)</u></button>
-              </div>
-            </div>
-          </div>
-          <br>
-        </div>
-
-        <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
-
-          <div class="w3-right" style="padding-right: 6%;"> <br>
-            <h3 class="letters_dark_blue"><a href="profil.html" style="text-decoration: none; font-size: 20px;"><b>Autor odgovora:
-                  Dr Nikola Petrović</b></a> </h3>
-          </div>
-
-          <div class="input letters_dark_blue">
-            <p style="text-align: justify; font-weight: normal; ">Poštovani, <br> U svojoj dugogodnišnjoj praksi sam se mnogo puta susretao sa
-              pacijentima koji su imali isti ili sličan problem kao što je Vaš. Nikako nemojte da uzimate lekove na
-              svoju ruku, jer to može dovesti do naglih promena raspoloženja i samog statusa organizma, pa kad izazvati
-              da se osećate gore nego trenutno. Važno je praviti male korake ka uspehu. Najbolje bi bilo da kroz sve
-              situacije koje predstavljaju okidač na početku prolazite uz pomoć bliske osobe uz koju se osecaće sigurno
-              i zaštićeno. Za više informacija stojim Vam na raspolaganju.
-            </p> <br>
-          </div>
-
-          <!-- Buttons -->
-          <div class="input ">
-            <div id="like">
-              <div>
-                <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> <u onclick="alert('Povećali ste broj lajkova za 1')" style="text-decoration: none; font-weight: normal;">Korisno (41)</u></button> &nbsp
-                  <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-down"></i> <u onclick="alert('Povećali ste broj dislajkova za 1')" style="text-decoration: none; font-weight: normal;">Nije korisno (1)</u></button>
+                <button onclick="window.location.href='anwsers.html';"style="font-weight: normal;" class="w3-button buttons"> Pogledaj
+                    odgovore</button> &nbsp
+                <button onclick="window.location.href='anwsers.html#text_input';"
+                  class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
               </div>
             </div>
           </div>
@@ -193,56 +139,57 @@
         <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
 
           <div class="w3-left" style="padding-left: 5%;"> <br>
-            <h3 class="letters_dark_blue"><b>Saveti i preporuke prilikom odgovaranja na pitanja</b></h3>
+            <h3 class="letters_dark_blue"><b>Anksioznost</b></h3>
           </div>
 
-          <br>
-          <div class="w3-left letters_dark_blue" style="padding-left: 5%; padding-right: 6%;">
-            <ol>
-              <li>Prilikom formulacije odgovora trudite se da odgovor bude što jasniji i precizniji</li>
-              <li>Pre nego što pošaljete odgovor proverite da li je u skladu sa temom pitanja</li>
-              <li>Ako niste verifikovani psiholog, molimo Vas da proverite da li imate mogućnost da odgovorite na
-                postavljeno pitanje</li>
-              <li>Vodite računa da je podrazumevano javno odgovaranje na pitanja. Ukoliko želite da anonimno odgovorite,
-                molimo Vas da to i naznačite u odgovarajućem polju.</li>
-            </ol>
-
-            <hr style="border-top-color: #021B79;">
+          <div class="w3-right" style="padding-right: 6%;"> <br>
+            <h3 class="letters_dark_blue"><b>Autor: Anonimno</b></h3>
           </div>
 
-          <div class="input ">
+          <!-- Input section -->
+          <div class="input letters_dark_blue">
+            <p style="text-align: justify; font-weight: normal;">Zdravo, dugo mi je trebalo da uopšte progovorim o ovoj temi. Anksioznost
+              osjećam već nekih 5/6 godina. Dugo sam odbijala bilo kakav vid pomoći, nijesam htjela da me drugi vide
+              “ludom”, plašila se da me psiholozi neće razumjeti, da će misliti ko zna šta, da će me ljudi okolo
+              osudjivati.. o svakoj situaciji u životu previše razmišljam unaprijed. I najkraći razgovor ja u svojoj
+              glavi razradim unaprijed, stalno strepim od gluposti, muči me kako ću reći ovo, kako ću uraditi ono… Strah
+              od javnog govora da ni ne pominjem, a nekad sam bila toliko slobodna i opuštena, sve ovo previše crpi
+              energiju iz mene. Takodje, imam jako dobro pamćenje, ali toliko puta ponovim određene aktivnosti tipa
+              provjeravam da li sam zaključala stan, da li sam prepisala nešto tačno iako znam da jesam.. Takodje pranje
+              ruku, operem ruke i imam neki osjećaj nenormalno neprijatan da automatski moram opet da ih operem i tako
+              više puta.. još kao mala obožavam neku pravilnost i organizovanost, u ormaru sve mora da bude savršeno
+              složeno sve u kocku, čim jedna stvar nije po tom iznerviram se… Takodje imam jako čudne misli dok hodam
+              tipa predjem preko stepenica i shvatim da sam ih prošla i više ne mogu to da uradim i vratim se još jednom
+              tuda… Da ne nabrajam više… Interesuje me šta ja sama mogu da uradim povodom toga. Hvala Vam puno, već mi
+              je lakše.
 
-            <textarea name="" id="text_input" cols="400" rows="5"
-              style="resize:none; size: 100%; position: center; padding: 0; color: #021B79; border-color: #021B79; font-size: 16px;"
-              placeholder="Tekst odgovora..."></textarea>
-            <br>
-
-            <!-- Public/private -->
-            <div><input type="checkbox" id="anonimus" name="anonimus" value="Bike">
-              <label for="anonimus" class="letters_dark_blue"> Želim anonimno da odgovorim na pitanje</label>
-            </div>
-            <br>
-
+            </p> <br>
           </div>
-
 
           <!-- Buttons -->
-          <div class="input ">
+          <div class="input ">     
             <div id="like">
+              <div>
+                <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> <u onclick="alert('Povećali ste broj lajkova za 1')" style="text-decoration: none; font-weight: normal;">Korisno (3)</u></button> &nbsp
+                  <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-down"></i> <u onclick="alert('Povećali ste broj dislajkova za 1')" style="text-decoration: none; font-weight: normal;">Nije korisno (11)</u></button>
+              </div>
+
               <div style="float: right;">
-                <button onclick="window.location.href='homepage.html';" class="w3-button buttons" style="font-weight: normal;">
-                    Odustani</button> &nbsp
-                <button  class="w3-button buttons"><u onclick="alert('Odgovor je poslat!')" style="text-decoration: none; font-weight: normal;">Pošalji</u></button>
+                <button onclick="window.location.href='anwsers.html';" class="w3-button buttons" style="font-weight: normal;"> Pogledaj
+                    odgovore</button> &nbsp
+                <button onclick="window.location.href='anwsers.html#text_input';"
+                  class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
               </div>
             </div>
           </div>
           <br>
         </div>
 
-        <!-- End  entries -->
+        <!-- End of entries -->
       </div>
 
       <br>
+
       <!-- Literature -->
       <div class="w3-col l4">
         <div class="w3-white w3-margin w3-card-2">
@@ -367,10 +314,10 @@
       <!-- End background -->
     </div>
 
-    <!-- End of content -->
+    <!-- End content -->
   </div>
 
- <!-- Footer -->
+  <!-- Footer -->
 	<footer class="w3-container color-dark-blue" style="padding:32px">
 		<div class="w3-left">
 			<a href="#" class="w3-button w3-light-gray w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
@@ -385,4 +332,5 @@
 	</footer>
 
 </body>
+
 </html>
