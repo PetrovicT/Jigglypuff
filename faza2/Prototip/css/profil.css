@@ -1,0 +1,21 @@
+body{
+    background-color:#f1f1f1;
+}
+
+.picture{
+    width:900px;
+	max-width: 95%;
+    margin-bottom: 20%;
+    margin:auto;
+    background: #f1f1f1;
+    box-shadow: 0 30px 10px 0 rgba(0,0,0,0.5);
+}
+
+.name{
+    text-align: center;
+    color:white;
+}  
+
+h3{
+    color: #021B79;
+}
