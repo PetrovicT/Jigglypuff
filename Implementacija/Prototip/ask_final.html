@@ -126,7 +126,8 @@
 
             <form action="">
               <label for="category"></label>
-              <select style="color: #021B79; border-color: #021B79; font-size: 16px; width: 100%;" name="category" id="category" required>
+              <select style="color: #021B79; border-color: #021B79; font-size: 16px; width: 100%;" name="category" id="category" required oninvalid="this.setCustomValidity('Izaberite kategoriju pitanja!')"
+              oninput="this.setCustomValidity('')">
                 <option style="color: #021B79;" value="">-</option>
                 <option style="color: #021B79;" value="">Anksioznost</option>
                 <option style="color: #021B79;" value="">Depresija</option>
@@ -142,9 +143,11 @@
 
             <!-- Question input -->
             <input style="color: #021B79; border-color: #021B79; font-size: 16px; " class="w3-input" type="text"
-              placeholder="Naslov pitanja"> <br> <br>
+              placeholder="Naslov pitanja" required oninvalid="this.setCustomValidity('Unesite naslov pitanja!')"
+              oninput="this.setCustomValidity('')"> <br> <br>
             <textarea style="color: #021B79; border-color: #021B79; font-size: 16px; resize: none; width: 100%;" name="" id=""
-              cols="355" rows="10" placeholder=" Tekst pitanja"></textarea>
+              cols="355" rows="10" placeholder=" Tekst pitanja" required oninvalid="this.setCustomValidity('Unesite tekst pitanja!')"
+              oninput="this.setCustomValidity('')"></textarea>
             <br>
 
             <!-- Public/private -->
@@ -168,7 +171,7 @@
               <div style="float: right;">
                 <button onclick="window.location.href='homepage.html';" class="w3-button buttons">
                     Odustani</button> &nbsp
-                    <button type="submit" class="w3-button buttons">Pošalji</button>
+                    <button type="submit" class="w3-button buttons"><u onclick="alert('Pitanje je poslato!')" style="text-decoration: none; font-weight: normal;">Pošalji</u></button>
               </div>
             </div>
       

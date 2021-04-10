@@ -185,6 +185,7 @@
           <br>
         </div>
 
+        <form action="">
         <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
 
           <div class="w3-left" style="padding-left: 5%;"> <br>
@@ -204,13 +205,13 @@
 
             <hr style="border-top-color: #021B79;">
           </div>
-		  
-		<form>
+
           <div class="input ">
 
             <textarea name="" id="text_input" cols="400" rows="5"
               style="resize:none; size: 100%; position: center; padding: 0; color: #021B79; border-color: #021B79; font-size: 16px;"
-              placeholder="Tekst odgovora..." required></textarea>
+              placeholder="Tekst odgovora..." required oninvalid="this.setCustomValidity('Unesite tekst odgovora!')"
+              oninput="this.setCustomValidity('')" ></textarea>
             <br>
 
             <!-- Public/private -->
@@ -228,14 +229,13 @@
               <div style="float: right;">
                 <button onclick="window.location.href='homepage.html';" class="w3-button buttons" style="font-weight: normal;">
                     Odustani</button> &nbsp
-                <submit  class="w3-button buttons"><u onclick="alert('Odgovor je poslat!')" style="text-decoration: none; font-weight: normal;">Pošalji</u></submit>
+                <button  class="w3-button buttons"><u onclick="alert('Odgovor je poslat!')" style="text-decoration: none; font-weight: normal;">Pošalji</u></button>
               </div>
             </div>
           </div>
-		</form>
-		  
           <br>
         </div>
+      </form>
 
         <!-- End  entries -->
       </div>
