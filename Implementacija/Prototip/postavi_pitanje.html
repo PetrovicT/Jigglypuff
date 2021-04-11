@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/ask.css">
-  <title>Pregled pitanja</title>
+  <link rel="stylesheet" href="css/pitanja.css">
+  <title>Postavi pitanje</title>
   <style>
     h1,
     h2,
@@ -36,38 +36,38 @@
 
   <!-- Header -->
   <header class="w3-bar w3-padding-12 color-dark-blue w3-mobile">
-    <!-- S leva nadesno -->
-    <a href="homepage.html" class="w3-bar-item w3-button letters"><i class="fa fa-home"></i> Home</a>
+
+    <a href="pocetna_stranica.html" class="w3-bar-item w3-button letters"><i class="fa fa-home"></i> Home</a>
 
 
     <div class="w3-dropdown-hover w3">
-      <a href="view_questions.html" class="w3-bar-item w3-button letters"><i class="fa fa-question-circle-o"></i>
+      <a href="pregled_pitanja.html" class="w3-bar-item w3-button letters"><i class="fa fa-question-circle-o"></i>
         Kategorije</a>
       <div id="CategoryDropdownMenu" class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i>
+        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i>
           Anksioznost</a>
-        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i>
+        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i>
           Depresija</a>
-        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Napad
+        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Napad
           panike</a>
-        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Kontrola
+        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Kontrola
           stresa</a>
-        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Kontrola
+        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Kontrola
           besa</a>
-        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Porodični
+        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Porodični
           problemi</a>
-        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Manjak
+        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Manjak
           samopouzdanja</a>
-        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> OKP</a>
-        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i>
+        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> OKP</a>
+        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i>
           Depersonalizacija</a>
-        <a href="view_questions.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> <b>Nijedno
+        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> <b>Nijedno
             od ponuđenog</b></a>
       </div>
     </div>
 
     <a href="view_seanse.html" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-fire"></i> Seanse</a>
-    <a href="ask_final.html" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-plus-circle"></i>
+    <a href="postavi_pitanje.html" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-plus-circle"></i>
       Postavi pitanje</a>
 
     <div class="w3-dropdown-hover w3-right">
@@ -79,96 +79,112 @@
     </div>
 
     <div id="SearchBar" class="w3-right" style="width:346px; max-width: 100%;">
-      <a href="view_questions.html" class="w3-bar-item w3-button w3-right letters"><i class="fa fa-search"></i></a>
+      <a href="pregled_pitanja.html" class="w3-bar-item w3-button w3-right letters"><i class="fa fa-search"></i></a>
       <input id="SearchField" class="w3-bar-item w3-right" type="text" placeholder="Pretraži"
         style="width:300px; max-width:calc(100% - 46px);">
     </div>
   </header>
 
+
   <div class="w3-content" style="max-width:90%">
-    <!-- Background -->
+
+    <!-- POZADINA -->
     <div class="w3-row  w3-padding w3-border">
 
-      <!-- Entries -->
-      <div class="w3-col l8 s12"> <br>
+      <!-- UNOSI -->
+      <div class="w3-col l8 s12">
+        <br>
 
-        <!-- Entry -->
-        <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
-          <div class="w3-left" style="padding-left: 5%;"> <br>
-            <h3 class="letters_dark_blue"><b>Problemi sa paničnim napadima</b></h3>
-          </div>
-
-          <div class="w3-right" style="padding-right: 6%;"> <br>
-            <h3 class="letters_dark_blue"><a href="profil.html" style="text-decoration: none;"><b>Autor: Marko Ivanović</b></a>
-            </h3>
-          </div>
-
-          <!-- Question text -->
-          <div class="input letters_dark_blue">
-            <p style="text-align: justify; font-weight: normal;">Jako dugo imam probleme sa paničnim napadima. Osećam stezanje u grlu sto je postalo baš problem sada,
-              uzimao sam lekove kao terapiju sto mi je psihijatar prepisao i sam sam prestao da ih uzimam. Smatrao sam da mi više ne trebaju. Prošle nedelje sam imao učestale napade. Imam fizicke probleme kao stezanje u grlu i bol srca. Kako da pomognem sam sebi? Da li je bolje posavetovati se sa stručnim licem ili da sam nastavim sa prethodnom terapijom?</p> <br>
-          </div>
-
-          <!-- Buttons -->
-          <div class="input ">  
-            <div id="like">
-              <div>
-                <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> <u onclick="alert('Povećali ste broj lajkova za 1')" style="text-decoration: none; font-weight: normal;">Korisno (16)</u></button> &nbsp
-                  <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-down"></i> <u onclick="alert('Povećali ste broj dislajkova za 1')" style="text-decoration: none;font-weight: normal;">Nije korisno (7)</u></button>
-              </div>
-
-              <div style="float: right;">
-                <button onclick="window.location.href='anwsers.html';"style="font-weight: normal;" class="w3-button buttons"> Pogledaj
-                    odgovore</button> &nbsp
-                <button onclick="window.location.href='anwsers.html#text_input';"
-                  class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
-              </div>
-            </div>
-          </div>
-          <br>
-        </div>
-
+        <!-- UNOS -->
         <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
 
           <div class="w3-left" style="padding-left: 5%;"> <br>
-            <h3 class="letters_dark_blue"><b>Anksioznost</b></h3>
+            <h3 class="letters_dark_blue"><b>Saveti i preporuke prilikom postavljanja pitanja</b></h3>
           </div>
 
-          <div class="w3-right" style="padding-right: 6%;"> <br>
-            <h3 class="letters_dark_blue"><b>Autor: Anonimno</b></h3>
+          <br>
+          <div class="w3-left letters_dark_blue" style="padding-left: 5%; padding-right: 6%; font-weight: bold;">
+            <ol>
+              <li>Pre nego što postavite pitanje proverite da li je neko drugi ranije postavio isto ili slično pitanje
+              </li>
+              <li>Prilikom formulacije pitanja trudite se da pitanje bude što jasnije i preciznije</li>
+              <li>Pre nego što pošaljete pitanje pročitajte ga još jednom i ispravite eventualne greške</li>
+              <li>Vodite računa da je podrazumevano javno postavljanje pitanja. Ukoliko želite da anonimno postavite
+                pitanje, molimo Vas da to i naznačite u odgovarajućem polju.</li>
+            </ol>
+
+            <hr style="border-top-color: #021B79;">
           </div>
 
-          <!-- Input section -->
+          <div class="w3-left" style="padding-left: 5%;">
+            <h3 class="letters_dark_blue"><b>Postavi pitanje</b></h3>
+          </div>
+
+          <br>
           <div class="input letters_dark_blue">
-            <p style="text-align: justify; font-weight: normal;">Anksioznost je problem koji me muči već godinama. Pokušavala sam na razne načine da ga rešim, išla sam kod psihologa i psihijatra, ali nije bilo većih poboljšanja. Možda zato što nisam bila spremna da otvoreno govorim sa njima. Strah me je da podelim priču sa bliskim osobama, jer ne znam da li će me razumeti. Niko ne razume koliko truda ulažem u svakodnevne razgovore, ma koliko oni bili kratki. Plašim se raznih stvari i imam običaj da ruke perem više puta detaljno, da mi cela kuća bude sređena. Da li je ovo stvarno anksioznost ili može biti nešto drugo? Kome da se obratim?
-            </p> <br>
-          </div>
+            <h4 class="letters_dark_blue">Izaberite kategoriju pitanja</h4>
 
-          <!-- Buttons -->
-          <div class="input ">     
-            <div id="like">
-              <div>
-                <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> <u onclick="alert('Povećali ste broj lajkova za 1')" style="text-decoration: none; font-weight: normal;">Korisno (3)</u></button> &nbsp
-                  <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-down"></i> <u onclick="alert('Povećali ste broj dislajkova za 1')" style="text-decoration: none; font-weight: normal;">Nije korisno (11)</u></button>
-              </div>
+            <form action="">
+              <label for="category"></label>
+              <select style="color: #021B79; border-color: #021B79; font-size: 16px; width: 100%;" name="category" id="category" required oninvalid="this.setCustomValidity('Izaberite kategoriju pitanja!')"
+              oninput="this.setCustomValidity('')">
+                <option style="color: #021B79;" value="">-</option>
+                <option style="color: #021B79;" value="">Anksioznost</option>
+                <option style="color: #021B79;" value="">Depresija</option>
+                <option style="color: #021B79;" value="">Panični napadi</option>
+                <option style="color: #021B79;" value="">Kontrola stresa</option>
+                <option style="color: #021B79;" value="">Problemi sa besom</option>
+                <option style="color: #021B79;" value="">Porodični problemi</option>
+                <option style="color: #021B79;" value="">Manjak samopouzdanja</option>
+                <option style="color: #021B79;" value="">Ništa od ponuđenog</option>
+              </select>
+              <br><br>
+         
+
+            <!-- UNOS PITANJA -->
+            <input style="color: #021B79; border-color: #021B79; font-size: 16px; " class="w3-input" type="text"
+              placeholder="Naslov pitanja" required oninvalid="this.setCustomValidity('Unesite naslov pitanja!')"
+              oninput="this.setCustomValidity('')"> <br> <br>
+            <textarea style="color: #021B79; border-color: #021B79; font-size: 16px; resize: none; width: 100%;" name="" id=""
+              cols="355" rows="10" placeholder=" Tekst pitanja" required oninvalid="this.setCustomValidity('Unesite tekst pitanja!')"
+              oninput="this.setCustomValidity('')"></textarea>
+            <br>
+
+            <!-- JAVNO/PRIVATNO -->
+            <div><input type="checkbox" id="anonimus" name="anonimus" value="Bike">
+              <label for="anonimus" style="color: #021B79; font-size: 16px; font-weight: bold; "> Želim anonimno da postavim
+                pitanje</label>
+            </div>
+            <br>
+
+            <!-- KO ODGOVARA -->
+            <h4>Na ovo pitanje će moći da odgovore &nbsp&nbsp</h4>
+            <select style="color: #021B79; border-color: #021B79; font-size: 16px; " name="anwser">
+              <option value="">Svi korisnici</option>
+              <option value="">Samo psiholozi</option>
+            </select>
+            <br>
+            <br>
+            <!-- DUGMAD -->
+            <div>
 
               <div style="float: right;">
-                <button onclick="window.location.href='anwsers.html';" class="w3-button buttons" style="font-weight: normal;"> Pogledaj
-                    odgovore</button> &nbsp
-                <button onclick="window.location.href='anwsers.html#text_input';"
-                  class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
+                <button onclick="window.location.href='pocetna_stranica.html';" class="w3-button buttons">
+                    Odustani</button> &nbsp
+                    <button type="submit" class="w3-button buttons"><u onclick="alert('Pitanje je poslato!')" style="text-decoration: none; font-weight: normal;">Pošalji</u></button>
               </div>
             </div>
+      
+            <br>
           </div>
-          <br>
+        </form>
         </div>
 
-        <!-- End of entries -->
+        <!-- KRAJ UNOSA -->
       </div>
 
       <br>
-
-      <!-- Literature -->
+       <!-- LITERATURA -->
       <div class="w3-col l4">
         <div class="w3-white w3-margin w3-card-2">
           <div class="w3-container w3-padding gradient_literature letters">
@@ -286,16 +302,16 @@
         </div>
         <hr>
 
-        <!-- End of literature -->
+        <!-- KRAJ LITERATURA -->
       </div>
 
-      <!-- End background -->
+      <!-- KRAJ POZADINA -->
     </div>
 
-    <!-- End content -->
+    <!-- KRAJ SADRZAJ -->
   </div>
 
-  <!-- Footer -->
+<!-- Footer -->
 	<footer class="w3-container color-dark-blue" style="padding:32px">
 		<div class="w3-left">
 			<a href="#" class="w3-button w3-light-gray w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
