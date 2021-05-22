@@ -2,7 +2,7 @@
 Par instrukcija za kodiranje, bilo bi super da ih se držimo, biće nam lakše da spajamo sve što radimo.
 Ako imate neke primedbe, nešto hoćete da promenimo, slobodno recite!
 ## Pre nego što počnemo
-1. Treba restrukturirati repozitorijum. Oko toga bi bilo najbolje da se dogovorimo na sastanku.  
+1. Treba restrukturirati repozitorijum. ~~Oko toga bi bilo najbolje da se dogovorimo na sastanku.~~ Zapravo, mogao bih to odmah, pa ako imate primedbe, promenićemo.  
 2. Treba linkovati folder na našim lokalnim repozitorijumima sa folderima naših WAMP servera komandom `mklink`. To možemo isto na sastanku.
 3. Treba da premestimo html prototipe na folder za implementaciju i da ih prebacimo u PHP. To isto možemo na sastanku, a mogu i ja pre njega  
   3.1. Treba da rasparčamo neke komponente, tj. da ih izvadimo iz prototip stranica. Header i footer sigurno. Njih ćemo posle da insertujemo pomoću PHP-a. Da ne moramo da kopiramo posle te stvari kadgod napravimo neku izmenu.
