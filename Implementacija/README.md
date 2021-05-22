@@ -1,0 +1,2 @@
+OK, u folderu `savetovaliste` radimo sve. On će biti povezan sa folderom u našem `www` folderu Apache servera komandom `mklink`. To radi, provereno!  
+Sve pisati u PHP fajlovima, ne ostavljati jednostavne HTML fajlove. Dogovorićemo se oko toga.
