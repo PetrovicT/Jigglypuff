@@ -1,0 +1,75 @@
+#UserDropdownMenu{
+	position: absolute;
+	top: 38px;
+	right: 0px;
+}
+
+#JigglypuffFooterImage{
+	position: relative;
+	width: 100px;
+	height: 100px;
+	top: 100px;
+}
+
+#Mouth{
+	position: relative;
+	right:74px;
+	top:112px;
+	display:none;
+}
+
+#JigglypuffFooterImage:hover + #Mouth{
+	display:inline;
+}
+
+.close-button:hover{
+	background-color:red !important;
+}
+
+.buttons {
+	width: 160px;
+	background-color: #021B79 !important;
+	color:white !important;  
+}
+
+.blue {
+	background-color: rgb(58, 80, 148);
+}
+
+.letters_blue {
+	color: rgb(58, 80, 148);
+}
+
+.color-blue {        
+    background-color: #63a4ff;
+    background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+}
+
+.color-dark-blue {        
+	background: #0575E6;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #021B79, #0a63bd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.input {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	padding-left: 5%;
+	padding-right: 6%;
+}
+
+.gradient_literature {        
+    background: #0575E6;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, rgb(7,73,165), #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, rgb(7,73,165), #0a63bd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.letters_dark_blue, #text_input{        
+    color: #021B79;
+}
+    
+.letters {        
+    color: white;
+}
