@@ -34,57 +34,9 @@
 
 <body class="w3-light-grey">
 
-  <!-- Header -->
-  <header class="w3-bar w3-padding-12 color-dark-blue w3-mobile">
-    <!-- S leva nadesno -->
-    <a href="pocetna_stranica.html" class="w3-bar-item w3-button letters"><i class="fa fa-home"></i> Home</a>
-
-
-    <div class="w3-dropdown-hover w3">
-      <a href="pregled_pitanja.html" class="w3-bar-item w3-button letters"><i class="fa fa-question-circle-o"></i>
-        Kategorije</a>
-      <div id="CategoryDropdownMenu" class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i>
-          Anksioznost</a>
-        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i>
-          Depresija</a>
-        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Napad
-          panike</a>
-        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Kontrola
-          stresa</a>
-        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Kontrola
-          besa</a>
-        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Porodični
-          problemi</a>
-        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> Manjak
-          samopouzdanja</a>
-        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> OKP</a>
-        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i>
-          Depersonalizacija</a>
-        <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-angle-double-right"></i> <b>Nijedno
-            od ponuđenog</b></a>
-      </div>
-    </div>
-
-    <a href="view_seanse.html" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-fire"></i> Seanse</a>
-    <a href="postavi_pitanje.html" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-plus-circle"></i>
-      Postavi pitanje</a>
-
-    <div class="w3-dropdown-hover w3-right">
-      <a href="profil.html" class="w3-bar-item w3-button letters"><i class="fa fa-user"></i> Ana Jovanović</a>
-      <div id="UserDropdownMenu" class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="profilIzmena.html" class="w3-bar-item w3-button"><i class="fa fa-gear"></i> Podešavanja naloga</a>
-        <a href="moje_seanse.html" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i> Moje seanse</a>
-      </div>
-    </div>
-
-    <div id="SearchBar" class="w3-right" style="width:346px; max-width: 100%;">
-      <a href="pregled_pitanja.html" class="w3-bar-item w3-button w3-right letters"><i class="fa fa-search"></i></a>
-      <input id="SearchField" class="w3-bar-item w3-right" type="text" placeholder="Pretraži"
-        style="width:300px; max-width:calc(100% - 46px);">
-    </div>
-  </header>
-
+    <?php
+        require 'resources/header.php';
+    ?>
 
   <div class="w3-content" style="max-width:90%">
 
@@ -368,19 +320,10 @@
     <!-- KRAJ SADRZAJ -->
   </div>
 
- <!-- Footer -->
-	<footer class="w3-container color-dark-blue" style="padding:32px">
-		<div class="w3-left">
-			<a href="#" class="w3-button w3-light-gray w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-			<p style="color: white; font-weight: normal;">Web portal za psihološko savetovanje</p>
-			<p style="color: white; font-weight: normal;">Projekat iz predmeta "Principi softverskog inženjerstva"</p>
-			<p style="color: white; font-weight: normal;">Tim Jigglypuff <i class="fa fa-copyright"></i> all rights reserved</p>
-		</div>
-		<div class="w3-right">
-			<img id="JigglypuffFooterImage"  src="https://upload.wikimedia.org/wikipedia/en/2/22/Pok%C3%A9mon_Jigglypuff_art.png"></img>
-			<img id="Mouth" src="images/mouth.png"></img>
-		</div>
-	</footer>
+    <!-- Footer -->
+    <?php
+        require 'resources/footer.php';
+    ?>
 
 </body>
 </html>
