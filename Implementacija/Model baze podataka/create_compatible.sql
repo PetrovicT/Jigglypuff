@@ -253,8 +253,8 @@ DROP TABLE IF EXISTS `PREPORUCENA_LITERATURA` ;
 CREATE TABLE IF NOT EXISTS `PREPORUCENA_LITERATURA` (
   `idPreporucenaLiteratura` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nazivLiterature` VARCHAR(80) NOT NULL,
-  `slikaLiterature` TINYBLOB NOT NULL,
-  `opisLiterature` TINYTEXT CHARACTER SET 'ascii' NOT NULL,
+  `slikaLiterature` TINYBLOB NULL,
+  `opisLiterature` TINYTEXT NOT NULL,
   PRIMARY KEY (`idPreporucenaLiteratura`))
 ENGINE = InnoDB;
 
@@ -346,7 +346,7 @@ INSERT INTO `korisnik` (`idKorisnik`, `username`, `email`, `licnoIme`, `prikaziL
 INSERT INTO `korisnik` (`idKorisnik`, `username`, `email`, `licnoIme`, `prikaziLicnoIme`, `password`, `tipKorisnika_idTipKorisnika`, `grad_idGrad`, `pol_idPol`, `slika`, `create_time`) VALUES ('4', 'xNNN', NULL, NULL, b'0', 'xx999oo', '1', '5', '1', NULL, '2021-05-18 13:43:49');
 INSERT INTO `korisnik` (`idKorisnik`, `username`, `email`, `licnoIme`, `prikaziLicnoIme`, `password`, `tipKorisnika_idTipKorisnika`, `grad_idGrad`, `pol_idPol`, `slika`, `create_time`) VALUES ('5', 'Neda33', 'neki@yahoo.com', 'Neda', b'1', 'NedaNedica33', '1', NULL, '2', NULL, CURRENT_TIMESTAMP);
 INSERT INTO `korisnik` (`idKorisnik`, `username`, `email`, `licnoIme`, `prikaziLicnoIme`, `password`, `tipKorisnika_idTipKorisnika`, `grad_idGrad`, `pol_idPol`, `slika`, `create_time`) VALUES ('7', 'Dr Tijana', 'tijana.ivanovic@gmail.com', 'Tijana Ivanović', b'1', 'TijanaSifra99', '2', '1', '2', NULL, CURRENT_TIMESTAMP);
-INSERT INTO `korisnik` (`idKorisnik`, `username`, `email`, `licnoIme`, `prikaziLicnoIme`, `password`, `tipKorisnika_idTipKorisnika`, `grad_idGrad`, `pol_idPol`, `slika`, `create_time`) VALUES ('8', 'AdminUser', 'admin.user@gmail.com', NULL, b'0', 'AdminPassword99', '3', NULL, '1', NULL, CURRENT_TIMESTAMP);
+INSERT INTO `korisnik` (`idKorisnik`, `username`, `email`, `licnoIme`, `prikaziLicnoIme`, `password`, `tipKorisnika_idTipKorisnika`, `grad_idGrad`, `pol_idPol`, `slika`, `create_time`) VALUES ('8', 'Admin', 'admin@gmail.com', NULL, b'0', 'AdminPassword99', '3', NULL, '1', NULL, CURRENT_TIMESTAMP);
 INSERT INTO `korisnik` (`idKorisnik`, `username`, `email`, `licnoIme`, `prikaziLicnoIme`, `password`, `tipKorisnika_idTipKorisnika`, `grad_idGrad`, `pol_idPol`, `slika`, `create_time`) VALUES ('6', 'Dr PetrovicN', 'nikola.petrovic@gmail.com', 'Nikola Petrovic', b'1', 'PsihologNikola99', '2', '6', '1', NULL, CURRENT_TIMESTAMP);
 INSERT INTO `korisnik_ocenio_odgovor` (`korisnik_idKorisnik`, `odgovor_idOdgovor`, `ocena`) VALUES ('1', '1', b'1');
 INSERT INTO `korisnik_ocenio_odgovor` (`korisnik_idKorisnik`, `odgovor_idOdgovor`, `ocena`) VALUES ('3', '1', b'1');
@@ -362,7 +362,28 @@ INSERT INTO `korisnik_ocenio_pitanje` (`korisnik_idKorisnik`, `pitanje_idPitanje
 INSERT INTO `korisnik_ocenio_pitanje` (`korisnik_idKorisnik`, `pitanje_idPitanje`, `ocena`) VALUES ('3', '4', b'1'),('6', '4', b'0'),('1', '4', b'0');
 INSERT INTO `korisnik_ocenio_pitanje` (`korisnik_idKorisnik`, `pitanje_idPitanje`, `ocena`) VALUES ('3', '5', b'1'),('6', '5', b'1');
 
-INSERT INTO `korisnik_ocenio_psihologa` (`korisnik_idKorisnik_ocenio`, `korisnik_idKorisnik_ocenjen`, `ocena`) VALUES ('1', '6', b'1'),('2', '6', b'1'),('3', '6', b'0'),('1', '7', b'1'),('4', '7', b'1'),('6', '7', b'1'),('3', '6', b'1'),('2', '6', b'0');
+INSERT INTO `korisnik_ocenio_psihologa` (`korisnik_idKorisnik_ocenio`, `korisnik_idKorisnik_ocenjen`, `ocena`) VALUES 
+('1', '6', b'1'),('2', '6', b'1'),('3', '6', b'0'),('4', '6', b'0'),('5', '6', b'1'),
+('1', '7', b'1'),('3', '7', b'1'),('4', '7', b'1');
+
+INSERT INTO `korisnik_prijavljen_na_seansu` (`korisnik_idKorisnik`, `seansa_idSeansa`) VALUES 
+('1', '1'),('2', '1'),('4', '1'),
+('5', '2');
+
+INSERT INTO `preporucena_literatura` (`idPreporucenaLiteratura`, `nazivLiterature`, `opisLiterature`) VALUES 
+('1', '50 ideja koje bi stvarno trebalo da znate - Adrijan Fernam', 'Kolika je razlika između muškog i ženskog mozga? Postoji li zaista altruizam? Da li je naš um, odmah po rođenju, neispisana tablica?'),
+('2', 'Bez granica - Džim Kvik', 'Usavršite svoj mozak, učite brže i otključajte pristup izuzetnom životu za koji ste sposobni.'),
+('3', 'Dete u tebi mora da pronađe svoj zavičaj - Štefani Štal', 'Ključ za rešavanje (skoro) svih problema. Svetski bestseler iz oblasti psihologije'),
+('4', 'Emocionalni prtljag - Vivijan Ditmar', 'Svako može, ako želi, da pronađe nešto dragoceno u ovoj knjizi i da naposletku nauči da se bolje nosi s negativnim emocijama.'),
+('5', 'Izgubljene veze - Johan Hari', 'Naučnici širom sveta otkrili su dokaze za devet različitih uzroka depresije. Neki od njih su ukorenjeni u našoj biologiji, ali većina ih je u načinu na koji danas živimo.'),
+('6', 'Šta nam svako telo govori-Džo Navaro', 'Priručnik bivšeg agenta FBI-a za brzo „čitanje“ ljudi. Zašto je lice poslednje mesto na kojem treba tražiti znake iskrenih emocija?'),
+('7', 'Više se ne razumemo - Izabel Fijioza', 'U knjizi Više se ne razumemo otkrićemo šta se dešava u glavi i telu naših tinejdžera.'),
+('8', 'Borba do pobede - Srđan Krstić', 'Ova knjiga je napisana s namerom da pomogne ljudima kojima je teško, onima koji ne vide izlaz.');
+
+INSERT INTO `seansa` (`idSeansa`, `korisnik_idKorisnik_organizator`, `nazivSeanse`, `opisSeanse`, `maxBrojPrijavljenih`, `datumPocetka`, `vremePocetka`, `zoomLink`) VALUES 
+('1', '6', 'Socijalna anksioznost i kako je prevazići', 'Dobrodošli. Cilj ove seanse je da se doslednim načinom pomogne da prevaziđete poremećaj socijalne anksioznosti, ponekad zvane socijalna fobija koju ima 7 do 8 procenata populacije i jedna je od najvećih mentalnih i zdravstvenih problema na svetu. Prevazilaženje socijalne anksioznosti nije lak zadatak. Govorimo o reprogramiranju načina na koji razmišljate, menjanju načina na koji opažate stvari i olakšavanje vašeg života i to na način na koji vi to želite.', '5', '2021-06-24', '13:00:00', NULL),
+('2', '7', 'Podigni nivo samopouzdanja', 'Radne hipoteze: 1.Omogućiti da putem procesa ventiliranja iznesete što više informacija u cilju što boljeg razumijevanja Vaših emocija, ali i samog problema. 2.Raditi na prihvatanju sebe i svojih osećanja. 3.Raditi na prevazilaženju iracionalnih misli i negativnih nezdravih emocija, kao i reakcija („blokada, izolacija”, kasnije i „ljutnja na sebe”) pomoću liste REBT intervencija. 4.Raditi na samopouzdanju.', '8', '2021-06-28', '18:30:00', NULL),
+('3', '6', 'OCD: Kako se rešiti pronalaženja smetnji u neskladu boja?', 'Da li ste se ikad suočili sa nepodnošljivim osećajem u vezi sa neprikladnošću boja? Da li ste upadali u sukobe sa svojim kolegama oko ljudskom oku jedva vidljivih nijansi plave? Da li ste došli u situaciju da na web-stranici sa dve primarne boje vidite još trocifren broj drugih i to vas dovodi do ludila? Ako je odgovor na neko od prethodna tri pitanja bio "da", na pravom ste mestu! Ovog veselog četvrtka razgovaramo o opsesivno kompulsivnom poremećaju i njegovim specifičnim manifestacijama na lični osećaj prema bojama. Saznajte kako vaš mozak sagleda boje, i kakve ga muke snalaze vaš hipotalamus kad ga strefi nesklad. Više se nikad ne svađajte sa kolegama oko nebitnih stvari kao što su nijanse plave!', '10', '2021-06-29', '17:00:00', NULL);
 SET SQL_MODE=@OLD_SQL_MODE;
 
 
