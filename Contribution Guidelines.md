@@ -1,5 +1,5 @@
 # Softver koji koristimo
-## WAMP server
+## WAMP server 3.2.5
 - https://sourceforge.net/projects/wampserver/
 ## Codeigniter 4
 - https://getcomposer.org
