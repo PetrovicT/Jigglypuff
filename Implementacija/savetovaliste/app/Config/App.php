@@ -69,7 +69,7 @@ class App extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $defaultLocale = 'en';
+	public $defaultLocale = 'sr';
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -96,7 +96,7 @@ class App extends BaseConfig
 	 *
 	 * @var string[]
 	 */
-	public $supportedLocales = ['en'];
+	public $supportedLocales = ['sr'];
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -108,7 +108,7 @@ class App extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $appTimezone = 'America/Chicago';
+	public $appTimezone = 'Europe/Belgrade';
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -296,7 +296,7 @@ class App extends BaseConfig
 	 *
 	 * @deprecated use Config\Cookie::$httponly property instead.
 	 */
-	public $cookieHTTPOnly = true;
+	public $cookieHTTPOnly = false;
 
 	/**
 	 * --------------------------------------------------------------------------
