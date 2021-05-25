@@ -1,3 +1,24 @@
+# Softver koji koristimo
+## WAMP server
+- https://sourceforge.net/projects/wampserver/
+## Codeigniter 4
+- https://getcomposer.org
+- Samo instalirati composer. Ne treba da pravi novi projekat svako kod sebe, napravili smo kad pullujemo
+	- Ako zatreba, komanda je `composer create-project codeigniter4/appstarter savetovaliste`
+## PHP 7.3.21
+- Uvek biramo tu verziju ako je moguće, ako ne, onda bilo koju 7.3.x
+## MySQL 8.0.25
+- Uz WAMP dolazi 5.7.31.
+- Skinuti 8.0.25 sa https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/Mysql/
+- Hostovati na portu **3306**
+## Netbeans
+- Otvoriti projekat po mogućstvu kroz NetBeans, sa existing PHP sources-ima
+## Nazivi
+- Projekat se obavezno zove `savetovaliste`
+- Lokalnu MySQL bazu nazvati `savetovalistedb`
+- Za bazu koristimo po defaultu korisnika `root` bez passworda
+- Ako bude još nešto (a sigurno će biti), dodaćemo...
+
 # Instrukcije za kodiranje
 Par instrukcija za kodiranje, bilo bi super da ih se držimo, biće nam lakše da spajamo sve što radimo.
 Ako imate neke primedbe, nešto hoćete da promenimo, slobodno recite!
