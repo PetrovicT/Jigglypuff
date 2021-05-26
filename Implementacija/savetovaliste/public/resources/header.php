@@ -1,3 +1,5 @@
+  <!-- Header -->
+  
   <header class="w3-bar w3-padding-12 color-dark-blue w3-mobile">
     <!-- S leva nadesno -->
     <a href="pocetna_stranica.html" class="w3-bar-item w3-button letters"><i class="fa fa-home"></i> Home</a>
