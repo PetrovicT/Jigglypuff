@@ -51,7 +51,7 @@
                                 <input type="submit" value="Ulogujte se">
                             </div>
                             <div class="singup-link">
-                                Nemate korisnicki nalog? <a href="registracija.html"><b>Registrujte se</b></a>
+                                Nemate korisnicki nalog? <a href="<?php echo site_url('Gost/register'); ?>"><b>Registrujte se</b></a>
                             </div>
                         </form>
                     </div>
