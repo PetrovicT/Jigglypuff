@@ -7,7 +7,7 @@
             </div>
             <div class="w3-right">
                     <img id="JigglypuffFooterImage"  src="https://upload.wikimedia.org/wikipedia/en/2/22/Pok%C3%A9mon_Jigglypuff_art.png"></img>
-                    <img id="Mouth" src="images/mouth.png"></img>
+                    <img id="Mouth" src="<?php echo base_url(); ?>/images/mouth.png"></img>
             </div>
         </footer>
 
