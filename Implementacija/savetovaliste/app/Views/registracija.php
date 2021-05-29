@@ -48,10 +48,14 @@
                             <div class="field">
                                 <input name = "grad" type="text" placeholder="Grad" list="gradovi" >
                                 <datalist id="gradovi">
-                                    <option>Novi Sad</option>
-                                    <option>Beograd</option>
-                                    <option>Jagodina</option>
-                                    <option>Mars</option>
+                                    <?php
+                                    // Dodati sve gradove kao opcije u alfabetnom poretku
+                                    $gradModel = new \App\Models\GradModel();
+                                    $sviGradovi = $gradModel->findAllAlphabetical();
+                                    foreach ($sviGradovi as $grad) {
+                                        echo '<option value="'.$grad->idGrad.'">'.$grad->naziv.'</option>';
+                                    }
+                                    ?>
                                 </datalist>
                             </div> 
                             <div class="field">
