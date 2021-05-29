@@ -53,7 +53,7 @@
                                     $gradModel = new \App\Models\GradModel();
                                     $sviGradovi = $gradModel->findAllAlphabetical();
                                     foreach ($sviGradovi as $grad) {
-                                        echo '<option value="'.$grad->idGrad.'">'.$grad->naziv.'</option>';
+                                        echo '<option value="' . $grad->idGrad . '">' . $grad->naziv . '</option>';
                                     }
                                     ?>
                                 </datalist>
@@ -63,13 +63,14 @@
                             </div> 
 
                             <div>Pol:</div>
-                            <input type="radio" id="male" name="gender" value="male">
-                            <label for="male">Muski</label><br>
-                            <input type="radio" id="female" name="gender" value="female">
-                            <label for="female">Zenski</label><br>
-                            <input type="radio" id="other" name="gender" value="other">
-                            <label for="other">Drugo</label>
-
+                            <?php
+                            $polModel = new \App\Models\PolModel();
+                            $sviPolovi = $polModel->findAll();
+                            foreach($sviPolovi as $pol){
+                                echo '<input type="radio" id="'.$pol->pol.'" name="gender" value="'.$pol->idPol.'">';
+                                echo '<label for="'.$pol->pol.'">'.$pol->pol.'</label><br>';
+                            }
+                            ?>
                             <div class="field">
                                 <input type="submit" value="Registrujte se">
                             </div>
