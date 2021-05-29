@@ -44,4 +44,8 @@ class Gost extends BaseController {
         return redirect()->to(site_url('Korisnik/'));
     }
 
+    // Stranica za registraciju, ne funkcionalnost registovanja
+    public function register($poruka = null){
+        echo view("registracija", ['registrationErrorMessage' => $poruka]);
+    }
 }
