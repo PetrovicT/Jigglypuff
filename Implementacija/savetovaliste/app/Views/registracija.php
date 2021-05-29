@@ -34,22 +34,28 @@
 
                 <div class="form-container">
                     <div class="form-inner">
-                        <form action="#" class="login">
+                        <form action="#" class="login" method="post">
                             <div class="field">
-                                <input type="text" placeholder="Korisnicko ime" required>
+                                <input name="username" type="text" placeholder="Korisnicko ime" required>
                             </div> 
                             <div class="field">
-                                <input type="password" placeholder="Sifra" required>
+                                <input name="password" type="password" placeholder="Sifra" required>
                             </div> 
                             <div class="field">
                                 <div>Sledeca polja nisu obavezna, tako da ih mozete ostaviti praznim. </div>
-                                <input type="text" placeholder="Licno ime" >
+                                <input name="licnoIme" type="text" placeholder="Licno ime" >
                             </div> 
                             <div class="field">
-                                <input type="password" placeholder="Grad" >
+                                <input name = "grad" type="text" placeholder="Grad" list="gradovi" >
+                                <datalist id="gradovi">
+                                    <option>Novi Sad</option>
+                                    <option>Beograd</option>
+                                    <option>Jagodina</option>
+                                    <option>Mars</option>
+                                </datalist>
                             </div> 
                             <div class="field">
-                                <input type="email" placeholder="Email adresa" >
+                                <input name = "email" type="email" placeholder="Email adresa" >
                             </div> 
 
                             <div>Pol:</div>
@@ -64,7 +70,7 @@
                                 <input type="submit" value="Registrujte se">
                             </div>
                             <div class="singup-link">
-                                Vec imate korisnicki nalog? <a href="logovanje.html"><b>Ulogujte se</b></a>
+                                Vec imate korisnicki nalog? <a href="<?php echo base_url(); ?>/Gost/login"><b>Ulogujte se</b></a>
                             </div>
                         </form>
                     </div>
@@ -77,7 +83,7 @@
 
         <!-- Footer -->
         <?php
-        require 'resources/header.php';
+        require 'resources/footer.php';
         ?>
 
     </body>
