@@ -16,6 +16,7 @@ class KorisnikModel extends Model
         }
         
         // Vraća string koji označava da li je korisnik običan korisnik, psiholog ili admin, ili pak nešto novo ako dodamo
+        // String se dobija iz baze
         public function findUserType($id){
             $korisnik = $this->find($id);
             

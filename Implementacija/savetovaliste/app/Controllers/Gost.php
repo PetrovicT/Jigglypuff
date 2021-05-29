@@ -15,9 +15,12 @@ class Gost extends BaseController {
         echo view("logovanje", ['loginErrorMessage' => $poruka]);
     }
 
+    // Funkcionalnost logovanja
     public function loginSubmit() {
+        // Nije potrebno dodatno validirati username i password jer ako
+        // ne zadovoljavaju uslove, neće ni biti u bazi
         if (!$this->validate(['username' => 'required', 'password' => 'required'])) {
-            return $this->login("Korisničko ime i šifra su oba obavezni!");
+            return $this->login("Molimo ukucajte korisničko ime i šifru.");
         }
 
         $korisnikModel = new KorisnikModel();
