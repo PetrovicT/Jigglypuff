@@ -1,15 +1,27 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\PitanjeModel;
 
 use App\Models\KorisnikModel;
-
-class Gost extends BaseController {
-
-    public function index() {
-        return view('welcome_message');
-    }
-
+class Gost extends BaseController
+{
+	public function index()
+	{
+                echo view('pocetna_stranica');
+	}
+              
+        // Stranica za pregled pitanja, ne funkcionalnost pregleda pitanja
+        public function pregled_pitanja_stranica($poruka = null){
+            echo view("pregled_pitanja", ['pregled_pitanjaErrorMessage' => $poruka, 'pitanja'=>[]]);
+        }
+        
+        public function pregled_pitanja(){
+             $pitanjeModel=new PitanjeModel();
+             $pitanja=$pitanjeModel->findAll();
+             $this->pregled_pitanja_stranica();
+        }
+        
     // Stranica za login, ne funkcionalnost logovanja
     public function login($poruka = null) {
         echo view("logovanje", ['loginErrorMessage' => $poruka]);
