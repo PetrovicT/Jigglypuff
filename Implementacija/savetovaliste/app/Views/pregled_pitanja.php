@@ -29,86 +29,46 @@
         <div class="w3-content" style="max-width:90%">
             <!-- POZADINA -->
             <div class="w3-row  w3-padding w3-border">
+            
+<div class="w3-col l8 s12"> <br>
+<?php foreach ($pitanja as $pitanje) {
+    echo '
+    <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
+        <div class="w3-left" style="padding-left: 5%;"> 
+            <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
+        </div>
+        <div class="w3-right" style="padding-right: 6%;"> <br>
+            <h3 class="letters_dark_blue"><b> ' . $pitanje->naslovPitanja . '</b></h3>
+        </div>
 
-                <!-- UNOSI -->
-                <div class="w3-col l8 s12"> <br>
-
-                    <!-- UNOS -->
-                    <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
-                        <div class="w3-left" style="padding-left: 5%;"> <br>
-                            <h3 class="letters_dark_blue"><b>Problemi sa paničnim napadima</b></h3>
-                        </div>
-
-                        <div class="w3-right" style="padding-right: 6%;"> <br>
-                            <h3 class="letters_dark_blue"><a href="profil.html" style="text-decoration: none;"><b>Autor: Marko Ivanović</b></a>
-                            </h3>
-                        </div>
-
-                        <!-- TEKST PITANJA -->
-                        <div class="input letters_dark_blue">
-                            <p style="text-align: justify; font-weight: normal;">Jako dugo imam probleme sa paničnim napadima. Osećam stezanje u grlu sto je postalo baš problem sada,
-                                uzimao sam lekove kao terapiju sto mi je psihijatar prepisao i sam sam prestao da ih uzimam. Smatrao sam da mi više ne trebaju. Prošle nedelje sam imao učestale napade. Imam fizicke probleme kao stezanje u grlu i bol srca. Kako da pomognem sam sebi? Da li je bolje posavetovati se sa stručnim licem ili da sam nastavim sa prethodnom terapijom?</p> <br>
-                        </div>
-
-                        <!-- DUGMAD -->
-                        <div class="input ">  
-                            <div id="like">
-                                <div>
-                                    <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> <u onclick="alert('Povećali ste broj lajkova za 1')" style="text-decoration: none; font-weight: normal;">Korisno (16)</u></button> &nbsp
-                                    <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-down"></i> <u onclick="alert('Povećali ste broj dislajkova za 1')" style="text-decoration: none;font-weight: normal;">Nije korisno (7)</u></button>
-                                </div>
-
-                                <div style="float: right;">
-                                    <button onclick="window.location.href = 'odgovori.html';"style="font-weight: normal;" class="w3-button buttons"> Pogledaj
-                                        odgovore</button> &nbsp
-                                    <button onclick="window.location.href = 'odgovori.html#text_input';"
-                                            class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                    </div>
-
-                    <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
-
-                        <div class="w3-left" style="padding-left: 5%;"> <br>
-                            <h3 class="letters_dark_blue"><b>Anksioznost</b></h3>
-                        </div>
-
-                        <div class="w3-right" style="padding-right: 6%;"> <br>
-                            <h3 class="letters_dark_blue"><b>Autor: Anonimno</b></h3>
-                        </div>
-
-                        <!-- TEKST PITANJA -->
-                        <div class="input letters_dark_blue">
-                            <p style="text-align: justify; font-weight: normal;">Anksioznost je problem koji me muči već godinama. Pokušavala sam na razne načine da ga rešim, išla sam kod psihologa i psihijatra, ali nije bilo većih poboljšanja. Možda zato što nisam bila spremna da otvoreno govorim sa njima. Strah me je da podelim priču sa bliskim osobama, jer ne znam da li će me razumeti. Niko ne razume koliko truda ulažem u svakodnevne razgovore, ma koliko oni bili kratki. Plašim se raznih stvari i imam običaj da ruke perem više puta detaljno, da mi cela kuća bude sređena. Da li je ovo stvarno anksioznost ili može biti nešto drugo? Kome da se obratim?
-                            </p> <br>
-                        </div>
-
-                        <!-- DUGMAD -->
-                        <div class="input ">     
-                            <div id="like">
-                                <div>
-                                    <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> <u onclick="alert('Povećali ste broj lajkova za 1')" style="text-decoration: none; font-weight: normal;">Korisno (3)</u></button> &nbsp
-                                    <button class="w3-button buttons" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-down"></i> <u onclick="alert('Povećali ste broj dislajkova za 1')" style="text-decoration: none; font-weight: normal;">Nije korisno (11)</u></button>
-                                </div>
-
-                                <div style="float: right;">
-                                    <button onclick="window.location.href = 'odgovori.html';" class="w3-button buttons" style="font-weight: normal;"> Pogledaj
-                                        odgovore</button> &nbsp
-                                    <button onclick="window.location.href = 'odgovori.html#text_input';"
-                                            class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                    </div>
-
-                    <!-- KRAJ UNOSI -->
+        <!-- TEKST PITANJA -->
+        <div class="input letters_dark_blue">
+            <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
+            <br>
+        </div>
+        <!-- DUGMAD -->
+        <div class="input ">     
+            <div id="like">
+                <div>
+                    <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (3)</u></button> &nbsp
+                    <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (11)</u></button>
                 </div>
 
-                <br>
-             
+                <div style="float: right;">
+                    <button onclick="" class="w3-button buttons" style="font-weight: normal;"> Pogledaj
+                        odgovore</button> &nbsp
+                    <button onclick=""
+                            class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    ';
+
+} ?>
+</div>
+
+                <br>             
                 <!-- LITERATURA -->
                 <div class="w3-col l4">
                     <div class="w3-white w3-margin w3-card-2">
@@ -240,7 +200,7 @@
         <?php
         require 'resources/footer.php';
         ?>
-
+';
     </body>
 
 </html>

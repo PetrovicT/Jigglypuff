@@ -9,13 +9,13 @@ class PitanjeModel extends Model
         protected $table      = 'pitanje';
         protected $primaryKey = 'idPitanje';
         protected $allowedFields = ['korisnik_idKorisnik_postavio',
-            'kategorijaPitanja_idKategorija', 'naslovPitanja', 'tesktPitanja','postavljenoANonimno','moguSviDaOdgovore'];
+            'kategorijaPitanja_idKategorija', 'naslovPitanja', 'tekstPitanja','postavljenoANonimno','moguSviDaOdgovore'];
         protected $returnType = 'object';
         
     
-        // Prosledimo id pitanja i dobijemo tekst pitanja
-        public function findByUsername($username){
-            return $this->where('username', $username)->first();
+        // Prosledimo id korisnika i dobijemo username
+        public function findUsernameById($id){
+            return $this->where('id', $id)->first();
         }
         
         // Vraća string koji označava da li je korisnik običan korisnik, psiholog ili admin, ili pak nešto novo ako dodamo
