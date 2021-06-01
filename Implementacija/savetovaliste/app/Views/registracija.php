@@ -47,7 +47,7 @@
                             </div> 
                             <div class="field">
                                 <select class="select-input" name="grad" id="grad">
-                                    <option value="">Drugo/Neizjašnjen</option>>
+                                    <option value="">Grad:</option>>
                                     <?php
                                     // Dodati sve gradove kao opcije u alfabetnom poretku
                                     $gradModel = new \App\Models\GradModel();
@@ -85,7 +85,7 @@
                                 echo '<label for="' . $pol->pol . '">' . $pol->pol . '</label><br>';
                             }
                             ?>
-                            <input type="radio" id="Drugo" name="gender" value="">
+                            <input type="radio" id="Drugo" name="gender" value="" checked>
                             <label for="Drugo">Drugo/Neizjašnjen</label>
                             <div class="field">
                                 <input type="submit" value="Registrujte se">
