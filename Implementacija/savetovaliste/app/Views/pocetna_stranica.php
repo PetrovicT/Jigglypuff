@@ -6,17 +6,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="photos/logo.png" />
-        <link rel="stylesheet" href="css/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/pitanja.css">
-        <link rel="stylesheet" href="css/pocetna.css">
-        <title>Homepage</title>
-        <style>h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}  body {font-family: "Oswald"} </style>
-        <script src="js/script.js"></script>
+        <link rel="icon" href="<?php echo base_url(); ?>/photos/logo.png" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>/css/w3.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>https://fonts.googleapis.com/css?family=Oswald">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>https://fonts.googleapis.com/css?family=Open Sans">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>/css/style.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>/css/pitanja.css">
+         <link rel="stylesheet" href="<?php echo base_url(); ?>/css/pocetna.css">
+        <style>h1,h2,h3,h4,h5,h6 {font-family: "Oswald"} body {font-family: "Open Sans"}</style>
+        <script src = "<?php echo base_url(); ?>/js/script.js"></script>
+          <title>Homepage</title> 
     </head>
 
     <body class="w3-light-grey">
@@ -30,7 +30,7 @@
 
             <!-- POZADINA -->
             <div class="w3-row w3-padding w3-border sky " 
-                 style="background-image: url(photos/sky3.jpg); background-repeat: no-repeat; background-attachment: fixed;"> 
+                 style="background-image: url(<?php echo base_url(); ?>/photos/sky3.jpg); background-repeat: no-repeat; background-attachment: fixed;"> 
 
                 <!-- UNOSI -->
                 <div class="w3-col l12 s12" style="padding-left: 5%; padding-right: 5%;">
@@ -40,7 +40,8 @@
                         <div class="w3-center letters_dark_blue" style="font-size: 30px;">
                             Dobrodošli na veb portal za psihološko savetovanje!
                             <br>
-                            <img src="photos/logo.png" alt="">
+							
+                          <img src="<?php echo base_url(); ?>/photos/logo.png" alt="">
                         </div>
 
                         <!-- LINK LOGIN/REGISTRACIJA -->
@@ -63,6 +64,8 @@
                             <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-search letters_dark_blue"
                                                                                              style="font-size: 20px; "></i></a>
                         </div>
+                        
+                        <a href="<?php echo site_url('Gost/pregled_pitanja'); ?>"><b>SVA PITANJA</b></a>
 
                         <hr style="border-top-color: #021B79;">
 
@@ -103,17 +106,17 @@
                     <!-- RED OD 3 SLIKE -->
                     <div class="w3-row-padding">
                         <div class="w3-col s4">
-                            <img src="photos/NEW/panic_atack.jpg" style="width:100%;">
+							<img src="<?php echo base_url(); ?>/photos/NEW/panic_atack.jpg" alt="" style="width:100%;">                       
                             <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">NAPAD PANIKE</p>
                         </div>
 
                         <div class="w3-col s4">
-                            <img src="photos/new/ocd.png" style="width:100%;">
+							<img src="<?php echo base_url(); ?>/photos/new/ocd.png" alt="" style="width:100%;">  
                             <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">OKP</p>
                         </div>
 
                         <div class="w3-col s4">
-                            <img src="photos/new/shape.jpg" style="width:100%; ">
+                       	<img src="<?php echo base_url(); ?>/photos/NEW/shape.jpg" alt="" style="width:100%;"> 
                             <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">PORODIČNI PROBLEMI</p>
                         </div>
                     </div>
@@ -125,17 +128,17 @@
                     <div class="w3-row-padding">
 
                         <div class="w3-col s4">
-                            <img src="photos/new/angrer.png" style="width:100%">
+                            	<img src="<?php echo base_url(); ?>/photos/NEW/angrer.png" alt="" style="width:100%;"> 
                             <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">PROBLEMI SA BESOM</p>
                         </div>
 
                         <div class="w3-col s4">
-                            <img src="photos/new/stress.png" style="width:100%">
+                            	<img src="<?php echo base_url(); ?>/photos/NEW/stress.png" alt="" style="width:100%;"> 
                             <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">STRES</p>
 
                         </div>
                         <div class="w3-col s4">
-                            <img src="photos/new/depersonalisation.jpg" style="width:100%">
+                            	<img src="<?php echo base_url(); ?>/photos/NEW/depersonalisation.jpg" alt="" style="width:100%;"> 
                             <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">DEPERSONALIZACIJA</p>
                         </div>
                     </div>
@@ -147,18 +150,18 @@
                     <div class="w3-row-padding">
 
                         <div class="w3-col s4">
-                            <img src="photos/new/depresija.png" style="width:100%">
+                        <img src="<?php echo base_url(); ?>/photos/NEW/depresija.png" alt="" style="width:100%;">
                             <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">DEPRESIJA</p>
                         </div>
 
                         <div class="w3-col s4">
-                            <img src="photos/NEW/samopouzdanje.jpg" style="width:100%">
+                            <img src="<?php echo base_url(); ?>/photos/NEW/samopouzdanje.jpg" alt="" style="width:100%;">
                             <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">MANJAK SAMOPOUZDANJA</p>
 
                         </div>
                         <div class="w3-col s4">
-                            <img src="photos/new/anxiety.png" style="width:100%">
-                            <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">ANKSIOZNOST</p>
+						<img src="<?php echo base_url(); ?>/photos/NEW/anxiety.png" alt="" style="width:100%;">
+                        <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">ANKSIOZNOST</p>
                         </div>
                     </div>
 
