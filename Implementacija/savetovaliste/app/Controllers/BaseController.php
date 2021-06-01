@@ -8,6 +8,7 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use App\Models\PitanjeModel;
 
 /**
  * Class BaseController
@@ -54,5 +55,20 @@ class BaseController extends Controller
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		$this->session = session();
+	}
+
+	 // Stranica za pregled pitanja, ne funkcionalnost pregleda pitanja
+	 public function pregled_pitanja_stranica($poruka = null){
+        echo view("pregled_pitanja", ['pregled_pitanjaErrorMessage' => $poruka]);
+    }
+
+    public function pregled_pitanja(){
+         $pitanjeModel=new PitanjeModel();
+         $pitanja=$pitanjeModel->findAll();
+         $this->prikaz('pregled_pitanja', ['pitanja'=>$pitanja]);
+    }
+
+	public function pretraga_pitanja(){
+
 	}
 }

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\PitanjeModel;
 use App\Models\KorisnikModel;
 
 class Gost extends BaseController
@@ -11,17 +10,6 @@ class Gost extends BaseController
             echo view('pocetna_stranica');
     }
 
-    // Stranica za pregled pitanja, ne funkcionalnost pregleda pitanja
-    public function pregled_pitanja_stranica($poruka = null){
-        echo view("pregled_pitanja", ['pregled_pitanjaErrorMessage' => $poruka]);
-    }
-
-    public function pregled_pitanja(){
-         $pitanjeModel=new PitanjeModel();
-         $pitanja=$pitanjeModel->findAll();
-         $this->pregled_pitanja_stranica();
-    }
-        
     // Stranica za login, ne funkcionalnost logovanja
     public function login($poruka = null) {
         echo view("logovanje", ['loginErrorMessage' => $poruka]);
@@ -56,4 +44,9 @@ class Gost extends BaseController
         return redirect()->to(site_url('Korisnik/'));
     }
 
+    protected function prikaz($page, $data){
+		$data['controller']='Gost';
+		echo view("$page", $data);
+	}
+    
 }
