@@ -7,10 +7,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="<?php echo base_url(); ?>/photos/logo.png" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>/css/w3.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>https://fonts.googleapis.com/css?family=Oswald">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>https://fonts.googleapis.com/css?family=Open Sans">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="/css/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>/css/style.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>/css/pitanja.css">
          <link rel="stylesheet" href="<?php echo base_url(); ?>/css/pocetna.css">
