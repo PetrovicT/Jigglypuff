@@ -32,6 +32,16 @@
 
                 <div>Sledeca polja su obavezna, molimo Vas da ih popunite. Obratite paznju da Vasa sifra mora sadrzati minimum 8 karaktera.</div>
 
+                <font color='red'>
+                <?php
+                if (!empty($registrationErrorMessages)) {
+                    foreach ($registrationErrorMessages as $msg) {
+                        echo $msg, '<br/>';
+                    };
+                }
+                ?>
+                </font>
+
                 <div class="form-container">
                     <div class="form-inner">
                         <form action="<?= site_url("Gost/registerSubmit") ?>" class="login" method="post">
@@ -55,7 +65,7 @@
                                     foreach ($sviGradovi as $grad) {
                                         echo '<option value="' . $grad->idGrad . '">' . $grad->naziv . '</option>';
                                     }
-                                    
+
                                     /*
                                       <input name = "grad" type="text" placeholder="Grad" list="gradovi" >
                                      * 
@@ -79,7 +89,7 @@
                             <div>Pol:</div>
                             <?php
                             $polModel = new \App\Models\PolModel();
-                            $sviPolovi = $polModel->findAll();                            
+                            $sviPolovi = $polModel->findAll();
                             foreach ($sviPolovi as $pol) {
                                 echo '<input type="radio" id="' . $pol->pol . '" name="gender" value="' . $pol->idPol . '">';
                                 echo '<label for="' . $pol->pol . '">' . $pol->pol . '</label><br>';

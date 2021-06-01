@@ -25,7 +25,7 @@ class KorisnikModel extends Model {
         'email' => 'valid_email|is_unique[korisnik.email]|permit_empty',
         'password' => 'required|alpha_numeric_punct|min_length[6]',
         'licnoIme' => 'alpha_space|permit_empty',
-        'tipKorisnika_idTipKorisnika' => 'required|integer|is_not_unique[tipKorisnika.idTipKorisnika]',
+        'tipKorisnika_idTipKorisnika' => 'required|integer|is_not_unique[tip_korisnika.idTipKorisnika]',
         'grad_idGrad' => 'integer|permit_empty|is_not_unique[grad.idGrad]',
         'pol_idPol' => 'integer|permit_empty|is_not_unique[pol.idPol]'
     ];
