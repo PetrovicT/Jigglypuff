@@ -34,7 +34,7 @@
 
                 <div class="form-container">
                     <div class="form-inner">
-                        <form action="#" class="login" method="post">
+                        <form action="<?= site_url("Gost/registerSubmit") ?>" class="login" method="post">
                             <div class="field">
                                 <input name="username" type="text" placeholder="Korisnicko ime" required>
                             </div> 
@@ -46,8 +46,7 @@
                                 <input name="licnoIme" type="text" placeholder="Licno ime" >
                             </div> 
                             <div class="field">
-                                <input name = "grad" type="text" placeholder="Grad" list="gradovi" >
-                                <datalist id="gradovi">
+                                <select class="select-input" name="grad" id="grad">
                                     <?php
                                     // Dodati sve gradove kao opcije u alfabetnom poretku
                                     $gradModel = new \App\Models\GradModel();
@@ -55,8 +54,22 @@
                                     foreach ($sviGradovi as $grad) {
                                         echo '<option value="' . $grad->idGrad . '">' . $grad->naziv . '</option>';
                                     }
+                                    
+                                    /*
+                                      <input name = "grad" type="text" placeholder="Grad" list="gradovi" >
+                                     * 
+                                      <select name="cars" id="cars">
+                                      <option value="volvo">Volvo</option>
+                                      <option value="saab">Saab</option>
+                                      <option value="mercedes">Mercedes</option>
+                                      <option value="audi">Audi</option>
+                                      </select>
+                                     */
                                     ?>
-                                </datalist>
+                                </select>
+
+
+
                             </div> 
                             <div class="field">
                                 <input name = "email" type="email" placeholder="Email adresa" >
@@ -66,9 +79,9 @@
                             <?php
                             $polModel = new \App\Models\PolModel();
                             $sviPolovi = $polModel->findAll();
-                            foreach($sviPolovi as $pol){
-                                echo '<input type="radio" id="'.$pol->pol.'" name="gender" value="'.$pol->idPol.'">';
-                                echo '<label for="'.$pol->pol.'">'.$pol->pol.'</label><br>';
+                            foreach ($sviPolovi as $pol) {
+                                echo '<input type="radio" id="' . $pol->pol . '" name="gender" value="' . $pol->idPol . '">';
+                                echo '<label for="' . $pol->pol . '">' . $pol->pol . '</label><br>';
                             }
                             ?>
                             <div class="field">

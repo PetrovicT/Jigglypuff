@@ -41,7 +41,7 @@
     margin-top: 20px;
 }
 
-.form-inner form .field input{
+.form-inner form .field input, .select-input{
     height: 100%;
     width: 100%;
     outline:none;
