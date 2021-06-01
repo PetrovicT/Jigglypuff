@@ -47,6 +47,7 @@
                             </div> 
                             <div class="field">
                                 <select class="select-input" name="grad" id="grad">
+                                    <option value="">Drugo/Neizjašnjen</option>>
                                     <?php
                                     // Dodati sve gradove kao opcije u alfabetnom poretku
                                     $gradModel = new \App\Models\GradModel();
@@ -78,12 +79,14 @@
                             <div>Pol:</div>
                             <?php
                             $polModel = new \App\Models\PolModel();
-                            $sviPolovi = $polModel->findAll();
+                            $sviPolovi = $polModel->findAll();                            
                             foreach ($sviPolovi as $pol) {
                                 echo '<input type="radio" id="' . $pol->pol . '" name="gender" value="' . $pol->idPol . '">';
                                 echo '<label for="' . $pol->pol . '">' . $pol->pol . '</label><br>';
                             }
                             ?>
+                            <input type="radio" id="Drugo" name="gender" value="">
+                            <label for="Drugo">Drugo/Neizjašnjen</label>
                             <div class="field">
                                 <input type="submit" value="Registrujte se">
                             </div>
