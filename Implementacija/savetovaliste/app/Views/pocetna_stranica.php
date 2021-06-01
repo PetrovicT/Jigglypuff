@@ -61,11 +61,24 @@
                              style="width:100%; max-width: 100%; padding-top: 30px; padding-bottom: 20px; border-color: #021B79;">
                             <input id="SearchField" class="w3-bar-item w3-center letters_dark_blue" type="text"
                                    placeholder="Pretraži..." style="width: 40%;">
-                            <a href="pregled_pitanja.html" class="w3-bar-item w3-button "><i class="fa fa-search letters_dark_blue"
-                                                                                             style="font-size: 20px; "></i></a>
+                            <a href="<?= site_url("Gost/pregled_pitanja") ?>" class="w3-bar-item w3-button "><i class="fa fa-search letters_dark_blue" style="font-size: 20px; " onclick="<?= site_url("Gost/pregled_pitanja") ?>"></i></a>
                         </div>
                         
                         <a href="<?php echo site_url('Gost/pregled_pitanja'); ?>"><b>SVA PITANJA</b></a>
+                        
+
+                        
+                        <!--   
+
+                        <form name="pregled_pitanja"  action="<?= site_url("Gost/pregled_pitanja") ?>">
+                        
+                        <input id="SearchField" class="w3-bar-item w3-center letters_dark_blue" type="text"
+                                   placeholder="Pretraži..." style="width: 40%;">
+                        <input type="submit" name="Trazi" value="Trazi"> <input type="submit" class="fa fa-search letters_dark_blue"
+                                                                                             style="font-size: 20px; "> <br>
+                        </form>
+
+                        -->
 
                         <hr style="border-top-color: #021B79;">
 
