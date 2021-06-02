@@ -56,29 +56,25 @@
                     <hr>
 
                     <!-- PRETRAGA -->
+                     
                     <div class="w3-container w3-center w3-white w3-margin w3-padding-large w3-card-4">
-                        <div id="SearchBar"
-                             style="width:100%; max-width: 100%; padding-top: 30px; padding-bottom: 20px; border-color: #021B79;">
-                            <input id="SearchField" class="w3-bar-item w3-center letters_dark_blue" type="text"
-                                   placeholder="Pretraži..." style="width: 40%;">
-                            <a href="<?= site_url("Gost/pregled_pitanja") ?>" class="w3-bar-item w3-button "><i class="fa fa-search letters_dark_blue" style="font-size: 20px; " onclick="<?= site_url("Gost/pregled_pitanja") ?>"></i></a>
-                        </div>
-                        
-                        <a href="<?php echo site_url('Gost/pregled_pitanja'); ?>"><b>SVA PITANJA</b></a>
-                        
-
-                        
-                        <!--   
-
-                        <form name="pregled_pitanja"  action="<?= site_url("Gost/pregled_pitanja") ?>">
-                        
+                           
+                        <div id="SearchBar" style="width:100%; max-width: 100%; padding-top: 30px; padding-bottom: 20px; border-color: #021B79;">
+                       
+                         <!--   Fali popravka  redovi 64 do 69 -->  
+                        <input id="SearchField" class="w3-bar-item w3-center letters_dark_blue" type="text" placeholder="Pretraži..." style="width: 40%;" name="pretraga">           
+                                <a href="<?= site_url("Gost/pretraga_pitanja") ?>" class="w3-bar-item w3-button ">
+                                    <i class="fa fa-search letters_dark_blue" style="font-size: 20px; " ></i>
+                                </a>
+                       
+                                                                                          
+                        <form name="pretraga_pitanja"  action="<?= site_url("Gost/pretraga_pitanja") ?>">                         
                         <input id="SearchField" class="w3-bar-item w3-center letters_dark_blue" type="text"
-                                   placeholder="Pretraži..." style="width: 40%;">
-                        <input type="submit" name="Trazi" value="Trazi"> <input type="submit" class="fa fa-search letters_dark_blue"
-                                                                                             style="font-size: 20px; "> <br>
+                                   placeholder="Pretraži..." style="width: 40%;" name="pretraga">
+                        <input class="fa fa-search letters_dark_blue" style="font-size: 18px;" value="Pretrazi"  type="submit"  > <br>
                         </form>
-
-                        -->
+                        </div>
+                       
 
                         <hr style="border-top-color: #021B79;">
 

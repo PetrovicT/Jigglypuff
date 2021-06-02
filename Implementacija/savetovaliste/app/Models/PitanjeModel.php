@@ -32,4 +32,10 @@ class PitanjeModel extends Model
             
             return $tipKorisnika->tip;
         } 
+
+        public function pretraga_pitanja($tekst){
+             return $this->like('naslovPitanja',$tekst)->orlike('tekstPitanja',$tekst)->findAll();
+        }
+
+
 }
