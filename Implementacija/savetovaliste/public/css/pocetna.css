@@ -52,3 +52,8 @@ div.container {
 .card_text{
   margin-top: 0px; margin-bottom: 0px; font-size: 22px; background-color: #021B79;color: white; text-align: center; cursor: pointer;
 }
+
+#search_pocetna{
+  border: none;
+   background-color: rgba(255, 255, 255, 0.8);
+}

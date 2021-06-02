@@ -34,7 +34,7 @@
 
                 <!-- UNOSI -->
                 <div class="w3-col l12 s12" style="padding-left: 5%; padding-right: 5%;">
-
+                <br>
                     <!-- UNOS -->
                     <div class="w3-container w3-white w3-margin w3-padding-large w3-card-4">
                         <div class="w3-center letters_dark_blue" style="font-size: 30px;">
@@ -47,9 +47,9 @@
                         <!-- LINK LOGIN/REGISTRACIJA -->
                         <div class=" w3-left">
                             <div class="overlay letters_dark_blue" style="font-size: 28px;"><i class="fa fa-user"></i> Već imate nalog?
-                                <a href="logovanje.html">LOGIN</a></div>
+                                <a href="<?= site_url("Gost/login") ?>">LOGIN</a></div>
                             <div class="overlay letters_dark_blue" style="font-size: 28px; color: #021B79;"><i class="fa fa-user"></i>
-                                Nemate nalog? <a href="registracija.html">REGISTRUJ SE</a></div>
+                                Nemate nalog?  <a href="<?= site_url("Gost/register") ?>">REGISTRUJ SE</a></div>
                             <br>
                         </div>
                     </div>
@@ -59,29 +59,30 @@
                      
                     <div class="w3-container w3-center w3-white w3-margin w3-padding-large w3-card-4">
                            
-                        <div id="SearchBar" style="width:100%; max-width: 100%; padding-top: 30px; padding-bottom: 20px; border-color: #021B79;">
-                       
-                         <!--   Fali popravka  redovi 64 do 69 -->  
-                        <input id="SearchField" class="w3-bar-item w3-center letters_dark_blue" type="text" placeholder="Pretraži..." style="width: 40%;" name="pretraga">           
-                                <a href="<?= site_url("Gost/pretraga_pitanja") ?>" class="w3-bar-item w3-button ">
-                                    <i class="fa fa-search letters_dark_blue" style="font-size: 20px; " ></i>
-                                </a>
-                       
+                        <div id="SearchBar" style="width:100%; max-width: 100%; padding-top: 30px; padding-bottom: 20px; border-color: #021B79;">                                                
                                                                                           
                         <form name="pretraga_pitanja"  action="<?= site_url("Gost/pretraga_pitanja") ?>">                         
                         <input id="SearchField" class="w3-bar-item w3-center letters_dark_blue" type="text"
                                    placeholder="Pretraži..." style="width: 40%;" name="pretraga">
-                        <input class="fa fa-search letters_dark_blue" style="font-size: 18px;" value="Pretrazi"  type="submit"  > <br>
+                        <button type="submit" id="search_pocetna" class="fa fa-search letters_dark_blue" style="font-size: 20px;" value="Pretrazi"   > <br>
                         </form>
                         </div>
                        
+                    
+
+                   
 
                         <hr style="border-top-color: #021B79;">
 
                         <div class="w3-center w3-white">
                             <div class=" w3-white" style="padding-left: 10%; padding-right: 10%; width: 100%; align-items: center;">
-                                <span onclick="window.location.href = 'pregled_pitanja.html';"
-                                      class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">Anksioznost</span>
+
+
+                            <a href="<?php echo base_url(); ?>/Gost/pretraga_pitanja"><b>Anksioznost</b>
+                                <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">Anksioznost</span> </a>
+                                
+                                
+                                
                                 <span onclick="window.location.href = 'pregled_pitanja.html';"
                                       class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">Depresija</span>
                                 <span onclick="window.location.href = 'pregled_pitanja.html';"
