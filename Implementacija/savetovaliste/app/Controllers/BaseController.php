@@ -70,7 +70,6 @@ class BaseController extends Controller
 
 	public function pretraga_pitanja(){
 		$pitanjeModel=new PitanjeModel();
-		//let parametar=$this->request->getVar('pretraga');
 		$pitanja=$pitanjeModel->pretraga_pitanja($this->request->getVar('pretraga'));
 		$this->prikaz('pregled_pitanja', ['pitanja'=>$pitanja,'trazeno'=>$this->request->getVar('pretraga')]);
 	}

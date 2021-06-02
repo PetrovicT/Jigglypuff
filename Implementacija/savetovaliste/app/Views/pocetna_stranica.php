@@ -60,45 +60,46 @@
                     <div class="w3-container w3-center w3-white w3-margin w3-padding-large w3-card-4">
                            
                         <div id="SearchBar" style="width:100%; max-width: 100%; padding-top: 30px; padding-bottom: 20px; border-color: #021B79;">                                                
-                                                                                          
                         <form name="pretraga_pitanja"  action="<?= site_url("Gost/pretraga_pitanja") ?>">                         
                         <input id="SearchField" class="w3-bar-item w3-center letters_dark_blue" type="text"
                                    placeholder="Pretraži..." style="width: 40%;" name="pretraga">
                         <button type="submit" id="search_pocetna" class="fa fa-search letters_dark_blue" style="font-size: 20px;" value="Pretrazi"   > <br>
                         </form>
-                        </div>
-                       
-                    
-
-                   
+                        </div>                                
 
                         <hr style="border-top-color: #021B79;">
 
                         <div class="w3-center w3-white">
                             <div class=" w3-white" style="padding-left: 10%; padding-right: 10%; width: 100%; align-items: center;">
 
-
-                            <a href="<?php echo base_url(); ?>/Gost/pretraga_pitanja"><b>Anksioznost</b>
-                                <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">Anksioznost</span> </a>
+                            <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
+                                <a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=anksioznost">Anksioznost</a>
+                            </span>  
+                            <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
+                                <a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=depresija">Depresija</a>
+                            </span> 
+                            <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
+                                <a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=napad%20panike">Napad panike</a>
+                            </span> 
+                            <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
+                                <a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=kontrola%20stresa">Kontrola stresa</a>
+                            </span> 
+                            <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
+                                <a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=kontrola%20besa">Kontrola besa</a>
+                            </span> 
+                            <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
+                                <a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=porodični%20problemi">Porodični problemi</a>
+                            </span> 
+                            <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
+                                <a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=manjak%20samopouzdanja">Manjak samopouzdanja</a>
+                            </span> 
+                            <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
+                                <a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=OKP">OKP</a>
+                            </span> 
+                            <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
+                                <a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=depersonalizacija">Depersonalizacija</a>
+                            </span> 
                                 
-                                
-                                
-                                <span onclick="window.location.href = 'pregled_pitanja.html';"
-                                      class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">Depresija</span>
-                                <span onclick="window.location.href = 'pregled_pitanja.html';"
-                                      class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">Napad panike</span>
-                                <span onclick="window.location.href = 'pregled_pitanja.html';"
-                                      class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">Kontrola stresa</span>
-                                <span onclick="window.location.href = 'pregled_pitanja.html';"
-                                      class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">Kontrola besa</span>
-                                <span onclick="window.location.href = 'pregled_pitanja.html';"
-                                      class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">Porodični problemi</span>
-                                <span onclick="window.location.href = 'pregled_pitanja.html';"
-                                      class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">Manjak samopouzdanja</span>
-                                <span onclick="window.location.href = 'pregled_pitanja.html';"
-                                      class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">OKP</span>
-                                <span onclick="window.location.href = 'pregled_pitanja.html';"
-                                      class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">Depersonalizacija</span>
                             </div>
                         </div>
                     </div>
@@ -117,17 +118,17 @@
                     <div class="w3-row-padding">
                         <div class="w3-col s4">
 							<img src="<?php echo base_url(); ?>/photos/NEW/panic_atack.jpg" alt="" style="width:100%;">                       
-                            <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">NAPAD PANIKE</p>
+                            <p class="card_text"><a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=napad%20panike">NAPAD PANIKE</a></p>
                         </div>
 
                         <div class="w3-col s4">
 							<img src="<?php echo base_url(); ?>/photos/new/ocd.png" alt="" style="width:100%;">  
-                            <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">OKP</p>
+                            <p class="card_text"><a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=OKP">OKP</a></p>
                         </div>
 
                         <div class="w3-col s4">
                        	<img src="<?php echo base_url(); ?>/photos/NEW/shape.jpg" alt="" style="width:100%;"> 
-                            <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">PORODIČNI PROBLEMI</p>
+                           <p class="card_text"><a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=porodični%20problemi">PORODIČNI PROBLEMI</a></p>
                         </div>
                     </div>
 
@@ -139,17 +140,17 @@
 
                         <div class="w3-col s4">
                             	<img src="<?php echo base_url(); ?>/photos/NEW/angrer.png" alt="" style="width:100%;"> 
-                            <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">PROBLEMI SA BESOM</p>
+                                <p class="card_text"><a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=kontrola%20besa">PROBLEMI SA BESOM</a></p>
                         </div>
 
                         <div class="w3-col s4">
                             	<img src="<?php echo base_url(); ?>/photos/NEW/stress.png" alt="" style="width:100%;"> 
-                            <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">STRES</p>
+                                <p class="card_text"><a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=kontrola%20stresa">STRES</a></p>
 
                         </div>
                         <div class="w3-col s4">
                             	<img src="<?php echo base_url(); ?>/photos/NEW/depersonalisation.jpg" alt="" style="width:100%;"> 
-                            <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">DEPERSONALIZACIJA</p>
+                                <p class="card_text"><a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=depersonalizacija">DEPERSONALIZACIJA</a></p>
                         </div>
                     </div>
 
@@ -161,17 +162,17 @@
 
                         <div class="w3-col s4">
                         <img src="<?php echo base_url(); ?>/photos/NEW/depresija.png" alt="" style="width:100%;">
-                            <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">DEPRESIJA</p>
+                             <p class="card_text"><a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=depresija">DEPRESIJA</a></p>
                         </div>
 
                         <div class="w3-col s4">
                             <img src="<?php echo base_url(); ?>/photos/NEW/samopouzdanje.jpg" alt="" style="width:100%;">
-                            <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">MANJAK SAMOPOUZDANJA</p>
+                            <p class="card_text"><a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=manjak%20samopouzdanja">MANJAK SAMOPOUZDANJA</a></p>
 
                         </div>
                         <div class="w3-col s4">
 						<img src="<?php echo base_url(); ?>/photos/NEW/anxiety.png" alt="" style="width:100%;">
-                        <p class="card_text" onclick="window.location.href = 'pregled_pitanja.html';">ANKSIOZNOST</p>
+                        <p class="card_text"><a class="nema_podvlacenja" href="<?php echo base_url(); ?>/Gost/pretraga_pitanja?pretraga=anksioznost">ANKSIOZNOST</a></p>
                         </div>
                     </div>
 

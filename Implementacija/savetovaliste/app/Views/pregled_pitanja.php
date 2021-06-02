@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>/css/style.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>/css/pitanja.css">
-      
         <style>h1,h2,h3,h4,h5,h6 {font-family: "Oswald"} body {font-family: "Open Sans"}</style>
         <script src = "<?php echo base_url(); ?>/js/script.js"></script>
           <title>Pregled pitanja</title>
@@ -21,52 +20,70 @@
 
     <body class="w3-light-grey">
 
-        <!-- Header -->
-        <?php
-        require 'resources/header.php';
-        ?>
+    <!-- Header -->
+    <?php
+    require 'resources/header.php';
+    ?>
 
-        <div class="w3-content" style="max-width:90%">
-            <!-- POZADINA -->
-            <div class="w3-row  w3-padding w3-border">
+    <div class="w3-content" style="max-width:90%">
+    <!-- POZADINA -->
+    <div class="w3-row  w3-padding w3-border">
             
-<div class="w3-col l8 s12"> <br>
-<?php foreach ($pitanja as $pitanje) {
-    echo '
-    <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
-        <div class="w3-left" style="padding-left: 5%;"> 
-            <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
-        </div>
-        <div class="w3-right" style="padding-right: 6%;"> <br>
-            <h3 class="letters_dark_blue"><b> ' . $pitanje->naslovPitanja . '</b></h3>
-        </div>
+    <div class="w3-col l8 s12"> <br>
 
-        <!-- TEKST PITANJA -->
-        <div class="input letters_dark_blue">
-            <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
-            <br>
-        </div>
-        <!-- DUGMAD -->
-        <div class="input ">     
-            <div id="like">
-                <div>
-                    <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (3)</u></button> &nbsp
-                    <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (11)</u></button>
+    <!-- ako nema rezultata pretrage pitanja onda ispiši poruku korisniku -->
+    <?php 
+        if (count($pitanja)==0) 
+            echo '
+                <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
+                    <div class="w3-center"> 
+                        <h3 class="letters_dark_blue"> 
+                            <b> Nije pronađen nijedan rezultat. </b>
+                        </h3>
+                    </div>
                 </div>
+                ';
+            
+        else 
+        {
+            // ako postoje pitanja koja odgovaraju pretrazi ispiši svako u novoj kartici -->
+            foreach ($pitanja as $pitanje) 
+            {
+                echo '
+                    <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
+                        <div class="w3-left" style="padding-left: 5%;"> 
+                            <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
+                        </div>
+                        <div class="w3-right" style="padding-right: 6%;"> <br>
+                            <h3 class="letters_dark_blue"><b> ' . $pitanje->naslovPitanja . '</b></h3>
+                        </div>
 
-                <div style="float: right;">
-                    <button onclick="" class="w3-button buttons" style="font-weight: normal;"> Pogledaj
-                        odgovore</button> &nbsp
-                    <button onclick=""
-                            class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
-                </div>
-            </div>
-        </div>
+                        <!-- TEKST PITANJA -->
+                        <div class="input letters_dark_blue">
+                            <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
+                            <br>
+                        </div>
+                        <!-- DUGMAD -->
+                        <div class="input ">     
+                            <div id="like">
+                                <div>
+                                    <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (3)</u></button> &nbsp
+                                    <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (11)</u></button>
+                                </div>
+
+                                <div style="float: right;">
+                                    <button onclick="" class="w3-button buttons" style="font-weight: normal;"> Pogledaj
+                                        odgovore</button> &nbsp
+                                    <button onclick=""
+                                            class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    ';
+            }
+    }?>
     </div>
-    ';
-
-} ?>
-</div>
 
                 <br>             
                 <!-- LITERATURA -->
@@ -191,7 +208,7 @@
                 </div>
 
                 <!-- KRAJ POZADINA -->
-            </div>
+        </div>
 
             <!-- KRAJ SADRZAJ -->
         </div>
@@ -200,7 +217,7 @@
         <?php
         require 'resources/footer.php';
         ?>
-';
+
     </body>
 
 </html>

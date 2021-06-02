@@ -48,5 +48,4 @@ class Gost extends BaseController
 		$data['controller']='Gost';
 		echo view("$page", $data);
 	}
-    
 }
