@@ -7,7 +7,7 @@ class Gost extends BaseController
 {
     public function index()
     {
-            echo view('pocetna_stranica');
+        $this->prikaz('pocetna_stranica',[]);
     }
 
     // Stranica za login, ne funkcionalnost logovanja
@@ -46,6 +46,9 @@ class Gost extends BaseController
 
     protected function prikaz($page, $data){
 		$data['controller']='Gost';
+        // promeniti na resources/header_gost
+        echo view('resources/header');
 		echo view("$page", $data);
+        echo view('resources/footer');
 	}
 }

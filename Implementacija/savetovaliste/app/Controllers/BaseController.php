@@ -57,12 +57,7 @@ class BaseController extends Controller
 		$this->session = session();
 	}
 
-	 // Stranica za pregled pitanja, ne funkcionalnost pregleda pitanja
-	 public function pregled_pitanja_stranica($poruka = null){
-        echo view("pregled_pitanja", ['pregled_pitanjaErrorMessage' => $poruka]);
-    }
-
-    public function pregled_pitanja(){
+	public function pregled_pitanja(){
          $pitanjeModel=new PitanjeModel();
          $pitanja=$pitanjeModel->findAll();
          $this->prikaz('pregled_pitanja', ['pitanja'=>$pitanja]);

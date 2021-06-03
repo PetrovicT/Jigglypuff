@@ -21,9 +21,6 @@
     <body class="w3-light-grey">
 
     <!-- Header -->
-    <?php
-    require 'resources/header.php';
-    ?>
 
     <div class="w3-content" style="max-width:90%">
     <!-- POZADINA -->
@@ -51,7 +48,7 @@
             {
                 echo '
                     <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
-                        <div class="w3-left" style="padding-left: 5%;"> 
+                        <div class="w3-left" style="padding-left: 5%;"> <br>
                             <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
                         </div>
                         <div class="w3-right" style="padding-right: 6%;"> <br>
@@ -74,11 +71,13 @@
                                 <div style="float: right;">
                                     <button onclick="" class="w3-button buttons" style="font-weight: normal;"> Pogledaj
                                         odgovore</button> &nbsp
-                                    <button onclick=""
-                                            class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
+                                    <button onclick="" class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
                                 </div>
+                           
                             </div>
                         </div>
+                        <br>
+
                     </div>
                     ';
             }
@@ -212,11 +211,6 @@
 
             <!-- KRAJ SADRZAJ -->
         </div>
-
-        <!-- Footer -->
-        <?php
-        require 'resources/footer.php';
-        ?>
 
     </body>
 

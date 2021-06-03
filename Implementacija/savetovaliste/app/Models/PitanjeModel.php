@@ -91,8 +91,4 @@ class PitanjeModel extends Model
              return $this->like('naslovPitanja',$tekst)->orlike('tekstPitanja',$tekst)->findAll();
         }
 
-        public function pretraga_pitanja_kategorije($kategorija){
-            
-        }
-
 }
