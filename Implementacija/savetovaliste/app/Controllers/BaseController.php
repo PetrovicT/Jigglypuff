@@ -87,8 +87,10 @@ class BaseController extends Controller
 
 	public function pregledOdgovora(){
 		$odgovorModel=new OdgovorModel();
+		$pitanjeModel=new PitanjeModel();
 		$pitanjeId=$this->request->getVar('pretraga');
 		$odgovori=$odgovorModel->pregledOdgovoraNaPitanje($pitanjeId);
-		$this->prikaz('odgovori', ['odgovori'=>$odgovori]);
+		$pitanje=$pitanjeModel->find($pitanjeId);
+		$this->prikaz('odgovori', ['odgovori'=>$odgovori, 'pitanje'=>$pitanje]);
 	}
 }

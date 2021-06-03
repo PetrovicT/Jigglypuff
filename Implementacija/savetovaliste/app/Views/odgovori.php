@@ -33,26 +33,89 @@
 
       <!-- UNOSI -->
     <div class="w3-col l8 s12">
-        <br>
-        <!-- ako nema rezultata pretrage pitanja onda ispiši poruku korisniku -->
+    <br>
+    
     <?php 
     use App\Models\KorisnikModel;
     use App\Models\PitanjeModel;
     use App\Models\OdgovorModel;
-
-        if (count($odgovori)==0) 
+        
+        if (count($odgovori)==0) {
+            $korisnikModel=new KorisnikModel();
             echo '
-                <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
-                    <div class="w3-center"> 
-                       <h3 class="letters_dark_blue"> 
-                            <b> Nije pronađen nijedan rezultat. </b>
-                        </h3>
-                    </div>
+            <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
+                <div class="w3-left" style="padding-left: 5%;"> <br>
+                <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
+            </div>
+            ';   
+            if($pitanje->postavljenoAnonimno==1)
+            {
+                echo '
+                <div class="w3-right" style="padding-right: 6%;"> <br>
+                <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
+            </div> ';
+            }
+            else
+            {
+                $idAutora=$pitanje->korisnik_idKorisnik_postavio;
+                $autor=$korisnikModel->findUserUsername($idAutora);
+                echo '
+                <div class="w3-right" style="padding-right: 6%;"> <br>
+                <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
                 </div>
                 ';
-        
+            }
+            echo '
+            <!-- TEKST PITANJA -->
+            <div class="input letters_dark_blue">
+                <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
+            </div>
+            </div>
+            ';
+            echo '
+            <div class="w3-center"> 
+                    <h3 class="letters_dark_blue"> 
+                    <br>
+                         <b> Nije pronađen nijedan odgovor na izabrano pitanje. </b>
+                     </h3>
+                 </div>
+            ';
+        }
         else 
         {
+            $korisnikModel=new KorisnikModel();
+            echo '
+            <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
+                <div class="w3-left" style="padding-left: 5%;"> <br> 
+                <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
+            </div>
+            ';   
+            
+            if($pitanje->postavljenoAnonimno==1)
+            {
+                echo '
+                <div class="w3-right" style="padding-right: 6%;"> <br>
+                <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
+            </div> ';
+            }
+            else
+            {
+                $idAutora=$pitanje->korisnik_idKorisnik_postavio;
+                $autor=$korisnikModel->findUserUsername($idAutora);
+                echo '
+                <div class="w3-right" style="padding-right: 6%;"> <br>
+                <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
+                </div>
+                ';
+            }
+            echo '
+            <!-- TEKST PITANJA -->
+            <div class="input letters_dark_blue">
+                <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
+            </div>
+            </div>
+            ';
+
             // ako postoje pitanja koja odgovaraju pretrazi ispiši svako u novoj kartici -->
             $korisnikModel=new KorisnikModel();
             $pitanjeModel=new PitanjeModel();
@@ -91,8 +154,6 @@
                         ';
 
                          //<!-- DUGMAD -->
-                         //$id=$pitanje->idPitanje;
-                         //$referenca=site_url("$controller/pregledOdgovora?pretraga=$id");
                          echo '
                          <div class="input ">     
                              <div id="like">
@@ -103,21 +164,15 @@
                              </div>
                          </div>
                         <br>
-
                     </div>
-                  
-                    ';
-                   
+                    '; 
                   }
-        
     }?>
    </div>
 
-    
-
-      <br>
-     <!-- LITERATURA -->
-     <div class="w3-col l4">
+    <br>
+    <!-- LITERATURA -->
+    <div class="w3-col l4">
                     <div class="w3-white w3-margin w3-card-2">
                         <div class="w3-container w3-padding gradient_literature letters">
                             <h4>Preporučena literatura za sve ljubitelje psihologije</h4>
@@ -239,14 +294,11 @@
 
       <!-- KRAJ POZADINA -->
     </div>
-
     <!-- KRAJ SADRZAJ -->
-  </div>
-
+</div>
     <!-- Footer -->
     <?php
         require 'resources/footer.php';
     ?>
-
 </body>
 </html>

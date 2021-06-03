@@ -45,7 +45,6 @@
                     </div>
                 </div>
                 ';
-        
         else 
         {
             // ako postoje pitanja koja odgovaraju pretrazi ispiši svako u novoj kartici -->
@@ -108,13 +107,11 @@
                             </div>
                         </div>
                         <br>
-
                     </div>
                     ';
             }
     }?>
     </div>
-
                 <br>             
                 <!-- LITERATURA -->
                 <div class="w3-col l4">
@@ -123,7 +120,6 @@
                             <h4>Preporučena literatura za sve ljubitelje psihologije</h4>
                         </div>
                         <ul class="w3-ul w3-hoverable w3-white">
-
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
@@ -134,11 +130,9 @@
                                         <span class="w3-medium"><b>50 ideja koje bi stvarno trebalo da znate - Adrijan Fernam</b></span> <br>
                                         <span style="font-weight: 500;"> Kolika je razlika između muškog i ženskog mozga? Postoji li zaista altruizam? Da li je naš um,
                                             odmah po rođenju, neispisana tablica?</span>
-
                                     </div>
                                 </div>
                             </li>
-
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
@@ -151,8 +145,6 @@
                                     </div>
                                 </div>
                             </li>
-
-
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
@@ -164,7 +156,6 @@
                                     </div>
                                 </div>
                             </li>
-
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
@@ -177,7 +168,6 @@
                                     </div>
                                 </div>
                             </li>
-
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
@@ -190,7 +180,6 @@
                                     </div>
                                 </div>
                             </li>
-
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
@@ -203,7 +192,6 @@
                                     </div>
                                 </div>
                             </li>
-
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
@@ -215,7 +203,6 @@
                                     </div>
                                 </div>
                             </li>
-
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
@@ -229,17 +216,13 @@
                                     </div>
                                 </div>
                             </li>
-
                         </ul>
                     </div>
                     <hr>
-
                     <!-- KRAJ LITERATURA -->
                 </div>
-
                 <!-- KRAJ POZADINA -->
         </div>
-
             <!-- KRAJ SADRZAJ -->
         </div>
 
@@ -247,5 +230,4 @@
         require 'resources/footer.php';
         ?>
     </body>
-
 </html>
