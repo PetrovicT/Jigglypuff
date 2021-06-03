@@ -33,17 +33,18 @@
     <!-- ako nema rezultata pretrage pitanja onda ispiši poruku korisniku -->
     <?php 
     use App\Models\KorisnikModel;
+
         if (count($pitanja)==0) 
             echo '
                 <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
                     <div class="w3-center"> 
-                        <h3 class="letters_dark_blue"> 
+                       <h3 class="letters_dark_blue"> 
                             <b> Nije pronađen nijedan rezultat. </b>
                         </h3>
                     </div>
                 </div>
                 ';
-            
+        
         else 
         {
             // ako postoje pitanja koja odgovaraju pretrazi ispiši svako u novoj kartici -->
@@ -68,7 +69,6 @@
                         {
                             $idAutora=$pitanje->korisnik_idKorisnik_postavio;
                             $autor=$korisnikModel->findUserUsername($idAutora);
-                           // $usernameAutora=$autor->username;
                             echo '
                             <div class="w3-right" style="padding-right: 6%;"> <br>
                             <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>

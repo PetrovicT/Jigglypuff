@@ -72,6 +72,12 @@
                         <div class="w3-center w3-white">
                             <div class=" w3-white" style="padding-left: 10%; padding-right: 10%; width: 100%; align-items: center;">
 
+                             <!-- pregled pitanja po kategoriji proba redovi 75-79 -->
+                            <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
+                 
+                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=Anksioznost") ?>">Anksioznost-kategorija</a>
+                            </span>  
+
                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
                                 <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=anksioznost") ?>">Anksioznost</a>
                             </span>  

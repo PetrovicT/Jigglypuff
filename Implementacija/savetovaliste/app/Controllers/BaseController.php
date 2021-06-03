@@ -10,6 +10,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use App\Models\PitanjeModel;
 use App\Models\KorisnikModel;
+use App\Models\KategorijaPitanjaModel;
 
 /**
  * Class BaseController
@@ -70,8 +71,16 @@ class BaseController extends Controller
 		$this->prikaz('pregled_pitanja', ['pitanja'=>$pitanja,'trazeno'=>$this->request->getVar('pretraga')]);
 	}
 
-    public function prikaz_username_autora_pitanja($id){
+	public function prikaz_username_autora_pitanja($id){
 		$korisnikModel=new KorsnikModel();
 		return $korisnikModel->findUserUsername($id);
 	}
+
+	public function pregled_pitanja_po_kategoriji() {
+		$pitanjeModel=new PitanjeModel();
+		$kategorijaPitanjaModel=new KategorijaPitanjaModel();
+		$kategorijaId=$kategorijaPitanjaModel->findQuestionCategoryId($this->request->getVar('pretraga'));
+		$pitanjaK=$pitanjeModel->pregled_pitanja_po_k($kategorijaId);
+	    $this->prikaz('pregled_pitanja', ['pitanja'=>$pitanjaK]);
+	} 
 }

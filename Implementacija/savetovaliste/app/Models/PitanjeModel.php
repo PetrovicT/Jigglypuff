@@ -90,4 +90,8 @@ class PitanjeModel extends Model
 
              return $this->like('naslovPitanja',$tekst)->orlike('tekstPitanja',$tekst)->findAll();
         }
+
+        public function pregled_pitanja_po_k($idKategorija){
+            return $this->like('kategorijaPitanja_idKategorija',"$idKategorija")->findAll();
+        }
 }
