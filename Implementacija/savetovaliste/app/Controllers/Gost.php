@@ -46,9 +46,6 @@ class Gost extends BaseController
 
     protected function prikaz($page, $data){
 		$data['controller']='Gost';
-        // promeniti na resources/header_gost
-        echo view('resources/header');
-		echo view("$page", $data);
-        echo view('resources/footer');
+        echo view("$page", $data);
 	}
 }

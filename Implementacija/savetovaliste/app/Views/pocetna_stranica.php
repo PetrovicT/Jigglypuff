@@ -21,6 +21,11 @@
 
     <body class="w3-light-grey">
 
+        <!-- Header -->
+        <?php
+            require 'resources/header.php';
+        ?>
+
         <div class="w3-content" style="max-width:85%; padding-top: 0; ">
 
             <!-- POZADINA -->
@@ -199,6 +204,9 @@
             <!-- KRAJ SADRZAJ -->
         </div>
 
+        <?php
+        require 'resources/footer.php';
+        ?>
     </body>
 
 </html>

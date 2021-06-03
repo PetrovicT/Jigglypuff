@@ -70,11 +70,8 @@ class BaseController extends Controller
 		$this->prikaz('pregled_pitanja', ['pitanja'=>$pitanja,'trazeno'=>$this->request->getVar('pretraga')]);
 	}
 
-
     public function prikaz_username_autora_pitanja($id){
 		$korisnikModel=new KorsnikModel();
 		return $korisnikModel->findUserUsername($id);
 	}
-
-
 }
