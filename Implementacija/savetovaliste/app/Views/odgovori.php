@@ -39,6 +39,7 @@
     use App\Models\KorisnikModel;
     use App\Models\PitanjeModel;
     use App\Models\OdgovorModel;
+    use App\Models\KorisnikOcenioOdgovorModel;
         
         if (count($odgovori)==0) {
             $korisnikModel=new KorisnikModel();
@@ -120,6 +121,7 @@
             $korisnikModel=new KorisnikModel();
             $pitanjeModel=new PitanjeModel();
             $odgovorModel=new OdgovorModel();
+            $korisnikOcenioOdgovorModel=new KorisnikOcenioOdgovorModel();
             foreach ($odgovori as $odgovor) 
             {
               echo '
@@ -154,12 +156,17 @@
                         ';
 
                          //<!-- DUGMAD -->
+                        $idOdgovora=$odgovor->idOdgovor;
+                        $likes=$korisnikOcenioOdgovorModel->findNumOfLikes($idOdgovora);
+                        $dislikes=$korisnikOcenioOdgovorModel->findNumOfDislikes(($idOdgovora));
+                        $referenca1=site_url("$controller/PostaviLike?pretraga=$idOdgovora");
+                        $referenca2=site_url("$controller/PostaviDislike?pretraga=$idOdgovora");
                          echo '
                          <div class="input ">     
                              <div id="like">
                                  <div>
-                                     <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (3)</u></button> &nbsp
-                                     <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (11)</u></button>
+                                 <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                                 <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
                                  </div>                           
                              </div>
                          </div>

@@ -11,14 +11,14 @@ class KorisnikOcenioPitanjeModel extends Model
         
         public function findNumOfLikes($idPitanja){
             $sveOceneNaPitanje =  $this->where('ocena',"1")->where('pitanje_idPitanje', "$idPitanja")->findAll();
-            if ($sveOceneNaPitanje == null) {echo "Greska"; return null;}
+            if ($sveOceneNaPitanje == null) {return 0;}
             $numOfLikes=count($sveOceneNaPitanje); 
             return $numOfLikes;
         }
 
         public function findNumOfDislikes($idPitanja){
             $sveOceneNaPitanje =  $this->where('ocena',"0")->where('pitanje_idPitanje', "$idPitanja")->findAll();
-            if ($sveOceneNaPitanje == null) {echo "Greska"; return null;}
+            if ($sveOceneNaPitanje == null) {return 0;}
             $numOfDislikes=count($sveOceneNaPitanje); 
             return $numOfDislikes;
         }
