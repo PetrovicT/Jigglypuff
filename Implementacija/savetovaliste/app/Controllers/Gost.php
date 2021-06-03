@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\TipKorisnikaModel;
 use App\Models\KorisnikModel;
 
 class Gost extends BaseController {
@@ -42,6 +43,49 @@ class Gost extends BaseController {
         $this->session->set('controller', $korisnikModel->findUserType($korisnik->idKorisnik));
 
         return redirect()->to(site_url('Korisnik/'));
+    }
+
+    // Stranica za registraciju, ne funkcionalnost registovanja
+    public function register($porukaList = null) {
+        echo view("registracija", ['registrationErrorMessages' => $porukaList]);
+    }
+
+    // Funkcionalnost registracije
+    public function registerSubmit() {
+        // Prvo getujemo tip korisnika koji je običan korisnik
+        $tipKorisnikaModel = new TipKorisnikaModel();
+        $tipKorisnika = $tipKorisnikaModel->getKorisnikId();
+
+        // Setujemo data prvo
+        $data = [
+            'username' => $this->request->getPost("username"),
+            'password' => $this->request->getPost("password"),
+            'email' => $this->request->getPost("email"),
+            'licnoIme' => $this->request->getPost("licnoIme"),
+            'grad_idGrad' => empty($this->request->getPost("grad")) ? null : $this->request->getPost("grad"),
+            'pol_idPol' => empty($this->request->getPost("gender"))? null : $this->request->getPost("gender"),
+            'prikaziLicnoIme' => empty($this->request->getPost("licnoIme")) ? 0 : 1,
+            'tipKorisnika_idTipKorisnika' => $tipKorisnika,
+        ];
+
+        // Pa insert
+        $korisnikModel = new KorisnikModel();
+        $success = $korisnikModel->insert($data);
+
+        if ($success) {
+            $insertedId = $korisnikModel->getInsertID();
+            
+            // Ovo koristimo da identifikujemo korisnika kroz celu upotrebu sajta
+            $this->session->set('userid', $insertedId);
+
+            // A ovo koristimo da uslovno učitavamo stvari
+            $this->session->set('controller', $korisnikModel->findUserType($insertedId));
+
+            return redirect()->to(site_url('Korisnik/'));
+        }
+        else{
+            return $this->register($korisnikModel->errors());
+        }
     }
 
 }
