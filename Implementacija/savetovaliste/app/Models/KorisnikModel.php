@@ -29,4 +29,16 @@ class KorisnikModel extends Model
             
             return $tipKorisnika->tip;
         }
+
+        
+        public function findUserUsername($id){
+            $korisnik = $this->find($id);
+            
+            if($korisnik == null){
+                return null;
+            }            
+            
+            return $korisnik->username;
+        }
+        
 }

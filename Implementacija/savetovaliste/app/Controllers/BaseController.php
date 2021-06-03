@@ -9,6 +9,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use App\Models\PitanjeModel;
+use App\Models\KorisnikModel;
 
 /**
  * Class BaseController
@@ -68,4 +69,12 @@ class BaseController extends Controller
 		$pitanja=$pitanjeModel->pretraga_pitanja($this->request->getVar('pretraga'));
 		$this->prikaz('pregled_pitanja', ['pitanja'=>$pitanja,'trazeno'=>$this->request->getVar('pretraga')]);
 	}
+
+
+    public function prikaz_username_autora_pitanja($id){
+		$korisnikModel=new KorsnikModel();
+		return $korisnikModel->findUserUsername($id);
+	}
+
+
 }

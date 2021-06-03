@@ -8,7 +8,7 @@ class PitanjeModel extends Model
         protected $table      = 'pitanje';
         protected $primaryKey = 'idPitanje';
         protected $allowedFields = ['korisnik_idKorisnik_postavio', 'kategorijaPitanja_idKategorija', 'naslovPitanja', 
-                                    'tekstPitanja','postavljenoANonimno','moguSviDaOdgovore'];
+                                    'tekstPitanja','postavljenoAnonimno','moguSviDaOdgovore'];
         protected $returnType = 'object';
         
         public function pretraga_pitanja($tekst){
@@ -91,4 +91,27 @@ class PitanjeModel extends Model
              return $this->like('naslovPitanja',$tekst)->orlike('tekstPitanja',$tekst)->findAll();
         }
 
+        /*
+        public function findQuestionId($pitanje){
+            $this->where('idPitanje',)
+            return $this->like('naslovPitanja',$tekst)->orlike('tekstPitanja',$tekst)->
+                orlike('tekstPitanja',"paničnim")->orlike('naslovPitanja',"paničnim")->
+                orlike('tekstPitanja',"panika")->orlike('naslovPitanja',"panika")->
+                orlike('tekstPitanja',"napadi panike")->orlike('naslovPitanja',"napadi panike")->
+                orlike('naslovPitanja',"panike")->orlike('tekstPitanja',"panike")->findAll();
+            
+            
+            
+            $korisnik = $this->find($id);
+            
+            $tipKorisnikaModel = new TipKorisnikaModel();
+            $tipKorisnika = $tipKorisnikaModel->find($korisnik->tipKorisnika_idTipKorisnika);
+            
+            if($tipKorisnika == null){
+                return null;
+            }
+            
+            return $tipKorisnika->tip;
+        }
+        */
 }

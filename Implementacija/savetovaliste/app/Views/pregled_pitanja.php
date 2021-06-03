@@ -51,10 +51,24 @@
                         <div class="w3-left" style="padding-left: 5%;"> <br>
                             <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
                         </div>
-                        <div class="w3-right" style="padding-right: 6%;"> <br>
-                            <h3 class="letters_dark_blue"><b> ' . $pitanje->naslovPitanja . '</b></h3>
-                        </div>
-
+                        ';   
+                        
+                        if($pitanje->postavljenoAnonimno==1)
+                        {
+                            echo '
+                            <div class="w3-right" style="padding-right: 6%;"> <br>
+                            <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
+                        </div> ';
+                        }
+                        else
+                        {
+                            echo '
+                            <div class="w3-right" style="padding-right: 6%;"> <br>
+                            <h3 class="letters_dark_blue"><b>' . $controller->prikaz_username_autora_pitanja($pitanje->korisnik_idKorisnik_postavio) . '</b></h3>
+                            </div>
+                            ';
+                        }
+                        echo '
                         <!-- TEKST PITANJA -->
                         <div class="input letters_dark_blue">
                             <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
