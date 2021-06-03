@@ -33,6 +33,7 @@
     <!-- ako nema rezultata pretrage pitanja onda ispiši poruku korisniku -->
     <?php 
     use App\Models\KorisnikModel;
+    use App\Models\PitanjeModel;
 
         if (count($pitanja)==0) 
             echo '
@@ -49,6 +50,7 @@
         {
             // ako postoje pitanja koja odgovaraju pretrazi ispiši svako u novoj kartici -->
             $korisnikModel=new KorisnikModel();
+            $pitanjeModel=new PitanjeModel();
             foreach ($pitanja as $pitanje) 
             {
                 echo '
@@ -81,17 +83,25 @@
                             <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
                             <br>
                         </div>
-                        <!-- DUGMAD -->
+                        ';
+
+                        //<!-- DUGMAD -->
+                        $id=$pitanje->idPitanje;
+                        $referenca=site_url("$controller/pregledOdgovora?pretraga=$id");
+                        echo '
                         <div class="input ">     
                             <div id="like">
                                 <div>
                                     <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (3)</u></button> &nbsp
                                     <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (11)</u></button>
                                 </div>
-
+                           
+                           
                                 <div style="float: right;">
-                                    <button onclick="" class="w3-button buttons" style="font-weight: normal;"> Pogledaj
-                                        odgovore</button> &nbsp
+                               
+                                    <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
+                                         <a class="nema_podvlacenja" href=' . "$referenca" . '>Pogledaj odgovore</a>
+                                    </button> &nbsp
                                     <button onclick="" class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
                                 </div>
                            

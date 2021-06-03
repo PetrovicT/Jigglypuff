@@ -92,6 +92,13 @@ class PitanjeModel extends Model
         }
 
         public function pregled_pitanja_po_k($idKategorija){
-            return $this->like('kategorijaPitanja_idKategorija',"$idKategorija")->findAll();
+            return $this->where('kategorijaPitanja_idKategorija',"$idKategorija")->findAll();
         }
+
+        public function findAnwserId($tekst_p){
+            $pitanje =  $this->where('tekstPitanja', $tekst_p)->first();
+            if ($pitanje == null) {echo "Greska"; return null;}
+            return $pitanje->idPitanje;
+        }
+        
 }

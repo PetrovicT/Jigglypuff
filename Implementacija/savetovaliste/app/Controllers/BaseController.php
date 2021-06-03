@@ -10,6 +10,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use App\Models\PitanjeModel;
 use App\Models\KorisnikModel;
+use App\Models\OdgovorModel;
 use App\Models\KategorijaPitanjaModel;
 
 /**
@@ -83,4 +84,11 @@ class BaseController extends Controller
 		$pitanjaK=$pitanjeModel->pregled_pitanja_po_k($kategorijaId);
 	    $this->prikaz('pregled_pitanja', ['pitanja'=>$pitanjaK]);
 	} 
+
+	public function pregledOdgovora(){
+		$odgovorModel=new OdgovorModel();
+		$pitanjeId=$this->request->getVar('pretraga');
+		$odgovori=$odgovorModel->pregledOdgovoraNaPitanje($pitanjeId);
+		$this->prikaz('odgovori', ['odgovori'=>$odgovori]);
+	}
 }
