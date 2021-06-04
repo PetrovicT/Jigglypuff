@@ -23,37 +23,36 @@ class Korisnik extends BaseController
 
 	// kada se submit forma poziva se ova funkcija kako bi se sacuvao odgovor u bazi
 	public function odgovoriNaPitanje($idPitanje){
-		$pitanjeModel = new PitanjeModel();
-	    $pitanje = $pitanjeModel->find($idPitanje);
-		if(!$this->validate(['TekstOdgovora'=>'required|max_length[200]'])) 
-			{
-				echo view("odgovori_na_pitanje", ['pitanje' => $pitanje,'poruka' => $this->validator->listErrors()]);
-				return;
-			}
-	
-		$odgovorModel = new OdgovorModel();
-		$anonimno=$this->request->getVar('anonimus');
-		if ($anonimno==null) $anonimno=0;
-		echo session()->get('userid');  // ostavljeno da bi se videlo da dobro dohvata userid
-        $odgovorModel->save([
-			'pitanje_idPitanje'=>$idPitanje,
-			'korisnik_idKorisnik_odgovorio'=>session()->get('userid'),
-			'tekstOdgovora'=>$this->request->getVar('TekstOdgovora'),
-			'odgovorenoAnonimno'=>$anonimno
-		]);
-        $controller=session()->get('controller');
-		return redirect()->to(site_url("$controller/"));		
+            $pitanjeModel = new PitanjeModel();
+            $pitanje = $pitanjeModel->find($idPitanje);
+            if (!$this->validate(['TekstOdgovora' => 'required|max_length[200]'])) {
+                echo view("odgovori_na_pitanje", ['pitanje' => $pitanje, 'poruka' => $this->validator->listErrors()]);
+                return;
+            }
+
+            $odgovorModel = new OdgovorModel();
+            $anonimno = $this->request->getVar('anonimus');
+            echo session()->get('userid');  // ostavljeno da bi se videlo da dobro dohvata userid
+            $odgovorModel->save([
+                            'pitanje_idPitanje'=>$idPitanje,
+                            'korisnik_idKorisnik_odgovorio'=>session()->get('userid'),
+                            'tekstOdgovora'=>$this->request->getVar('TekstOdgovora'),
+                            'odgovorenoAnonimno'=>$anonimno=="1" ? true : false
+                    ]);
+            
+            $controller=session()->get('controller');
+            return redirect()->to(site_url("$controller/"));
 	}
 
 	public function pregledOdgovora() {
-        $odgovorModel = new OdgovorModel();
-        $pitanjeModel = new PitanjeModel();
-        if ($this->request->getVar('pretraga')==null)  return redirect()->to(site_url('/'));
-        else {
-        $pitanjeId = $this->request->getVar('pretraga');
-        $odgovori = $odgovorModel->pregledOdgovoraNaPitanje($pitanjeId);
-        $pitanje = $pitanjeModel->find($pitanjeId);
-        echo view("odgovori", ['odgovori' => $odgovori, 'pitanje' => $pitanje]);
+            $odgovorModel = new OdgovorModel();
+            $pitanjeModel = new PitanjeModel();
+            if ($this->request->getVar('pretraga')==null)  return redirect()->to(site_url('/'));
+            else {
+            $pitanjeId = $this->request->getVar('pretraga');
+            $odgovori = $odgovorModel->pregledOdgovoraNaPitanje($pitanjeId);
+            $pitanje = $pitanjeModel->find($pitanjeId);
+            echo view("odgovori", ['odgovori' => $odgovori, 'pitanje' => $pitanje]);
         }
     }
 }
