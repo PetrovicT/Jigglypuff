@@ -66,6 +66,17 @@
                         </div>
                         ';
                         }
+                        // ako je korisnik ulogovan onda on ima opciju da se logoutuje
+                        else {
+                            $referencaLogout=site_url("$controller/logout");
+                            echo '
+                            <div class=" w3-left">
+                                <div class="overlay letters_dark_blue" style="font-size: 28px;"><i class="fa fa-user"></i> Želite da se izlogujete?
+                                <a href=' . "$referencaLogout" . '>LOGOUT</a></div>
+                                <br>
+                            </div>
+                            ';
+                        }
                         ?>
                     </div>
                     <hr>
