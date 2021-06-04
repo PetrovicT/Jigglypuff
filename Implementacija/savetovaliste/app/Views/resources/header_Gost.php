@@ -26,8 +26,8 @@
     <div class="w3-dropdown-hover w3-right">
         <a href="#" class="w3-bar-item w3-button letters"><i class="fa fa-user"></i> Gost</a>
         <div id="UserDropdownMenu" class="w3-dropdown-content w3-bar-block w3-card-4">
-            <a href="profilIzmena.html" class="w3-bar-item w3-button"><i class="fa fa-user-plus"></i> Registruj se</a>
-            <a href="moje_seanse.html" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i> Uloguj se</a>
+            <a href="<?= site_url("login") ?>" class="w3-bar-item w3-button"><i class="fa fa-user-plus"></i> Registruj se</a>
+            <a href="<?= site_url("register") ?>" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i> Uloguj se</a>
         </div>
     </div>
 
