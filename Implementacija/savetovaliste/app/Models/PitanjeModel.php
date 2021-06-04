@@ -11,6 +11,8 @@ class PitanjeModel extends Model
                                     'tekstPitanja','postavljenoAnonimno','moguSviDaOdgovore'];
         protected $returnType = 'object';
         
+        // prikazu svih pitanja koja odgovaraju pretrazi
+        // radi boljih rezultata prikazuju se i pitanja koja sadrze trazenu rec u razlicitim padezima
         public function pretraga_pitanja($tekst){
             if($tekst=="porodični problemi")
             {
@@ -91,14 +93,8 @@ class PitanjeModel extends Model
              return $this->like('naslovPitanja',$tekst)->orlike('tekstPitanja',$tekst)->findAll();
         }
 
-        public function pregled_pitanja_po_k($idKategorija){
+        // prikaz svih pitanja koja odgovaraju odredjenoj kategoriji ciji id je prosledjen
+        public function pregled_pitanja_po_kategoriji($idKategorija){
             return $this->where('kategorijaPitanja_idKategorija',"$idKategorija")->findAll();
-        }
-
-        public function findAnwserId($tekst_p){
-            $pitanje =  $this->where('tekstPitanja', $tekst_p)->first();
-            if ($pitanje == null) {echo "Greska"; return null;}
-            return $pitanje->idPitanje;
-        }
-        
+        }        
 }

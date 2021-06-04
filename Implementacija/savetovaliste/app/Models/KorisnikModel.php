@@ -10,7 +10,7 @@ class KorisnikModel extends Model
         protected $primaryKey = 'idKorisnik';
         protected $returnType = 'object';
     
-        // Proslediš ime, i on vrati korisnika
+        // Funkciji se prosledjuje username, a ona vraca korisnika sa tim username
         public function findByUsername($username){
             return $this->where('username', $username)->first();
         }
@@ -30,6 +30,8 @@ class KorisnikModel extends Model
             return $tipKorisnika->tip;
         }
         
+        // funkciji se prosledjuje id korisnika, a ona vraca username 
+        // koristi se prilikom ispisa autora pitanja/odgovora
         public function findUserUsername($id){
             $korisnik = $this->find($id);
             if($korisnik == null){

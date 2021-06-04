@@ -130,14 +130,10 @@
                                 <div class="input ">     
                                     <div id="like">
                                         <div>
-                                            <!-- TODO ubaciti lajkovanje -->
-                                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">
-                                            <a class="nema_podvlacenja" href=' . "$referenca1" . '>Korisno</a>
-                                            </u></button> &nbsp
-                                            <!-- TODO ubaciti lajkovanje -->
-                                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">
-                                            <a class="nema_podvlacenja" href=' . "$referenca2" . '>Nije korisno</a>
-                                            </u></button>
+                                        <!-- TODO ubaciti lajkovanje -->
+                                        <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                                        <!-- TODO ubaciti lajkovanje -->
+                                        <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
                                         </div>
                                 
                                         <div style="float: right;">

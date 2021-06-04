@@ -47,88 +47,95 @@
     use App\Models\KorisnikOcenioOdgovorModel;
     use App\Models\KorisnikOcenioPitanjeModel;
         
+    // bez obzira da li ima ili nema odgovora uvek se radi prikaz pitanja, pa zatim ili obavestenje da nema odgovora ili prikaz odgovora
+    // na koje pitanje se traze odgovori
+    $idPitanja=$pitanje->idPitanje;
+    $korisnikOcenioPitanjeModel=new KorisnikOcenioPitanjeModel();
+    // prikaz broja like i dislike na pitanju za koje se prikazuju odgovori
+    $likes=$korisnikOcenioPitanjeModel->findNumOfLikes($idPitanja);
+    $dislikes=$korisnikOcenioPitanjeModel->findNumOfDislikes(($idPitanja));
+    
+    // ispis naslova pitanja
+    echo '
+    <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
+        <div class="w3-left" style="padding-left: 5%;"> <br> 
+            <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
+        </div>
+    ';   
+    
+    // ako je anonimno postavljeno pitanje napisi anonimno
+    if($pitanje->postavljenoAnonimno==1)
+    {
+        echo '
+            <div class="w3-right" style="padding-right: 6%;"> <br>
+                <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
+            </div> ';
+    }
+    else
+    {
+        // ako nije anonimno stavi autora pitanja
+        $korisnikModel=new KorisnikModel();
+        $idAutora=$pitanje->korisnik_idKorisnik_postavio;
+        $autor=$korisnikModel->findUserUsername($idAutora);
+        echo '
+            <div class="w3-right" style="padding-right: 6%;"> <br>
+                <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
+            </div>
+        ';
+    }
+    
+    echo '
+        <div class="input letters_dark_blue">
+            <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
+        </div>
+        ';
+
+    // ako je kontroler gost nemoj da das opciju odgovori na pitanje (mogucnost da se napise odgovor na pitanje cije odgovore prikazujemo)
+    if ($controller=='Gost')
+    {
+        echo '
+            <br>
+            <div class="input">     
+                <div id="like">
+                    <div>
+                        <!-- TODO ubaciti lajkovanje za Gosta -->
+                        <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                        <!-- TODO ubaciti lajkovanje za Gosta -->
+                        <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+                    </div>
+                </div>
+            <br>
+            </div>
+
+        </div> <!-- Kraj div container -->
+        ';
+    }
+
+    else {  // ako nije controller gost, nego korisnik onda daj i mogucnost odgovora na pitanje i lajkovanja
+        
+        echo '
+        <br>
+        <div class="input">     
+            <div id="like">
+                <div>
+                    <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
+                    <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                    <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
+                    <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+                </div>
+        
+                <div style="float: right;">
+                    <button onclick="" class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
+                </div>
+            </div>
+        <br>
+        </div>
+
+    </div> <!-- Kraj div container -->
+    ';
+    }
+        // ako nema odgovora onda je potrebno ispisati korisniku da nema nijednog odgovora na pitanje
         if (count($odgovori)==0) {
-            $idPitanja=$pitanje->idPitanje;
-            $korisnikOcenioPitanjeModel=new KorisnikOcenioPitanjeModel();
-            $likes=$korisnikOcenioPitanjeModel->findNumOfLikes($idPitanja);
-            $dislikes=$korisnikOcenioPitanjeModel->findNumOfDislikes(($idPitanja));
-            
-            echo '
-            <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
-                <div class="w3-left" style="padding-left: 5%;"> <br> 
-                    <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
-                </div>
-            ';   
-            
-            if($pitanje->postavljenoAnonimno==1)
-            {
-                echo '
-                    <div class="w3-right" style="padding-right: 6%;"> <br>
-                        <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
-                    </div> ';
-            }
-            else
-            {
-                $korisnikModel=new KorisnikModel();
-                $idAutora=$pitanje->korisnik_idKorisnik_postavio;
-                $autor=$korisnikModel->findUserUsername($idAutora);
-                echo '
-                    <div class="w3-right" style="padding-right: 6%;"> <br>
-                        <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
-                    </div>
-                ';
-            }
-            if ($controller=='Gost')
-            {
-                echo '
-                    <div class="input letters_dark_blue">
-                        <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
-                    </div>
-
-                    <br>
-                    <div class="input">     
-                        <div id="like">
-                            <div>
-                                <!-- TODO ubaciti lajkovanje za Gosta -->
-                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                                <!-- TODO ubaciti lajkovanje za Gosta -->
-                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
-                            </div>
-                        </div>
-                    <br>
-                    </div>
-
-                </div> <!-- Kraj div container -->
-                ';
-            }
-
-            else {
-                echo '
-                <div class="input letters_dark_blue">
-                    <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
-                </div>
-
-                <br>
-                <div class="input">     
-                    <div id="like">
-                        <div>
-                            <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                            <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
-                        </div>
-                
-                        <div style="float: right;">
-                            <button onclick="" class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
-                        </div>
-                    </div>
-                <br>
-                </div>
-
-            </div> <!-- Kraj div container -->
-            ';
-            }
-
             echo '
                 <div class="w3-center"> 
                     <h3 class="letters_dark_blue"> 
@@ -140,93 +147,14 @@
         }
         else 
         {
-            $idPitanja=$pitanje->idPitanje;
-            $korisnikOcenioPitanjeModel=new KorisnikOcenioPitanjeModel();
-            $likes=$korisnikOcenioPitanjeModel->findNumOfLikes($idPitanja);
-            $dislikes=$korisnikOcenioPitanjeModel->findNumOfDislikes(($idPitanja));
-            echo '
-            <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
-                <div class="w3-left" style="padding-left: 5%;"> <br> 
-                    <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
-                </div>
-            ';   
-            
-            if($pitanje->postavljenoAnonimno==1)
-            {
-                echo '
-                    <div class="w3-right" style="padding-right: 6%;"> <br>
-                        <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
-                    </div> ';
-            }
-            else
-            {
-                $korisnikModel=new KorisnikModel();
-                $idAutora=$pitanje->korisnik_idKorisnik_postavio;
-                $autor=$korisnikModel->findUserUsername($idAutora);
-                echo '
-                    <div class="w3-right" style="padding-right: 6%;"> <br>
-                        <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
-                    </div>
-                ';
-            }
-            if ($controller=='Gost')
-            {
-                echo '
-                    <div class="input letters_dark_blue">
-                        <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
-                    </div>
-
-                    <br>
-                    <div class="input">     
-                        <div id="like">
-                            <div>
-                                <!-- TODO ubaciti lajkovanje za Gosta -->
-                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                                <!-- TODO ubaciti lajkovanje za Gosta -->
-                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
-                            </div>
-                        </div>
-                    <br>
-                    </div>
-
-                </div> <!-- Kraj div container -->
-                ';
-            }
-
-            else {
-                echo '
-                <div class="input letters_dark_blue">
-                    <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
-                </div>
-
-                <br>
-                <div class="input">     
-                    <div id="like">
-                        <div>
-                            <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                            <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
-                        </div>
-                
-                        <div style="float: right;">
-                            <button onclick="" class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
-                        </div>
-                    </div>
-                <br>
-                </div>
-
-            </div> <!-- Kraj div container -->
-            ';
-            }
-
-            // ako postoje pitanja koja odgovaraju pretrazi ispiši svako u novoj kartici -->
+            // ako postoje pitanja koja odgovaraju pretrazi ispiši svako u novoj kartici 
             $korisnikModel=new KorisnikModel();
             $pitanjeModel=new PitanjeModel();
             $odgovorModel=new OdgovorModel();
             $korisnikOcenioOdgovorModel=new KorisnikOcenioOdgovorModel();
             foreach ($odgovori as $odgovor) 
             {
+                // naznaci da se radi o odgovoru
                 echo '
                 <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
                     <div class="w3-left" style="padding-left: 5%;"> <br>
@@ -234,6 +162,7 @@
                     </div>
                 ';           
                 if($odgovor->odgovorenoAnonimno==1)
+                // ako je anonimno odgovoreno, napisi da je autor anoniman
                     {
                         echo '
                             <div class="w3-right" style="padding-right: 6%;"> <br>
@@ -241,6 +170,7 @@
                             </div> ';
                     }
                 else
+                // ako nije anoniman autor odgovora, napisi njegov username
                     {
                         $idAutora=$odgovor->korisnik_idKorisnik_odgovorio;
                         $autor=$korisnikModel->findUserUsername($idAutora);
@@ -265,6 +195,7 @@
                 $referenca1=site_url("$controller/PostaviLike?pretraga=$idOdgovora");
                 $referenca2=site_url("$controller/PostaviDislike?pretraga=$idOdgovora");
                 $referenca4=site_url("$controller/Odgovori?pretraga=$idPitanja");
+                // ako je gost, nema mogucnost da like/dislike
                 if ($controller=='Gost')
                 {
                     echo '
@@ -282,7 +213,7 @@
                     </div>
                     '; 
                 }
-                else 
+                else // ako nije gost nego korisnik ima mogucnost da like/dislike
                 {
                     echo '
                     <div class="input ">     

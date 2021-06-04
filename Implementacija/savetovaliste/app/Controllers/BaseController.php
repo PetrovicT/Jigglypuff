@@ -77,18 +77,14 @@ class BaseController extends Controller {
         // $this->prikaz('pregled_pitanja', ['pitanja' => $pitanja, 'trazeno' => $this->request->getVar('pretraga')]);
     }
 
-    // prosledimo funkciji id korisnika, a ona vraca username korisnika
-    public function prikaz_username_autora_pitanja($id) {
-        $korisnikModel = new KorsnikModel();
-        return $korisnikModel->findUserUsername($id);
-    }
-
     // prikazuju se sva pitanja koja pripadaju odredjenoj kategoriji
+     // posto se prosledjuje funkciji naziv kategorije, prvo se pronalazi id kategorije 
+     // zatim se dohvataju sva pitanja koja pripadaju toj kategoriji (u pitanjima se cuva id kategorije)
     public function pregled_pitanja_po_kategoriji() {
         $pitanjeModel = new PitanjeModel();
         $kategorijaPitanjaModel = new KategorijaPitanjaModel();
         $kategorijaId = $kategorijaPitanjaModel->findQuestionCategoryId($this->request->getVar('pretraga'));
-        $pitanjaK = $pitanjeModel->pregled_pitanja_po_k($kategorijaId);
+        $pitanjaK = $pitanjeModel->pregled_pitanja_po_kategoriji($kategorijaId);
         echo view("pregled_pitanja", ['pitanja' => $pitanjaK]);
         //$this->prikaz('pregled_pitanja', ['pitanja' => $pitanjaK]);
     }
