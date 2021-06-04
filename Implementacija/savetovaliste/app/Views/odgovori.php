@@ -40,81 +40,124 @@
     use App\Models\PitanjeModel;
     use App\Models\OdgovorModel;
     use App\Models\KorisnikOcenioOdgovorModel;
+    use App\Models\KorisnikOcenioPitanjeModel;
         
         if (count($odgovori)==0) {
-            $korisnikModel=new KorisnikModel();
-            echo '
-            <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
-                <div class="w3-left" style="padding-left: 5%;"> <br>
-                <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
-            </div>
-            ';   
-            if($pitanje->postavljenoAnonimno==1)
-            {
-                echo '
-                <div class="w3-right" style="padding-right: 6%;"> <br>
-                <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
-            </div> ';
-            }
-            else
-            {
-                $idAutora=$pitanje->korisnik_idKorisnik_postavio;
-                $autor=$korisnikModel->findUserUsername($idAutora);
-                echo '
-                <div class="w3-right" style="padding-right: 6%;"> <br>
-                <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
-                </div>
-                ';
-            }
-            echo '
-            <!-- TEKST PITANJA -->
-            <div class="input letters_dark_blue">
-                <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
-            </div>
-            </div>
-            ';
-            echo '
-            <div class="w3-center"> 
-                    <h3 class="letters_dark_blue"> 
-                    <br>
-                         <b> Nije pronađen nijedan odgovor na izabrano pitanje. </b>
-                     </h3>
-                 </div>
-            ';
-        }
-        else 
-        {
-            $korisnikModel=new KorisnikModel();
+            $idPitanja=$pitanje->idPitanje;
+            $korisnikOcenioPitanjeModel=new KorisnikOcenioPitanjeModel();
+            $likes=$korisnikOcenioPitanjeModel->findNumOfLikes($idPitanja);
+            $dislikes=$korisnikOcenioPitanjeModel->findNumOfDislikes(($idPitanja));
+            
             echo '
             <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
                 <div class="w3-left" style="padding-left: 5%;"> <br> 
-                <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
-            </div>
+                    <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
+                </div>
             ';   
             
             if($pitanje->postavljenoAnonimno==1)
             {
                 echo '
-                <div class="w3-right" style="padding-right: 6%;"> <br>
-                <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
-            </div> ';
+                    <div class="w3-right" style="padding-right: 6%;"> <br>
+                        <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
+                    </div> ';
             }
             else
             {
+                $korisnikModel=new KorisnikModel();
                 $idAutora=$pitanje->korisnik_idKorisnik_postavio;
                 $autor=$korisnikModel->findUserUsername($idAutora);
                 echo '
-                <div class="w3-right" style="padding-right: 6%;"> <br>
-                <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
-                </div>
+                    <div class="w3-right" style="padding-right: 6%;"> <br>
+                        <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
+                    </div>
                 ';
             }
             echo '
-            <!-- TEKST PITANJA -->
-            <div class="input letters_dark_blue">
-                <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
-            </div>
-            </div>
+                <div class="input letters_dark_blue">
+                    <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
+                </div>
+
+                <br>
+                <div class="input">     
+                    <div id="like">
+                        <div>
+                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+                        </div>
+                
+                        <div style="float: right;">
+                            <button onclick="" class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
+                        </div>
+                    </div>
+                <br>
+                </div>
+
+            </div> <!-- Kraj div container -->
+            ';
+
+            echo '
+                <div class="w3-center"> 
+                    <h3 class="letters_dark_blue"> 
+                    <br>
+                        <b> Nije pronađen nijedan odgovor na izabrano pitanje. </b>
+                    </h3>
+                </div>
+            ';
+        }
+        else 
+        {
+            $idPitanja=$pitanje->idPitanje;
+            $korisnikOcenioPitanjeModel=new KorisnikOcenioPitanjeModel();
+            $likes=$korisnikOcenioPitanjeModel->findNumOfLikes($idPitanja);
+            $dislikes=$korisnikOcenioPitanjeModel->findNumOfDislikes(($idPitanja));
+            echo '
+            <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
+                <div class="w3-left" style="padding-left: 5%;"> <br> 
+                    <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
+                </div>
+            ';   
+            
+            if($pitanje->postavljenoAnonimno==1)
+            {
+                echo '
+                    <div class="w3-right" style="padding-right: 6%;"> <br>
+                        <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
+                    </div> ';
+            }
+            else
+            {
+                $korisnikModel=new KorisnikModel();
+                $idAutora=$pitanje->korisnik_idKorisnik_postavio;
+                $autor=$korisnikModel->findUserUsername($idAutora);
+                echo '
+                    <div class="w3-right" style="padding-right: 6%;"> <br>
+                        <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
+                    </div>
+                ';
+            }
+            echo '
+           
+                <div class="input letters_dark_blue">
+                    <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
+                </div>
+
+                <br>
+                <div class="input ">     
+                    <div id="like">
+                        <div>
+                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+                        </div>
+                
+                        <div style="float: right;">
+                            <button onclick="" class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
+                        </div>
+                    </div>
+                <br>
+                </div>
+
+            </div>   <!-- Kraj div container -->
             ';
 
             // ako postoje pitanja koja odgovaraju pretrazi ispiši svako u novoj kartici -->
@@ -124,56 +167,57 @@
             $korisnikOcenioOdgovorModel=new KorisnikOcenioOdgovorModel();
             foreach ($odgovori as $odgovor) 
             {
-              echo '
-              <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
-                  <div class="w3-left" style="padding-left: 5%;"> <br>
-                      <h3 class="letters_dark_blue"> <b> ODGOVOR  </b>  </h3>
-                  </div>
-                  ';           
-                        if($odgovor->odgovorenoAnonimno==1)
-                        {
-                            echo '
-                            <div class="w3-right" style="padding-right: 6%;"> <br>
-                            <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
-                            </div> ';
-                        }
-                        else
-                        {
-                            $idAutora=$odgovor->korisnik_idKorisnik_odgovorio;
-                            $autor=$korisnikModel->findUserUsername($idAutora);
-                            echo '
-                            <div class="w3-right" style="padding-right: 6%;"> <br>
-                            <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
-                            </div>
-                            ';
-                        }
+                echo '
+                <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
+                    <div class="w3-left" style="padding-left: 5%;"> <br>
+                        <h3 class="letters_dark_blue"> <b> ODGOVOR  </b>  </h3>
+                    </div>
+                ';           
+                if($odgovor->odgovorenoAnonimno==1)
+                    {
                         echo '
-                        <!-- TEKST ODGOVORA -->
-                        <div class="input letters_dark_blue">
-                            <p style="text-align: justify; font-weight: normal;"> ' . $odgovor->tekstOdgovora . ' </p> 
-                            <br>
-                        </div>
+                            <div class="w3-right" style="padding-right: 6%;"> <br>
+                                <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
+                            </div> ';
+                    }
+                else
+                    {
+                        $idAutora=$odgovor->korisnik_idKorisnik_odgovorio;
+                        $autor=$korisnikModel->findUserUsername($idAutora);
+                        echo '
+                            <div class="w3-right" style="padding-right: 6%;"> <br>
+                                <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
+                            </div>
                         ';
-
-                         //<!-- DUGMAD -->
-                        $idOdgovora=$odgovor->idOdgovor;
-                        $likes=$korisnikOcenioOdgovorModel->findNumOfLikes($idOdgovora);
-                        $dislikes=$korisnikOcenioOdgovorModel->findNumOfDislikes(($idOdgovora));
-                        $referenca1=site_url("$controller/PostaviLike?pretraga=$idOdgovora");
-                        $referenca2=site_url("$controller/PostaviDislike?pretraga=$idOdgovora");
-                         echo '
-                         <div class="input ">     
-                             <div id="like">
-                                 <div>
-                                 <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                                 <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
-                                 </div>                           
-                             </div>
-                         </div>
+                    }
+                echo '
+                    <div class="input letters_dark_blue">
+                        <p style="text-align: justify; font-weight: normal;"> ' . $odgovor->tekstOdgovora . ' </p> 
                         <br>
                     </div>
-                    '; 
-                  }
+                ';
+
+                //<!-- DUGMAD -->
+                $idOdgovora=$odgovor->idOdgovor;
+                $idPitanja=$pitanje->idPitanje;
+                $likes=$korisnikOcenioOdgovorModel->findNumOfLikes($idOdgovora);
+                $dislikes=$korisnikOcenioOdgovorModel->findNumOfDislikes(($idOdgovora));
+                $referenca1=site_url("$controller/PostaviLike?pretraga=$idOdgovora");
+                $referenca2=site_url("$controller/PostaviDislike?pretraga=$idOdgovora");
+                $referenca4=site_url("$controller/Odgovori?pretraga=$idPitanja");
+                echo '
+                <div class="input ">     
+                    <div id="like">
+                        <div>
+                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+                        </div>                           
+                    </div>
+                </div>
+                <br>
+                </div>
+                '; 
+            }
     }?>
    </div>
 
