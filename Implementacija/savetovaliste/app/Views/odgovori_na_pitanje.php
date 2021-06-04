@@ -146,7 +146,7 @@
             <hr style="border-top-color: #021B79;">
           </div>
 
-          <div class="input">
+          <div class="input ">
 
             <textarea name="TekstOdgovora" id="text_input" cols="400" rows="5"
               style="resize:none; size: 100%; position: center; padding: 0; color: #021B79; border-color: #021B79; font-size: 16px;"
@@ -154,13 +154,8 @@
             <br>
 
             <!-- JAVNO/PRIVATNO -->
-            <div>
-              <input type="radio" id="nijeanonimno" name="anonimnost" value="0" checked>
-              <label for="nijeanonimno" class="letters_dark_blue"> Ne želim anonimno da odgovorim na pitanje</label>
-            </div>
-            <div>
-              <input type="radio" id="anonimno" name="anonimnost" value="1">
-              <label for="anonimno" class="letters_dark_blue"> Želim anonimno da odgovorim na pitanje</label>
+            <div><input type="checkbox" id="anonimus" name="anonimus" value="1">
+              <label for="anonimus" class="letters_dark_blue"> Želim anonimno da odgovorim na pitanje</label>
             </div>
             <br>
 
