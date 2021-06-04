@@ -25,7 +25,7 @@ class Korisnik extends BaseController
 	public function odgovoriNaPitanje($idPitanje){
 		$pitanjeModel = new PitanjeModel();
 	    $pitanje = $pitanjeModel->find($idPitanje);
-		if(!$this->validate(['TekstOdgovora'=>'required|max_length[200]'])) 
+		if(!$this->validate(['TekstOdgovora'=>'required'])) 
 			{
 				echo view("odgovori_na_pitanje", ['pitanje' => $pitanje,'poruka' => $this->validator->listErrors()]);
 				return;
@@ -42,7 +42,7 @@ class Korisnik extends BaseController
 			'odgovorenoAnonimno'=>$this->request->getVar('anonimnost')
 		]);
         $controller=session()->get('controller');
-		//return redirect()->to(site_url("$controller/"));		
+		return redirect()->to(site_url("$controller/"));		
 	}
 
 	public function pregledOdgovora() {
@@ -56,4 +56,36 @@ class Korisnik extends BaseController
         echo view("odgovori", ['odgovori' => $odgovori, 'pitanje' => $pitanje]);
         }
     }
+
+	// prikazuje se forma za postavljanje pitanja
+	public function postavi_pitanje(){
+		echo view("postavi_pitanje");
+	}
+
+	// unos pitanja u bazu odnosno citanje podataka iz forme
+	public function postaviPitanje(){
+		if(!$this->validate(['category'=>'required','NaslovPitanja'=>'required','TekstPitanja'=>'required'])) 
+			{
+				echo view("postavi_pitanje", ['poruka' => $this->validator->listErrors()]);
+				return;
+			}	
+		$pitanjeModel = new PitanjeModel();   
+		$kategorija=$this->request->getVar('category');
+		if($kategorija=="Nema") return echo view("postavi_pitanje", ['poruka' => "Morate da unesete kategoriju pitanja!"]);
+        else {
+			$kategorijaPitanjaModel=new KategorijaPitanjaModel();
+			$idKategorije=$kategorijaPitanjaModel->findQuestionCategoryId($kategorija);
+		}
+		$pitanjeModel->save([
+			'korisnik_idKorisnik_postavio'=>session()->get('userid'),
+			'kategorijaPitanja_idKategorija'=>$idKategorije;
+			'naslovPitanja'=>$this->request->getVar('NaslovPitanja'),
+			'tekstPitanja'=>$this->request->getVar('TekstPitanja'),
+			'postavljenoAnonimno'=>0,
+			'moguSviDaOdgovore'=>0
+		]);
+        $controller=session()->get('controller');
+		// kada korisnik unese pitanje neka predje na pregled pitanja gde moze da nadje svoje tek dodato pitanje
+		return redirect()->to(site_url("$controller/pregled_pitanja"));		
+	}
 }

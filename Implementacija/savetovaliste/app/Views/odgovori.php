@@ -116,7 +116,7 @@
     }
 
     else {  // ako nije controller gost, nego korisnik onda daj i mogucnost odgovora na pitanje i lajkovanja
-        
+        $referenca4=site_url("$controller/odgovori_na_pitanje/$idPitanja");
         echo '
         <br>
         <div class="input">     
@@ -128,9 +128,9 @@
                     <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
                 </div>
         
-                <div style="float: right;">
-                    <button onclick="" class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
-                </div>
+                <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
+                    <a class="nema_podvlacenja" href=' . "$referenca4" . '>Odgovori</a>
+                </button>
             </div>
         <br>
         </div>

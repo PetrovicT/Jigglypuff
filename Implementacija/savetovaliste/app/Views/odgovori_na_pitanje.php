@@ -140,7 +140,7 @@
                 postavljeno pitanje</li>
               <li>Vodite računa da je podrazumevano javno odgovaranje na pitanja. Ukoliko želite da anonimno odgovorite,
                 molimo Vas da to i naznačite u odgovarajućem polju.</li>
-              <li>Odgovor ne sme da ima više od 200 karaktera!</li>
+              
             </ol>
 
             <hr style="border-top-color: #021B79;">
@@ -154,11 +154,14 @@
             <br>
 
             <!-- JAVNO/PRIVATNO -->
-            
+            <div>
               <input type="radio" id="nijeanonimno" name="anonimnost" value="0" checked>
               <label for="nijeanonimno" class="letters_dark_blue"> Ne želim anonimno da odgovorim na pitanje</label>
+            </div>
+            <div>
               <input type="radio" id="anonimno" name="anonimnost" value="1">
               <label for="anonimno" class="letters_dark_blue"> Želim anonimno da odgovorim na pitanje</label>
+            </div>
             <br>
 
           </div>
