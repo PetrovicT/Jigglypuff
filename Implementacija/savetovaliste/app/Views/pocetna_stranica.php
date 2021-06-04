@@ -50,6 +50,7 @@
                             <img src="<?php echo base_url(); ?>/photos/logo.png" alt="">
                         </div>
 
+                        <!-- TODO: Ako je korisnik već ulogovan, ispisati dobrodošlicu i ponuditi logout umesto ovoga. -->
                         <!-- LINK LOGIN/REGISTRACIJA -->
                         <?php
                         // samo ako je kontroler gost onda prikazi opcije da se registrujes i login

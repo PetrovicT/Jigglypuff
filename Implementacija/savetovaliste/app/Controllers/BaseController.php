@@ -112,4 +112,8 @@ class BaseController extends Controller {
 	}
     */
     
+    public function logout() {
+        $this->session->destroy();
+        return redirect()->to(site_url());
+    }
 }
