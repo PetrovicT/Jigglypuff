@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <a href="<?= site_url("$controller/view_seanse") ?>" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-fire"></i> Seanse</a>
+    <a href="<?= site_url("$controller/pregled_seansi") ?>" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-fire"></i> Seanse</a>
     <a href="<?= site_url("$controller/postavi_pitanje") ?>" class="w3-bar-item w3-button" style="color: white;"><i class="fa fa-plus-circle"></i> Postavi pitanje</a>
 
     <div class="w3-dropdown-hover w3-right">
