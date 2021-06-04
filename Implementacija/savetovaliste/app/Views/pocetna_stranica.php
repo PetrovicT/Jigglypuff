@@ -41,6 +41,7 @@
                             Dobrodošli na veb portal za psihološko savetovanje!  
                             <?php
                             //dohvatanje controllera
+    
                             $controller=session()->get('controller');
                             ?>
                             <br>

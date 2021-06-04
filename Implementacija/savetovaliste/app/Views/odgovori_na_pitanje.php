@@ -123,8 +123,8 @@
 ?>
        
   
-        
-    <form name="odgovoriNaPitanje"  action="<?= site_url("$controller/odgovoriNaPitanje") ?>">
+    <?php  $idPitanja=$pitanje->idPitanje;  ?> 
+    <form name="odgovoriNaPitanje"  action="<?= site_url("$controller/odgovoriNaPitanje/$idPitanja") ?>">
         <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
 
           <div class="w3-left" style="padding-left: 5%;"> <br>
@@ -140,6 +140,7 @@
                 postavljeno pitanje</li>
               <li>Vodite računa da je podrazumevano javno odgovaranje na pitanja. Ukoliko želite da anonimno odgovorite,
                 molimo Vas da to i naznačite u odgovarajućem polju.</li>
+              <li>Odgovor ne sme da ima više od 200 karaktera!</li>
             </ol>
 
             <hr style="border-top-color: #021B79;">
@@ -147,13 +148,13 @@
 
           <div class="input ">
 
-            <textarea name="TextArea" id="text_input" cols="400" rows="5"
+            <textarea name="TekstOdgovora" id="text_input" cols="400" rows="5"
               style="resize:none; size: 100%; position: center; padding: 0; color: #021B79; border-color: #021B79; font-size: 16px;"
               placeholder="Tekst odgovora..."></textarea>
             <br>
 
             <!-- JAVNO/PRIVATNO -->
-            <div><input type="checkbox" id="anonimus" name="anonimus" value="Bike">
+            <div><input type="checkbox" id="anonimus" name="anonimus" value="1">
               <label for="anonimus" class="letters_dark_blue"> Želim anonimno da odgovorim na pitanje</label>
             </div>
             <br>
@@ -169,6 +170,7 @@
                 <button type="submit" class="w3-button buttons" style="font-weight: normal;" value="">Pošalji</button> &nbsp
               </div>
             </div>
+            <?php  if(!empty($poruka)) echo "<span style='color:red'>$poruka</span>"; ?>
           </div>
           <br>
         </div>
