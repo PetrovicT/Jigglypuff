@@ -38,11 +38,9 @@
                     <!-- UNOS -->
                     <div class="w3-container w3-white w3-margin w3-padding-large w3-card-4">
                         <div class="w3-center letters_dark_blue" style="font-size: 30px;">
-                            Dobrodošli na veb portal za psihološko savetovanje! Kontroler = 
+                            Dobrodošli na veb portal za psihološko savetovanje!  
                             <?php
                             //dohvatanje controllera
-                            // TODO obrisi proveru controllera
-                            echo session()->get('controller');
                             $controller=session()->get('controller');
                             ?>
                             <br>
@@ -50,7 +48,6 @@
                             <img src="<?php echo base_url(); ?>/photos/logo.png" alt="">
                         </div>
 
-                        <!-- TODO: Ako je korisnik već ulogovan, ispisati dobrodošlicu i ponuditi logout umesto ovoga. -->
                         <!-- LINK LOGIN/REGISTRACIJA -->
                         <?php
                         // samo ako je kontroler gost onda prikazi opcije da se registrujes i login

@@ -27,8 +27,6 @@
     <div class="w3-content" style="max-width:90%">
     <!-- POZADINA -->
     <?php
-        //TODO obrisi proveru controllera
-        echo session()->get('controller');
         $controller=session()->get('controller');
     ?>
     <div class="w3-row  w3-padding w3-border">

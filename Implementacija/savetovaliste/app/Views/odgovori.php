@@ -28,8 +28,6 @@
 
   <div class="w3-content" style="max-width:90%">
     <?php
-        // TODO obrisi proveru controllera                        
-        echo session()->get('controller');
         $controller=session()->get('controller');
     ?>
 
@@ -54,11 +52,17 @@
     // prikaz broja like i dislike na pitanju za koje se prikazuju odgovori
     $likes=$korisnikOcenioPitanjeModel->findNumOfLikes($idPitanja);
     $dislikes=$korisnikOcenioPitanjeModel->findNumOfDislikes(($idPitanja));
-    
+
     // ispis naslova pitanja
     echo '
     <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
-        <div class="w3-left" style="padding-left: 5%;"> <br> 
+        <!-- ispis da se radi o pitanju na koje zelimo da pogledamo odgovore -->
+        <div class="w3-center" style="padding-right: 5%; padding-left: 5%;"> <br>
+            <h3 class="letters_dark_blue" style="font-size: 26px;"><b>PITANJE</b></h3>
+            <hr style="border-top-color: #021B79;">
+        </div>
+
+        <div class="w3-left" style="padding-left: 5%;"> 
             <h3 class="letters_dark_blue"> <b> ' . $pitanje->naslovPitanja . '   </b>  </h3>
         </div>
     ';   
@@ -67,7 +71,7 @@
     if($pitanje->postavljenoAnonimno==1)
     {
         echo '
-            <div class="w3-right" style="padding-right: 6%;"> <br>
+            <div class="w3-right" style="padding-right: 6%;"> 
                 <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
             </div> ';
     }
