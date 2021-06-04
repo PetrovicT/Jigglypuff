@@ -22,7 +22,7 @@
 
         <!-- Header -->
         <?php
-        require 'resources/header.php';
+        require 'resources/header_gost.php';
         ?>
 
         <!-- Logovanje-->
