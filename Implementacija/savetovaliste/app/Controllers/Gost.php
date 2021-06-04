@@ -19,11 +19,21 @@ class Gost extends BaseController
 
     // Stranica za login, ne funkcionalnost logovanja
     public function login($poruka = null) {
+        // Ako nije gost, redirectuj ga na homepage
+        if($this->session->get('controller')!='Gost'){
+            return redirect()->to(site_url($this->session->get('controller') . "/index"));
+        }
+        
         echo view("logovanje", ['loginErrorMessage' => $poruka]);
     }
 
     // Funkcionalnost logovanja
     public function loginSubmit() {
+        // Ako nije gost, redirectuj ga na homepage
+        if($this->session->get('controller')!='Gost'){
+            return redirect()->to(site_url($this->session->get('controller') . "/index"));
+        }
+        
         // Nije potrebno dodatno validirati username i password jer ako
         // ne zadovoljavaju uslove, neće ni biti u bazi
         if (!$this->validate(['username' => 'required', 'password' => 'required'])) {
@@ -48,16 +58,26 @@ class Gost extends BaseController
         // Naravno, kontroleri odgovaraju tipovima korisnika, kao što je ranije dogovoreno.
         $this->session->set('controller', $korisnikModel->findUserType($korisnik->idKorisnik));
 
-        return redirect()->to(site_url('Korisnik/'));
+        return redirect()->to(site_url());
     }
 
     // Stranica za registraciju, ne funkcionalnost registovanja
     public function register($porukaList = null) {
+        // Ako nije gost, redirectuj ga na homepage
+        if($this->session->get('controller')!='Gost'){
+            return redirect()->to(site_url($this->session->get('controller') . "/index"));
+        }
+        
         echo view("registracija", ['registrationErrorMessages' => $porukaList]);
     }
 
     // Funkcionalnost registracije
     public function registerSubmit() {
+        // Ako nije gost, redirectuj ga na homepage
+        if($this->session->get('controller')!='Gost'){
+            return redirect()->to(site_url($this->session->get('controller') . "/index"));
+        }
+        
         // Prvo getujemo tip korisnika koji je običan korisnik
         $tipKorisnikaModel = new TipKorisnikaModel();
         $tipKorisnika = $tipKorisnikaModel->getKorisnikId();
