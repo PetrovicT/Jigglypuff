@@ -82,7 +82,7 @@
         $idAutora=$pitanje->korisnik_idKorisnik_postavio;
         $autor=$korisnikModel->findUserUsername($idAutora);
         echo '
-            <div class="w3-right" style="padding-right: 6%;"> <br>
+            <div class="w3-right" style="padding-right: 6%;"> 
                 <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
             </div>
         ';
@@ -198,7 +198,7 @@
                 $dislikes=$korisnikOcenioOdgovorModel->findNumOfDislikes(($idOdgovora));
                 $referenca1=site_url("$controller/PostaviLike?pretraga=$idOdgovora");
                 $referenca2=site_url("$controller/PostaviDislike?pretraga=$idOdgovora");
-                $referenca4=site_url("$controller/Odgovori?pretraga=$idPitanja");
+                $referenca4=site_url("$controller/odgovori_na_pitanje/$idPitanja");
                 // ako je gost, nema mogucnost da like/dislike
                 if ($controller=='Gost')
                 {
