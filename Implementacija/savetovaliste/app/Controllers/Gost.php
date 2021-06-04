@@ -5,10 +5,16 @@ namespace App\Controllers;
 use App\Models\TipKorisnikaModel;
 use App\Models\KorisnikModel;
 
-class Gost extends BaseController {
-
-    public function index() {
-        return view('welcome_message');
+class Gost extends BaseController
+{
+    public function index()
+    {
+        // Ako nije gost, redirectuj ga na svoj controller
+        if($this->session->get('controller')!='Gost'){
+            return redirect()->to(site_url($this->session->get('controller') . "/index"));
+        }
+        echo view("pocetna_stranica");
+        //$this->prikaz('pocetna_stranica',[]);
     }
 
     // Stranica za login, ne funkcionalnost logovanja
