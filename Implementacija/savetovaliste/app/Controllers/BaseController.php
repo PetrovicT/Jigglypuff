@@ -23,74 +23,76 @@ use App\Models\KategorijaPitanjaModel;
  *
  * For security be sure to declare any new methods as protected or private.
  */
+class BaseController extends Controller {
 
-class BaseController extends Controller
-{
-	/**
-	 * Instance of the main Request object.
-	 *
-	 * @var IncomingRequest|CLIRequest
-	 */
-	protected $request;
+    /**
+     * Instance of the main Request object.
+     *
+     * @var IncomingRequest|CLIRequest
+     */
+    protected $request;
 
-	/**
-	 * An array of helpers to be loaded automatically upon
-	 * class instantiation. These helpers will be available
-	 * to all other controllers that extend BaseController.
-	 *
-	 * @var array
-	 */
-	protected $helpers = ['url', 'form'];
+    /**
+     * An array of helpers to be loaded automatically upon
+     * class instantiation. These helpers will be available
+     * to all other controllers that extend BaseController.
+     *
+     * @var array
+     */
+    protected $helpers = ['url', 'form'];
 
-	/**
-	 * Constructor.
-	 *
-	 * @param RequestInterface  $request
-	 * @param ResponseInterface $response
-	 * @param LoggerInterface   $logger
-	 */
-	public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
-	{
-		// Do Not Edit This Line
-		parent::initController($request, $response, $logger);
+    /**
+     * Constructor.
+     *
+     * @param RequestInterface  $request
+     * @param ResponseInterface $response
+     * @param LoggerInterface   $logger
+     */
+    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger) {
+        // Do Not Edit This Line
+        parent::initController($request, $response, $logger);
 
-		//--------------------------------------------------------------------
-		// Preload any models, libraries, etc, here.
-		//--------------------------------------------------------------------
-		$this->session = session();
-	}
-
-	public function pregled_pitanja(){
-         $pitanjeModel=new PitanjeModel();
-         $pitanja=$pitanjeModel->findAll();
-         $this->prikaz('pregled_pitanja', ['pitanja'=>$pitanja]);
+        //--------------------------------------------------------------------
+        // Preload any models, libraries, etc, here.
+        //--------------------------------------------------------------------
+        $this->session = session();
+        if (!$this->session->get('controller')) {
+            $this->session->set('controller', 'Gost');
+        }
     }
 
-	public function pretraga_pitanja(){
-		$pitanjeModel=new PitanjeModel();
-		$pitanja=$pitanjeModel->pretraga_pitanja($this->request->getVar('pretraga'));
-		$this->prikaz('pregled_pitanja', ['pitanja'=>$pitanja,'trazeno'=>$this->request->getVar('pretraga')]);
-	}
+    public function pregled_pitanja() {
+        $pitanjeModel = new PitanjeModel();
+        $pitanja = $pitanjeModel->findAll();
+        $this->prikaz('pregled_pitanja', ['pitanja' => $pitanja]);
+    }
 
-	public function prikaz_username_autora_pitanja($id){
-		$korisnikModel=new KorsnikModel();
-		return $korisnikModel->findUserUsername($id);
-	}
+    public function pretraga_pitanja() {
+        $pitanjeModel = new PitanjeModel();
+        $pitanja = $pitanjeModel->pretraga_pitanja($this->request->getVar('pretraga'));
+        $this->prikaz('pregled_pitanja', ['pitanja' => $pitanja, 'trazeno' => $this->request->getVar('pretraga')]);
+    }
 
-	public function pregled_pitanja_po_kategoriji() {
-		$pitanjeModel=new PitanjeModel();
-		$kategorijaPitanjaModel=new KategorijaPitanjaModel();
-		$kategorijaId=$kategorijaPitanjaModel->findQuestionCategoryId($this->request->getVar('pretraga'));
-		$pitanjaK=$pitanjeModel->pregled_pitanja_po_k($kategorijaId);
-	    $this->prikaz('pregled_pitanja', ['pitanja'=>$pitanjaK]);
-	} 
+    public function prikaz_username_autora_pitanja($id) {
+        $korisnikModel = new KorsnikModel();
+        return $korisnikModel->findUserUsername($id);
+    }
 
-	public function pregledOdgovora(){
-		$odgovorModel=new OdgovorModel();
-		$pitanjeModel=new PitanjeModel();
-		$pitanjeId=$this->request->getVar('pretraga');
-		$odgovori=$odgovorModel->pregledOdgovoraNaPitanje($pitanjeId);
-		$pitanje=$pitanjeModel->find($pitanjeId);
-		$this->prikaz('odgovori', ['odgovori'=>$odgovori, 'pitanje'=>$pitanje]);
-	}
+    public function pregled_pitanja_po_kategoriji() {
+        $pitanjeModel = new PitanjeModel();
+        $kategorijaPitanjaModel = new KategorijaPitanjaModel();
+        $kategorijaId = $kategorijaPitanjaModel->findQuestionCategoryId($this->request->getVar('pretraga'));
+        $pitanjaK = $pitanjeModel->pregled_pitanja_po_k($kategorijaId);
+        $this->prikaz('pregled_pitanja', ['pitanja' => $pitanjaK]);
+    }
+
+    public function pregledOdgovora() {
+        $odgovorModel = new OdgovorModel();
+        $pitanjeModel = new PitanjeModel();
+        $pitanjeId = $this->request->getVar('pretraga');
+        $odgovori = $odgovorModel->pregledOdgovoraNaPitanje($pitanjeId);
+        $pitanje = $pitanjeModel->find($pitanjeId);
+        $this->prikaz('odgovori', ['odgovori' => $odgovori, 'pitanje' => $pitanje]);
+    }
+
 }

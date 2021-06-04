@@ -7,6 +7,11 @@ class Gost extends BaseController
 {
     public function index()
     {
+        // Ako nije gost, redirectuj ga na svoj controller
+        if($this->session->get('controller')!='Gost'){
+            return redirect()->to(site_url($this->session->get('controller')));
+        }
+        
         $this->prikaz('pocetna_stranica',[]);
     }
 
