@@ -103,6 +103,10 @@ class BaseController extends Controller {
         echo view("odgovori", ['odgovori' => $odgovori, 'pitanje' => $pitanje]);
         }
     }
+    
+    public function pregled_seansi(){
+        echo view("view_seanse", []);
+    }
 
     /*
     // ako zelimo nesto da uradimo pre svakog prikaza
