@@ -9,10 +9,10 @@ class Gost extends BaseController
     {
         // Ako nije gost, redirectuj ga na svoj controller
         if($this->session->get('controller')!='Gost'){
-            return redirect()->to(site_url($this->session->get('controller')));
+            return redirect()->to(site_url($this->session->get('controller') . "/index"));
         }
-        
-        $this->prikaz('pocetna_stranica',[]);
+        echo view("pocetna_stranica");
+        //$this->prikaz('pocetna_stranica',[]);
     }
 
     // Stranica za login, ne funkcionalnost logovanja
@@ -49,8 +49,4 @@ class Gost extends BaseController
         return redirect()->to(site_url('Korisnik/'));
     }
 
-    protected function prikaz($page, $data){
-		$data['controller']='Gost';
-        echo view("$page", $data);
-	}
 }

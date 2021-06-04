@@ -27,6 +27,11 @@
     ?>
 
   <div class="w3-content" style="max-width:90%">
+    <?php
+        // TODO obrisi proveru controllera                        
+        echo session()->get('controller');
+        $controller=session()->get('controller');
+    ?>
 
     <!-- POZADINA -->
     <div class="w3-row  w3-padding w3-border">
@@ -73,7 +78,32 @@
                     </div>
                 ';
             }
-            echo '
+            if ($controller=='Gost')
+            {
+                echo '
+                    <div class="input letters_dark_blue">
+                        <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
+                    </div>
+
+                    <br>
+                    <div class="input">     
+                        <div id="like">
+                            <div>
+                                <!-- TODO ubaciti lajkovanje za Gosta -->
+                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                                <!-- TODO ubaciti lajkovanje za Gosta -->
+                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+                            </div>
+                        </div>
+                    <br>
+                    </div>
+
+                </div> <!-- Kraj div container -->
+                ';
+            }
+
+            else {
+                echo '
                 <div class="input letters_dark_blue">
                     <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
                 </div>
@@ -82,7 +112,9 @@
                 <div class="input">     
                     <div id="like">
                         <div>
+                            <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
                             <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                            <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
                             <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
                         </div>
                 
@@ -95,6 +127,7 @@
 
             </div> <!-- Kraj div container -->
             ';
+            }
 
             echo '
                 <div class="w3-center"> 
@@ -136,17 +169,43 @@
                     </div>
                 ';
             }
-            echo '
-           
+            if ($controller=='Gost')
+            {
+                echo '
+                    <div class="input letters_dark_blue">
+                        <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
+                    </div>
+
+                    <br>
+                    <div class="input">     
+                        <div id="like">
+                            <div>
+                                <!-- TODO ubaciti lajkovanje za Gosta -->
+                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                                <!-- TODO ubaciti lajkovanje za Gosta -->
+                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+                            </div>
+                        </div>
+                    <br>
+                    </div>
+
+                </div> <!-- Kraj div container -->
+                ';
+            }
+
+            else {
+                echo '
                 <div class="input letters_dark_blue">
                     <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
                 </div>
 
                 <br>
-                <div class="input ">     
+                <div class="input">     
                     <div id="like">
                         <div>
+                            <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
                             <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                            <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
                             <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
                         </div>
                 
@@ -157,8 +216,9 @@
                 <br>
                 </div>
 
-            </div>   <!-- Kraj div container -->
+            </div> <!-- Kraj div container -->
             ';
+            }
 
             // ako postoje pitanja koja odgovaraju pretrazi ispiši svako u novoj kartici -->
             $korisnikModel=new KorisnikModel();
@@ -205,18 +265,40 @@
                 $referenca1=site_url("$controller/PostaviLike?pretraga=$idOdgovora");
                 $referenca2=site_url("$controller/PostaviDislike?pretraga=$idOdgovora");
                 $referenca4=site_url("$controller/Odgovori?pretraga=$idPitanja");
-                echo '
-                <div class="input ">     
-                    <div id="like">
-                        <div>
-                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                            <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
-                        </div>                           
+                if ($controller=='Gost')
+                {
+                    echo '
+                    <div class="input ">     
+                        <div id="like">
+                            <div>
+                                <!-- TODO ubaciti lajkovanje za gosta -->
+                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                                <!-- TODO ubaciti lajkovanje za gosta -->
+                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+                            </div>                           
+                        </div>
+                    </div> 
+                    <br>
                     </div>
-                </div>
-                <br>
-                </div>
-                '; 
+                    '; 
+                }
+                else 
+                {
+                    echo '
+                    <div class="input ">     
+                        <div id="like">
+                            <div>
+                                <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
+                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                                <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
+                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+                            </div>                           
+                        </div>
+                    </div> 
+                    <br>
+                    </div>
+                    '; 
+                }
             }
     }?>
    </div>

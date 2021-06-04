@@ -26,6 +26,11 @@
 
     <div class="w3-content" style="max-width:90%">
     <!-- POZADINA -->
+    <?php
+        //TODO obrisi proveru controllera
+        echo session()->get('controller');
+        $controller=session()->get('controller');
+    ?>
     <div class="w3-row  w3-padding w3-border">
             
     <div class="w3-col l8 s12"> <br>
@@ -102,17 +107,21 @@
                                 <div class="input ">     
                                     <div id="like">
                                         <div>
+                                            <!-- TODO ubaciti lajkovanje -->
                                             <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                                            <!-- TODO ubaciti lajkovanje -->
                                             <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
                                         </div>
-                                                                
+                                                              
                                         <div style="float: right;">                                    
                                             <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
                                                 <a class="nema_podvlacenja" href=' . "$referenca3" . '>Pogledaj odgovore</a>
                                             </button> &nbsp
-                                            <button onclick="" class="w3-button buttons" style="font-weight: normal;">Odgovori</button>
-                                        </div>                                
+                                           
+                                        </div>  
+                                                                    
                                     </div>
+                                    <p style="color:red; text-align:left">Morate biti ulogovani da biste mogli da ocenite pitanje sa korisno/nije korisno!</p>
                                 </div> 
                             ';
                         }
@@ -121,9 +130,11 @@
                                 <div class="input ">     
                                     <div id="like">
                                         <div>
+                                            <!-- TODO ubaciti lajkovanje -->
                                             <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">
                                             <a class="nema_podvlacenja" href=' . "$referenca1" . '>Korisno</a>
                                             </u></button> &nbsp
+                                            <!-- TODO ubaciti lajkovanje -->
                                             <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">
                                             <a class="nema_podvlacenja" href=' . "$referenca2" . '>Nije korisno</a>
                                             </u></button>

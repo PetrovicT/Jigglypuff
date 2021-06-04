@@ -40,9 +40,10 @@
                         <div class="w3-center letters_dark_blue" style="font-size: 30px;">
                             Dobrodošli na veb portal za psihološko savetovanje! Kontroler = 
                             <?php
-                            
+                            //dohvatanje controllera
+                            // TODO obrisi proveru controllera
                             echo session()->get('controller');
-                            
+                            $controller=session()->get('controller');
                             ?>
                             <br>
 
@@ -50,20 +51,29 @@
                         </div>
 
                         <!-- LINK LOGIN/REGISTRACIJA -->
+                        <?php
+                        // samo ako je kontroler gost onda prikazi opcije da se registrujes i login
+                        if ($controller=='Gost'){
+                        $referencaLogin=site_url("$controller/login");
+                        $referencaRegister=site_url("$controller/register");
+                        echo '
                         <div class=" w3-left">
                             <div class="overlay letters_dark_blue" style="font-size: 28px;"><i class="fa fa-user"></i> Već imate nalog?
-                                <a href="<?= site_url("Gost/login") ?>">LOGIN</a></div>
+                            <a href=' . "$referencaLogin" . '>LOGIN</a></div>
                             <div class="overlay letters_dark_blue" style="font-size: 28px; color: #021B79;"><i class="fa fa-user"></i>
-                                Nemate nalog?  <a href="<?= site_url("Gost/register") ?>">REGISTRUJ SE</a></div>
+                                Nemate nalog?  <a href=' . "$referencaRegister" . '>REGISTRUJ SE</a></div>
                             <br>
                         </div>
+                        ';
+                        }
+                        ?>
                     </div>
                     <hr>
 
                     <!-- PRETRAGA -->
 
                     <div class="w3-container w3-center w3-white w3-margin w3-padding-large w3-card-4">
-
+                         <!-- Pretraga pitanja -->
                         <div id="SearchBar" style="width:100%; max-width: 100%; padding-top: 30px; padding-bottom: 20px; border-color: #021B79;">                                                
                             <form name="pretraga_pitanja"  action="<?= site_url("$controller/pretraga_pitanja") ?>">                         
                                 <input id="SearchField" class="w3-bar-item w3-center letters_dark_blue" type="text"
@@ -77,12 +87,13 @@
                                     <div class="w3-center w3-white">
                                         <div class=" w3-white" style="padding-left: 10%; padding-right: 10%; width: 100%; align-items: center;">
 
-                                            <!-- pregled pitanja po kategoriji proba redovi 75-79 -->
+                                            <!-- pregled pitanja po kategoriji proba  -->
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
 
                                                 <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=Anksioznost") ?>">Anksioznost-kategorija</a>
                                             </span>  
-
+                                            
+                                            <!-- kada se klikne na tekst ispod slike, efekat je kao da se vrsi pretraga pitanja po tekstu ispod slike -->
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
                                                 <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=anksioznost") ?>">Anksioznost</a>
                                             </span>  

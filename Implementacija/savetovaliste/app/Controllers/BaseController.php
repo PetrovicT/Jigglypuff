@@ -61,38 +61,53 @@ class BaseController extends Controller {
         }
     }
 
+    // prikazuju se sva pitanja koja postoje u bazi
     public function pregled_pitanja() {
         $pitanjeModel = new PitanjeModel();
         $pitanja = $pitanjeModel->findAll();
-        $this->prikaz('pregled_pitanja', ['pitanja' => $pitanja]);
+        echo view("pregled_pitanja", ['pitanja' => $pitanja]);
+        //$this->prikaz('pregled_pitanja', ['pitanja' => $pitanja]);
     }
 
+    // prikazuju se pitanja koja odgovaraju pretrazi
     public function pretraga_pitanja() {
         $pitanjeModel = new PitanjeModel();
         $pitanja = $pitanjeModel->pretraga_pitanja($this->request->getVar('pretraga'));
-        $this->prikaz('pregled_pitanja', ['pitanja' => $pitanja, 'trazeno' => $this->request->getVar('pretraga')]);
+        echo view("pregled_pitanja", ['pitanja' => $pitanja, 'trazeno' => $this->request->getVar('pretraga')]);
+        // $this->prikaz('pregled_pitanja', ['pitanja' => $pitanja, 'trazeno' => $this->request->getVar('pretraga')]);
     }
 
+    // prosledimo funkciji id korisnika, a ona vraca username korisnika
     public function prikaz_username_autora_pitanja($id) {
         $korisnikModel = new KorsnikModel();
         return $korisnikModel->findUserUsername($id);
     }
 
+    // prikazuju se sva pitanja koja pripadaju odredjenoj kategoriji
     public function pregled_pitanja_po_kategoriji() {
         $pitanjeModel = new PitanjeModel();
         $kategorijaPitanjaModel = new KategorijaPitanjaModel();
         $kategorijaId = $kategorijaPitanjaModel->findQuestionCategoryId($this->request->getVar('pretraga'));
         $pitanjaK = $pitanjeModel->pregled_pitanja_po_k($kategorijaId);
-        $this->prikaz('pregled_pitanja', ['pitanja' => $pitanjaK]);
+        echo view("pregled_pitanja", ['pitanja' => $pitanjaK]);
+        //$this->prikaz('pregled_pitanja', ['pitanja' => $pitanjaK]);
     }
 
+    // prikazuju se svi odgovori na odredjeno pitanje
     public function pregledOdgovora() {
         $odgovorModel = new OdgovorModel();
         $pitanjeModel = new PitanjeModel();
         $pitanjeId = $this->request->getVar('pretraga');
         $odgovori = $odgovorModel->pregledOdgovoraNaPitanje($pitanjeId);
         $pitanje = $pitanjeModel->find($pitanjeId);
-        $this->prikaz('odgovori', ['odgovori' => $odgovori, 'pitanje' => $pitanje]);
+        echo view("odgovori", ['odgovori' => $odgovori, 'pitanje' => $pitanje]);
+        //$this->prikaz('odgovori', ['odgovori' => $odgovori, 'pitanje' => $pitanje]);
     }
 
+    /*  // ako zelimo nesto da uradimo pre svakog prikaza
+    protected function prikaz($page, $data){
+		$data['controller']='BaseController';
+        echo view("$page", $data);
+	}
+    */
 }
