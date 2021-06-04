@@ -147,7 +147,7 @@
         }
         else 
         {
-            // ako postoje pitanja koja odgovaraju pretrazi ispiši svako u novoj kartici 
+            // ako postoje odgovori na izabrano pitanje ispisi sve odgovore
             $korisnikModel=new KorisnikModel();
             $pitanjeModel=new PitanjeModel();
             $odgovorModel=new OdgovorModel();

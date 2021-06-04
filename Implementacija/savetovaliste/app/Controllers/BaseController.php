@@ -66,15 +66,14 @@ class BaseController extends Controller {
         $pitanjeModel = new PitanjeModel();
         $pitanja = $pitanjeModel->findAll();
         echo view("pregled_pitanja", ['pitanja' => $pitanja]);
-        //$this->prikaz('pregled_pitanja', ['pitanja' => $pitanja]);
     }
 
     // prikazuju se pitanja koja odgovaraju pretrazi
     public function pretraga_pitanja() {
         $pitanjeModel = new PitanjeModel();
-        $pitanja = $pitanjeModel->pretraga_pitanja($this->request->getVar('pretraga'));
+        if ($this->request->getVar('pretraga')==null)  $pitanja=$pitanjeModel->findAll();
+        else $pitanja = $pitanjeModel->pretraga_pitanja($this->request->getVar('pretraga'));
         echo view("pregled_pitanja", ['pitanja' => $pitanja, 'trazeno' => $this->request->getVar('pretraga')]);
-        // $this->prikaz('pregled_pitanja', ['pitanja' => $pitanja, 'trazeno' => $this->request->getVar('pretraga')]);
     }
 
     // prikazuju se sva pitanja koja pripadaju odredjenoj kategoriji
@@ -83,27 +82,34 @@ class BaseController extends Controller {
     public function pregled_pitanja_po_kategoriji() {
         $pitanjeModel = new PitanjeModel();
         $kategorijaPitanjaModel = new KategorijaPitanjaModel();
-        $kategorijaId = $kategorijaPitanjaModel->findQuestionCategoryId($this->request->getVar('pretraga'));
-        $pitanjaK = $pitanjeModel->pregled_pitanja_po_kategoriji($kategorijaId);
+        if ($this->request->getVar('pretraga')==null)  $pitanjaK=$pitanjeModel->findAll();
+        else  // ako nije uneta nijedna kategorija onda prikazi sva pitanja
+        {
+            $kategorijaId = $kategorijaPitanjaModel->findQuestionCategoryId($this->request->getVar('pretraga'));
+            $pitanjaK = $pitanjeModel->pregled_pitanja_po_kategoriji($kategorijaId);
+        }
         echo view("pregled_pitanja", ['pitanja' => $pitanjaK]);
-        //$this->prikaz('pregled_pitanja', ['pitanja' => $pitanjaK]);
     }
 
     // prikazuju se svi odgovori na odredjeno pitanje
     public function pregledOdgovora() {
         $odgovorModel = new OdgovorModel();
         $pitanjeModel = new PitanjeModel();
+        if ($this->request->getVar('pretraga')==null)  return redirect()->to(site_url('/'));
+        else {
         $pitanjeId = $this->request->getVar('pretraga');
         $odgovori = $odgovorModel->pregledOdgovoraNaPitanje($pitanjeId);
         $pitanje = $pitanjeModel->find($pitanjeId);
         echo view("odgovori", ['odgovori' => $odgovori, 'pitanje' => $pitanje]);
-        //$this->prikaz('odgovori', ['odgovori' => $odgovori, 'pitanje' => $pitanje]);
+        }
     }
 
-    /*  // ako zelimo nesto da uradimo pre svakog prikaza
+    /*
+    // ako zelimo nesto da uradimo pre svakog prikaza
     protected function prikaz($page, $data){
 		$data['controller']='BaseController';
         echo view("$page", $data);
 	}
     */
+    
 }
