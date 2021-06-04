@@ -32,17 +32,17 @@ class Korisnik extends BaseController
 			}
 	
 		$odgovorModel = new OdgovorModel();
-		$anonimno=$this->request->getVar('anonimus');
-		if ($anonimno==null) $anonimno=0;
+		$anonimno=$this->request->getVar('anonimnost');
+		echo "$anonimno"; // dohvata dobro, ali pamti lose nekako
 		echo session()->get('userid');  // ostavljeno da bi se videlo da dobro dohvata userid
         $odgovorModel->save([
 			'pitanje_idPitanje'=>$idPitanje,
 			'korisnik_idKorisnik_odgovorio'=>session()->get('userid'),
 			'tekstOdgovora'=>$this->request->getVar('TekstOdgovora'),
-			'odgovorenoAnonimno'=>$anonimno
+			'odgovorenoAnonimno'=>$this->request->getVar('anonimnost')
 		]);
         $controller=session()->get('controller');
-		return redirect()->to(site_url("$controller/"));		
+		//return redirect()->to(site_url("$controller/"));		
 	}
 
 	public function pregledOdgovora() {
