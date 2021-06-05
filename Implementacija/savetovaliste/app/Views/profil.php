@@ -29,11 +29,13 @@
         <?php
         // dohvatanje kontrolera i userId
         $controller=session()->get("controller");
-        $userId=session()->get("userid");
+        $userId=$idKorisnikaCijiProfilGledamo;
         // korisnik model nam treba radi dohvatanja podataka o korisniku ciji profil gledamo
         use App\Models\KorisnikModel;
         use App\Models\PolModel;
         use App\Models\GradModel;
+        use App\Models\TipKorisnikaModel;
+        use App\Models\KorisnikOcenioPsihologaModel;
 
         ?>
         <div>
@@ -60,7 +62,11 @@
         if ($licnoIme==null) $licnoIme="Nije uneto";
         // dohvatanje email
         $email=$korisnik->email;
-        if ($email==null) $email="Nije uneto";    
+        if ($email==null) $email="Nije uneto";
+        // dohvatanje kategorije korisnika
+        $idKategorije=$korisnik->tipKorisnika_idTipKorisnika;
+        $tipKorisnikaModel=new TipKorisnikaModel();
+        $kategorija=$tipKorisnikaModel->find($idKategorije)->tip;
        
         echo '
 
@@ -118,13 +124,37 @@
                     <div class="slovaVelika ">Pol: </div>
                     <div class="slovaMala ">' ."$pol" . '</div>
                 </div>
+                <div class="w3-row">
+                    <div class="slovaVelika ">Kategorija korisnika: </div>
+                    <div class="slovaMala ">' ."$kategorija" . '</div>
+                </div>
                 <br>
 
             </div>
+            ';
+            if ($kategorija=="Psiholog"){
+                    $korisnikOcenioPsihologaModel=new KorisnikOcenioPsihologaModel();
+                    $likes=$korisnikOcenioPsihologaModel->findNumOfLikes($korisnik->idKorisnik);
+                    $dislikes=$korisnikOcenioPsihologaModel->findNumOfDislikes(($korisnik->idKorisnik));
+                echo '
+                    <br> 
+
+                    <div class="w3-row w3-center picture">
+                        <div class="slovaVelika ">Pregled dosadašnjih ocena psihologa ' ."$username" . ': </div> <br>
+
+                            <div class="w3-center">
+                                <!-- TODO ubaciti lajkovanje -->
+                                <button class="w3-button dugmeOceniPsihologa w3-center" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Pozitivna ocena (' . "$likes" . ')</u></button> &nbsp
+                                <!-- TODO ubaciti lajkovanje -->
+                                <button class="w3-button dugmeOceniPsihologa w3-center" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Negativna ocena (' . "$dislikes" . ')</u></button>
+                            </div>
+                            <br> <br>
+                    </div>
+                    <br> 
+                ';
+            }
+            echo '
             <br>
-      
-        <br>
-        <br>
         <br>
         <br>
         '; // kraj echo

@@ -151,7 +151,8 @@ class Korisnik extends BaseController
 
 	// prikaz profila korisnika ciji smo id prosledili 
 	public function profil($userId){
-    echo view("profil");
+		echo view("profil", ['idKorisnikaCijiProfilGledamo'=>$userId]);
+			return;
 
 	}
 }

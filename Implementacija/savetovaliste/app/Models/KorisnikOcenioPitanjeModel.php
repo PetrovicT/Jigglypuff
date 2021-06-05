@@ -18,7 +18,7 @@ class KorisnikOcenioPitanjeModel extends Model
             return $numOfLikes;
         }
         
-         // pronalazi broj lajkova na prosledjeno pitanje
+         // pronalazi broj dislajkova na prosledjeno pitanje
         public function findNumOfDislikes($idPitanja){
             $sveOceneNaPitanje =  $this->where('ocena',"0")->where('pitanje_idPitanje', "$idPitanja")->findAll();
             if ($sveOceneNaPitanje == null) {return 0;}

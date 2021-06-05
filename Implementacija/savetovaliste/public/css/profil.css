@@ -49,4 +49,8 @@ h3{
 	background: linear-gradient(to right, #021B79, #0a63bd);
 }
 
-
+.dugmeOceniPsihologa {
+	width: 230px;
+	background-color: #021B79 !important;
+	color:white !important;  
+}
