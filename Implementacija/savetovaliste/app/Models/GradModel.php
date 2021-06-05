@@ -18,4 +18,9 @@ class GradModel extends Model
             
             return $gradoviSorted->getResult();
         }
+
+        // vraca naziv grada ciji id prosledimo
+        public function nadjiNazivGrada($idGrada){
+            return $this->find($idGrada)->naziv;
+        }
 }
