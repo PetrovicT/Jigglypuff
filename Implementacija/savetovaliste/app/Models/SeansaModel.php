@@ -38,4 +38,16 @@ class SeansaModel extends Model {
 
         return $seanseSorted->getResult();
     }
+    
+    public function findAllInFutureSortedLike($keyword){
+        $queryBuilder = $this->db->table($this->table);
+        
+        $queryBuilder->where('datumPocetka >= CURRENT_DATE()');
+        $queryBuilder->like('nazivSeanse', $keyword)->orLike('opisSeanse', $keyword);
+        $queryBuilder->orderBy('datumPocetka','ASC');
+        $queryBuilder->orderBy('vremePocetka','ASC');
+        $seanseSorted = $queryBuilder->get();
+
+        return $seanseSorted->getResult();
+    }
 }

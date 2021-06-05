@@ -112,6 +112,9 @@ class BaseController extends Controller {
         if($this->request->getGet('datumSeanse')){
             $sveSeanse = $seansaModel->findAllOnDateSorted($this->request->getGet('datumSeanse'));
         }
+        else if($this->request->getGet('pretraga')){
+            $sveSeanse = $seansaModel->findAllInFutureSortedLike($this->request->getGet('pretraga'));
+        }
         else{
             $sveSeanse = $seansaModel->findAllInFutureSorted();
         }
