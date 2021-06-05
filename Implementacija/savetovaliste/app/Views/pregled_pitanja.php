@@ -83,6 +83,16 @@
                                     </div>
                                 ';
                             }
+
+                        // da li svi ili samo registrovani korisnici mogu da odgovore na pitanje
+                        $sviImajuPravoDaOdgovore="Svi registrovani korisnici";
+                        if ($pitanje->moguSviDaOdgovore==0) $sviImajuPravoDaOdgovore="Samo registrovani psiholozi";
+
+                        echo '
+                        <div class="input letters_dark_blue">
+                        <p style="text-align: justify; font-weight: normal;"> <b> Na ovo pitanje mogu da odgovore: ' . $sviImajuPravoDaOdgovore . '</></p> 
+                        </div>';
+
                         echo '
 
                         <div class="input letters_dark_blue">
