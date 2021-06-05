@@ -6,9 +6,10 @@ use App\Models\PitanjeModel;
 class KorisnikOcenioOdgovorModel extends Model
 {
         protected $table      = 'korisnik_ocenio_odgovor';
+        protected $primaryKey = 'idScapegoat';
         protected $allowedFields = ['ocena','odgovor_idOdgovor', 'korisnik_idKorisnik'];
         protected $returnType = 'object';
-        protected $useAutoIncrement = false;
+        protected $useAutoIncrement = true;
         
         // pronalazi broj lajkova na prosledjen odgovor
         public function findNumOfLikes($idOdgovora){

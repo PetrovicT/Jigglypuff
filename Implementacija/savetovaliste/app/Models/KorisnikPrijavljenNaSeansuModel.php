@@ -7,15 +7,10 @@ use CodeIgniter\Model;
 class KorisnikPrijavljenNaSeansuModel extends Model {
 
     protected $table = 'korisnik_prijavljen_na_seansu';
-    protected $allowedFields = ['seansa_idSeansa', 'korisnik_idKorisnik'];
+    protected $primaryKey = 'idScapegoat';
+    protected $allowedFields = [ 'korisnik_idKorisnik', 'seansa_idSeansa'];
     protected $returnType = 'object';
-    protected $useAutoIncrement = false;
-    // Nažalost moramo da specificiramo tačno jedan primary key
-    protected $primaryKey = 'seansa_idSeansa';
-
-    public function __construct(\CodeIgniter\Database\ConnectionInterface &$db = null, \CodeIgniter\Validation\ValidationInterface $validation = null) {
-        parent::__construct($db, $validation);
-    }
+    protected $useAutoIncrement = true;
 
     // Nadji broj prijavljenih na seansu sa id-jem
     public function findNumberOfSignedUsers($idSeanse) {
@@ -52,8 +47,8 @@ class KorisnikPrijavljenNaSeansuModel extends Model {
     // Dodaje prijavu
     public function addPrijava($idKorisnika, $idSeanse) {
         $data = [
-            'seansa_idSeansa' => $idKorisnika,
-            'korisnik_idKorisnik' => $idSeanse
+            'korisnik_idKorisnik' => $idKorisnika,
+            'seansa_idSeansa' => $idSeanse
         ];
         $this->insert($data);
     }

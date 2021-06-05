@@ -33,7 +33,7 @@ class Korisnik extends BaseController {
         // Parametri iz sessiona i requesta
         $idKorisnik = $this->session->get('userid');
         $idSeansa = $this->request->getPost('id');
-
+        
         // Ako nisu prisutni, zahtev je loš, vrati grešku 400
         if (!$idKorisnik || !$idSeansa) {
             return $this->responseWithIspis(400,
