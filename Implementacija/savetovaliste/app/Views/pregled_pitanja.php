@@ -77,9 +77,12 @@
                             {
                                 $idAutora=$pitanje->korisnik_idKorisnik_postavio;
                                 $autor=$korisnikModel->findUserUsername($idAutora);
+                                $referencaPregledProfila=site_url("$controller/profil/$idAutora");
                                 echo '
                                     <div class="w3-right" style="padding-right: 6%;"> <br>
+                                    <a class="nema_podvlacenja" href=' . "$referencaPregledProfila" . '>
                                         <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
+                                    </a>                                        
                                     </div>
                                 ';
                             }

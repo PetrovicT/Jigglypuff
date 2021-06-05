@@ -116,4 +116,18 @@ class BaseController extends Controller {
         $this->session->destroy();
         return redirect()->to(site_url());
     }
+
+    // prikaz profila korisnika ciji smo id prosledili 
+	public function profil($idKorisnika=null){
+        // ako pozovemo bez parametara
+        if ($idKorisnika==null) return redirect()->to(site_url('/'));
+        // ako pokusamo da pregledamo profil korisnika ciji id nije u bazi 
+        $korisnikModel=new KorisnikModel();
+        $korisnik = $korisnikModel->find($idKorisnika);
+        if ($korisnik == null) {
+            return redirect()->to(site_url('/'));
+        }
+		echo view("profil", ['idKorisnikaCijiProfilGledamo'=>$idKorisnika]);
+			return;
+	}
 }

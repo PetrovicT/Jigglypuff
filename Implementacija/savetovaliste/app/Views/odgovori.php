@@ -71,19 +71,20 @@
     if($pitanje->postavljenoAnonimno==1)
     {
         echo '
-            <div class="w3-right" style="padding-right: 6%;"> 
-                <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
-            </div> ';
+        <div class="w3-right" style="padding-right: 6%;"> <br>
+            <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
+        </div> ';
     }
-    else
+else
     {
-        // ako nije anonimno stavi autora pitanja
-        $korisnikModel=new KorisnikModel();
         $idAutora=$pitanje->korisnik_idKorisnik_postavio;
         $autor=$korisnikModel->findUserUsername($idAutora);
+        $referencaPregledProfila=site_url("$controller/profil/$idAutora");
         echo '
-            <div class="w3-right" style="padding-right: 6%;"> 
+            <div class="w3-right" style="padding-right: 6%;"> <br>
+            <a class="nema_podvlacenja" href=' . "$referencaPregledProfila" . '>
                 <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
+            </a>                                        
             </div>
         ';
     }
@@ -187,12 +188,16 @@
                     {
                         $idAutora=$odgovor->korisnik_idKorisnik_odgovorio;
                         $autor=$korisnikModel->findUserUsername($idAutora);
+                        $referencaPregledProfila=site_url("$controller/profil/$idAutora");
                         echo '
                             <div class="w3-right" style="padding-right: 6%;"> <br>
+                            <a class="nema_podvlacenja" href=' . "$referencaPregledProfila" . '>
                                 <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
+                            </a>                                        
                             </div>
                         ';
                     }
+
                 echo '
                     <div class="input letters_dark_blue">
                         <p style="text-align: justify; font-weight: normal;"> ' . $odgovor->tekstOdgovora . ' </p> 
