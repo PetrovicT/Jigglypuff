@@ -1,7 +1,7 @@
 <!-- Izgled jedne seanse -->
 <!-- Obavezno deklarisati PHP varijablu sa svim podacima pre includovanja ovoga -->
 <!-- PHP variable name: $oneSeansaData -->
-<!-- Polja: naziv, datum, vreme, idOrganizatora, imeOrganizatora, tekstSeanse, maxPrijavljenih, trenutnoPrijavljenih, idSeanse, zabranjenaPrijava -->
+<!-- Polja: naziv, datum, vreme, idOrganizatora, imeOrganizatora, tekstSeanse, maxPrijavljenih, trenutnoPrijavljenih, idSeanse, zabranjenaPrijava, kontaktInfoUslovno -->
 
 
 <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
@@ -21,6 +21,11 @@
     <!-- Input section -->
     <div class="input letters_dark_blue">
         <p style="text-align: justify;"><?= $oneSeansaData['tekstSeanse'] ?> </p>
+        <br />
+    </div>
+    
+    <div class="input letters_dark_blue">
+        <i><?= $oneSeansaData['kontaktInfoUslovno'] ?> </i>
         <br />
     </div>
     <!-- Anwser input -->

@@ -76,8 +76,10 @@
                                 'maxPrijavljenih' => $seansa->maxBrojPrijavljenih,
                                 'trenutnoPrijavljenih' => $korisnikPrijavljenNaSeansuModel->findNumberOfSignedUsers($seansa->idSeansa),
                                 'idSeanse' => $seansa->idSeansa,
-                                'zabranjenaPrijava' => $seansaModel->isSeansaFull($seansa->idSeansa) && $postojecaPrijavaKorisnika == null,
-                                'korisnikVecPrijavljen' => $postojecaPrijavaKorisnika != null
+                                // Zabranjena prijava ako nije već prijavljen a seansa je puna. Ako je prijavljen, nemoj zabraniti, mozda hoće da se odjavi.
+                                'zabranjenaPrijava' => $postojecaPrijavaKorisnika == null && $seansaModel->isSeansaFull($seansa->idSeansa),
+                                'korisnikVecPrijavljen' => $postojecaPrijavaKorisnika != null,
+                                'kontaktInfoUslovno' => $postojecaPrijavaKorisnika != null && $seansa->zoomLink != null ? "Zoom link: <a href = '" . $seansa->zoomLink . "'>" . $seansa->zoomLink . "</a>" : ""
                             ];
                             include 'resources/oneSeansaView.php';
                         }
