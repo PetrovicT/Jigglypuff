@@ -170,7 +170,7 @@
                 <button type="submit" class="w3-button buttons" style="font-weight: normal;" value="">Pošalji</button> &nbsp
               </div>
             </div>
-            <?php  if(!empty($poruka)) echo "<span style='color:red'>$poruka</span>"; ?>
+            <?php  if(!empty($poruka)) echo "<br> <span style='color:red; font-size:18px'>$poruka</span>"; ?>
           </div>
           <br>
         </div>

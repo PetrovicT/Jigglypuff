@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\PitanjeModel;
 use App\Models\OdgovorModel;
+use App\Models\KorisnikModel;
 
 class Korisnik extends BaseController
 {
@@ -16,32 +17,43 @@ class Korisnik extends BaseController
 	// zelim da odgovorim na pitanje ciji je id proslednjen
 	// prikazace se forma za cuvanje novog odgovora na odabrano pitanje
 	public function odgovori_na_pitanje($idPitanje){
-	$pitanjeModel = new PitanjeModel();
-	$pitanje = $pitanjeModel->find($idPitanje);
-	echo view("odgovori_na_pitanje", ['pitanje' => $pitanje]);
+		$pitanjeModel = new PitanjeModel();
+		$pitanje = $pitanjeModel->find($idPitanje);
+		echo view("odgovori_na_pitanje", ['pitanje' => $pitanje]);
 	}
 
 	// kada se submit forma poziva se ova funkcija kako bi se sacuvao odgovor u bazi
 	public function odgovoriNaPitanje($idPitanje){
-            $pitanjeModel = new PitanjeModel();
-            $pitanje = $pitanjeModel->find($idPitanje);
-            if (!$this->validate(['TekstOdgovora' => 'required|max_length[200]'])) {
-                echo view("odgovori_na_pitanje", ['pitanje' => $pitanje, 'poruka' => $this->validator->listErrors()]);
-                return;
-            }
+		$pitanjeModel = new PitanjeModel();
+		$pitanje = $pitanjeModel->find($idPitanje);
+		if (!$this->validate(['TekstOdgovora' => 'required'])) {
+			echo view("odgovori_na_pitanje", ['pitanje' => $pitanje, 'poruka' => $this->validator->listErrors()]);
+			return;
+		}
+		// provera da li korisnik ima pravo da odgovori na izabrano pitanje
+		// ako korisnik nije psiholog a na pitanje smeju samo psiholozi da odgovore potrebno je ispisati poruku korisniku
+        $moguSviDaOdgovore=$pitanje->moguSviDaOdgovore;
+		$korisnikModel=new KorisnikModel();
+		$idKategorijaKorisnika=$korisnikModel->find(session()->get('userid'))->tipKorisnika_idTipKorisnika;
+		// psiholozi su idKategorijaKorisnika=2 
+		if ($moguSviDaOdgovore==0 && $idKategorijaKorisnika!=2){
+            echo view("odgovori_na_pitanje", ['pitanje' => $pitanje, 
+			'poruka' => "Morate biti registrovani psiholog da biste imali pravo da odgovorite na ovo pitanje!"]);
+			return;
+		}
 
-            $odgovorModel = new OdgovorModel();
-            $anonimno = $this->request->getVar('anonimus');
-            echo session()->get('userid');  // ostavljeno da bi se videlo da dobro dohvata userid
-            $odgovorModel->save([
-                            'pitanje_idPitanje'=>$idPitanje,
-                            'korisnik_idKorisnik_odgovorio'=>session()->get('userid'),
-                            'tekstOdgovora'=>$this->request->getVar('TekstOdgovora'),
-                            'odgovorenoAnonimno'=>$anonimno=="1" ? true : false
-                    ]);
-            
-            $controller=session()->get('controller');
-            return redirect()->to(site_url("$controller/"));
+		$odgovorModel = new OdgovorModel();
+		$anonimno = $this->request->getVar('anonimus');
+		$odgovorModel->save([
+						'pitanje_idPitanje'=>$idPitanje,
+						'korisnik_idKorisnik_odgovorio'=>session()->get('userid'),
+						'tekstOdgovora'=>$this->request->getVar('TekstOdgovora'),
+						'odgovorenoAnonimno'=>$anonimno=="1" ? true : false
+				]);
+		
+		$controller=session()->get('controller');
+		// kada se sacuva odgovor na pitanje, redirect korisnika na prikaz svih odgovora na to pitanje
+		return redirect()->to(site_url("$controller/pregledOdgovora?pretraga=$idPitanje"));
 	}
 
 	public function pregledOdgovora() {
@@ -70,14 +82,18 @@ class Korisnik extends BaseController
 			}	
 		$pitanjeModel = new PitanjeModel();   
 		$kategorija=$this->request->getVar('category');
-		if($kategorija=="Nema") return echo view("postavi_pitanje", ['poruka' => "Morate da unesete kategoriju pitanja!"]);
-        else {
+		if($kategorija=="Nema") 
+		{
+			echo view("postavi_pitanje", ['poruka' => "Morate da unesete kategoriju pitanja!"]);
+			return;
+        }
+		else {
 			$kategorijaPitanjaModel=new KategorijaPitanjaModel();
 			$idKategorije=$kategorijaPitanjaModel->findQuestionCategoryId($kategorija);
 		}
 		$pitanjeModel->save([
 			'korisnik_idKorisnik_postavio'=>session()->get('userid'),
-			'kategorijaPitanja_idKategorija'=>$idKategorije;
+			'kategorijaPitanja_idKategorija'=>$idKategorije,
 			'naslovPitanja'=>$this->request->getVar('NaslovPitanja'),
 			'tekstPitanja'=>$this->request->getVar('TekstPitanja'),
 			'postavljenoAnonimno'=>0,

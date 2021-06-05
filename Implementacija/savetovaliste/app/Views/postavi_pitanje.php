@@ -119,7 +119,7 @@
                                
 
                                 <br>
-                                <?php  if(!empty($poruka)) echo "<hr> <span style='color:red; '>$poruka</span>"; ?>
+                                <?php  if(!empty($poruka)) echo "<br> <span style='color:red; font-size:18px'>$poruka</span>"; ?>
                                 </div>
                           
                             </form>
