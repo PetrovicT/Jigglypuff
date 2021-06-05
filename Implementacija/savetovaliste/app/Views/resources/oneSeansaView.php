@@ -1,7 +1,7 @@
 <!-- Izgled jedne seanse -->
 <!-- Obavezno deklarisati PHP varijablu sa svim podacima pre includovanja ovoga -->
 <!-- PHP variable name: $oneSeansaData -->
-<!-- Polja: naziv, datum, vreme, idKorisnika, imeKorisnika, tekstSeanse, maxPrijavljenih, trenutnoPrijavljenih, idSeanse -->
+<!-- Polja: naziv, datum, vreme, idOrganizatora, imeOrganizatora, tekstSeanse, maxPrijavljenih, trenutnoPrijavljenih, idSeanse, zabranjenaPrijava -->
 
 
 <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
@@ -15,7 +15,7 @@
     <div class="w3-right" style="padding-right: 6%;">
         <br />
         <h3 class="letters_dark_blue">
-            <a href="<?= site_url("$controller/profil/" . $oneSeansaData['idKorisnika']) ?>"><b><?= $oneSeansaData['imeKorisnika'] ?></b></a>
+            <a href="<?= site_url("$controller/profil/" . $oneSeansaData['idOrganizatora']) ?>"><b><?= $oneSeansaData['imeOrganizatora'] ?></b></a>
         </h3>
     </div>
     <!-- Input section -->
@@ -29,12 +29,14 @@
         $trenutnoPrijavljenih = $oneSeansaData['trenutnoPrijavljenih'];
         $maxPrijavljenih = $oneSeansaData['maxPrijavljenih'];
         $idSeanse = $oneSeansaData['idSeanse'];
+        $disabledOrNot = $oneSeansaData['zabranjenaPrijava'] ? 'disabled' : '';
+        $natpisDugmeta = $oneSeansaData['korisnikVecPrijavljen'] ? "Odjavi se" : "Prijavi se";
         echo "
         <div class='input'>
             <div id='like'>
                 <div style='float: right;'>
-                    <button onclick='prijaviSeansu($idSeanse)' class='w3-button buttons'>
-                        <b>Prijavi se ($trenutnoPrijavljenih/$maxPrijavljenih)</b>
+                    <button onclick='prijaviSeansu($idSeanse)' class='w3-button buttons' $disabledOrNot>
+                        <b>$natpisDugmeta ($trenutnoPrijavljenih/$maxPrijavljenih)</b>
                     </button>
                 </div>
             </div>

@@ -63,17 +63,21 @@
                     } else {
                         $korisnikModel = new \App\Models\KorisnikModel();
                         $korisnikPrijavljenNaSeansuModel = new App\Models\KorisnikPrijavljenNaSeansuModel();
+                        $seansaModel = new \App\Models\SeansaModel();
                         foreach ($sveSeanse as $seansa) {
+                            $postojecaPrijavaKorisnika = $korisnikPrijavljenNaSeansuModel->findPrijava(session()->get('userid'), $seansa->idSeansa);
                             $oneSeansaData = [
                                 'naziv' => $seansa->nazivSeanse,
                                 'datum' => $seansa->datumPocetka,
                                 'vreme' => $seansa->vremePocetka,
-                                'idKorisnika' => $seansa->korisnik_idKorisnik_organizator,
-                                'imeKorisnika' => $korisnikModel->findUserUsername($seansa->korisnik_idKorisnik_organizator),
+                                'idOrganizatora' => $seansa->korisnik_idKorisnik_organizator,
+                                'imeOrganizatora' => $korisnikModel->findUserUsername($seansa->korisnik_idKorisnik_organizator),
                                 'tekstSeanse' => $seansa->opisSeanse,
                                 'maxPrijavljenih' => $seansa->maxBrojPrijavljenih,
                                 'trenutnoPrijavljenih' => $korisnikPrijavljenNaSeansuModel->findNumberOfSignedUsers($seansa->idSeansa),
-                                'idSeanse' => $seansa->idSeansa
+                                'idSeanse' => $seansa->idSeansa,
+                                'zabranjenaPrijava' => $seansaModel->isSeansaFull($seansa->idSeansa) && $postojecaPrijavaKorisnika == null,
+                                'korisnikVecPrijavljen' => $postojecaPrijavaKorisnika != null
                             ];
                             include 'resources/oneSeansaView.php';
                         }
