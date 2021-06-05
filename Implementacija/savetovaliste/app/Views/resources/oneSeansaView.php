@@ -1,7 +1,7 @@
 <!-- Izgled jedne seanse -->
 <!-- Obavezno deklarisati PHP varijablu sa svim podacima pre includovanja ovoga -->
 <!-- PHP variable name: $oneSeansaData -->
-<!-- Polja: naziv, datum, vreme, idKorisnika, imeKorisnika, tekstSeanse, maxPrijavljenih, trenutnoPrijavljenih -->
+<!-- Polja: naziv, datum, vreme, idKorisnika, imeKorisnika, tekstSeanse, maxPrijavljenih, trenutnoPrijavljenih, idSeanse -->
 
 
 <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
@@ -28,11 +28,12 @@
     if (session()->get('controller') != 'Gost') {
         $trenutnoPrijavljenih = $oneSeansaData['trenutnoPrijavljenih'];
         $maxPrijavljenih = $oneSeansaData['maxPrijavljenih'];
+        $idSeanse = $oneSeansaData['idSeanse'];
         echo "
         <div class='input'>
             <div id='like'>
                 <div style='float: right;'>
-                    <button class='w3-button buttons'>
+                    <button onclick='prijaviSeansu($idSeanse)' class='w3-button buttons'>
                         <b>Prijavi se ($trenutnoPrijavljenih/$maxPrijavljenih)</b>
                     </button>
                 </div>

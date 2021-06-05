@@ -16,6 +16,8 @@
         <style>
             h1,h2,h3,h4,h5,h6 {font-family: "Oswald"} body {font-family: "Open Sans"}
         </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="<?php echo base_url(); ?>/js/seanse.js"></script>
         <script src="<?php echo base_url(); ?>/js/script.js"></script>
     </head>
     <body class="w3-light-grey">
@@ -70,7 +72,8 @@
                                 'imeKorisnika' => $korisnikModel->findUserUsername($seansa->korisnik_idKorisnik_organizator),
                                 'tekstSeanse' => $seansa->opisSeanse,
                                 'maxPrijavljenih' => $seansa->maxBrojPrijavljenih,
-                                'trenutnoPrijavljenih' => $korisnikPrijavljenNaSeansuModel->findNumberOfSignedUsers($seansa->idSeansa)
+                                'trenutnoPrijavljenih' => $korisnikPrijavljenNaSeansuModel->findNumberOfSignedUsers($seansa->idSeansa),
+                                'idSeanse' => $seansa->idSeansa
                             ];
                             include 'resources/oneSeansaView.php';
                         }
