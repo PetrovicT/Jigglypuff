@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use App\Models\KorisnikPrijavljenNaSeansuModel;
 
 class SeansaModel extends Model {
 
@@ -47,6 +48,12 @@ class SeansaModel extends Model {
         $seanseSorted = $queryBuilder->get();
 
         return $seanseSorted->getResult();
+    }
+    
+    // Vraća bool da li je seansa puna ili ne
+    public function isSeansaFull($idSeanse){
+        $korisnikPrijavljenNaSeansuModel = new KorisnikPrijavljenNaSeansuModel();
+        return ($korisnikPrijavljenNaSeansuModel->findNumberOfSignedUsers($idSeanse) >= $this->find($idSeanse)->maxBrojPrijavljenih);
     }
 
 }

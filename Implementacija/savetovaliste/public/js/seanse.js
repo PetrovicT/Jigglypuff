@@ -1,10 +1,10 @@
 function prijaviSeansu(idSeanse) {
-    $.post("prijavi_seansu",
+    $.post("prijavi_odjavi_seansu",
             {
                 id: idSeanse
             },
             function (data, status) {
-                alert("Data: " + data + "\nStatus: " + status);
+                alert("Ispis: " + data.ispis + "\nStatus: " + status);
             });
 }
 
