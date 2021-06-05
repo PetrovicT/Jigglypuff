@@ -40,7 +40,7 @@
         <div class='input'>
             <div id='like'>
                 <div style='float: right;'>
-                    <button onclick='prijaviSeansu($idSeanse)' class='w3-button buttons' $disabledOrNot>
+                    <button onclick='prijaviSeansu(this,$idSeanse)' class='w3-button buttons' $disabledOrNot>
                         <b>$natpisDugmeta ($trenutnoPrijavljenih/$maxPrijavljenih)</b>
                     </button>
                 </div>

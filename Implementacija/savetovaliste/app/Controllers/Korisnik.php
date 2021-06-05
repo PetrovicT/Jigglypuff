@@ -75,7 +75,7 @@ class Korisnik extends BaseController {
             $korisnikPrijavljenNaSeansuModel->deletePrijava($idKorisnik, $idSeansa);
             return $this->responseWithIspis(209,
                             "Uspešna odjava!",
-                            'Uspešna odjava sa seanse. :(');
+                            'Uspešna odjava sa seanse.');
         }
     }
 
