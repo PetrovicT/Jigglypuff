@@ -17,7 +17,7 @@
         <style>h1,h2,h3,h4,h5,h6 {font-family: "Oswald"} body {font-family: "Open Sans"}</style>
         <script src = "<?php echo base_url(); ?>/js/script.js"></script>
         <title>Odgovori</title>
-  </head>
+</head>
 
 
 <body class="w3-light-grey">
@@ -27,6 +27,7 @@
     ?>
 
   <div class="w3-content" style="max-width:90%">
+
     <?php
         $controller=session()->get('controller');
     ?>
@@ -35,21 +36,19 @@
     <div class="w3-row  w3-padding w3-border">
 
       <!-- UNOSI -->
-    <div class="w3-col l8 s12">
-    <br>
-    
-    <?php 
+      <div class="w3-col l8 s12">
+        <br>
+        <?php 
     use App\Models\KorisnikModel;
     use App\Models\PitanjeModel;
     use App\Models\OdgovorModel;
     use App\Models\KorisnikOcenioOdgovorModel;
     use App\Models\KorisnikOcenioPitanjeModel;
         
-    // bez obzira da li ima ili nema odgovora uvek se radi prikaz pitanja, pa zatim ili obavestenje da nema odgovora ili prikaz odgovora
-    // na koje pitanje se traze odgovori
+    // prikaz pitanja na koje zelimo da damo odgovor
     $idPitanja=$pitanje->idPitanje;
     $korisnikOcenioPitanjeModel=new KorisnikOcenioPitanjeModel();
-    // prikaz broja like i dislike na pitanju za koje se prikazuju odgovori
+    // prikaz broja like i dislike na pitanju 
     $likes=$korisnikOcenioPitanjeModel->findNumOfLikes($idPitanja);
     $dislikes=$korisnikOcenioPitanjeModel->findNumOfDislikes(($idPitanja));
 
@@ -96,159 +95,115 @@
     <div class="input letters_dark_blue">
     <p style="text-align: justify; font-weight: normal;"> <b> Na ovo pitanje mogu da odgovore: ' . $sviImajuPravoDaOdgovore . '</></p> 
     </div>';
-    
+   
+    $referencaOdgovori=site_url("$controller/pregledOdgovora?pretraga=$idPitanja");
+    // prikaz teksta pitanja
     echo '
         <div class="input letters_dark_blue">
             <p style="text-align: justify; font-weight: normal;"> ' . $pitanje->tekstPitanja . ' </p> 
         </div>
         ';
 
-    // ako je kontroler gost nemoj da das opciju odgovori na pitanje (mogucnost da se napise odgovor na pitanje cije odgovore prikazujemo)
-    if ($controller=='Gost')
-    {
-        echo '
-            <br>
-            <div class="input">     
-                <div id="like">
-                    <div>
-                        <!-- TODO ubaciti lajkovanje za Gosta -->
-                        <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                        <!-- TODO ubaciti lajkovanje za Gosta -->
-                        <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
-                    </div>
-                </div>
-            <br>
+    // prikaz broja lajkova i dislajkova 
+    echo '
+    <br>
+    <div class="input">     
+        <div id="like">
+            <div>
+                <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
+                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
+                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
             </div>
-
-        </div> <!-- Kraj div container -->
-        ';
-    }
-
-    else {  // ako nije controller gost, nego korisnik onda daj i mogucnost odgovora na pitanje i lajkovanja
-        $referenca4=site_url("$controller/odgovori_na_pitanje/$idPitanja");
-        echo '
-        <br>
-        <div class="input">     
-            <div id="like">
-                <div>
-                    <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                    <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                    <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                    <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
-                </div>
-        
-                <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
-                    <a class="nema_podvlacenja" href=' . "$referenca4" . '>Odgovori</a>
-                </button>
-            </div>
-        <br>
+    
+            <div style="float: right;">                                    
+            <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
+                <a class="nema_podvlacenja" href=' . "$referencaOdgovori" . '>Pogledaj odgovore</a>
+            </button> &nbsp
+           
+        </div> 
         </div>
+    <br>
+    </div>
 
     </div> <!-- Kraj div container -->
     ';
-    }
-        // ako nema odgovora onda je potrebno ispisati korisniku da nema nijednog odgovora na pitanje
-        if (count($odgovori)==0) {
-            echo '
-                <div class="w3-center"> 
-                    <h3 class="letters_dark_blue"> 
-                    <br>
-                        <b> Nije pronađen nijedan odgovor na izabrano pitanje. </b>
-                    </h3>
-                </div>
-            ';
-        }
-        else 
-        {
-            // ako postoje odgovori na izabrano pitanje ispisi sve odgovore
-            $korisnikModel=new KorisnikModel();
-            $pitanjeModel=new PitanjeModel();
-            $odgovorModel=new OdgovorModel();
-            $korisnikOcenioOdgovorModel=new KorisnikOcenioOdgovorModel();
-            foreach ($odgovori as $odgovor) 
-            {
-                // naznaci da se radi o odgovoru
-                echo '
-                <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
-                    <div class="w3-left" style="padding-left: 5%;"> <br>
-                        <h3 class="letters_dark_blue"> <b> ODGOVOR  </b>  </h3>
-                    </div>
-                ';           
-                if($odgovor->odgovorenoAnonimno==1)
-                // ako je anonimno odgovoreno, napisi da je autor anoniman
-                    {
-                        echo '
-                            <div class="w3-right" style="padding-right: 6%;"> <br>
-                                <h3 class="letters_dark_blue"><b> ' . "Anonimno" . '</b></h3>
-                            </div> ';
-                    }
-                else
-                // ako nije anoniman autor odgovora, napisi njegov username
-                    {
-                        $idAutora=$odgovor->korisnik_idKorisnik_odgovorio;
-                        $autor=$korisnikModel->findUserUsername($idAutora);
-                        echo '
-                            <div class="w3-right" style="padding-right: 6%;"> <br>
-                                <h3 class="letters_dark_blue"><b>' . $autor . '</b></h3>
-                            </div>
-                        ';
-                    }
-                echo '
-                    <div class="input letters_dark_blue">
-                        <p style="text-align: justify; font-weight: normal;"> ' . $odgovor->tekstOdgovora . ' </p> 
-                        <br>
-                    </div>
-                ';
+    
+?>
+       
+  
+    <?php  $idPitanja=$pitanje->idPitanje;  ?> 
+    <form name="odgovoriNaPitanje"  action="<?= site_url("$controller/odgovoriNaPitanje/$idPitanja") ?>" method="post">
+        <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
 
-                //<!-- DUGMAD -->
-                $idOdgovora=$odgovor->idOdgovor;
-                $idPitanja=$pitanje->idPitanje;
-                $likes=$korisnikOcenioOdgovorModel->findNumOfLikes($idOdgovora);
-                $dislikes=$korisnikOcenioOdgovorModel->findNumOfDislikes(($idOdgovora));
-                $referenca1=site_url("$controller/PostaviLike?pretraga=$idOdgovora");
-                $referenca2=site_url("$controller/PostaviDislike?pretraga=$idOdgovora");
-                $referenca4=site_url("$controller/odgovori_na_pitanje/$idPitanja");
-                // ako je gost, nema mogucnost da like/dislike
-                if ($controller=='Gost')
-                {
-                    echo '
-                    <div class="input ">     
-                        <div id="like">
-                            <div>
-                                <!-- TODO ubaciti lajkovanje za gosta -->
-                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                                <!-- TODO ubaciti lajkovanje za gosta -->
-                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
-                            </div>                           
-                        </div>
-                    </div> 
-                    <br>
-                    </div>
-                    '; 
-                }
-                else // ako nije gost nego korisnik ima mogucnost da like/dislike
-                {
-                    echo '
-                    <div class="input ">     
-                        <div id="like">
-                            <div>
-                                <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                                <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
-                            </div>                           
-                        </div>
-                    </div> 
-                    <br>
-                    </div>
-                    '; 
-                }
-            }
-    }?>
-   </div>
+          <div class="w3-left" style="padding-left: 5%;"> <br>
+            <h3 class="letters_dark_blue"><b>Saveti i preporuke prilikom odgovaranja na pitanja</b></h3>
+          </div>
 
-    <br>
-    <!-- LITERATURA -->
+          <br>
+          <div class="w3-left letters_dark_blue" style="padding-left: 5%; padding-right: 6%;">
+            <ol>
+              <li>Prilikom formulacije odgovora trudite se da odgovor bude što jasniji i precizniji</li>
+              <li>Pre nego što pošaljete odgovor proverite da li je u skladu sa temom pitanja</li>
+              <li>Ako niste verifikovani psiholog, molimo Vas da proverite da li imate mogućnost da odgovorite na
+                postavljeno pitanje</li>
+              <li>Vodite računa da je podrazumevano javno odgovaranje na pitanja. Ukoliko želite da anonimno odgovorite,
+                molimo Vas da to i naznačite u odgovarajućem polju.</li>
+              
+            </ol>
+
+            <hr style="border-top-color: #021B79;">
+          </div>
+
+          <div class="input ">
+
+            <textarea name="TekstOdgovora" id="text_input" cols="400" rows="5"
+              style="resize:none; size: 100%; position: center; padding: 0; color: #021B79; border-color: #021B79; font-size: 16px;"
+              placeholder="Tekst odgovora..."></textarea>
+            <?php  if(!empty($porukaTekstOdgovora)) echo " <span style='color:red; font-size:16px'>$porukaTekstOdgovora</span>"; ?>
+            <br>
+
+            <!-- JAVNO/PRIVATNO -->
+            <div><input type="checkbox" id="anonimus" name="anonimus" value="1">
+              <label for="anonimus" class="letters_dark_blue"> Želim anonimno da odgovorim na pitanje</label>
+            </div>
+            <br>
+
+          </div>
+
+
+          <!-- DUGMAD -->
+          
+          <?php $referencaOdustani=site_url("$controller/"); 
+          echo '
+          <div class="input ">
+            
+            <div id="like">
+              <div style="float: right;">
+                '; ?>
+                <a class="nema_podvlacenja" href=' . '$referencaOdustani' . '>
+                    <div class="w3-button buttons dugme" style="font-weight: normal;"> 
+                        Odustani
+                    </div>
+                </a> 
+                &nbsp
+                <?php echo '
+                <button type="submit" class="w3-button buttons" style="font-weight: normal;" value="">Pošalji</button> &nbsp
+              </div>
+            </div> '; 
+           if(!empty($porukaNemaPravaDaOdgovori)) echo "<br> <span style='color:red; font-size:16px'>$porukaNemaPravaDaOdgovori</span>"; 
+           echo '</div> 
+          ';?>
+          
+          <br>
+        </div>
+      </form>
+
+        <!-- KRAJ UNOSI -->
+      </div>
+
+      <br>
+     <!-- LITERATURA -->
     <div class="w3-col l4">
                     <div class="w3-white w3-margin w3-card-2">
                         <div class="w3-container w3-padding gradient_literature letters">
@@ -371,8 +326,10 @@
 
       <!-- KRAJ POZADINA -->
     </div>
+
     <!-- KRAJ SADRZAJ -->
-</div>
+  </div>
+
     <!-- Footer -->
     <?php
         require 'resources/footer.php';
