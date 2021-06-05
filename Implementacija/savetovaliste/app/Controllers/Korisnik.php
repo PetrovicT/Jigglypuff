@@ -45,6 +45,13 @@ class Korisnik extends BaseController {
         $korisnikPrijavljenNaSeansuModel = new KorisnikPrijavljenNaSeansuModel();
         $seansaModel = new SeansaModel();
 
+        // Ako seansa ne postoji, zahtev je loš, vrati grešku 400
+        if (!$seansaModel->find($idSeansa)) {
+            return $this->responseWithIspis(400,
+                            "Nepostojeća seansa",
+                            'Loše poslat zahtev, molimo probajte ponovo.<br/>Ako se ovaj problem desi više puta, molimo kontaktirajte administratora sajta.');
+        }
+
         // Nađi prijavu ako postoji
         $postojecaPrijava = $korisnikPrijavljenNaSeansuModel->findPrijava($idKorisnik, $idSeansa);
 
