@@ -56,21 +56,24 @@
                 <div class="w3-col l8 s12">
                     <br />
                     <?php
-                    if(count($sveSeanse) == 0){
+                    if (count($sveSeanse) == 0) {
                         echo '<h1>Nije pronađena nijedna seansa</h1>';
-                    }
-                    
-                    $korisnikModel = new \App\Models\KorisnikModel();
-                    foreach ($sveSeanse as $seansa) {
-                        $oneSeansaData = [
-                            'naziv' => $seansa->nazivSeanse,
-                            'datum' => $seansa->datumPocetka,
-                            'vreme' => $seansa->vremePocetka,
-                            'idKorisnika' => $seansa->korisnik_idKorisnik_organizator,
-                            'imeKorisnika' => $korisnikModel->findUserUsername($seansa->korisnik_idKorisnik_organizator),
-                            'tekstSeanse' => $seansa->opisSeanse
-                        ];
-                        include 'resources/oneSeansaView.php';
+                    } else {
+                        $korisnikModel = new \App\Models\KorisnikModel();
+                        $korisnikPrijavljenNaSeansuModel = new App\Models\KorisnikPrijavljenNaSeansuModel();
+                        foreach ($sveSeanse as $seansa) {
+                            $oneSeansaData = [
+                                'naziv' => $seansa->nazivSeanse,
+                                'datum' => $seansa->datumPocetka,
+                                'vreme' => $seansa->vremePocetka,
+                                'idKorisnika' => $seansa->korisnik_idKorisnik_organizator,
+                                'imeKorisnika' => $korisnikModel->findUserUsername($seansa->korisnik_idKorisnik_organizator),
+                                'tekstSeanse' => $seansa->opisSeanse,
+                                'maxPrijavljenih' => $seansa->maxBrojPrijavljenih,
+                                'trenutnoPrijavljenih' => $korisnikPrijavljenNaSeansuModel->findNumberOfSignedUsers($seansa->idSeansa)
+                            ];
+                            include 'resources/oneSeansaView.php';
+                        }
                     }
                     ?>
                 </div>
