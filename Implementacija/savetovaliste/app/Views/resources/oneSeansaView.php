@@ -24,14 +24,27 @@
         <br />
     </div>
     <!-- Anwser input -->
-    <div class="input">
-        <!-- Buttons -->
-        <div id="like">
-            <div style="float: right;">
-                <button class="w3-button buttons">
-                    <b>Prijavi se (<?= $oneSeansaData['trenutnoPrijavljenih'] ?>/<?= $oneSeansaData['maxPrijavljenih'] ?>)</b>
-                </button></div>
-        </div>
-    </div>
+    <?php
+    if (session()->get('controller') != 'Gost') {
+        $trenutnoPrijavljenih = $oneSeansaData['trenutnoPrijavljenih'];
+        $maxPrijavljenih = $oneSeansaData['maxPrijavljenih'];
+        echo "
+        <div class='input'>
+            <div id='like'>
+                <div style='float: right;'>
+                    <button class='w3-button buttons'>
+                        <b>Prijavi se ($trenutnoPrijavljenih/$maxPrijavljenih)</b>
+                    </button>
+                </div>
+            </div>
+        </div>";
+    } else {
+        echo "
+        <div style='float: right; color: gray;'>
+            Ulogujte se ili napravite nalog kako biste se prijavili na seansu!
+        </div>";
+    }
+    ?>
+
     <br />
 </div>
