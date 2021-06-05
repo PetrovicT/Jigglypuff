@@ -53,7 +53,7 @@
                     <br />
                     <?php
                     $korisnikModel = new \App\Models\KorisnikModel();
-                    foreach($sveSeanse as $seansa){
+                    foreach ($sveSeanse as $seansa) {
                         $oneSeansaData = [
                             'naziv' => $seansa->nazivSeanse,
                             'datum' => $seansa->datumPocetka,
@@ -68,7 +68,7 @@
                 </div>
                 <br />
                 <!-- LITERATURA -->
-    <div class="w3-col l4">
+                <div class="w3-col l4">
                     <div class="w3-white w3-margin w3-card-2">
                         <div class="w3-container w3-padding gradient_literature letters">
                             <h4>Preporučena literatura za sve ljubitelje psihologije</h4>
@@ -78,7 +78,7 @@
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
-										<img src="<?php echo base_url(); ?>/photos/50_ideja_koje_bi_stvarno_trebalo_da_znate_psihologija-adrijan_fernam_s.jpg"
+                                        <img src="<?php echo base_url(); ?>/photos/50_ideja_koje_bi_stvarno_trebalo_da_znate_psihologija-adrijan_fernam_s.jpg"
                                              style="width:100%;">
                                     </div>
                                     <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
@@ -186,16 +186,16 @@
                     <hr>
                     <!-- KRAJ LITERATURA -->
                 </div>
-                </div>
-                <!-- END GRID -->
             </div>
-            <!-- END w3-content -->
+            <!-- END GRID -->
         </div>
+        <!-- END w3-content -->
+    </div>
 
-        <!-- Footer -->
-        <?php
-        require 'resources/footer.php';
-        ?>
-        
-    </body>
+    <!-- Footer -->
+    <?php
+    require 'resources/footer.php';
+    ?>
+
+</body>
 </html>
