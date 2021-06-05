@@ -17,14 +17,29 @@ class Korisnik extends BaseController
 
 	// zelim da odgovorim na pitanje ciji je id proslednjen
 	// prikazace se forma za cuvanje novog odgovora na odabrano pitanje
-	public function odgovori_na_pitanje($idPitanje){
+	public function odgovori_na_pitanje($idPitanje=null){
+		$controller=session()->get('controller');
+		if ($idPitanje == null)  return redirect()->to(site_url("$controller/"));
 		$pitanjeModel = new PitanjeModel();
 		$pitanje = $pitanjeModel->find($idPitanje);
 		echo view("odgovori_na_pitanje", ['pitanje' => $pitanje]);
 	}
 
 	// kada se submit forma poziva se ova funkcija kako bi se sacuvao odgovor u bazi
-	public function odgovoriNaPitanje($idPitanje){
+	public function odgovoriNaPitanje($idPitanje = null){
+		$controller=session()->get('controller');
+		
+		if ($idPitanje == null) {
+			return redirect()->to(site_url("$controller/"));
+		}
+
+	    // ako je nepostojeci id treba vratiti korisnika na pocetnu stranu
+        $pitanjeModel = new PitanjeModel();
+		$pitanje = $pitanjeModel->find($idPitanje);	
+		if ($pitanje == null) {
+			return redirect()->to(site_url("$controller/"));
+		}
+
 		// koje sve poruke mogu da se prikazu korisniku
 		$porukaTekstOdgovora=null;
 		$porukaNemaPravaDaOdgovori=null;
@@ -72,9 +87,14 @@ class Korisnik extends BaseController
             $pitanjeModel = new PitanjeModel();
             if ($this->request->getVar('pretraga')==null)  return redirect()->to(site_url('/'));
             else {
-            $pitanjeId = $this->request->getVar('pretraga');
+			$pitanjeId = $this->request->getVar('pretraga');
+			$pitanje = $pitanjeModel->find($pitanjeId);
+			// ako ne postoji pitanje za koje gledamo odgovore
+			if ($pitanje == null) {
+				return redirect()->to(site_url('/'));
+			}
+
             $odgovori = $odgovorModel->pregledOdgovoraNaPitanje($pitanjeId);
-            $pitanje = $pitanjeModel->find($pitanjeId);
             echo view("odgovori", ['odgovori' => $odgovori, 'pitanje' => $pitanje]);
         }
     }

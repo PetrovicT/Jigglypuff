@@ -69,7 +69,7 @@
                         <div class="input letters_dark_blue">
                             <h4 class="letters_dark_blue">Izaberite kategoriju pitanja</h4>
 
-                            <form name="postaviPitanje"  action="<?= site_url("$controller/postaviPitanje") ?>">
+                            <form name="postaviPitanje"  action="<?= site_url("$controller/postaviPitanje") ?>" method="post">
                                 <label for="category"></label>
                                 <select style="color: #021B79; border-color: #021B79; font-size: 16px; width: 100%;" name="category" id="category">
                                     <option style="color: #021B79;" value="Nema">-</option>
@@ -102,7 +102,7 @@
                                 <!-- JAVNO/PRIVATNO -->
                                 <div>
                                     <input type="checkbox" id="anonimus" name="anonimus" value="1">
-                                    <label for="anonimus" class="letters_dark_blue"> Želim anonimno da odgovorim na pitanje</label>
+                                    <label for="anonimus" class="letters_dark_blue"> Želim anonimno da postavim pitanje</label>
                                 </div>
                                 <br>
 
@@ -118,9 +118,10 @@
                                 <div>
                                     <?php $referencaOdustani=site_url("$controller/"); ?>
                                     <div style="float: right;">
-                                        <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
-                                            <a class="nema_podvlacenja" href=' . '$referencaOdustani' . '>Odustani</a>
-                                        </button> &nbsp
+                                    <a class="nema_podvlacenja" href=' . '$referencaOdustani' . '>
+                                        <div class="w3-button buttons dugme" style="font-weight: normal;"> 
+                                            Odustani
+                                        </div></a> &nbsp
                                         <button type="submit" class="w3-button buttons"><u style="text-decoration: none; font-weight: normal;">Pošalji</u></button>
                                     </div>
                                 </div>

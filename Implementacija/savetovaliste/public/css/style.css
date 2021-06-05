@@ -73,3 +73,8 @@
 .letters {        
     color: white;
 }
+
+.dugme {
+	height: 38px !important;
+	color: white !important; 
+}

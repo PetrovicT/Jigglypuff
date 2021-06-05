@@ -133,7 +133,7 @@
        
   
     <?php  $idPitanja=$pitanje->idPitanje;  ?> 
-    <form name="odgovoriNaPitanje"  action="<?= site_url("$controller/odgovoriNaPitanje/$idPitanja") ?>">
+    <form name="odgovoriNaPitanje"  action="<?= site_url("$controller/odgovoriNaPitanje/$idPitanja") ?>" method="post">
         <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
 
           <div class="w3-left" style="padding-left: 5%;"> <br>
@@ -173,16 +173,21 @@
 
 
           <!-- DUGMAD -->
-          <?php $referencaOdustani=site_url("$controller/pregledOdgovora/$idPitanja"); 
+          
+          <?php $referencaOdustani=site_url("$controller/"); 
           echo '
           <div class="input ">
             
             <div id="like">
               <div style="float: right;">
-                
-                <button class="w3-button buttons" style="font-weight: normal;"> 
-                    <a class="nema_podvlacenja" href=' . "$referencaOdustani" . '>Odustani</a>
-                </button> &nbsp 
+                '; ?>
+                <a class="nema_podvlacenja" href=' . '$referencaOdustani' . '>
+                    <div class="w3-button buttons dugme" style="font-weight: normal;"> 
+                        Odustani
+                    </div>
+                </a> 
+                &nbsp
+                <?php echo '
                 <button type="submit" class="w3-button buttons" style="font-weight: normal;" value="">Pošalji</button> &nbsp
               </div>
             </div> '; 
