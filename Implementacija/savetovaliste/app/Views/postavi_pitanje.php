@@ -109,11 +109,12 @@
                                 <br>
                                 <!-- DUGMAD -->
                                 <div>
-
+                                    <?php $referencaOdustani=site_url("$controller/"); ?>
                                     <div style="float: right;">
-                                        <button onclick="window.location.href = 'pocetna_stranica.html';" class="w3-button buttons">
-                                            Odustani</button> &nbsp
-                                        <button type="submit" class="w3-button buttons"><u onclick="alert('Pitanje je poslato!')" style="text-decoration: none; font-weight: normal;">Pošalji</u></button>
+                                        <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
+                                            <a class="nema_podvlacenja" href=' . '$referencaOdustani' . '>Odustani</a>
+                                        </button> &nbsp
+                                        <button type="submit" class="w3-button buttons"><u style="text-decoration: none; font-weight: normal;">Pošalji</u></button>
                                     </div>
                                 </div>
                                

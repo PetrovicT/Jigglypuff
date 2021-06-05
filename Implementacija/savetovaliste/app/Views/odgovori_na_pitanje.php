@@ -163,15 +163,22 @@
 
 
           <!-- DUGMAD -->
+          <?php $referencaOdustani=site_url("$controller/pregledOdgovora/$idPitanja"); 
+          echo '
           <div class="input ">
+            
             <div id="like">
               <div style="float: right;">
-                <button type="submit" class="w3-button buttons" style="font-weight: normal;" value="">Odustani</button> &nbsp
+                
+                <button class="w3-button buttons" style="font-weight: normal;"> 
+                    <a class="nema_podvlacenja" href=' . "$referencaOdustani" . '>Odustani</a>
+                </button> &nbsp 
                 <button type="submit" class="w3-button buttons" style="font-weight: normal;" value="">Pošalji</button> &nbsp
               </div>
-            </div>
-            <?php  if(!empty($poruka)) echo "<br> <span style='color:red; font-size:18px'>$poruka</span>"; ?>
-          </div>
+            </div> ';
+            if(!empty($poruka)) echo ' <br> <span style="color:red; font-size:18px">' . "$poruka" . '</span>'; 
+           echo '</div> 
+          ';?> 
           <br>
         </div>
       </form>

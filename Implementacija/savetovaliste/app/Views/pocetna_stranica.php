@@ -82,16 +82,7 @@
 
                     <!-- PRETRAGA -->
 
-                    <div class="w3-container w3-center w3-white w3-margin w3-padding-large w3-card-4">
-                         
-                        <?php $referencaPostaviPitanje=site_url("$controller/postavi_pitanje"); 
-                        echo '
-                        <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
-                        <a class="nema_podvlacenja" href=' . $referencaPostaviPitanje . '>Postavi pitanje</a>
-                        </button>
-                        ';
-                        ?>
-                        
+                    <div class="w3-container w3-center w3-white w3-margin w3-padding-large w3-card-4">                      
                         
                          <!-- Pretraga pitanja -->
                         <div id="SearchBar" style="width:100%; max-width: 100%; padding-top: 30px; padding-bottom: 20px; border-color: #021B79;">                                                
