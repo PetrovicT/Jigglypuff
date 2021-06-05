@@ -720,13 +720,8 @@
 <XPD:REF name="Views[2]">Hu/oikddNEOLyFuKqq0b+gAA</XPD:REF>
 <XPD:REF name="Views[3]">gM1ch3JR606S8cN21fGgHQAA</XPD:REF>
 </XPD:OBJ>
-<XPD:ATTR name="#Fragments" type="integer">2</XPD:ATTR>
-<XPD:OBJ name="Fragments[0]" type="UMLCombinedFragment" guid="eEdcABn5m0G1LT2B2n/moQAA">
-<XPD:ATTR name="Name" type="string">correct data</XPD:ATTR>
-<XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokAlt</XPD:ATTR>
-<XPD:REF name="EnclosingInteractionInstanceSet">gak/GraHeUWApHuS2wc3OAAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Fragments[1]" type="UMLCombinedFragment" guid="RJS2ULEXREKh6qwJBqfYXAAA">
+<XPD:ATTR name="#Fragments" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Fragments[0]" type="UMLCombinedFragment" guid="RJS2ULEXREKh6qwJBqfYXAAA">
 <XPD:ATTR name="Name" type="string">correct data</XPD:ATTR>
 <XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokAlt</XPD:ATTR>
 <XPD:REF name="EnclosingInteractionInstanceSet">gak/GraHeUWApHuS2wc3OAAA</XPD:REF>
