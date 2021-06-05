@@ -148,11 +148,4 @@ class Korisnik extends BaseController
 		// kada korisnik unese pitanje neka predje na pregled pitanja gde moze da nadje svoje tek dodato pitanje
 		return redirect()->to(site_url("$controller/pregled_pitanja"));		
 	}
-
-	// prikaz profila korisnika ciji smo id prosledili 
-	public function profil($userId){
-		echo view("profil", ['idKorisnikaCijiProfilGledamo'=>$userId]);
-			return;
-
-	}
 }
