@@ -27,4 +27,15 @@ class SeansaModel extends Model {
 
         return $seanseSorted->getResult();
     }
+    
+    public function findAllInFutureSorted(){
+        $queryBuilder = $this->db->table($this->table);
+        
+        $queryBuilder->where('datumPocetka >= CURRENT_DATE()');
+        $queryBuilder->orderBy('datumPocetka','ASC');
+        $queryBuilder->orderBy('vremePocetka','ASC');
+        $seanseSorted = $queryBuilder->get();
+
+        return $seanseSorted->getResult();
+    }
 }

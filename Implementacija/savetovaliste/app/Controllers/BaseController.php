@@ -113,7 +113,7 @@ class BaseController extends Controller {
             $sveSeanse = $seansaModel->findAllOnDateSorted($this->request->getGet('datumSeanse'));
         }
         else{
-            $sveSeanse = $seansaModel->findAll();
+            $sveSeanse = $seansaModel->findAllInFutureSorted();
         }
         echo view("view_seanse", ['sveSeanse' => $sveSeanse]);
     }
