@@ -82,14 +82,21 @@
                                     <option style="color: #021B79;" value="Manjak samopouzdanja">Manjak samopouzdanja</option>
                                     <option style="color: #021B79;" value="Ništa od ponuđenog">Ništa od ponuđenog</option>
                                 </select>
+                                <?php  if(!empty($porukaKategorija)) echo "<br> <span style='color:red; font-size:16px'>$porukaKategorija</span>"; ?>
                                 <br><br>
 
 
-                                <!-- UNOS PITANJA -->
+                            <!-- UNOS PITANJA -->
+                                <!-- UNOS NASLOVA PITANJA I ISPIS GRESKE-->
                                 <input style="color: #021B79; border-color: #021B79; font-size: 16px; " class="w3-input" type="text" name="NaslovPitanja"
-                                       placeholder="Naslov pitanja"> <br> <br>
+                                       placeholder="Naslov pitanja"> 
+                                <?php  if(!empty($porukaNaslovPitanja)) echo " <span style='color:red; font-size:16px'>$porukaNaslovPitanja</span>"; ?>
+                                <br> <br>
+
+                                <!-- UNOS TEKSTA PITANJA I ISPIS GRESKE-->
                                 <textarea style="color: #021B79; border-color: #021B79; font-size: 16px; resize: none; width: 100%;" name="TekstPitanja" id=""
                                           cols="355" rows="10" placeholder=" Tekst pitanja"></textarea>
+                                <?php  if(!empty($porukaTekstPitanja)) echo "<br> <span style='color:red; font-size:16px'>$porukaTekstPitanja</span> <br>"; ?>  
                                 <br>
 
                                 <!-- JAVNO/PRIVATNO -->

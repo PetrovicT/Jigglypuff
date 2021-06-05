@@ -25,23 +25,33 @@ class Korisnik extends BaseController
 
 	// kada se submit forma poziva se ova funkcija kako bi se sacuvao odgovor u bazi
 	public function odgovoriNaPitanje($idPitanje){
-		$pitanjeModel = new PitanjeModel();
-		$pitanje = $pitanjeModel->find($idPitanje);
-		if (!$this->validate(['TekstOdgovora' => 'required'])) {
-			echo view("odgovori_na_pitanje", ['pitanje' => $pitanje, 'poruka' => $this->validator->listErrors()]);
-			return;
-		}
+		// koje sve poruke mogu da se prikazu korisniku
+		$porukaTekstOdgovora=null;
+		$porukaNemaPravaDaOdgovori=null;
+
+		// provera da li je unet tekst odgovora posto je obavezno polje
+		if(!$this->validate(['TekstOdgovora'=>'required'])) 
+			{
+				$porukaTekstOdgovora="Morate da unesete tekst odgovora - to je obavezno polje!";
+			}	
+		
 		// provera da li korisnik ima pravo da odgovori na izabrano pitanje
 		// ako korisnik nije psiholog a na pitanje smeju samo psiholozi da odgovore potrebno je ispisati poruku korisniku
-        $moguSviDaOdgovore=$pitanje->moguSviDaOdgovore;
+		$pitanjeModel = new PitanjeModel();
+		$pitanje = $pitanjeModel->find($idPitanje);	
+		$moguSviDaOdgovore=$pitanje->moguSviDaOdgovore;
 		$korisnikModel=new KorisnikModel();
 		$idKategorijaKorisnika=$korisnikModel->find(session()->get('userid'))->tipKorisnika_idTipKorisnika;
 		// psiholozi su idKategorijaKorisnika=2 
 		if ($moguSviDaOdgovore==0 && $idKategorijaKorisnika!=2){
-            echo view("odgovori_na_pitanje", ['pitanje' => $pitanje, 
-			'poruka' => "Morate biti registrovani psiholog da biste imali pravo da odgovorite na ovo pitanje!"]);
-			return;
+            $porukaNemaPravaDaOdgovori="Na ovo pitanje imaju pravo samo registrovani psiholozi da odgovore!";
 		}
+		
+		// ako nije unet tekst odgovora ili korisnik nema prava da odgovori ispisati mu poruke, odbacuje se unos odgovora
+		if ($porukaTekstOdgovora!=null || $porukaNemaPravaDaOdgovori!=null){
+			echo view("odgovori_na_pitanje", ['pitanje'=>$pitanje, 'porukaTekstOdgovora' => $porukaTekstOdgovora, 'porukaNemaPravaDaOdgovori' => $porukaNemaPravaDaOdgovori]);
+			return;
+		}		
 
 		$odgovorModel = new OdgovorModel();
 		$anonimno = $this->request->getVar('anonimus');
@@ -76,19 +86,31 @@ class Korisnik extends BaseController
 
 	// unos pitanja u bazu odnosno citanje podataka iz forme
 	public function postaviPitanje(){
-		if(!$this->validate(['category'=>'required','NaslovPitanja'=>'required','TekstPitanja'=>'required'])) 
-			{
-				echo view("postavi_pitanje", ['poruka' => $this->validator->listErrors()]);
-				return;
-			}	
-		$pitanjeModel = new PitanjeModel();   
+        // koje sve poruke mogu da se prikazu korisniku
+		$porukaKategorija=null; 
+		$porukaNaslovPitanja=null;
+		$porukaTekstPitanja=null;
+
+		// provera da li je uneta kategorija, ako ne potrebno je ispisati poruku
 		$kategorija=$this->request->getVar('category');
 		if($kategorija=="Nema") 
 		{
-			echo view("postavi_pitanje", ['poruka' => "Morate da unesete kategoriju pitanja!"]);
-			return;
+			$porukaKategorija="Morate da unesete kategoriju pitanja - to je obavezno polje!";
         }
-		
+		if(!$this->validate(['NaslovPitanja'=>'required'])) 
+			{
+				$porukaNaslovPitanja="Morate da unesete naslov pitanja - to je obavezno polje!";
+			}
+		if(!$this->validate(['TekstPitanja'=>'required'])) 
+			{
+				$porukaTekstPitanja="Morate da unesete tekst pitanja - to je obavezno polje!";
+			}	
+		if ($porukaKategorija!=null || $porukaNaslovPitanja!=null || $porukaNaslovPitanja!=null){
+			echo view("postavi_pitanje", 
+			['porukaKategorija' => $porukaKategorija, 'porukaNaslovPitanja' => $porukaNaslovPitanja,'porukaTekstPitanja' => $porukaTekstPitanja]);
+		     return;
+		}
+		$pitanjeModel = new PitanjeModel();   		
 		$kategorijaPitanjaModel=new KategorijaPitanjaModel();
 		$idKategorije=$kategorijaPitanjaModel->findQuestionCategoryId($kategorija);
 		$anonimno = $this->request->getVar('anonimus');

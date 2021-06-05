@@ -151,6 +151,7 @@
             <textarea name="TekstOdgovora" id="text_input" cols="400" rows="5"
               style="resize:none; size: 100%; position: center; padding: 0; color: #021B79; border-color: #021B79; font-size: 16px;"
               placeholder="Tekst odgovora..."></textarea>
+            <?php  if(!empty($porukaTekstOdgovora)) echo " <span style='color:red; font-size:16px'>$porukaTekstOdgovora</span>"; ?>
             <br>
 
             <!-- JAVNO/PRIVATNO -->
@@ -175,10 +176,11 @@
                 </button> &nbsp 
                 <button type="submit" class="w3-button buttons" style="font-weight: normal;" value="">Pošalji</button> &nbsp
               </div>
-            </div> ';
-            if(!empty($poruka)) echo ' <br> <span style="color:red; font-size:18px">' . "$poruka" . '</span>'; 
+            </div> '; 
+           if(!empty($porukaNemaPravaDaOdgovori)) echo "<br> <span style='color:red; font-size:16px'>$porukaNemaPravaDaOdgovori</span>"; 
            echo '</div> 
-          ';?> 
+          ';?>
+          
           <br>
         </div>
       </form>
