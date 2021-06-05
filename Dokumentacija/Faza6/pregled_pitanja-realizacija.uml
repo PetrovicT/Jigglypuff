@@ -60,7 +60,7 @@
 <XPD:ATTR name="Width" type="integer">386</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">38</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">Posto se na sequence dijagramu ne prikazuje mogucnost dodavanja actora, 
-on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
+on se nalazi ovde, a zatim se iz menija prevlaci na sequence dijagram
 </XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[2]" type="UMLNoteLinkView" guid="bZth8989c06iKPMf3HuuhgAA">

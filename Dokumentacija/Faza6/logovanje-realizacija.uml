@@ -60,7 +60,7 @@
 <XPD:ATTR name="Width" type="integer">386</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">38</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">Posto se na sequence dijagramu ne prikazuje mogucnost dodavanja actora, 
-on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
+on se nalazi ovde, a zatim se iz menija prevlaci na sequence dijagram
 </XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[2]" type="UMLNoteLinkView" guid="geBw9G3lG0SZ9GunyoDABwAA">
@@ -85,19 +85,19 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 </XPD:OBJ>
 <XPD:ATTR name="#OwnedCollaborationInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[0]" type="UMLCollaborationInstanceSet" guid="no3Ulg03xUS4dde3kZ5qowAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet1</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Logovanje</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">nnw1gw6K5E6co3y/xROtAAAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="gak/GraHeUWApHuS2wc3OAAA">
-<XPD:ATTR name="Name" type="string">InteractionInstanceSet1</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Logovanje</XPD:ATTR>
 <XPD:REF name="Context">no3Ulg03xUS4dde3kZ5qowAA</XPD:REF>
 <XPD:ATTR name="#OwnedDiagrams" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="OwnedDiagrams[0]" type="UMLSequenceDiagram" guid="11DFHUF+PEiJWJ6X68pCrQAA">
-<XPD:ATTR name="Name" type="string">SequenceDiagram1</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Logovanje</XPD:ATTR>
 <XPD:REF name="DiagramOwner">gak/GraHeUWApHuS2wc3OAAA</XPD:REF>
 <XPD:OBJ name="DiagramView" type="UMLSequenceDiagramView" guid="tAQPydcnG0eSCXHdLJ058gAA">
 <XPD:REF name="Diagram">11DFHUF+PEiJWJ6X68pCrQAA</XPD:REF>
-<XPD:ATTR name="#OwnedViews" type="integer">17</XPD:ATTR>
+<XPD:ATTR name="#OwnedViews" type="integer">19</XPD:ATTR>
 <XPD:OBJ name="OwnedViews[0]" type="UMLCombinedFragmentView" guid="Jx3Di8y9JkiF43WZP5GmyAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
@@ -608,6 +608,24 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[17]" type="UMLNoteView" guid="OZeVQeOMwkG9UKvMSU6GNAAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">336</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">360</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">220</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">38</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Ukoliko je korisnik uneo pogresne podatke
+ stranica ispisuje gde je doslo do greske
+</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[18]" type="UMLNoteLinkView" guid="mUeY5IFYWUOv62DivWkZegAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">550,320;478,360</XPD:ATTR>
+<XPD:REF name="Head">OZeVQeOMwkG9UKvMSU6GNAAA</XPD:REF>
+<XPD:REF name="Tail">wOuVhaTHrEmbY6X+pIxCzwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
