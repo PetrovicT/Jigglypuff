@@ -51,122 +51,24 @@
                 <!-- Blog entries -->
                 <div class="w3-col l8 s12">
                     <br />
-                    <!-- Blog entry -->
-                    <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
-                        <div class="w3-left" style="padding-left: 5%;">
-                            <br />
-                            <h3 class="letters_dark_blue">
-                                <b>Popodnevna seansa sa Snorlaksom</b>
-                            </h3>
-                            <h5><span class="w3-opacity">12. april 2021, 16:00</span></h5>
-                        </div>
-                        <div class="w3-right" style="padding-right: 6%;">
-                            <br />
-                            <h3 class="letters_dark_blue">
-                                <a href="profil.html"><b>DrSnorlax123</b></a>
-                            </h3>
-                        </div>
-                        <!-- Input section -->
-                        <div class="input letters_dark_blue">
-                            <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper commodo lorem et auctor.
-                                Suspendisse non eros sit amet diam pharetra pulvinar. Praesent neque elit, eleifend at urna in, venenatis semper diam. Morbi bibendum 
-                                faucibus congue. Curabitur blandit et purus ac suscipit. Pellentesque odio nulla, porta tristique scelerisque a, suscipit eu lectus. 
-                                Vivamus sit amet metus eget neque laoreet dictum eget et felis. Aliquam nulla urna, viverra ac tincidunt a, placerat sed ante. 
-                                Fusce consequat pretium tortor, a fermentum sapien tempor quis. </p>
-                            <br />
-                        </div>
-                        <!-- Anwser input -->
-                        <div class="input">
-                            <!-- Buttons -->
-                            <div id="like">
-                                <div style="float: right;">
-                                    <button class="w3-button buttons">
-                                        <b>Prijavi se (3/4)</b>
-                                    </button></div>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    <!-- Blog entry -->
-                    <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
-                        <div class="w3-left" style="padding-left: 5%;">
-                            <br />
-                            <h3 class="letters_dark_blue">
-                                <b>Čikoritin krug anti alkoholičara</b>
-                            </h3>
-                            <h5><span class="w3-opacity">16. april 2021, 14:00</span></h5>
-                        </div>
-                        <div class="w3-right" style="padding-right: 6%;">
-                            <br />
-                            <h3 class="letters_dark_blue">
-                                <a href="profil.html"><b>Cheeky432</b></a>
-                            </h3>
-                        </div>
-                        <!-- Input section -->
-                        <div class="input letters_dark_blue">
-                            <p style="text-align: justify;">
-                                Today we talk about ways to prevent alchohol consuption in everyday life.
-                                Keep yourself occupied. When you have nothing to do or going through depression, you may tend to drink more. ...
-                                Go on a juice diet. Juice diet can help you crave less for alcohol. ...
-                                Add dates to your diet. Dates are one of the oldest and popular remedies for alcoholism. ...
-                                Bitter gourd. ...
-                                Start practicing yoga. </p>
-                            <br />
-                        </div>
-                        <!-- Anwser input -->
-                        <div class="input">
-                            <!-- Buttons -->
-                            <div id="like">
-                                <div style="float: right;">
-                                    <button class="w3-button buttons">
-                                        <b>Prijavi se (6/15)</b>
-                                    </button></div>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    <!-- Blog entry -->
-                    <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
-                        <div class="w3-left" style="padding-left: 5%;">
-                            <br />
-                            <h3 class="letters_dark_blue">
-                                <b>OCD: Kako se rešiti pronalaženja smetnji u neskladu boja?</b>
-                            </h3>
-                            <h5><span class="w3-opacity">17. april 2021, 11:00</span></h5>
-                        </div>
-                        <div class="w3-right" style="padding-right: 6%;">
-                            <br />
-                            <h3 class="letters_dark_blue">
-                                <a href="profil.html"><b>Igglybuff</b></a>
-                            </h3>
-                        </div>
-                        <!-- Input section -->
-                        <div class="input letters_dark_blue">
-                            <p style="text-align: justify;">Da li ste se ikad suočili sa nepodnošljivim osećajem u vezi sa neprikladnošću boja? Da li ste upadali u sukobe
-                                sa svojim kolegama oko ljudskom oku jedva vidljivih nijansi plave? Da li ste došli u situaciju da na web-stranici sa dve primarne boje vidite još
-                                trocifren broj drugih i to vas dovodi do ludila? Ako je odgovor na neko od prethodna tri pitanja bio "da", na pravom ste mestu! Ovog veselog
-                                četvrtka razgovaramo o opsesivno kompulsivnom poremećaju i njegovim specifičnim manifestacijama na lični osećaj prema bojama. Saznajte kako vaš mozak
-                                sagleda boje, i kakve ga muke snalaze vaš hipotalamus kad ga strefi nesklad. Saznajte kako da se rešite neugodnog osećaja pri gledanju naše početne
-                                stranice. Više se nikad ne svađajte sa kolegama oko nebitnih stvari kao što su nijanse plave! </p>
-                            <br />
-                        </div>
-                        <!-- Anwser input -->
-                        <div class="input">
-                            <!-- Buttons -->
-                            <div id="like">
-                                <div style="float: right;">
-                                    <button class="w3-button buttons">
-                                        <b>Prijavi se (0/2)</b>
-                                    </button></div>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    <!-- END BLOG ENTRIES -->
+                    <?php
+                    $korisnikModel = new \App\Models\KorisnikModel();
+                    foreach($sveSeanse as $seansa){
+                        $oneSeansaData = [
+                            'naziv' => $seansa->nazivSeanse,
+                            'datum' => $seansa->datumPocetka,
+                            'vreme' => $seansa->vremePocetka,
+                            'idKorisnika' => $seansa->korisnik_idKorisnik_organizator,
+                            'imeKorisnika' => $korisnikModel->findUserUsername($seansa->korisnik_idKorisnik_organizator),
+                            'tekstSeanse' => $seansa->opisSeanse
+                        ];
+                        include 'resources/oneSeansaView.php';
+                    }
+                    ?>
                 </div>
                 <br />
-                <!-- Literature -->
-                <div class="w3-col l4">
+                <!-- LITERATURA -->
+    <div class="w3-col l4">
                     <div class="w3-white w3-margin w3-card-2">
                         <div class="w3-container w3-padding gradient_literature letters">
                             <h4>Preporučena literatura za sve ljubitelje psihologije</h4>
@@ -176,7 +78,7 @@
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
-                                        <img src="photos/50_ideja_koje_bi_stvarno_trebalo_da_znate_psihologija-adrijan_fernam_s.jpg"
+										<img src="<?php echo base_url(); ?>/photos/50_ideja_koje_bi_stvarno_trebalo_da_znate_psihologija-adrijan_fernam_s.jpg"
                                              style="width:100%;">
                                     </div>
                                     <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
@@ -191,7 +93,7 @@
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
-                                        <img src="photos/bez_granica-dzim_kvik_s.jpg" style="width:100%;">
+                                        <img src="<?php echo base_url(); ?>/photos/bez_granica-dzim_kvik_s.jpg" style="width:100%;">
                                     </div>
                                     <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
                                         <span class="w3-medium"><b>Bez granica - Džim Kvik</b></span> <br>
@@ -205,7 +107,7 @@
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
-                                        <img src="photos/dete_u_tebi_mora_da_pronadje_svoj_zavicaj-stefani_stal_s.jpg" style="width:100%;">
+                                        <img src="<?php echo base_url(); ?>/photos/dete_u_tebi_mora_da_pronadje_svoj_zavicaj-stefani_stal_s.jpg" style="width:100%;">
                                     </div>
                                     <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
                                         <span class="w3-medium"><b>Dete u tebi mora da pronađe svoj zavičaj - Štefani Štal</b></span> <br>
@@ -217,7 +119,7 @@
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
-                                        <img src="photos/emocionalni_prtljag-vivijan_ditmar_s.jpg" style="width:100%;">
+                                        <img src="<?php echo base_url(); ?>/photos/emocionalni_prtljag-vivijan_ditmar_s.jpg" style="width:100%;">
                                     </div>
                                     <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
                                         <span class="w3-medium"><b>Emocionalni prtljag - Vivijan Ditmar</b></span> <br>
@@ -230,7 +132,7 @@
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
-                                        <img src="photos/izgubljene_veze-johan_hari_s.jpg" style="width:100%;">
+                                        <img src="<?php echo base_url(); ?>/photos/izgubljene_veze-johan_hari_s.jpg" style="width:100%;">
                                     </div>
                                     <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
                                         <span class="w3-medium"><b>Izgubljene veze - Johan Hari</b></span> <br>
@@ -243,7 +145,7 @@
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
-                                        <img src="photos/sta_nam_svako_telo_govori-dzo_navaro_s.jpg" style="width:100%;">
+                                        <img src="<?php echo base_url(); ?>/photos/sta_nam_svako_telo_govori-dzo_navaro_s.jpg" style="width:100%;">
                                     </div>
                                     <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
                                         <span class="w3-medium"><b>Šta nam svako telo govori-Džo Navaro</b></span> <br>
@@ -256,7 +158,7 @@
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
-                                        <img src="photos/vise_se_ne_razumemo-izabel_fijioza_v.jpg" style="width:100%;">
+                                        <img src="<?php echo base_url(); ?>/photos/vise_se_ne_razumemo-izabel_fijioza_v.jpg" style="width:100%;">
                                     </div>
                                     <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
                                         <span class="w3-medium"><b>Više se ne razumemo - Izabel Fijioza</b></span> <br>
@@ -268,7 +170,7 @@
                             <li>
                                 <div class="w3-row">
                                     <div class="w3-col s2 w3-white w3-center">
-                                        <img src="photos/borba_do_pobede_knjiga_za_sve_one_kojima_je_tesko-srdjan_krstic_v.jpg"
+                                        <img src="<?php echo base_url(); ?>/photos/borba_do_pobede_knjiga_za_sve_one_kojima_je_tesko-srdjan_krstic_v.jpg"
                                              style="width:100%;">
                                     </div>
                                     <div class="w3-col s10 w3-left letters_dark_blue" style="padding-left: 10px;">
@@ -282,8 +184,8 @@
                         </ul>
                     </div>
                     <hr>
-
-                    <!-- End of literature -->
+                    <!-- KRAJ LITERATURA -->
+                </div>
                 </div>
                 <!-- END GRID -->
             </div>

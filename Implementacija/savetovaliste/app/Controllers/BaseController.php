@@ -12,6 +12,7 @@ use App\Models\PitanjeModel;
 use App\Models\KorisnikModel;
 use App\Models\OdgovorModel;
 use App\Models\KategorijaPitanjaModel;
+use App\Models\SeansaModel;
 
 /**
  * Class BaseController
@@ -105,7 +106,9 @@ class BaseController extends Controller {
     }
     
     public function pregled_seansi(){
-        echo view("view_seanse", []);
+        $seansaModel = new SeansaModel();
+        $sveSeanse = $seansaModel->findAll();
+        echo view("view_seanse", ['sveSeanse' => $sveSeanse]);
     }
 
     /*
