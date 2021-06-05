@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\PitanjeModel;
 use App\Models\OdgovorModel;
 use App\Models\KorisnikModel;
+use App\Models\KategorijaPitanjaModel;
 
 class Korisnik extends BaseController
 {
@@ -87,17 +88,19 @@ class Korisnik extends BaseController
 			echo view("postavi_pitanje", ['poruka' => "Morate da unesete kategoriju pitanja!"]);
 			return;
         }
-		else {
-			$kategorijaPitanjaModel=new KategorijaPitanjaModel();
-			$idKategorije=$kategorijaPitanjaModel->findQuestionCategoryId($kategorija);
-		}
+		
+		$kategorijaPitanjaModel=new KategorijaPitanjaModel();
+		$idKategorije=$kategorijaPitanjaModel->findQuestionCategoryId($kategorija);
+		$anonimno = $this->request->getVar('anonimus');
+		$mozeDaOdgovori=$this->request->getVar('koOdgovaraNaPitanje');
+		if ($mozeDaOdgovori=="Svi") $svi=true; else $svi=false;
 		$pitanjeModel->save([
 			'korisnik_idKorisnik_postavio'=>session()->get('userid'),
 			'kategorijaPitanja_idKategorija'=>$idKategorije,
 			'naslovPitanja'=>$this->request->getVar('NaslovPitanja'),
 			'tekstPitanja'=>$this->request->getVar('TekstPitanja'),
-			'postavljenoAnonimno'=>0,
-			'moguSviDaOdgovore'=>0
+			'postavljenoAnonimno'=>$anonimno=="1" ? true : false,
+			'moguSviDaOdgovore'=>$svi
 		]);
         $controller=session()->get('controller');
 		// kada korisnik unese pitanje neka predje na pregled pitanja gde moze da nadje svoje tek dodato pitanje

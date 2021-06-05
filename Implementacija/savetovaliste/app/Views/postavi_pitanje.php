@@ -93,15 +93,15 @@
                                 <br>
 
                                 <!-- JAVNO/PRIVATNO -->
-                                <div><input type="checkbox" id="anonimus" name="anonimus" value="Bike">
-                                    <label for="anonimus" style="color: #021B79; font-size: 16px; font-weight: bold; "> Želim anonimno da postavim
-                                        pitanje</label>
+                                <div>
+                                    <input type="checkbox" id="anonimus" name="anonimus" value="1">
+                                    <label for="anonimus" class="letters_dark_blue"> Želim anonimno da odgovorim na pitanje</label>
                                 </div>
                                 <br>
 
                                 <!-- KO ODGOVARA -->
                                 <h4>Na ovo pitanje će moći da odgovore &nbsp&nbsp</h4>
-                                <select style="color: #021B79; border-color: #021B79; font-size: 16px; " name="anwser">
+                                <select style="color: #021B79; border-color: #021B79; font-size: 16px; " name="koOdgovaraNaPitanje">
                                     <option value="Svi">Svi korisnici</option>
                                     <option value="Psiholozi">Samo psiholozi</option>
                                 </select>
