@@ -35,8 +35,10 @@
                 <div class="w3-col l12 s12">
                     <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
                         <div class="w3-left">
-                            <input class="w3-input w3-left" type="date" style="width:300px; max-width:calc(100% - 46px)"></input>
-                            <button class="w3-button buttons gradient_literature">Filter</button>
+                            <form action="<?= site_url("$controller/pregled_seansi") ?>">
+                                <input class="w3-input w3-left" type="date" style="width:300px; max-width:calc(100% - 46px)" name="datumSeanse"></input>
+                                <button type="submit" class="w3-button buttons gradient_literature">Filter</button>
+                            </form>
                         </div>
                         <div id="SeanceSearchBar" class="w3-right" style="width:346px; max-width: 100%;">
                             <a href="#" class="w3-button w3-right letters gradient_literature"><i class="fa fa-search"></i></a>

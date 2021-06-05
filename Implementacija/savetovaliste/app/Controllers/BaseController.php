@@ -107,7 +107,14 @@ class BaseController extends Controller {
     
     public function pregled_seansi(){
         $seansaModel = new SeansaModel();
-        $sveSeanse = $seansaModel->findAll();
+        $sveSeanse = [];
+        
+        if($this->request->getGet('datumSeanse')){
+            $sveSeanse = $seansaModel->findAllOnDateSorted($this->request->getGet('datumSeanse'));
+        }
+        else{
+            $sveSeanse = $seansaModel->findAll();
+        }
         echo view("view_seanse", ['sveSeanse' => $sveSeanse]);
     }
 
