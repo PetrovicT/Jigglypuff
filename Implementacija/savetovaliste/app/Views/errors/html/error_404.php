@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>404 Page Not Found</title>
+	<title>404 Stranica nije pronadjena</title>
 
 	<style>
 		div.logo {
@@ -17,7 +17,9 @@
 		}
 		body {
 			height: 100%;
-			background: #fafafa;
+			background: #0575E6;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, rgb(7,73,165), #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, rgb(7,73,165), #0a63bd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			color: #777;
 			font-weight: 300;
@@ -34,7 +36,8 @@
 			max-width: 1024px;
 			margin: 5rem auto;
 			padding: 2rem;
-			background: #fff;
+			background-color: #63a4ff;
+  			background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
 			text-align: center;
 			border: 1px solid #efefef;
 			border-radius: 0.5rem;
@@ -70,13 +73,13 @@
 </head>
 <body>
 	<div class="wrap">
-		<h1>404 - File Not Found</h1>
+		<h1>404 - Fajl nije pronadjen!</h1>
 
 		<p>
 			<?php if (! empty($message) && $message !== '(null)') : ?>
 				<?= nl2br(esc($message)) ?>
 			<?php else : ?>
-				Sorry! Cannot seem to find the page you were looking for.
+				Izgleda da ne postoji stranica koju tražite! :(
 			<?php endif ?>
 		</p>
 	</div>

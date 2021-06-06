@@ -12,6 +12,7 @@ use App\Models\PitanjeModel;
 use App\Models\KorisnikModel;
 use App\Models\OdgovorModel;
 use App\Models\KategorijaPitanjaModel;
+use App\Models\SeansaModel;
 
 /**
  * Class BaseController
@@ -102,6 +103,25 @@ class BaseController extends Controller {
         $pitanje = $pitanjeModel->find($pitanjeId);
         echo view("odgovori", ['odgovori' => $odgovori, 'pitanje' => $pitanje]);
         }
+    }
+    
+    public function pregled_seansi(){
+        $seansaModel = new SeansaModel();
+        $sveSeanse = [];
+        
+        if($this->request->getGet('samoMoje') && $this->session->get('userid')){
+            $sveSeanse = $seansaModel->findAllWithParticipant($this->session->get('userid'));
+        }
+        else if($this->request->getGet('datumSeanse')){
+            $sveSeanse = $seansaModel->findAllOnDateSorted($this->request->getGet('datumSeanse'));
+        }
+        else if($this->request->getGet('pretraga')){
+            $sveSeanse = $seansaModel->findAllInFutureSortedLike($this->request->getGet('pretraga'));
+        }
+        else{
+            $sveSeanse = $seansaModel->findAllInFutureSorted();
+        }
+        echo view("view_seanse", ['sveSeanse' => $sveSeanse]);
     }
 
     /*
