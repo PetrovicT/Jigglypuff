@@ -275,5 +275,61 @@ class Korisnik extends BaseController {
                             'Uspešna izmena ocene!');
         }
     }
+    
+    // Toggluje lajk i dislajk na odgovoru
+    public function like_or_dislike_odgovor() {
+        // Ako nije pristupljeno funkciji klikom na dugme,
+        // nego preko URL-a, vrati ga nazad
+        if (!$this->request->isAJAX()) {
+            return redirect()->back();
+        }
+
+        // Parametri iz sessiona i requesta
+        $idKorisnik = $this->session->get('userid');
+        $idOdgovor = $this->request->getPost('id');
+        $isLike = $this->request->getPost('isLike');
+
+        // Ako nisu prisutni, zahtev je loš, vrati grešku 400
+        if (!$idKorisnik || !$idOdgovor || $isLike == null) {
+            return $this->responseWithIspis(400,
+                            "Parametar nije prisutan (idKorisnik = $idKorisnik; idSeansa = $idOdgovor, isLike = $isLike)",
+                            'Loše poslat zahtev, molimo probajte ponovo.<br/>Ako se ovaj problem desi više puta, molimo kontaktirajte administratora sajta.');
+        }
+        
+        $isLike = $isLike == "1" ? true : false;
+
+        $korisnikOcenioOdgovorModel = new KorisnikOcenioOdgovorModel();
+
+        $postojecaOcena = $korisnikOcenioOdgovorModel->findOcena($idKorisnik, $idOdgovor);
+
+        // Ako ne postoji ocena, onda daj novu ocenu
+        if (!$postojecaOcena) {
+            $novaOcena = [
+                'ocena' => $isLike,
+                'odgovor_idOdgovor' => $idOdgovor,
+                'korisnik_idKorisnik' => $idKorisnik
+            ];
+            $korisnikOcenioOdgovorModel->insert($novaOcena);
+            
+            return $this->responseWithIspis(210,
+                            "Uspešna nova ocena!",
+                            'Uspešna nova ocena!');
+        }
+        // A ako postoji, onda je samo updatuj da matchuje novu
+        else {
+            if($postojecaOcena->ocena == $isLike){
+                return $this->responseWithIspis(212,
+                            "Već je data ista ocena.",
+                            'Već je data ista ocena.');
+            }
+            
+            $postojecaOcena->ocena = $isLike;
+            $korisnikOcenioOdgovorModel->save($postojecaOcena);
+            
+            return $this->responseWithIspis(211,
+                            "Uspešna izmena ocene!",
+                            'Uspešna izmena ocene!');
+        }
+    }
 
 }

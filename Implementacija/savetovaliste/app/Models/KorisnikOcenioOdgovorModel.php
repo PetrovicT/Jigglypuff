@@ -26,4 +26,13 @@ class KorisnikOcenioOdgovorModel extends Model
             $numOfDislikes=count($sveOceneNaOdgovor); 
             return $numOfDislikes;
         }
+        
+        public function findOcena($idKorisnika, $idOcene) {
+        $queryBuilder = $this->db->table($this->table);
+
+        return $queryBuilder
+                        ->where('korisnik_idKorisnik', $idKorisnika)
+                        ->where('odgovor_idOdgovor', $idOcene)
+                        ->get()->getFirstRow();
+    }
 }
