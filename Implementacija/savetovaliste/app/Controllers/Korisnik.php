@@ -1,7 +1,3 @@
-
-<!-- Teodora Petrovic -->
-<!-- Katzenberger Viktor -->
-
 <?php
 
 namespace App\Controllers;
