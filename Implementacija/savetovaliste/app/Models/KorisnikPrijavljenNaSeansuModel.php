@@ -20,10 +20,10 @@ class KorisnikPrijavljenNaSeansuModel extends Model {
     }
 
     // Nalazi sve prijave gde je korisnik prijavljen
-    public function findAllSeanseForKorisnik($idKorisnika, $getIDsArrayOnly = false) {
+    public function findAllSeanseForKorisnik($idKorisnika, $getIDsOnly = false) {
         $queryBuilder = $this->db->table($this->table);
         
-        if($getIDsArrayOnly){
+        if($getIDsOnly){
             return $queryBuilder->where('korisnik_idKorisnik', $idKorisnika)->select('seansa_idSeansa')->get()->getResult();
         }
 
