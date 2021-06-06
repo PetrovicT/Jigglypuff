@@ -110,21 +110,13 @@ else
     echo '
     <br>
     <div class="input">     
-        <div id="like">
-            <div>
-                <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                <button class="w3-button buttons" onclick="like_or_dislike_pitanje(this,'.$idPitanja.',1)"><i class="fa fa-thumbs-up"></i>Korisno (' . "$likes" . ')</button> &nbsp
-                <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                <button class="w3-button buttons" onclick="like_or_dislike_pitanje(this,'.$idPitanja.',0)"><i class="fa fa-thumbs-down"></i>Nije korisno (' . "$dislikes" . ')</button>
-            </div>
-    
+        <div id="like">    
             <div style="float: right;">                                    
-            <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
+            <button onclick="" class="w3-button buttons w3-right" style="font-weight: normal;"> 
                 <a class="nema_podvlacenja" href=' . "$referencaOdgovori" . '>Pogledaj odgovore</a>
             </button> &nbsp
-           
         </div> 
-        </div>
+    </div>
     <br>
     </div>
 
