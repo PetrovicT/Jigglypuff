@@ -98,40 +98,33 @@
                                     <div class="w3-center w3-white">
                                         <div class=" w3-white" style="padding-left: 10%; padding-right: 10%; width: 100%; align-items: center;">
 
-                                            <!-- pregled pitanja po kategoriji proba  -->
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=Anksioznost") ?>">Anksioznost-kategorija</a>
-                                            </span>  
-                                            
-                                            <!-- kada se klikne na tekst ispod slike, efekat je kao da se vrsi pretraga pitanja po tekstu ispod slike -->
-                                            <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=anksioznost") ?>">Anksioznost</a>
+                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=Anksioznost") ?>">Anksioznost</a>
                                             </span>  
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=depresija") ?>">Depresija</a>
-                                            </span> 
+                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=Porodicni problemi") ?>">Porodicni problemi</a>
+                                            </span>  
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=napad%20panike") ?>">Napad panike</a>
-                                            </span> 
+                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=OKP") ?>">OKP</a>
+                                            </span>  
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=kontrola%20stresa") ?>">Kontrola stresa</a>
-                                            </span> 
+                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=Napad panike") ?>">Napad panike</a>
+                                            </span>  
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=kontrola%20besa") ?>">Kontrola besa</a>
-                                            </span> 
+                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=Manjak samopouzdanja") ?>">Manjak samopouzdanja</a>
+                                            </span>  
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=porodicni%20problemi") ?>">Porodični problemi</a>
-                                            </span> 
+                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=Kontrola stresa") ?>">Kontrola stresa</a>
+                                            </span>  
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=manjak%20samopouzdanja") ?>">Manjak samopouzdanja</a>
-                                            </span> 
+                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=Kontrola besa") ?>">Kontrola besa</a>
+                                            </span>  
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=OKP") ?>">OKP</a>
-                                            </span> 
+                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=Depresija") ?>">Depresija</a>
+                                            </span>  
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=depersonalizacija") ?>">Depersonalizacija</a>
-                                            </span> 
+                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=Depersonalizacija") ?>">Depersonalizacija</a>
+                                            </span>
 
                                         </div>
                                     </div>
