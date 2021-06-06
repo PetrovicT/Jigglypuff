@@ -1,4 +1,3 @@
-
 <!-- Petrovic Teodora -->
 
 <!DOCTYPE html>
@@ -139,9 +138,12 @@ else
                     <button class="w3-button buttons" onclick="like_or_dislike_pitanje(this,'.$idPitanja.',0)"><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
                 </div>
         
+                <a class="nema_podvlacenja" href=' . "$referenca4" . '>
                 <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
-                    <a class="nema_podvlacenja" href=' . "$referenca4" . '>Odgovori</a>
+                    Odgovori
                 </button>
+                </a>
+                
             </div>
         <br>
         </div>

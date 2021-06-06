@@ -104,6 +104,8 @@
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
                                                 <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=Porodicni problemi") ?>">Porodicni problemi</a>
                                             </span>  
+                                            </a>
+                                            <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=depresija") ?>">
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
                                                 <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=OKP") ?>">OKP</a>
                                             </span>  
