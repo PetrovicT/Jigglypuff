@@ -28,18 +28,29 @@ $idSeanse = $oneSeansaData['idSeanse'];
     </div>
     <!-- Input section -->
     <div class="input letters_dark_blue">
-        <p style="text-align: justify;"><?=$opis?></p>
+        <p style="text-align: justify;"><?= $opis ?></p>
         <br />
     </div>
-    <!-- Anwser input -->
+
+    <?php
+    // logika za dobijanje imena korisnika
+    $sviPrijavljeniKorisnici = $korisnikPrijavljenNaSeansuModel->findAllKorisniciForSeansa($idSeanse);
+    ?>
+
     <div class="input">
         <!-- Buttons -->
         <div>
             <div class="w3-left w3-padding">
-                <b class="">Prijavljeno: <?=$trenutnoPrijavljenih?>/<?=$maxPrijavljenih?></b>
+                <b class="">Prijavljeno: <?= $trenutnoPrijavljenih ?>/<?= $maxPrijavljenih ?></b>
+                <br>
+                <?php
+                    foreach ($sviPrijavljeniKorisnici as $prijavljenKorisnik){
+                        echo '<a href="'. site_url('Korisnik/profil/'.$prijavljenKorisnik->idKorisnik).'">'.$prijavljenKorisnik->username.'</a><br>';
+                    }
+                ?>
             </div>
             <div class="w3-right">
-                <button class="w3-button buttons" onclick="alert('Uklanjam <?=$idSeanse?>')">
+                <button class="w3-button buttons" onclick="ukloniSeansu(this, <?= $idSeanse ?>)">
                     <b>Ukloni</b>
                 </button>
             </div>

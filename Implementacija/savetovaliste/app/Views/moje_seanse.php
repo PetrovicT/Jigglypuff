@@ -94,6 +94,7 @@
             <div class="w3-row w3-padding w3-border">
                 <br>
                 <?php
+                $korisnikModel = new \App\Models\KorisnikModel();
                 $korisnikPrijavljenNaSeansuModel = new App\Models\KorisnikPrijavljenNaSeansuModel();
                 foreach ($sveSeanse as $seansa) {
                     $oneSeansaData = [

@@ -14,7 +14,7 @@ class Psiholog extends Korisnik {
 
         $seansaModel = new SeansaModel();
 
-        $sveMojeSeanse = $seansaModel->where('korisnik_idKorisnik_organizator', $this->session->get('userid'))->findAll();
+        $sveMojeSeanse = $seansaModel->findAllForOrganizator($this->session->get('userid'));
 
         echo view('moje_seanse', ['sveSeanse' => $sveMojeSeanse]);
     }
