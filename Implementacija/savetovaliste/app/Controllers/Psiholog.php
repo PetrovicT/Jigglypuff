@@ -18,5 +18,27 @@ class Psiholog extends Korisnik {
 
         echo view('moje_seanse', ['sveSeanse' => $sveMojeSeanse]);
     }
+    
+    // Brise seansu ako je ulogovan njen vljasnik
+    public function izbrisi_seansu($idSeanse = null){
+        if($idSeanse == null){
+            return redirect()->back();
+        }
+        
+        // Session data
+        $userid = $this->session->get('userid');
+        $controller = $this->session->get('controller');
+        
+        // Prvo provera da li je to seansa ulogovanog korisnika
+        $seansaModel = new SeansaModel();
+        $seansa = $seansaModel->find($idSeanse);
+        if($seansa == null || $seansa->korisnik_idKorisnik_organizator != $userid){
+            return redirect()->back();
+        }
+        
+        // Ako je sve ok, obriši je
+        $seansaModel->delete($idSeanse);  
+        return redirect()->to(site_url("$controller/organizovane_seanse"));
+    }
 
 }

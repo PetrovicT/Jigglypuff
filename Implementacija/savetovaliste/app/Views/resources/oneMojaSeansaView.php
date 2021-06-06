@@ -44,15 +44,17 @@ $idSeanse = $oneSeansaData['idSeanse'];
                 <b class="">Prijavljeno: <?= $trenutnoPrijavljenih ?>/<?= $maxPrijavljenih ?></b>
                 <br>
                 <?php
-                    foreach ($sviPrijavljeniKorisnici as $prijavljenKorisnik){
-                        echo '<a href="'. site_url('Korisnik/profil/'.$prijavljenKorisnik->idKorisnik).'">'.$prijavljenKorisnik->username.'</a><br>';
-                    }
+                foreach ($sviPrijavljeniKorisnici as $prijavljenKorisnik) {
+                    echo '<a href="' . site_url('Korisnik/profil/' . $prijavljenKorisnik->idKorisnik) . '">' . $prijavljenKorisnik->username . '</a><br>';
+                }
                 ?>
             </div>
             <div class="w3-right">
-                <button class="w3-button buttons" onclick="ukloniSeansu(this, <?= $idSeanse ?>)">
-                    <b>Ukloni</b>
-                </button>
+                <form action="<?= site_url("$controller/izbrisi_seansu/$idSeanse") ?>" method="post">
+                    <button class="w3-button buttons" type="submit">
+                        <b>Ukloni</b>
+                    </button>
+                </form>
             </div>
         </div>
     </div>
