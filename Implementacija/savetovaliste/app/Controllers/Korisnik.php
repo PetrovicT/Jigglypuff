@@ -215,5 +215,10 @@ class Korisnik extends BaseController
         }
     }
 
+	// svi registrovani korisnici imaju mogucnost da izmene svoj profil
+	public function profilIzmena(){
+		echo view ("profilIzmena");
+	}
+
 
 }
