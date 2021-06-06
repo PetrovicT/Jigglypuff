@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>/css/style.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>/css/pitanja.css">
         <style>h1,h2,h3,h4,h5,h6 {font-family: "Oswald"} body {font-family: "Open Sans"}</style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src = "<?php echo base_url(); ?>/js/script.js"></script>
         <title>Odgovori</title>
 </head>
@@ -112,9 +113,9 @@ else
         <div id="like">
             <div>
                 <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+                <button class="w3-button buttons" onclick="like_or_dislike_pitanje(this,'.$idPitanja.',1)"><i class="fa fa-thumbs-up"></i>Korisno (' . "$likes" . ')</button> &nbsp
                 <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+                <button class="w3-button buttons" onclick="like_or_dislike_pitanje(this,'.$idPitanja.',0)"><i class="fa fa-thumbs-down"></i>Nije korisno (' . "$dislikes" . ')</button>
             </div>
     
             <div style="float: right;">                                    
@@ -132,8 +133,6 @@ else
     
 ?>
        
-  
-    <?php  $idPitanja=$pitanje->idPitanje;  ?> 
     <form name="odgovoriNaPitanje"  action="<?= site_url("$controller/odgovoriNaPitanje/$idPitanja") ?>" method="post">
         <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4 ">
 
