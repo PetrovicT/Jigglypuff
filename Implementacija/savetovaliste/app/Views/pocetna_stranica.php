@@ -98,40 +98,60 @@
                                     <div class="w3-center w3-white">
                                         <div class=" w3-white" style="padding-left: 10%; padding-right: 10%; width: 100%; align-items: center;">
 
-                                            <!-- pregled pitanja po kategoriji proba  -->
-                                            <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pregled_pitanja_po_kategoriji?pretraga=Anksioznost") ?>">Anksioznost-kategorija</a>
-                                            </span>  
                                             
-                                            <!-- kada se klikne na tekst ispod slike, efekat je kao da se vrsi pretraga pitanja po tekstu ispod slike -->
+                                            <!-- klik na karticu ima efekat kao da smo pretrazili tekst unutar kartice -->
+                                            <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=anksioznost") ?>">
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=anksioznost") ?>">Anksioznost</a>
+                                                Anksioznost
                                             </span>  
+                                            </a>
+                                            <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=depresija") ?>">
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=depresija") ?>">Depresija</a>
+                                               Depresija
                                             </span> 
+                                            </a>
+
+                                            <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=napad%20panike") ?>">
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=napad%20panike") ?>">Napad panike</a>
+                                               Napad panike
                                             </span> 
+                                            </a>
+
+                                            <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=kontrola%20stresa") ?>">
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=kontrola%20stresa") ?>">Kontrola stresa</a>
+                                                Kontrola stresa
                                             </span> 
+                                            </a>
+
+                                            <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=kontrola%20besa") ?>">
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=kontrola%20besa") ?>">Kontrola besa</a>
+                                               Kontrola besa
                                             </span> 
+                                            </a>
+
+                                            <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=porodicni%20problemi") ?>">
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=porodicni%20problemi") ?>">Porodični problemi</a>
+                                                Porodični problemi
                                             </span> 
+                                            </a>
+
+                                            <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=manjak%20samopouzdanja") ?>">
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=manjak%20samopouzdanja") ?>">Manjak samopouzdanja</a>
+                                               Manjak samopouzdanja
                                             </span> 
+                                            </a>
+
+                                            <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=OKP") ?>">
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=OKP") ?>">OKP</a>
+                                                OKP
                                             </span> 
+                                            </a>
+
+                                            <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=depersonalizacija") ?>">
                                             <span class="w3-tag category w3-margin-bottom w3-xlarge w3-card-4">
-                                                <a class="nema_podvlacenja" href="<?= site_url("$controller/pretraga_pitanja?pretraga=depersonalizacija") ?>">Depersonalizacija</a>
+                                                Depersonalizacija
                                             </span> 
+                                            </a>
 
                                         </div>
                                     </div>

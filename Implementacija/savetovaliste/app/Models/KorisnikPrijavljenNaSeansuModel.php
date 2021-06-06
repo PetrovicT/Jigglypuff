@@ -1,3 +1,6 @@
+
+<!-- Katzenberger Viktor -->
+
 <?php
 
 namespace App\Models;
@@ -28,6 +31,23 @@ class KorisnikPrijavljenNaSeansuModel extends Model {
         }
 
         return $queryBuilder->where('korisnik_idKorisnik', $idKorisnika)->get()->getResult();
+    }
+    
+    // Nalazi sve prijave za određenu seansu
+    public function findAllKorisniciForSeansa($idSeanse) {
+        $svePrijave = $this->where('seansa_idSeansa', $idSeanse)->findAll();
+        
+        $sviIdKorisnika = array_map(function($kor){
+            return $kor->korisnik_idKorisnik;
+        }, $svePrijave);
+        
+        if(empty($sviIdKorisnika)){
+            return [];
+        }
+        
+        $korisnikModel = new KorisnikModel();
+
+        return $korisnikModel->find($sviIdKorisnika);
     }
 
     // Nalazi prijavu korisnika na seansu, ukoliko postoji

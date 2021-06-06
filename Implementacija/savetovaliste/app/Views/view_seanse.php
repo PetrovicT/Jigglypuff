@@ -71,7 +71,7 @@
                     <br />
                     <?php
                     if (count($sveSeanse) == 0) {
-                        echo '<h1>Nije pronađena nijedna seansa</h1>';
+                        echo '<h1 class="letters_dark_blue w3-center">Nije pronađena nijedna seansa</h1>';
                     } else {
                         $korisnikModel = new \App\Models\KorisnikModel();
                         $korisnikPrijavljenNaSeansuModel = new App\Models\KorisnikPrijavljenNaSeansuModel();

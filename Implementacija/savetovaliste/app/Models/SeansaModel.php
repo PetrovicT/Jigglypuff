@@ -1,3 +1,6 @@
+
+<!-- Katzenberger Viktor -->
+
 <?php
 
 namespace App\Models;
@@ -66,6 +69,18 @@ class SeansaModel extends Model {
         }, $sveSeanse);
 
         return $this->find($seansaIDs);
+    }
+    
+    // Pronalazi sve seanse sa određenim organizatorom
+    public function findAllForOrganizator($idOrganizatora){
+        $queryBuilder = $this->db->table($this->table);
+
+        $queryBuilder->where('korisnik_idKorisnik_organizator', $idOrganizatora);
+        $queryBuilder->orderBy('datumPocetka', 'DESC');
+        $queryBuilder->orderBy('vremePocetka', 'DESC');
+        $seanseSorted = $queryBuilder->get();
+
+        return $seanseSorted->getResult();
     }
 
     // Vraća bool da li je seansa puna ili ne

@@ -117,11 +117,12 @@ else
                 <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
             </div>
     
-            <div style="float: right;">                                    
+            <div style="float: right;">        
+            <a class="nema_podvlacenja" href=' . "$referencaOdgovori" . '>                            
             <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
-                <a class="nema_podvlacenja" href=' . "$referencaOdgovori" . '>Pogledaj odgovore</a>
+              Pogledaj odgovore
             </button> &nbsp
-           
+            </a>
         </div> 
         </div>
     <br>

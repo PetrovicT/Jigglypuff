@@ -1,22 +1,21 @@
-
 <!-- Katzenberger Viktor -->
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Moje seanse</title>
+        <title>Organizovane seanse</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="photos/logo.png" />
-        <link rel="stylesheet" href="css/w3.css" />
+        <link rel="icon" href="<?php echo base_url(); ?>/photos/logo.png" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>/css/w3.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>/css/style.css" />
         <style>
             h1,h2,h3,h4,h5,h6 {font-family: "Oswald"} body {font-family: "Open Sans"}
         </style>
-        <script src="js/script.js"></script>
+        <script src="<?php echo base_url(); ?>/js/script.js"></script>
     </head>
     <body class="w3-light-grey">
         <!-- Header -->
@@ -54,7 +53,7 @@
                         <span onclick="document.getElementById('NovaSeansaModal').style.display = 'none'" class="w3-button w3-large w3-display-topright close-button">×</span>
                         <h2 class="w3-text-white">Nova seansa</h2>
                     </header>
-                    <form class="w3-container">
+                    <form class="w3-container" action='novaSeansaSubmit' method="post">
 
                         <br>
                         <div style="display: inline-block; min-width:60% ">
@@ -80,7 +79,7 @@
 
                         <br>
                         <label>Zoom link</label>
-                        <input id="novaSeansaZoomLink" name="novaSeansaZoomLink" class="w3-input" type="url">
+                        <input required id="novaSeansaZoomLink" name="novaSeansaZoomLink" class="w3-input" type="url">
 
                         <br>
                         <input id="novaSeansaSubmit" name="novaSeansaSubmit" class="w3-input w3-button buttons" type="submit" value="Organizuj!">
@@ -92,258 +91,25 @@
 
             <!-- Grid -->
             <div class="w3-row w3-padding w3-border">
-                <!-- Blog entries -->
-                <h1>Kao organizator (omogućeno samo za psihologe)</h1>
-                <br />
-                <!-- Blog entry -->
-                <div class="w3-container w3-col l3ipo m5ipo w3-light-grey w3-margin-small-adaptive w3-card-4">
-                    <div class="w3-left" style="padding-left: 5%;">
-                        <br />
-                        <h3 class="letters_dark_blue">
-                            <b>Popodnevna seansa sa Snorlaksom</b>
-                        </h3>
-                        <h5><span class="w3-opacity">12. april 2021, 16:00</span></h5>
-                    </div>
-                    <!-- Input section -->
-                    <div class="input letters_dark_blue">
-                        <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper commodo lorem et auctor.
-                            Suspendisse non eros sit amet diam pharetra pulvinar. Praesent neque elit, eleifend at urna in, venenatis semper diam. Morbi bibendum 
-                            faucibus congue. Curabitur blandit et purus ac suscipit. Pellentesque odio nulla, porta tristique scelerisque a, suscipit eu lectus. 
-                            Vivamus sit amet metus eget neque laoreet dictum eget et felis. Aliquam nulla urna, viverra ac tincidunt a, placerat sed ante. 
-                            Fusce consequat pretium tortor, a fermentum sapien tempor quis. </p>
-                        <br />
-                    </div>
-                    <!-- Anwser input -->
-                    <div class="input">
-                        <!-- Buttons -->
-                        <div>
-                            <div class="w3-left w3-padding">
-                                <b class="">Prijavljeno: 3/4</b>
-                            </div>
-                            <div class="w3-right">
-                                <button class="w3-button buttons">
-                                    <b>Ukloni</b>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-                <!-- Blog entry -->
-                <div class="w3-container w3-col l3ipo m5ipo w3-light-grey w3-margin-small-adaptive w3-card-4">
-                    <div class="w3-left" style="padding-left: 5%;">
-                        <br />
-                        <h3 class="letters_dark_blue">
-                            <b>Popodnevna seansa sa Snorlaksom</b>
-                        </h3>
-                        <h5><span class="w3-opacity">12. april 2021, 16:00</span></h5>
-                    </div>
-                    <!-- Input section -->
-                    <div class="input letters_dark_blue">
-                        <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper commodo lorem et auctor.
-                            Suspendisse non eros sit amet diam pharetra pulvinar. Praesent neque elit, eleifend at urna in, venenatis semper diam. Morbi bibendum 
-                            faucibus congue. Curabitur blandit et purus ac suscipit. Pellentesque odio nulla, porta tristique scelerisque a, suscipit eu lectus. 
-                            Vivamus sit amet metus eget neque laoreet dictum eget et felis. Aliquam nulla urna, viverra ac tincidunt a, placerat sed ante. 
-                            Fusce consequat pretium tortor, a fermentum sapien tempor quis. </p>
-                        <br />
-                    </div>
-                    <!-- Anwser input -->
-                    <div class="input">
-                        <!-- Buttons -->
-                        <div>
-                            <div class="w3-left w3-padding">
-                                <b class="">Prijavljeno: 3/4</b>
-                            </div>
-                            <div class="w3-right">
-                                <button class="w3-button buttons">
-                                    <b>Ukloni</b>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-                <!-- Blog entry -->
-                <div class="w3-container w3-col l3ipo m5ipo w3-light-grey w3-margin-small-adaptive w3-card-4">
-                    <div class="w3-left" style="padding-left: 5%;">
-                        <br />
-                        <h3 class="letters_dark_blue">
-                            <b>Popodnevna seansa sa Snorlaksom</b>
-                        </h3>
-                        <h5><span class="w3-opacity">12. april 2021, 16:00</span></h5>
-                    </div>
-                    <!-- Input section -->
-                    <div class="input letters_dark_blue">
-                        <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper commodo lorem et auctor.
-                            Suspendisse non eros sit amet diam pharetra pulvinar. Praesent neque elit, eleifend at urna in, venenatis semper diam. Morbi bibendum 
-                            faucibus congue. Curabitur blandit et purus ac suscipit. Pellentesque odio nulla, porta tristique scelerisque a, suscipit eu lectus. 
-                            Vivamus sit amet metus eget neque laoreet dictum eget et felis. Aliquam nulla urna, viverra ac tincidunt a, placerat sed ante. 
-                            Fusce consequat pretium tortor, a fermentum sapien tempor quis. </p>
-                        <br />
-                    </div>
-                    <!-- Anwser input -->
-                    <div class="input">
-                        <!-- Buttons -->
-                        <div>
-                            <div class="w3-left w3-padding">
-                                <b class="">Prijavljeno: 3/4</b>
-                            </div>
-                            <div class="w3-right">
-                                <button class="w3-button buttons">
-                                    <b>Ukloni</b>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-                <!-- Blog entry -->
-                <div class="w3-container w3-col l3ipo m5ipo w3-light-grey w3-margin-small-adaptive w3-card-4">
-                    <div class="w3-left" style="padding-left: 5%;">
-                        <br />
-                        <h3 class="letters_dark_blue">
-                            <b>Popodnevna seansa sa Snorlaksom</b>
-                        </h3>
-                        <h5><span class="w3-opacity">12. april 2021, 16:00</span></h5>
-                    </div>
-                    <!-- Input section -->
-                    <div class="input letters_dark_blue">
-                        <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper commodo lorem et auctor.
-                            Suspendisse non eros sit amet diam pharetra pulvinar. Praesent neque elit, eleifend at urna in, venenatis semper diam. Morbi bibendum 
-                            faucibus congue. Curabitur blandit et purus ac suscipit. Pellentesque odio nulla, porta tristique scelerisque a, suscipit eu lectus. 
-                            Vivamus sit amet metus eget neque laoreet dictum eget et felis. Aliquam nulla urna, viverra ac tincidunt a, placerat sed ante. 
-                            Fusce consequat pretium tortor, a fermentum sapien tempor quis. </p>
-                        <br />
-                    </div>
-                    <!-- Anwser input -->
-                    <div class="input">
-                        <!-- Buttons -->
-                        <div>
-                            <div class="w3-left w3-padding">
-                                <b class="">Prijavljeno: 3/4</b>
-                            </div>
-                            <div class="w3-right">
-                                <button class="w3-button buttons">
-                                    <b>Ukloni</b>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-                <!-- Blog entry -->
-                <div class="w3-container w3-col l3ipo m5ipo w3-light-grey w3-margin-small-adaptive w3-card-4">
-                    <div class="w3-left" style="padding-left: 5%;">
-                        <br />
-                        <h3 class="letters_dark_blue">
-                            <b>Popodnevna seansa sa Snorlaksom</b>
-                        </h3>
-                        <h5><span class="w3-opacity">12. april 2021, 16:00</span></h5>
-                    </div>
-                    <!-- Input section -->
-                    <div class="input letters_dark_blue">
-                        <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper commodo lorem et auctor.
-                            Suspendisse non eros sit amet diam pharetra pulvinar. Praesent neque elit, eleifend at urna in, venenatis semper diam. Morbi bibendum 
-                            faucibus congue. Curabitur blandit et purus ac suscipit. Pellentesque odio nulla, porta tristique scelerisque a, suscipit eu lectus. 
-                            Vivamus sit amet metus eget neque laoreet dictum eget et felis. Aliquam nulla urna, viverra ac tincidunt a, placerat sed ante. 
-                            Fusce consequat pretium tortor, a fermentum sapien tempor quis. </p>
-                        <br />
-                    </div>
-                    <!-- Anwser input -->
-                    <div class="input">
-                        <!-- Buttons -->
-                        <div>
-                            <div class="w3-left w3-padding">
-                                <b class="">Prijavljeno: 3/4</b>
-                            </div>
-                            <div class="w3-right">
-                                <button class="w3-button buttons">
-                                    <b>Ukloni</b>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-                <!-- END BLOG ENTRIES -->
-                <!-- END GRID -->
+                <br>
+                <?php
+                $korisnikModel = new \App\Models\KorisnikModel();
+                $korisnikPrijavljenNaSeansuModel = new App\Models\KorisnikPrijavljenNaSeansuModel();
+                foreach ($sveSeanse as $seansa) {
+                    $oneSeansaData = [
+                        'naziv' => $seansa->nazivSeanse,
+                        'datum' => $seansa->datumPocetka,
+                        'vreme' => $seansa->vremePocetka,
+                        'tekstSeanse' => $seansa->opisSeanse,
+                        'maxPrijavljenih' => $seansa->maxBrojPrijavljenih,
+                        'trenutnoPrijavljenih' => $korisnikPrijavljenNaSeansuModel->findNumberOfSignedUsers($seansa->idSeansa),
+                        'idSeanse' => $seansa->idSeansa
+                        ];
+                    include 'resources/oneMojaSeansaView.php';
+                }
+                ?>
             </div>
-
-
-            <!-- Grid -->
-            <div class="w3-row w3-padding w3-border">
-                <!-- Blog entries -->
-                <h1>Kao učesnik</h1>
-                <br />
-                <!-- Blog entry -->
-                <div class="w3-container w3-col l3ipo m5ipo w3-light-grey w3-margin-small-adaptive w3-card-4">
-                    <div class="w3-left" style="padding-left: 5%;">
-                        <br />
-                        <h3 class="letters_dark_blue">
-                            <b>Popodnevna seansa sa Snorlaksom</b>
-                        </h3>
-                        <h5><span class="w3-opacity">12. april 2021, 16:00</span></h5>
-                    </div>
-                    <!-- Input section -->
-                    <div class="input letters_dark_blue">
-                        <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper commodo lorem et auctor.
-                            Suspendisse non eros sit amet diam pharetra pulvinar. Praesent neque elit, eleifend at urna in, venenatis semper diam. Morbi bibendum 
-                            faucibus congue. Curabitur blandit et purus ac suscipit. Pellentesque odio nulla, porta tristique scelerisque a, suscipit eu lectus. 
-                            Vivamus sit amet metus eget neque laoreet dictum eget et felis. Aliquam nulla urna, viverra ac tincidunt a, placerat sed ante. 
-                            Fusce consequat pretium tortor, a fermentum sapien tempor quis. </p>
-                        <br />
-                    </div>
-                    <!-- Anwser input -->
-                    <div class="input">
-                        <!-- Buttons -->
-                        <div>
-                            <div class="w3-right">
-                                <button class="w3-button buttons">
-                                    <b>Odjavi se</b>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-                <!-- Blog entry -->
-                <div class="w3-container w3-col l3ipo m5ipo w3-light-grey w3-margin-small-adaptive w3-card-4">
-                    <div class="w3-left" style="padding-left: 5%;">
-                        <br />
-                        <h3 class="letters_dark_blue">
-                            <b>Popodnevna seansa sa Snorlaksom</b>
-                        </h3>
-                        <h5><span class="w3-opacity">12. april 2021, 16:00</span></h5>
-                    </div>
-                    <!-- Input section -->
-                    <div class="input letters_dark_blue">
-                        <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper commodo lorem et auctor.
-                            Suspendisse non eros sit amet diam pharetra pulvinar. Praesent neque elit, eleifend at urna in, venenatis semper diam. Morbi bibendum 
-                            faucibus congue. Curabitur blandit et purus ac suscipit. Pellentesque odio nulla, porta tristique scelerisque a, suscipit eu lectus. 
-                            Vivamus sit amet metus eget neque laoreet dictum eget et felis. Aliquam nulla urna, viverra ac tincidunt a, placerat sed ante. 
-                            Fusce consequat pretium tortor, a fermentum sapien tempor quis. </p>
-                        <br />
-                    </div>
-                    <!-- Anwser input -->
-                    <div class="input">
-                        <!-- Buttons -->
-                        <div>
-                            <div class="w3-right">
-                                <button class="w3-button buttons">
-                                    <b>Odjavi se</b>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-                <!-- END BLOG ENTRIES -->
-                <!-- END GRID -->
-            </div>
-
-            <!-- END w3-content -->
-        </div> 
-
+        </div>
         <!-- Footer -->
         <?php
         require 'resources/footer.php';

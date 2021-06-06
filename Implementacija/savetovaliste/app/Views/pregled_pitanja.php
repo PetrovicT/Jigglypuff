@@ -124,13 +124,13 @@
                                             <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
                                         </div>
                                                               
-                                        <div style="float: right;">                                    
-                                            <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
-                                                <a class="nema_podvlacenja" href=' . "$referenca3" . '>Pogledaj odgovore</a>
+                                        <div style="float: right;">    
+                                        <a class="nema_podvlacenja" href=' . "$referenca3" . '>                                
+                                            <button class="w3-button buttons" style="font-weight: normal;"> 
+                                               Pogledaj odgovore
                                             </button> &nbsp
-                                           
-                                        </div>  
-                                                                    
+                                        </a> 
+                                        </div>                       
                                     </div>
                                     <p style="color:red; text-align:left">Morate biti ulogovani da biste mogli da ocenite pitanje sa korisno/nije korisno!</p>
                                 </div> 
@@ -148,19 +148,22 @@
                                         </div>
                                 
                                         <div style="float: right;">
-                                            <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
-                                                <a class="nema_podvlacenja" href=' . "$referenca3" . '>Pogledaj odgovore</a>
+                                        <a class="nema_podvlacenja" href=' . "$referenca3" . '>
+                                            <button class="w3-button buttons" style="font-weight: normal;"> 
+                                                Pogledaj odgovore
                                             </button> &nbsp
+                                        </a>
+                                        
+                                        <a class="nema_podvlacenja" href=' . "$referenca4" . '>
                                             <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
-                                            <a class="nema_podvlacenja" href=' . "$referenca4" . '>Odgovori</a>
+                                               Odgovori
                                             </button>
+                                        </a>
                                         </div>
-                                
                                     </div>
                                 </div> 
                             ';
-                        }
-                        
+                        }   
                     echo '<br>
                     </div>
                     ';
