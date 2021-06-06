@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\PitanjeModel;
 use App\Models\OdgovorModel;
 use App\Models\KorisnikModel;
+use App\Models\GradModel;
 use App\Models\KategorijaPitanjaModel;
 use App\Models\TipKorisnikaModel;
 
@@ -309,6 +310,27 @@ class Korisnik extends BaseController
 		echo "$noviGrad";
 		echo "$noviPol";
 
+		$db      = \Config\Database::connect();
+		$builder = $db->table('korisnik');
+		$builder->where('idKorisnik', $korisnikId);
+		$data = [
+			'username'=>"$noviUsername",
+			'email'=>"$novEmail",
+			'licnoIme'=>"$novoLicnoIme",
+			'prikaziLicnoIme'=>$korisnik->prikaziLicnoIme,
+			'password'=>$novaLozinka,
+			'tipKorisnika_idTipKorisnika'=>$korisnik->tipKorisnika_idTipKorisnika,
+			'grad_idGrad'=>$noviGrad,
+			'pol_idPol'=>$noviPol
+		];
+		$korisnikModel->update($korisnikId, $data);
+		
+		/*
+		$query=$db->query("UPDATE `korisnik` SET `username` = 'MareI2', `prikaziLicnoIme` = b'1' WHERE `korisnik`.`idKorisnik` = 1");
+		$query->getResult();
+ 		*/
+
+		/*
 		$korisnikModel->save([
 			'idKorisnik'=>$korisnikId,
 			'username'=>$noviUsername,
@@ -321,11 +343,11 @@ class Korisnik extends BaseController
 			'pol_idPol'=>$noviPol,
 			'slika'=>$korisnik->slika
 		]);
+		*/
+
         $controller=session()->get('controller');
 	    // kada zavrsi sa izmenama vraca se na pregled profila
 		//return redirect()->to(site_url("$controller/profil/$korisnikId"));	
-		return;	
-	}
-
-
+		return;
+  	}
 }

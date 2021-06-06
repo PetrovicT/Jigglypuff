@@ -89,5 +89,14 @@ class KorisnikModel extends Model {
             }       
             return $korisnik->username;
         }
-        
+     /*   
+        public function upddateKorisnik($idKorisnika, $idSeanse) {
+            $data = [
+                'korisnik_idKorisnik' => $idKorisnika,
+                'seansa_idSeansa' => $idSeanse
+            ];
+            $this->insert($data);
+        }
+*/
+
 }
