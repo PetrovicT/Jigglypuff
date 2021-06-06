@@ -4,5 +4,7 @@ namespace App\Controllers;
 
 class Psiholog extends Korisnik
 {
-	// Obrisan index jer je nasledjen od korisnika
+        public function organizovane_seanse(){
+            echo view('moje_seanse');
+        }
 }
