@@ -119,8 +119,8 @@
                                 <div class="input ">     
                                     <div id="like">
                                         <div>
-                                            <button class="w3-button buttons" onclick="like_or_dislike_pitanje(this,'.$idPitanja.',1)"><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">' . "$likes" . '</u></button> &nbsp
-                                            <button class="w3-button buttons" onclick="like_or_dislike_pitanje(this,'.$idPitanja.',0)"><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">' . "$dislikes" . '</u></button>
+                                            <button disabled class="w3-button buttons" onclick="like_or_dislike_pitanje(this,'.$idPitanja.',1)"><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">' . "$likes" . '</u></button> &nbsp
+                                            <button disabled class="w3-button buttons" onclick="like_or_dislike_pitanje(this,'.$idPitanja.',0)"><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">' . "$dislikes" . '</u></button>
                                         </div>
                                                               
                                         <div style="float: right;">                                    
