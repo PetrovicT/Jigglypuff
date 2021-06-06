@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Organizovanje seanse</title>
+        <title>Organizovane seanse</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="<?php echo base_url(); ?>/photos/logo.png" />
@@ -54,7 +54,7 @@
                         <span onclick="document.getElementById('NovaSeansaModal').style.display = 'none'" class="w3-button w3-large w3-display-topright close-button">×</span>
                         <h2 class="w3-text-white">Nova seansa</h2>
                     </header>
-                    <form class="w3-container">
+                    <form class="w3-container" action='novaSeansaSubmit' method="post">
 
                         <br>
                         <div style="display: inline-block; min-width:60% ">
@@ -80,7 +80,7 @@
 
                         <br>
                         <label>Zoom link</label>
-                        <input id="novaSeansaZoomLink" name="novaSeansaZoomLink" class="w3-input" type="url">
+                        <input required id="novaSeansaZoomLink" name="novaSeansaZoomLink" class="w3-input" type="url">
 
                         <br>
                         <input id="novaSeansaSubmit" name="novaSeansaSubmit" class="w3-input w3-button buttons" type="submit" value="Organizuj!">

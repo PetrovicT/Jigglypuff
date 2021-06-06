@@ -6,6 +6,8 @@ use App\Models\PitanjeModel;
 use App\Models\OdgovorModel;
 use App\Models\KorisnikModel;
 use App\Models\KategorijaPitanjaModel;
+use App\Models\SeansaModel;
+use App\Models\KorisnikPrijavljenNaSeansuModel;
 
 class Korisnik extends BaseController
 {
