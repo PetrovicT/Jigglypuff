@@ -47,7 +47,7 @@
                         if (session()->get('userid')) {
                             echo "
                             <div class = 'w3-left w3-margin'>
-                            <form action = ".site_url("$controller/pregled_seansi")." method = 'get'>
+                            <form action = " . site_url("$controller/pregled_seansi") . " method = 'get'>
                             <input class = 'w3-input' type = 'hidden' style = 'width:300px; max-width:calc(100% - 46px)' name = 'samoMoje' value = 'true'>
                             <button style = 'width:auto!important;' type = 'submit' class = 'w3-button buttons gradient_literature'>Moje seanse</button>
                             </form>
@@ -55,9 +55,9 @@
                         }
                         ?>
                         <div id="SeanceSearchBar" class="w3-right w3-margin" style="width:346px; max-width: 100%;">
-                            <form id="seansaPretraga" action="<?= site_url("$controller/pregled_seansi") ?>" method="get">
-                                <a onclick='document.getElementById("seansaPretraga").submit();' href="" class="w3-button w3-right letters gradient_literature"><i class="fa fa-search"></i></a>
-                                <input id="SeanceSearchField" name="pretraga" class="w3-input w3-right" type="text" placeholder="Pretraži seanse" style="width:300px; max-width:calc(100% - 46px);">
+                            <form id="pretraga_seansi" name="pretraga_seansi" action="<?= site_url("$controller/pregled_seansi") ?>">
+                                <a onclick="document.getElementById('pretraga_seansi' ).submit();" class="w3-button gradient_literature w3-right letters"><i class="fa fa-search"></i></a>
+                                <input id="SearchField" class="w3-input w3-right" type="text" placeholder="Pretraži" name="pretraga" style="width:300px; max-width:calc(100% - 46px);">
                             </form>
                         </div>
                     </div>
