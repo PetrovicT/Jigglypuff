@@ -49,9 +49,27 @@ class SeansaModel extends Model {
 
         return $seanseSorted->getResult();
     }
-    
+
+    // Vraća sve seanse na kojima učestvuje $idKorisnika
+    public function findAllWithParticipant($idKorisnika) {
+        // Prvo nađemo sve njegove prijave
+        $korisnikPrijavljenNaSeansuModel = new KorisnikPrijavljenNaSeansuModel();
+        $sveSeanse = $korisnikPrijavljenNaSeansuModel->findAllSeanseForKorisnik($idKorisnika, true);
+
+        // Ako nema prijava, ni ne traži detalje o seansama
+        if(!$sveSeanse){
+            return [];
+        }
+        
+        $seansaIDs = array_map(function($seansa) {
+            return $seansa->seansa_idSeansa;
+        }, $sveSeanse);
+
+        return $this->find($seansaIDs);
+    }
+
     // Vraća bool da li je seansa puna ili ne
-    public function isSeansaFull($idSeanse){
+    public function isSeansaFull($idSeanse) {
         $korisnikPrijavljenNaSeansuModel = new KorisnikPrijavljenNaSeansuModel();
         return ($korisnikPrijavljenNaSeansuModel->findNumberOfSignedUsers($idSeanse) >= $this->find($idSeanse)->maxBrojPrijavljenih);
     }

@@ -109,7 +109,10 @@ class BaseController extends Controller {
         $seansaModel = new SeansaModel();
         $sveSeanse = [];
         
-        if($this->request->getGet('datumSeanse')){
+        if($this->request->getGet('samoMoje') && $this->session->get('userid')){
+            $sveSeanse = $seansaModel->findAllWithParticipant($this->session->get('userid'));
+        }
+        else if($this->request->getGet('datumSeanse')){
             $sveSeanse = $seansaModel->findAllOnDateSorted($this->request->getGet('datumSeanse'));
         }
         else if($this->request->getGet('pretraga')){
