@@ -36,13 +36,25 @@
             <div class="w3-row w3-padding w3-border">
                 <div class="w3-col l12 s12">
                     <div class="w3-container w3-light-grey w3-margin w3-padding-large w3-card-4">
-                        <div class="w3-left">
+                        <div class="w3-left w3-margin">
                             <form action="<?= site_url("$controller/pregled_seansi") ?>" method="get">
-                                <input class="w3-input w3-left" type="date" style="width:300px; max-width:calc(100% - 46px)" name="datumSeanse"></input>
+                                <input class="w3-input w3-left" type="date" style="width:300px; max-width:calc(100% - 46px)" name="datumSeanse">
                                 <button style="width:auto!important;" type="submit" class="w3-button buttons gradient_literature">Pretraga po datumu</button>
                             </form>
                         </div>
-                        <div id="SeanceSearchBar" class="w3-right" style="width:346px; max-width: 100%;">
+                        <?php
+                        // Ako je neko ulogovan, onda moze da vidi svoje seanse
+                        if (session()->get('userid')) {
+                            echo "
+                            <div class = 'w3-left w3-margin'>
+                            <form action = ".site_url("$controller/pregled_seansi")." method = 'get'>
+                            <input class = 'w3-input' type = 'hidden' style = 'width:300px; max-width:calc(100% - 46px)' name = 'samoMoje' value = 'true'>
+                            <button style = 'width:auto!important;' type = 'submit' class = 'w3-button buttons gradient_literature'>Moje seanse</button>
+                            </form>
+                            </div>";
+                        }
+                        ?>
+                        <div id="SeanceSearchBar" class="w3-right w3-margin" style="width:346px; max-width: 100%;">
                             <form id="seansaPretraga" action="<?= site_url("$controller/pregled_seansi") ?>" method="get">
                                 <a onclick='document.getElementById("seansaPretraga").submit();' href="" class="w3-button w3-right letters gradient_literature"><i class="fa fa-search"></i></a>
                                 <input id="SeanceSearchField" name="pretraga" class="w3-input w3-right" type="text" placeholder="Pretraži seanse" style="width:300px; max-width:calc(100% - 46px);">
