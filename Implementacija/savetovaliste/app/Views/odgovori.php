@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>/css/style.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>/css/pitanja.css">
         <style>h1,h2,h3,h4,h5,h6 {font-family: "Oswald"} body {font-family: "Open Sans"}</style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src = "<?php echo base_url(); ?>/js/script.js"></script>
         <title>Odgovori</title>
   </head>
@@ -112,10 +113,10 @@ else
             <div class="input">     
                 <div id="like">
                     <div>
-                        <!-- TODO ubaciti lajkovanje za Gosta -->
-                        <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                        <!-- TODO ubaciti lajkovanje za Gosta -->
-                        <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+
+                        <button disabled class="w3-button buttons" onclick="like_or_dislike_pitanje(this,'.$idPitanja.',1)"><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+
+                        <button disabled class="w3-button buttons" onclick="like_or_dislike_pitanje(this,'.$idPitanja.',0)"><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
                     </div>
                 </div>
             <br>
@@ -132,10 +133,10 @@ else
         <div class="input">     
             <div id="like">
                 <div>
-                    <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                    <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                    <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                    <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+
+                    <button class="w3-button buttons" onclick="like_or_dislike_pitanje(this,'.$idPitanja.',1)"><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+
+                    <button class="w3-button buttons" onclick="like_or_dislike_pitanje(this,'.$idPitanja.',0)"><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
                 </div>
         
                 <button onclick="" class="w3-button buttons" style="font-weight: normal;"> 
@@ -220,10 +221,10 @@ else
                     <div class="input ">     
                         <div id="like">
                             <div>
-                                <!-- TODO ubaciti lajkovanje za gosta -->
-                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                                <!-- TODO ubaciti lajkovanje za gosta -->
-                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+
+                                <button disabled class="w3-button buttons" onclick="like_or_dislike_odgovor(this,'.$idOdgovora.',1)"><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+
+                                <button disabled class="w3-button buttons" onclick="like_or_dislike_odgovor(this,'.$idOdgovora.',0)"><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
                             </div>                           
                         </div>
                     </div> 
@@ -237,10 +238,10 @@ else
                     <div class="input ">     
                         <div id="like">
                             <div>
-                                <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
-                                <!-- TODO ubaciti lajkovanje za ulogovanog korisnika -->
-                                <button class="w3-button buttons" onclick=""><b><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
+                
+                                <button class="w3-button buttons" onclick="like_or_dislike_odgovor(this,'.$idOdgovora.',1)"><i class="fa fa-thumbs-up"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Korisno (' . "$likes" . ')</u></button> &nbsp
+   
+                                <button class="w3-button buttons" onclick="like_or_dislike_odgovor(this,'.$idOdgovora.',0)"><i class="fa fa-thumbs-down"></i> <u onclick="" style="text-decoration: none; font-weight: normal;">Nije korisno (' . "$dislikes" . ')</u></button>
                             </div>                           
                         </div>
                     </div> 

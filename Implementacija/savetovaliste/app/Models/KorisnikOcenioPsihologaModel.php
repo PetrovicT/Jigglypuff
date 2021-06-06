@@ -6,11 +6,13 @@ use App\Models\PitanjeModel;
 class KorisnikOcenioPsihologaModel extends Model
 {
         protected $table      = 'korisnik_ocenio_psihologa';
+        protected $primaryKey = 'idScapegoat';
         protected $allowedFields = ['ocena','korisnik_idKorisnik_ocenio','korisnik_idKorisnik_ocenjen'];
         protected $returnType = 'object';
-        protected $useAutoIncrement = false;
-        
-         // pronalazi broj pozitivnih ocena na psihologa ciji id prosledjujemo
+        protected $useAutoIncrement = true;
+
+
+        // pronalazi broj pozitivnih ocena na psihologa ciji id prosledjujemo
         public function findNumOfLikes($idPsihologa){
             $sveOceneNaPsihologa =  $this->where('ocena',"1")->where('korisnik_idKorisnik_ocenjen', "$idPsihologa")->findAll();
             if ($sveOceneNaPsihologa == null) {return 0;}
@@ -25,4 +27,14 @@ class KorisnikOcenioPsihologaModel extends Model
             $numOfDislikes=count($sveOceneNaPsihologa); 
             return $numOfDislikes;
         }
+        
+        // Nalazi ocenu psihologa od korisnika, ako postoji
+        public function findOcena($idKorisnika, $idPsihologa) {
+        $queryBuilder = $this->db->table($this->table);
+
+        return $queryBuilder
+                        ->where('korisnik_idKorisnik_ocenio', $idKorisnika)
+                        ->where('korisnik_idKorisnik_ocenjen', $idPsihologa)
+                        ->get()->getFirstRow();
+    }
 }
