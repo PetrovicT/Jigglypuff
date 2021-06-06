@@ -1,6 +1,3 @@
-
-<!-- Katzenberger Viktor -->
-
 <?php
 
 namespace App\Models;

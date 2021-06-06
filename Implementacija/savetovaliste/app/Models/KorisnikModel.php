@@ -1,7 +1,3 @@
-
-<!-- Petrovic Teodora -->
-<!-- Katzenberger Viktor -->
-
 <?php
 
 namespace App\Models;
