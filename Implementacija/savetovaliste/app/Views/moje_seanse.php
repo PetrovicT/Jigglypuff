@@ -93,41 +93,21 @@
             <!-- Grid -->
             <div class="w3-row w3-padding w3-border">
                 <br>
-                <!-- Blog entry -->
-                <div class="w3-container w3-col l3ipo m5ipo w3-light-grey w3-margin-small-adaptive w3-card-4">
-                    <div class="w3-left" style="padding-left: 5%;">
-                        <br />
-                        <h3 class="letters_dark_blue">
-                            <b>Popodnevna seansa sa Snorlaksom</b>
-                        </h3>
-                        <h5><span class="w3-opacity">12. april 2021, 16:00</span></h5>
-                    </div>
-                    <!-- Input section -->
-                    <div class="input letters_dark_blue">
-                        <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper commodo lorem et auctor.
-                            Suspendisse non eros sit amet diam pharetra pulvinar. Praesent neque elit, eleifend at urna in, venenatis semper diam. Morbi bibendum 
-                            faucibus congue. Curabitur blandit et purus ac suscipit. Pellentesque odio nulla, porta tristique scelerisque a, suscipit eu lectus. 
-                            Vivamus sit amet metus eget neque laoreet dictum eget et felis. Aliquam nulla urna, viverra ac tincidunt a, placerat sed ante. 
-                            Fusce consequat pretium tortor, a fermentum sapien tempor quis. </p>
-                        <br />
-                    </div>
-                    <!-- Anwser input -->
-                    <div class="input">
-                        <!-- Buttons -->
-                        <div>
-                            <div class="w3-left w3-padding">
-                                <b class="">Prijavljeno: 3/4</b>
-                            </div>
-                            <div class="w3-right">
-                                <button class="w3-button buttons">
-                                    <b>Ukloni</b>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-                <!-- END GRID -->
+                <?php
+                $korisnikPrijavljenNaSeansuModel = new App\Models\KorisnikPrijavljenNaSeansuModel();
+                foreach ($sveSeanse as $seansa) {
+                    $oneSeansaData = [
+                        'naziv' => $seansa->nazivSeanse,
+                        'datum' => $seansa->datumPocetka,
+                        'vreme' => $seansa->vremePocetka,
+                        'tekstSeanse' => $seansa->opisSeanse,
+                        'maxPrijavljenih' => $seansa->maxBrojPrijavljenih,
+                        'trenutnoPrijavljenih' => $korisnikPrijavljenNaSeansuModel->findNumberOfSignedUsers($seansa->idSeansa),
+                        'idSeanse' => $seansa->idSeansa
+                        ];
+                    include 'resources/oneMojaSeansaView.php';
+                }
+                ?>
             </div>
         </div>
         <!-- Footer -->
