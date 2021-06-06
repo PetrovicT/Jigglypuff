@@ -170,15 +170,44 @@
                 ';
 
                 // unapredjenje u psihologa ako nismo vec psiholog nego samo registrovan korisnik
-                if ($kategorija=="Korisnik"){
-                echo' <div class="w3-row w3-center" >
+                if ($kategorija=="Korisnik"){ ?>
+                
+                <div class="w3-row w3-center" >
                     <div class="w3-col s12"> 
-                        <button class = "w3-button buttons" style="width:100%" onclick="">Želim da predam dokumentaciju za unapređenje u korisnika psihologa</button>
+                        <button class = "w3-button buttons" style="width:100%" onclick="document.getElementById('unapredjenje').style.display='block'">Želim da predam dokumentaciju za unapređenje u korisnika psihologa</button>
                     </div>
-                </div> ';
-                }
-                echo '
+                </div> 
+
+                <?php } ?>
+                
                 <br>
+                <div class="w3-row w3-center" >
+                    <div class="w3-col s12"> 
+
+                        <div id="unapredjenje" class="w3-modal">
+                            <br><br>
+                            <div class="w3-modal-content w3-animate-top w3-card-4">
+                                <header class="w3-container color-dark-blue"> 
+                                <span onclick="document.getElementById('PromocijaModal').style.display='none'" class="w3-button w3-large w3-display-topright close-button">×</span>
+                                <h2 class="w3-text-white">Pošalji zahtev za unapređenje naloga u psihologa</h2>
+                                </header>
+                                <form class="w3-container">
+                                    
+                                    <br>
+                                    <div style="display: inline-block; ">
+                                        <label>Vaša zvanična dokumentacija:</label>
+                                        <input id="promocijaFile" name="promocijaFile" class="w3-input w3-button" type="file">
+                                    </div>
+
+                                    <br><br>
+                                    <input id="promocijaSubmit" name="promocijaSubmit" class="w3-input w3-button buttons" type="submit" value="Pošalji zahtev!">
+                                    
+                                </form> 
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <br><br><br>
         </div>
