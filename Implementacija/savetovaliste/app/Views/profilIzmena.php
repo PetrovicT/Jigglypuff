@@ -103,26 +103,34 @@
                 </div>
                 <br> 
                 <hr style="border-top-color: #021B79;">
+                </div> '; ?>
+
+            <form name="izmeniProfil"  action="<?= site_url("$controller/izmeniProfil") ?>" method="post"> 
+                <div class="w3-row">
+                    <div class="w3-col s12"> 
+                        <div class="slovaVelika">Username: </div> 
+                        <div> <input type="text" name="username" class="w3-input" placeholder="Unesite username" ></div> <br>
+                    </div>  
                 </div> 
-                 
+               
                 <div class="w3-row">
                     <div class="w3-col s12"> 
                         <div class="slovaVelika">Lično ime: </div> 
-                        <div> <input type="text" class="w3-input" placeholder="Unesite lično ime" ></div> <br>
+                        <div> <input type="text" name="licnoIme" class="w3-input" placeholder="Unesite lično ime" ></div> <br>
                     </div>  
                 </div> 
 
                 <div class="w3-row" >
                     <div class="w3-col s12"> 
                         <div class="slovaVelika">Grad: </div>
-                        <div> <input type="text" class="w3-input" placeholder="Unesite naziv grada"></div> <br>
+                        <div> <input type="text" name="grad" class="w3-input" placeholder="Unesite naziv grada"></div> <br>
                     </div>
                 </div>
 
                 <div class="w3-row" >
                 <div class="w3-col s12"> 
                     <div class="slovaVelika">Email: </div>
-                    <div> <input type="text" class="w3-input" placeholder="Unesite email"></div> <br>
+                    <div> <input type="text"  name="email" class="w3-input" placeholder="Unesite email"></div> <br>
                 </div>
                 </div>
 
@@ -130,19 +138,20 @@
                 <div class="w3-col s12"> 
                     <div class="slovaVelika">Pol: </div>
                     
-                        <input type="radio" id="male" name="gender" value="male">
+                        <input type="radio" id="male" name="pol" value="male">
                         <label for="male">Muski</label><br>
-                        <input type="radio" id="female" name="gender" value="female">
+                        <input type="radio" id="female" name="pol" value="female">
                         <label for="female">Zenski</label><br>
-                        <input type="radio" id="other" name="gender" value="other">
-                        <label for="other">Drugo</label>
+                        <input type="radio" id="other" name="pol" value="other">
+                        <label for="other">Drugo/Ne želim da se izjasnim</label>
+
                 </div> 
                 </div><br>
 
                 <div class="w3-row" >
                 <div class="w3-col s12"> 
                     <div class="slovaVelika">Nova lozinka: </div>
-                    <div> <input type="text" class="w3-input" placeholder="Unesite novu lozinku"></div> <br>
+                    <div> <input type="text" name="novaLozinka" class="w3-input" placeholder="Unesite novu lozinku"></div> <br>
                 </div>
                 </div>
 
@@ -156,18 +165,21 @@
 
                 <div class="w3-row" >
                 <div class="w3-col s12"> 
-                    <input class="w3-input" type="password" placeholder="Aktuelna lozinka" required style="display:inline-block">
+                    <input class="w3-input" type="password" name="aktuelnaLozinka" placeholder="Aktuelna lozinka" style="display:inline-block">
                 </div>
                 </div>
                 <br>
 
                 <div class="w3-row w3-right" >
                 <div class="w3-col s12"> 
-                <a href="profil.html" class="w3-button color-dark-blue name w3-padding-midium w3-margin-bottom ">Zavrsi sa izmenama</a>
+                <button type="submit" class="w3-button buttons"><u style="text-decoration: none; font-weight: normal;">Pošalji izmenu</u></button>
                 </div>
                 </div>
-                <br> <br> <br>
-                ';
+                <?php  if(!empty($porukaLozinka)) echo "<span style='color:red; font-size:18px'>$porukaLozinka</span>"; ?> 
+                <?php  if(!empty($porukaPogresnaLozinka)) echo "<span style='color:red; font-size:18px'>$porukaPogresnaLozinka</span>"; ?> 
+                <br> <br> <br> 
+            </form>  
+                <?php
 
                 // unapredjenje u psihologa ako nismo vec psiholog nego samo registrovan korisnik
                 if ($kategorija=="Korisnik"){ ?>
@@ -212,8 +224,8 @@
             <br><br><br>
         </div>
          <br><br><br>
-        '; // kraj echo
-
+        
+        <?php
         // dodavanje footera
         require 'resources/footer.php';
         ?>  
