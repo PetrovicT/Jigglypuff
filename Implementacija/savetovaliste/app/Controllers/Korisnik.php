@@ -436,12 +436,6 @@ class Korisnik extends BaseController {
 
         $novaLozinka = $this->request->getVar('novaLozinka');
 
-        echo "ID $korisnikId",'<br>';
-        echo "Mail $novEmail",'<br>';
-        echo "Novo ime $novoLicnoIme",'<br>';
-        echo "Lozinka nova $novaLozinka", empty($noviPol) ,'<br>';
-        echo "Pol novi $noviPol", empty($noviPol) ,'<br>';
-
         $data = [
             'email' => $novEmail,
             'licnoIme' => $novoLicnoIme,

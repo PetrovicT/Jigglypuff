@@ -87,10 +87,6 @@
                     </div>
                 </div>
              
-                <div class="w3-center"> 
-                    <a href="#" class="w3-button buttons color-dark-blue name w3-padding-small">Promeni sliku</a>
-                    <br>
-                </div>
                 <br><br>
 
                 <div class="w3-row w3-center">
