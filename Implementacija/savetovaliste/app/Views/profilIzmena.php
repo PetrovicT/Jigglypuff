@@ -215,7 +215,7 @@
                             <span onclick="document.getElementById('unapredjenje').style.display = 'none'" class="w3-button w3-large w3-display-topright close-button">×</span>
                             <h2 class="w3-text-white">Pošalji zahtev za unapređenje naloga u psihologa</h2>
                         </header>
-                        <form class="w3-container" action="<?= site_url("$controller/zahtevajPromociju") ?>" method = "post">
+                        <form class="w3-container" action="<?= site_url("$controller/zahtevajPromociju") ?>" method = "post" enctype="multipart/form-data">
 
                             <br>
                             <div style="display: inline-block; ">

@@ -459,7 +459,30 @@ class Korisnik extends BaseController {
 
     // Xahteva izmenu, tj. salje dokumentaciju u bazu
     public function zahtevajPromociju(){
+        $korisnikModel = new KorisnikModel();
+        $korisnik = $korisnikModel->find($this->session->get('userid'));
+        
         $dokumentacija = $this->request->getFile('promocijaFile');
-        echo (empty($dokumentacija)? 'Prazna je' : 'Prisutna je');
+        
+        if($dokumentacija == null || !$dokumentacija->isValid()){
+            return $this->profilIzmena();
+        }
+        
+        $novoIme = $korisnik->username.'.'.$dokumentacija->getExtension();
+        
+        // Move the file to it's new home
+        $dokumentacija->move('C:\wamp64\uploadedFiles\savetovaliste\zahteviZaPromociju', $novoIme, true);
+        
+        $noviPath = 'C:\wamp64\uploadedFiles\savetovaliste\zahteviZaPromociju\\'.$novoIme;
+        
+        $zahteviModel = new \App\Models\ZahteviPromocijeModel();
+        $data = [
+            'idKorisnika' => $this->session->get('userid'),
+            'path' => $noviPath
+        ];
+        
+        $zahteviModel->save($data);
+        
+        return $this->profilIzmena();
     }
 }
