@@ -33,37 +33,41 @@
         use App\Models\KategorijaPitanjaModel;
 
         require 'resources/header.php';
-        $controller=session()->get("controller");
-        $korisnikId=session()->get('userid');
+        $controller = session()->get("controller");
+        $korisnikId = session()->get('userid');
 
         // dohvatanje korisnika ciji profil menjamo
-        $korisnikModel=new KorisnikModel();
-        $korisnik=$korisnikModel->find("$korisnikId");
-
+        $korisnikModel = new KorisnikModel();
+        $korisnik = $korisnikModel->find($korisnikId);
+        
         // dohvatanje grada
-        if ($korisnik->grad_idGrad==null) $nazivGrada="Nije uneto";
+        if ($korisnik->grad_idGrad == null)
+            $nazivGrada = "Nije uneto";
         else {
-            $gradModel=new GradModel();
-            $nazivGrada=$gradModel->nadjiNazivGrada($korisnik->grad_idGrad);
+            $gradModel = new GradModel();
+            $nazivGrada = $gradModel->nadjiNazivGrada($korisnik->grad_idGrad);
         }
         // dohvatanje pola
-        if ($korisnik->pol_idPol==null) $pol="Nije uneto";
+        if ($korisnik->pol_idPol == null)
+            $pol = "Nije uneto";
         else {
-            $polModel=new PolModel();
-            $pol=$polModel->nadjiPol($korisnik->pol_idPol);
+            $polModel = new PolModel();
+            $pol = $polModel->nadjiPol($korisnik->pol_idPol);
         }
         // dohvatanje username
-        $username=$korisnik->username;
+        $username = $korisnik->username;
         // dohvatanje licnog imena
-        $licnoIme=$korisnik->licnoIme;
-        if ($licnoIme==null) $licnoIme="Nije uneto";
+        $licnoIme = $korisnik->licnoIme;
+        if ($licnoIme == null)
+            $licnoIme = "Nije uneto";
         // dohvatanje email
-        $email=$korisnik->email;
-        if ($email==null) $email="Nije uneto";
+        $email = $korisnik->email;
+        if ($email == null)
+            $email = "Nije uneto";
         // dohvatanje kategorije korisnika
-        $idKategorije=$korisnik->tipKorisnika_idTipKorisnika;
-        $tipKorisnikaModel=new TipKorisnikaModel();
-        $kategorija=$tipKorisnikaModel->find($idKategorije)->tip;
+        $idKategorije = $korisnik->tipKorisnika_idTipKorisnika;
+        $tipKorisnikaModel = new TipKorisnikaModel();
+        $kategorija = $tipKorisnikaModel->find($idKategorije)->tip;
 
         // ispis stranice
         echo ' 
@@ -72,15 +76,14 @@
         <div class="w3-row">   
             <div class="w3-row w3-left picture">
                 <div class="w3-col s12"> 
-                    <div class="w3-center w3-text-white ">'; 
-                    if ($korisnik->slika==null) 
-                        {
-                            ?>
-                            <img src="<?php echo base_url(); ?>/photos/no_picture.png" alt="" style="width:25%;">  
-                            <?php
-                        }
-                    else echo '<img src="data:image/jpeg;base64,' . base64_encode($korisnik->slika) . '">'; 
-                    echo '
+                    <div class="w3-center w3-text-white ">';
+        if ($korisnik->slika == null) {
+            ?>
+            <img src="<?php echo base_url(); ?>/photos/no_picture.png" alt="" style="width:25%;">  
+            <?php
+        } else
+            echo '<img src="data:image/jpeg;base64,' . base64_encode($korisnik->slika) . '">';
+        echo '
                     </div>
                 </div>
              
@@ -92,7 +95,7 @@
 
                 <div class="w3-row w3-center">
                     <div class="w3-col s12 color-dark-blue">
-                        <div class="w3-center w3-text-white velika_slova"> ' ."$username" . '</div>
+                        <div class="w3-center w3-text-white velika_slova"> ' . "$username" . '</div>
                     </div>
                 </div>
                 <br>
@@ -103,132 +106,141 @@
                 </div>
                 <br> 
                 <hr style="border-top-color: #021B79;">
-                </div> '; ?>
+                </div> ';
+        ?>
 
-            <form name="izmeniProfil"  action="<?= site_url("$controller/izmeniProfil") ?>" method="post"> 
-                <div class="w3-row">
-                    <div class="w3-col s12"> 
-                        <div class="slovaVelika">Username: </div> 
-                        <div> <input type="text" name="username" class="w3-input" placeholder="Unesite username" ></div> <br>
-                    </div>  
-                </div> 
-               
-                <div class="w3-row">
-                    <div class="w3-col s12"> 
-                        <div class="slovaVelika">Lično ime: </div> 
-                        <div> <input type="text" name="licnoIme" class="w3-input" placeholder="Unesite lično ime" ></div> <br>
-                    </div>  
-                </div> 
+        <form name="izmeniProfil"  action="<?= site_url("$controller/izmeniProfil") ?>" method="post">                
+            <div class="w3-row">
+                <div class="w3-col s12"> 
+                    <div class="slovaVelika">Lično ime: </div> 
+                    <div> <input type="text" name="licnoIme" class="w3-input" placeholder="Unesite lično ime ili ostavite prazno" value="<?=$korisnik->licnoIme?>" ></div> <br>
+                </div>  
+            </div> 
 
-                <div class="w3-row" >
-                    <div class="w3-col s12"> 
-                        <div class="slovaVelika">Grad: </div>
-                        <div> <input type="text" name="grad" class="w3-input" placeholder="Unesite naziv grada"></div> <br>
-                    </div>
+            <div class="w3-row" >
+                <div class="w3-col s12"> 
+                    <div class="slovaVelika">Grad: </div>
+                    <select class="select-input" name="grad" id="grad">
+                        <?php
+                        // Dodati sve gradove kao opcije u alfabetnom poretku
+                        $gradModel = new \App\Models\GradModel();
+                        $sviGradovi = $gradModel->findAllAlphabetical();
+                        foreach ($sviGradovi as $grad) {
+                            echo '<option value="' . $grad->idGrad . '" '. ($grad->idGrad==$korisnik->grad_idGrad ? 'selected="selected"' : '') .'>' . $grad->naziv . '</option>';
+                        }
+                        ?>
+                    </select>
                 </div>
+            </div>
 
-                <div class="w3-row" >
+            <div class="w3-row" >
                 <div class="w3-col s12"> 
                     <div class="slovaVelika">Email: </div>
-                    <div> <input type="text"  name="email" class="w3-input" placeholder="Unesite email"></div> <br>
+                    <div> <input type="text"  name="email" class="w3-input" placeholder="Unesite email ili ostavite prazno" value="<?=$korisnik->email?>"></div> <br>
                 </div>
-                </div>
+            </div>
 
-                <div class="w3-row" >
+            <div class="w3-row" >
                 <div class="w3-col s12"> 
                     <div class="slovaVelika">Pol: </div>
-                    
-                        <input type="radio" id="male" name="pol" value="male">
-                        <label for="male">Muski</label><br>
-                        <input type="radio" id="female" name="pol" value="female">
-                        <label for="female">Zenski</label><br>
-                        <input type="radio" id="other" name="pol" value="other">
-                        <label for="other">Drugo/Ne želim da se izjasnim</label>
-
+                    <?php
+                    $polModel = new \App\Models\PolModel();
+                    $sviPolovi = $polModel->findAll();
+                    $foundPol = false;
+                    foreach ($sviPolovi as $pol) {
+                        if($pol->idPol == $korisnik->pol_idPol){
+                            $foundPol = true;
+                        }                        
+                        echo '<input type="radio" id="' . $pol->pol . '" name="gender" value="' . $pol->idPol . '" '. ($pol->idPol == $korisnik->pol_idPol ? 'checked' : '') .'>';
+                        echo '<label for="' . $pol->pol . '">' . $pol->pol . '</label><br>';
+                    }
+                    ?>
+                    <input type="radio" id="Drugo" name="gender" value="" <?= (!$foundPol? 'checked' : '') ?>>
+                    <label for="Drugo">Drugo/Neizjašnjen</label>
                 </div> 
-                </div><br>
+            </div><br>
 
-                <div class="w3-row" >
+            <div class="w3-row" >
                 <div class="w3-col s12"> 
                     <div class="slovaVelika">Nova lozinka: </div>
-                    <div> <input type="text" name="novaLozinka" class="w3-input" placeholder="Unesite novu lozinku"></div> <br>
+                    <div> <input type="password" name="novaLozinka" class="w3-input" placeholder="Unesite novu lozinku ili ostavite prazno"></div> <br>
                 </div>
-                </div>
+            </div>
 
-                <div class="w3-row w3-center">
+            <div class="w3-row w3-center">
                 <div class="w3-col s12"> 
                     <div class="slovaVelika"> Obavezno unesite svoju aktuelnu lozinku kako bi izmena profila bila moguća:</div>
                 </div>
                 <br> 
                 <hr style="border-top-color: #021B79;">
-                </div>
+            </div>
 
-                <div class="w3-row" >
+            <div class="w3-row" >
                 <div class="w3-col s12"> 
                     <input class="w3-input" type="password" name="aktuelnaLozinka" placeholder="Aktuelna lozinka" style="display:inline-block">
                 </div>
-                </div>
-                <br>
+            </div>
+            <br>
 
-                <div class="w3-row w3-right" >
+            <div class="w3-row w3-right" >
                 <div class="w3-col s12"> 
-                <button type="submit" class="w3-button buttons"><u style="text-decoration: none; font-weight: normal;">Pošalji izmenu</u></button>
+                    <button type="submit" class="w3-button buttons"><u style="text-decoration: none; font-weight: normal;">Sačuvaj izmene</u></button>
                 </div>
+            </div>
+            <?php if (!empty($porukaLozinka)) echo "<span style='color:red; font-size:18px'>$porukaLozinka</span>"; ?> 
+            <?php if (!empty($porukaPogresnaLozinka)) echo "<span style='color:red; font-size:18px'>$porukaPogresnaLozinka</span>"; ?> 
+            <br> <br> <br> 
+        </form>  
+        <?php
+// unapredjenje u psihologa ako nismo vec psiholog nego samo registrovan korisnik
+        if ($kategorija == "Korisnik") {
+            ?>
+
+            <div class="w3-row w3-center" >
+                <div class="w3-col s12"> 
+                    <button class = "w3-button buttons" style="width:100%" onclick="document.getElementById('unapredjenje').style.display = 'block'">Želim da predam dokumentaciju za unapređenje u korisnika psihologa</button>
                 </div>
-                <?php  if(!empty($porukaLozinka)) echo "<span style='color:red; font-size:18px'>$porukaLozinka</span>"; ?> 
-                <?php  if(!empty($porukaPogresnaLozinka)) echo "<span style='color:red; font-size:18px'>$porukaPogresnaLozinka</span>"; ?> 
-                <br> <br> <br> 
-            </form>  
-                <?php
+            </div> 
 
-                // unapredjenje u psihologa ako nismo vec psiholog nego samo registrovan korisnik
-                if ($kategorija=="Korisnik"){ ?>
-                
-                <div class="w3-row w3-center" >
-                    <div class="w3-col s12"> 
-                        <button class = "w3-button buttons" style="width:100%" onclick="document.getElementById('unapredjenje').style.display='block'">Želim da predam dokumentaciju za unapređenje u korisnika psihologa</button>
-                    </div>
-                </div> 
+        <?php } ?>
 
-                <?php } ?>
-                
-                <br>
-                <div class="w3-row w3-center" >
-                    <div class="w3-col s12"> 
+        <br>
+        <div class="w3-row w3-center" >
+            <div class="w3-col s12"> 
 
-                        <div id="unapredjenje" class="w3-modal">
-                            <br><br>
-                            <div class="w3-modal-content w3-animate-top w3-card-4">
-                                <header class="w3-container color-dark-blue"> 
-                                <span onclick="document.getElementById('PromocijaModal').style.display='none'" class="w3-button w3-large w3-display-topright close-button">×</span>
-                                <h2 class="w3-text-white">Pošalji zahtev za unapređenje naloga u psihologa</h2>
-                                </header>
-                                <form class="w3-container">
-                                    
-                                    <br>
-                                    <div style="display: inline-block; ">
-                                        <label>Vaša zvanična dokumentacija:</label>
-                                        <input id="promocijaFile" name="promocijaFile" class="w3-input w3-button" type="file">
-                                    </div>
+                <div id="unapredjenje" class="w3-modal">
+                    <br><br>
+                    <div class="w3-modal-content w3-animate-top w3-card-4">
+                        <header class="w3-container color-dark-blue"> 
+                            <span onclick="document.getElementById('unapredjenje').style.display = 'none'" class="w3-button w3-large w3-display-topright close-button">×</span>
+                            <h2 class="w3-text-white">Pošalji zahtev za unapređenje naloga u psihologa</h2>
+                        </header>
+                        <form class="w3-container" action="<?= site_url("$controller/zahtevajPromociju") ?>" method = "post">
 
-                                    <br><br>
-                                    <input id="promocijaSubmit" name="promocijaSubmit" class="w3-input w3-button buttons" type="submit" value="Pošalji zahtev!">
-                                    
-                                </form> 
-                                <br><br>
+                            <br>
+                            <div style="display: inline-block; ">
+                                <label>Vaša zvanična dokumentacija:</label>
+                                <input id="promocijaFile" name="promocijaFile" class="w3-input w3-button" type="file">
                             </div>
-                        </div>
+
+                            <br><br>
+                            <input id="promocijaSubmit" name="promocijaSubmit" class="w3-input w3-button buttons" type="submit" value="Pošalji zahtev!">
+
+                        </form> 
+                        <br><br>
                     </div>
                 </div>
             </div>
-            <br><br><br>
         </div>
-         <br><br><br>
-        
-        <?php
-        // dodavanje footera
-        require 'resources/footer.php';
-        ?>  
+    </div>
+    <br><br><br>
+</div>
+<br><br><br>
 
-    </body>
+<?php
+// dodavanje footera
+require 'resources/footer.php';
+?>  
+
+</body>
 </html>

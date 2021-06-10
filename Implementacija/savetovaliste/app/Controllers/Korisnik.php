@@ -394,7 +394,9 @@ class Korisnik extends BaseController {
         echo view("profilIzmena");
     }
 
+    // Submit izmene profila
     public function izmeniProfil() {
+        
         // ako korisnik nije uneo staru lozinku onda mu ispisi poruku
         $porukaNijeUnetaLozinka = null;
         // ako je korisnik pokusao da promeni profil ali je uneo pogresnu aktuelnu lozinku
@@ -425,109 +427,39 @@ class Korisnik extends BaseController {
                     ['porukaPogresnaLozinka' => $porukaPogresnaLozinka]);
             return;
         }
-
-        // dohvatanje grada
-        $idGrada = $korisnik->grad_idGrad;
-        // dohvatanje pola
-        $idPola = $korisnik->pol_idPol;
-        // dohvatanje username
-        $username = $korisnik->username;
-        // dohvatanje licnog imena
-        $licnoIme = $korisnik->licnoIme;
-        // dohvatanje email
-        $email = $korisnik->email;
-        // dohvatanje kategorije korisnika
-        $idKategorije = $korisnik->tipKorisnika_idTipKorisnika;
-        $tipKorisnikaModel = new TipKorisnikaModel();
-        $kategorija = $tipKorisnikaModel->find($idKategorije)->tip;
-
-        $noviUsername = $this->request->getVar('username');
+        
         $novoLicnoIme = $this->request->getVar('licnoIme');
 
-        // unosi se grad u tekstualnom obliku, potrebno je prebaciti u idGrada
-        $noviGrad = $this->request->getVar('grad');
-        if ($noviGrad != null) {
-            $gradModel = new GradModel();
-            $grad = $gradModel->where('naziv', $noviGrad)->first();
-            if ($grad == null) {
-                // potrebno je ubaciti novi grad u bazu
-                $gradModel->save([
-                    'naziv' => $noviGrad
-                ]);
-            } else
-                $noviGrad = $grad->idGrad;
-        } else
-            $noviGrad = $idGrada;
-
+        $noviGradId = $this->request->getVar('grad');
         $novEmail = $this->request->getVar('email');
-        $noviPol = $this->request->getVar('pol');
-        if ($noviPol == null)
-            $noviPol = $idPola;
-        else if ($noviPol == "male")
-            $noviPol = 1;
-        else if ($noviPol == "female")
-            $noviPol = 2;
-        else if ($noviPol == "other")
-            $noviPol = null;
+        $noviPol = $this->request->getVar('gender');
 
         $novaLozinka = $this->request->getVar('novaLozinka');
 
-        if ($noviUsername == null)
-            $noviUsername = $username;
-        if ($novoLicnoIme == null)
-            $novoLicnoIme = $licnoIme;
-        if ($novaLozinka == null)
-            $novaLozinka = $tacnalozinka;
-        if ($novEmail == null)
-            $novEmail = $email;
+        echo "ID $korisnikId",'<br>';
+        echo "Mail $novEmail",'<br>';
+        echo "Novo ime $novoLicnoIme",'<br>';
+        echo "Lozinka nova $novaLozinka", empty($noviPol) ,'<br>';
+        echo "Pol novi $noviPol", empty($noviPol) ,'<br>';
 
-        echo "$korisnikId";
-        echo "$noviUsername";
-        echo "$novEmail";
-        echo "$novoLicnoIme";
-        echo "$novaLozinka";
-        echo "$noviGrad";
-        echo "$noviPol";
-
-        $db = \Config\Database::connect();
-        $builder = $db->table('korisnik');
-        $builder->where('idKorisnik', $korisnikId);
         $data = [
-            'username' => "$noviUsername",
-            'email' => "$novEmail",
-            'licnoIme' => "$novoLicnoIme",
-            'prikaziLicnoIme' => $korisnik->prikaziLicnoIme,
-            'password' => $novaLozinka,
-            'tipKorisnika_idTipKorisnika' => $korisnik->tipKorisnika_idTipKorisnika,
-            'grad_idGrad' => $noviGrad,
-            'pol_idPol' => $noviPol
+            'email' => $novEmail,
+            'licnoIme' => $novoLicnoIme,
+            'password' => (empty($novaLozinka) ? $korisnik->password : $novaLozinka ),
+            'grad_idGrad' => $noviGradId,
+            'pol_idPol' => (empty($noviPol) ? null : $noviPol)
         ];
         $korisnikModel->update($korisnikId, $data);
 
-        /*
-          $query=$db->query("UPDATE `korisnik` SET `username` = 'MareI2', `prikaziLicnoIme` = b'1' WHERE `korisnik`.`idKorisnik` = 1");
-          $query->getResult();
-         */
-
-        /*
-          $korisnikModel->save([
-          'idKorisnik'=>$korisnikId,
-          'username'=>$noviUsername,
-          'email'=>$novEmail,
-          'licnoIme'=>$novoLicnoIme,
-          'prikaziLicnoIme'=>$korisnik->prikaziLicnoIme,
-          'password'=>$novaLozinka,
-          'tipKorisnika_idTipKorisnika'=>$korisnik->tipKorisnika_idTipKorisnika,
-          'grad_idGrad'=>$noviGrad,
-          'pol_idPol'=>$noviPol,
-          'slika'=>$korisnik->slika
-          ]);
-         */
-
         $controller = session()->get('controller');
+        
         // kada zavrsi sa izmenama vraca se na pregled profila
-        //return redirect()->to(site_url("$controller/profil/$korisnikId"));	
-        return;
+        return redirect()->to(site_url("$controller/profil/$korisnikId"));
     }
 
+    // Xahteva izmenu, tj. salje dokumentaciju u bazu
+    public function zahtevajPromociju(){
+        $dokumentacija = $this->request->getFile('promocijaFile');
+        echo (empty($dokumentacija)? 'Prazna je' : 'Prisutna je');
+    }
 }
