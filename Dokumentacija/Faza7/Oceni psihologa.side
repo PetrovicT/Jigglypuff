@@ -1,0 +1,171 @@
+{
+  "id": "5c5f0e29-75d1-4926-bd90-119918e77709",
+  "version": "2.0",
+  "name": "Oceni psihologa",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "251167a5-ed29-42e6-a507-df3c0dda7818",
+    "name": "Oceni psihologa, pozitivno",
+    "commands": [{
+      "id": "90844761-fa01-465d-ad16-03b3a02143ac",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "485ee7b8-7b3b-46de-a0b3-a7daee3d6839",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cda045b1-6b03-4b39-9eff-d5d7a93f9db5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGIN",
+      "targets": [
+        ["linkText=LOGIN", "linkText"],
+        ["css=.overlay:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGIN')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gost/login']", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGIN')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d41ada5-37cb-4518-b469-d1abc1389337",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5e58ea7-aade-49c7-9965-8e73a11708fc",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "MareI"
+    }, {
+      "id": "d0c9888f-a27d-4400-a332-b1d4edc2cde3",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "jasamcar99"
+    }, {
+      "id": "f0610bde-5df9-4af9-9561-327230bb5886",
+      "comment": "",
+      "command": "click",
+      "target": "css=.field:nth-child(4) > input",
+      "targets": [
+        ["css=.field:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@value='Ulogujte se']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de20c74d-f51b-46c0-8d68-10a938d2806d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Seanse",
+      "targets": [
+        ["linkText=Seanse", "linkText"],
+        ["css=.w3-bar > .w3-bar-item:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Seanse')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/pregled_seansi']", "xpath:href"],
+        ["xpath=//header/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,' Seanse')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee4e4a45-e4f4-453a-8287-5bef4e1ce7c1",
+      "comment": "",
+      "command": "click",
+      "target": "css=a > b",
+      "targets": [
+        ["css=a > b", "css:finder"],
+        ["xpath=//a/b", "xpath:position"],
+        ["xpath=//b[contains(.,'Dr Tijana')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "724c8572-c97d-49bc-90a2-3dcffa5bf5c0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-button:nth-child(1) > u",
+      "targets": [
+        ["css=.w3-button:nth-child(1) > u", "css:finder"],
+        ["xpath=//u[@onclick='']", "xpath:attributes"],
+        ["xpath=//u", "xpath:position"],
+        ["xpath=//u[contains(.,'Pozitivna ocena (3)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f38cbce-2880-4a58-b053-c95e3a3f6cf3",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.w3-row:nth-child(5) > .w3-center",
+      "targets": [
+        ["css=.w3-row:nth-child(5) > .w3-center", "css:finder"],
+        ["xpath=//div[2]/div[2]", "xpath:position"]
+      ],
+      "value": "Hvala što ste ocenili psihologa!"
+    }, {
+      "id": "4b6d77e8-3a42-4c09-a5d8-7c9bb97aa9e9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.w3-bar > .letters", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,' Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "05fc3d96-4db7-49ef-8903-cbce1f5a32aa",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGOUT",
+      "targets": [
+        ["linkText=LOGOUT", "linkText"],
+        ["css=.overlay > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGOUT')]", "xpath:link"],
+        ["xpath=(//a[@href='http://localhost:8080/Korisnik/logout'])[2]", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGOUT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "0b916f2f-4237-4f68-ba8d-841571aacae4",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}

@@ -1,0 +1,688 @@
+{
+  "id": "5304bbd4-b0bb-4bdd-8b39-16711fd2275d",
+  "version": "2.0",
+  "name": "Postavi pitanje",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "f1c82580-c063-499b-b8ac-999b4f50d26d",
+    "name": "Uspesno postavljenje pitanja",
+    "commands": [{
+      "id": "cd16a04a-50cd-4ea9-b2a0-ee3019707373",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd13f851-a4dc-45a7-b833-1691fa0bbb27",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56446fe3-907c-4e98-87cc-0d48c55f4fc2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGIN",
+      "targets": [
+        ["linkText=LOGIN", "linkText"],
+        ["css=.overlay:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGIN')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gost/login']", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGIN')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f18821b-103a-42f1-86c8-0906271fbaa0",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ce379d8-9169-4e8b-9e1d-cedccb866844",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "MareI"
+    }, {
+      "id": "4caf0b53-e6f7-4d8d-b045-8839199e3290",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "jasamcar99"
+    }, {
+      "id": "61fa0402-e6f0-491a-bf42-8ef98bda6bef",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "a51813e8-96aa-4f36-9341-393e9506a3bf",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Postavi pitanje",
+      "targets": [
+        ["linkText=Postavi pitanje", "linkText"],
+        ["css=.w3-bar > .w3-bar-item:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Postavi pitanje')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/postavi_pitanje']", "xpath:href"],
+        ["xpath=//header/a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,' Postavi pitanje')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c76999cc-a37f-4960-9d9e-cc5070be73eb",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "291ca28c-5d94-44c3-accc-01f04ce128d1",
+      "comment": "",
+      "command": "select",
+      "target": "id=category",
+      "targets": [],
+      "value": "label=Anksioznost"
+    }, {
+      "id": "c1d0f899-784b-4079-b92c-8d8f34ac10f5",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "39e6a2f3-cdec-4f1b-bb43-9ee525269a1a",
+      "comment": "",
+      "command": "click",
+      "target": "name=NaslovPitanja",
+      "targets": [
+        ["name=NaslovPitanja", "name"],
+        ["css=.w3-input", "css:finder"],
+        ["xpath=//input[@name='NaslovPitanja']", "xpath:attributes"],
+        ["xpath=//div[4]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1eb12be0-cc0e-42b9-892e-8e4eaee72fad",
+      "comment": "",
+      "command": "type",
+      "target": "name=NaslovPitanja",
+      "targets": [
+        ["name=NaslovPitanja", "name"],
+        ["css=.w3-input", "css:finder"],
+        ["xpath=//input[@name='NaslovPitanja']", "xpath:attributes"],
+        ["xpath=//div[4]/form/input", "xpath:position"]
+      ],
+      "value": "test1"
+    }, {
+      "id": "9fc16c22-16ca-45d7-a251-d182407b892c",
+      "comment": "",
+      "command": "click",
+      "target": "name=TekstPitanja",
+      "targets": [
+        ["name=TekstPitanja", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@id='']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bded4cb4-b685-44ed-bce3-97bda55f3e62",
+      "comment": "",
+      "command": "type",
+      "target": "name=TekstPitanja",
+      "targets": [
+        ["name=TekstPitanja", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@id='']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test123"
+    }, {
+      "id": "233348af-3855-4011-ae7e-b7685ddb27cc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.buttons:nth-child(2)",
+      "targets": [
+        ["css=.buttons:nth-child(2)", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pošalji')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce4b15e9-ba6c-4a4e-a7cd-3ffba2967deb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b:nth-child(2) > b > b > b > b .w3-left b",
+      "targets": [
+        ["css=b:nth-child(2) > b > b > b > b .w3-left b", "css:finder"],
+        ["xpath=//b/b/b/b/b/b/div/div/h3/b", "xpath:position"]
+      ],
+      "value": "test1"
+    }, {
+      "id": "7413d22f-01bb-4f3f-a6ec-309b8d69a95a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.w3-bar > .letters", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,' Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "29796561-f368-4455-850e-287da84cb44e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGOUT",
+      "targets": [
+        ["linkText=LOGOUT", "linkText"],
+        ["css=.overlay > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGOUT')]", "xpath:link"],
+        ["xpath=(//a[@href='http://localhost:8080/Korisnik/logout'])[2]", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGOUT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "3e7d845f-29f2-4185-9076-0eacb8ae52c7",
+    "name": "Neuspesno postavljanje pitanja, kategorija",
+    "commands": [{
+      "id": "2e9e1ba5-e461-48cb-8334-cb59c694cd43",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2f56eff3-febd-4090-92f4-6ee8fcbafb2b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "874d500e-c9dd-4dc4-8bdb-06538433e21c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGIN",
+      "targets": [
+        ["linkText=LOGIN", "linkText"],
+        ["css=.overlay:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGIN')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gost/login']", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGIN')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9fdfc71-ff22-43d2-8d73-dbd3c6e7ba89",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "79a9f2bf-8bd7-4a03-90f4-114488cd149d",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "MareI"
+    }, {
+      "id": "23224e61-6c31-4aeb-ae52-51bd20acd6e6",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "jasamcar99"
+    }, {
+      "id": "6bc1e456-a16d-4ef7-9126-8b49ca267437",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "a2cf7c2d-b76a-4059-b98f-1a5b121922db",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Postavi pitanje",
+      "targets": [
+        ["linkText=Postavi pitanje", "linkText"],
+        ["css=.w3-bar > .w3-bar-item:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Postavi pitanje')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/postavi_pitanje']", "xpath:href"],
+        ["xpath=//header/a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,' Postavi pitanje')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2099a9b5-cfb8-42c1-b9ea-ef0d2aa5d586",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87637cb4-c8d1-453b-94ff-c99447895ca0",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b79999c6-60a9-46de-bd56-c8b61bada4f9",
+      "comment": "",
+      "command": "click",
+      "target": "name=NaslovPitanja",
+      "targets": [
+        ["name=NaslovPitanja", "name"],
+        ["css=.w3-input", "css:finder"],
+        ["xpath=//input[@name='NaslovPitanja']", "xpath:attributes"],
+        ["xpath=//div[4]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5bf2472d-73ca-49de-a46a-45ad9586ad67",
+      "comment": "",
+      "command": "type",
+      "target": "name=NaslovPitanja",
+      "targets": [
+        ["name=NaslovPitanja", "name"],
+        ["css=.w3-input", "css:finder"],
+        ["xpath=//input[@name='NaslovPitanja']", "xpath:attributes"],
+        ["xpath=//div[4]/form/input", "xpath:position"]
+      ],
+      "value": "test1"
+    }, {
+      "id": "a4b7c504-da17-497e-9a8e-d07ff5266365",
+      "comment": "",
+      "command": "click",
+      "target": "name=TekstPitanja",
+      "targets": [
+        ["name=TekstPitanja", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@id='']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f94d4724-64dd-4056-ac63-529273e6cd94",
+      "comment": "",
+      "command": "type",
+      "target": "name=TekstPitanja",
+      "targets": [
+        ["name=TekstPitanja", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@id='']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test1"
+    }, {
+      "id": "d42250b2-8689-4af8-b78d-fb7d5f56b311",
+      "comment": "",
+      "command": "click",
+      "target": "css=.buttons:nth-child(2)",
+      "targets": [
+        ["css=.buttons:nth-child(2)", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pošalji')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee26df39-8d00-448e-b18b-acfa51d6eed5",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=form > span",
+      "targets": [
+        ["css=form > span", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Morate da unesete kategoriju pitanja - to je obavezno polje!')]", "xpath:innerText"]
+      ],
+      "value": "Morate da unesete kategoriju pitanja - to je obavezno polje!"
+    }, {
+      "id": "b251d7ce-fd6b-484c-8eb4-f7f4c260bf09",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.w3-bar > .letters", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,' Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "26fe0f6b-1f06-4c03-8aba-ddb3c8e61773",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGOUT",
+      "targets": [
+        ["linkText=LOGOUT", "linkText"],
+        ["css=.overlay > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGOUT')]", "xpath:link"],
+        ["xpath=(//a[@href='http://localhost:8080/Korisnik/logout'])[2]", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGOUT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "04f8ee23-f308-4571-b5ab-da5a7a0542ea",
+    "name": "Neuspesno postavljanje pitanja, naslov",
+    "commands": [{
+      "id": "6e7dace2-4e98-4278-a158-31e9e82f453f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7c0070ba-362e-49e6-b211-1ad1ee4218f8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eaea076f-fcdc-48ae-b50a-fb74bb7fd405",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGIN",
+      "targets": [
+        ["linkText=LOGIN", "linkText"],
+        ["css=.overlay:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGIN')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gost/login']", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGIN')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2a6f5cc-f6ae-4708-ba92-7ae8385d9c07",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2dbf776a-1a0e-4620-b938-1afdc1030d70",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "MareI"
+    }, {
+      "id": "3e8e9fc4-b461-4fe3-84ec-b01d5e3b667a",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "jasamcar99"
+    }, {
+      "id": "693a9aca-ee92-4725-9c95-1fc1fb8dd2ac",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "3c674a45-cc23-433d-a7bd-3b83a657de4f",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Postavi pitanje",
+      "targets": [
+        ["linkText=Postavi pitanje", "linkText"],
+        ["css=.w3-bar > .w3-bar-item:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Postavi pitanje')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/postavi_pitanje']", "xpath:href"],
+        ["xpath=//header/a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,' Postavi pitanje')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "65101d74-9a35-4d6a-bec4-85edb8525966",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Postavi pitanje",
+      "targets": [
+        ["linkText=Postavi pitanje", "linkText"],
+        ["css=.w3-bar > .w3-bar-item:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Postavi pitanje')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/postavi_pitanje']", "xpath:href"],
+        ["xpath=//header/a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,' Postavi pitanje')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb972f17-f469-405f-ba83-a1ab78183d58",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e209b367-d50b-49a5-87fc-fb357751f588",
+      "comment": "",
+      "command": "select",
+      "target": "id=category",
+      "targets": [],
+      "value": "label=Panični napadi"
+    }, {
+      "id": "d97fa883-9e53-40d9-a0c5-c7fafb8a3bb3",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "abf5ce45-fa83-4388-8d4d-e276c5adfc46",
+      "comment": "",
+      "command": "click",
+      "target": "name=TekstPitanja",
+      "targets": [
+        ["name=TekstPitanja", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@id='']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e43831f7-0fb7-43c8-8cd7-8a9004695df5",
+      "comment": "",
+      "command": "type",
+      "target": "name=TekstPitanja",
+      "targets": [
+        ["name=TekstPitanja", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@id='']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test123"
+    }, {
+      "id": "353e849d-f610-4ff1-890b-f65e8a3f4032",
+      "comment": "",
+      "command": "click",
+      "target": "css=.buttons:nth-child(2)",
+      "targets": [
+        ["css=.buttons:nth-child(2)", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pošalji')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3780de8c-cee1-47a0-910d-69fd29c226fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=form > span:nth-child(6)",
+      "targets": [
+        ["css=form > span:nth-child(6)", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Morate da unesete naslov pitanja - to je obavezno polje!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5bc3679b-a795-431e-8f08-9ad5dc16470d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=form > span:nth-child(6)",
+      "targets": [
+        ["css=form > span:nth-child(6)", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Morate da unesete naslov pitanja - to je obavezno polje!')]", "xpath:innerText"]
+      ],
+      "value": "Morate da unesete naslov pitanja - to je obavezno polje!"
+    }, {
+      "id": "84cc377f-81db-496e-88cc-8526d32e5680",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.w3-bar > .letters", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,' Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "40004ac3-9920-406c-8629-1441481f44d4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGOUT",
+      "targets": [
+        ["linkText=LOGOUT", "linkText"],
+        ["css=.overlay > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGOUT')]", "xpath:link"],
+        ["xpath=(//a[@href='http://localhost:8080/Korisnik/logout'])[2]", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGOUT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "a61782c1-4fe9-4aa5-ae0e-da7c88b82dd0",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f1c82580-c063-499b-b8ac-999b4f50d26d"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}

@@ -1,0 +1,315 @@
+{
+  "id": "80b19a57-631c-4f0d-a58e-74abc4f2fc45",
+  "version": "2.0",
+  "name": "Prijavljivanje na seansu",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "51aa5f64-19a3-43f9-8dc9-439abd4916bf",
+    "name": "Uspesno odjavljivanje sa seanse",
+    "commands": [{
+      "id": "e252f9b6-e0cd-498e-bfa0-b4bc05a83e25",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56fcfd5d-ef42-413a-9ed5-8aa8b34927ba",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ba7ab37b-8cae-4489-8f32-65419b8dd79a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGIN",
+      "targets": [
+        ["linkText=LOGIN", "linkText"],
+        ["css=.overlay:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGIN')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gost/login']", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGIN')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4fb7195f-c0c5-4d21-8a31-989465892a0f",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "694dc98b-a477-4aeb-bff6-7aeb57080169",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "MareI"
+    }, {
+      "id": "047d5ca3-4c0c-4bdc-97f3-7c1435ab358b",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "jasamcar99"
+    }, {
+      "id": "9f634804-cd82-4733-b1a3-0c1a9b2b0743",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "c8503591-db3b-4e7e-b8be-1ce6ed7563de",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Seanse",
+      "targets": [
+        ["linkText=Seanse", "linkText"],
+        ["css=.w3-bar > .w3-bar-item:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Seanse')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/pregled_seansi']", "xpath:href"],
+        ["xpath=//header/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,' Seanse')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d9fb815-ca00-4f99-9807-49eef31aa85d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-button > b",
+      "targets": [
+        ["css=.w3-button > b", "css:finder"],
+        ["xpath=//div[@id='like']/div/button/b", "xpath:idRelative"],
+        ["xpath=//button/b", "xpath:position"],
+        ["xpath=//b[contains(.,'Prijavi se (2/5)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e404c47c-3ad6-4b7a-929b-f5a6d4a0e8d8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.input:nth-child(4)",
+      "targets": [
+        ["css=.input:nth-child(4)", "css:finder"],
+        ["xpath=//div[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f9da4ee-5921-4872-9b79-9a0f96a7013f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.input:nth-child(3)",
+      "targets": [
+        ["css=.input:nth-child(3)", "css:finder"],
+        ["xpath=//div[2]/div/div/div[3]", "xpath:position"]
+      ],
+      "value": "Dobrodošli. Cilj ove seanse je da se doslednim načinom pomogne da prevaziđete poremećaj socijalne anksioznosti, ponekad zvane socijalna fobija koju ima 7 do 8 procenata populacije i jedna je od najvećih mentalnih i zdravstvenih problema na svetu. Prevazilaženje socijalne anksioznosti nije lak zadatak. Govorimo o reprogramiranju načina na koji razmišljate, menjanju načina na koji opažate stvari i olakšavanje vašeg života i to na način na koji vi to želite."
+    }, {
+      "id": "ee3d2009-fe27-477e-8b74-f5183986177b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.w3-bar > .letters", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,' Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "80c7b4ac-9314-4105-8780-e067acfeb3b8",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGOUT",
+      "targets": [
+        ["linkText=LOGOUT", "linkText"],
+        ["css=.overlay > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGOUT')]", "xpath:link"],
+        ["xpath=(//a[@href='http://localhost:8080/Korisnik/logout'])[2]", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGOUT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "acbadba0-f1a5-43f4-a42f-b013f531b566",
+    "name": "Uspesno prijavljivanje na seansu",
+    "commands": [{
+      "id": "4e5e958e-eee5-4088-8213-3d1190c09234",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d9e101c1-2925-4259-b7d5-f705b09f192d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a069a2f4-fdd0-4dcf-9a52-992881d11c80",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGIN",
+      "targets": [
+        ["linkText=LOGIN", "linkText"],
+        ["css=.overlay:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGIN')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gost/login']", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGIN')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ffab9fec-eb8c-4596-a5d2-0fb45f27d365",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4d707a7-6b1d-46ec-9542-76eadee829f7",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "MareI"
+    }, {
+      "id": "1c75bbcc-acf9-4544-8df1-eaf69dcdf1d9",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "jasamcar99"
+    }, {
+      "id": "ace4e1b7-ee10-4de4-a6a1-1ecf0ced8a49",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "15654245-e7be-4f13-a458-384713d1d209",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Seanse",
+      "targets": [
+        ["linkText=Seanse", "linkText"],
+        ["css=.w3-bar > .w3-bar-item:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Seanse')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/pregled_seansi']", "xpath:href"],
+        ["xpath=//header/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,' Seanse')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0389274b-7826-44ee-b926-ffcec9303307",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-container:nth-child(2)",
+      "targets": [
+        ["css=.w3-container:nth-child(2)", "css:finder"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3bb981f9-8cb1-4983-a162-c8f91553f80c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-button > b",
+      "targets": [
+        ["css=.w3-button > b", "css:finder"],
+        ["xpath=//div[@id='like']/div/button/b", "xpath:idRelative"],
+        ["xpath=//button/b", "xpath:position"],
+        ["xpath=//b[contains(.,'Prijavi se (2/5)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d471be06-e835-4f79-9ed7-571e52fdcfad",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.w3-bar > .letters", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,' Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "12491329-580f-4862-a5c4-84d0b99f62ea",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGOUT",
+      "targets": [
+        ["linkText=LOGOUT", "linkText"],
+        ["css=.overlay > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGOUT')]", "xpath:link"],
+        ["xpath=(//a[@href='http://localhost:8080/Korisnik/logout'])[2]", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGOUT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "d412d87c-1bce-42e0-b926-9d80a5bd8f16",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["51aa5f64-19a3-43f9-8dc9-439abd4916bf"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}

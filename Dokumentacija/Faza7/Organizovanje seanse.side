@@ -1,0 +1,585 @@
+{
+  "id": "63274c4e-89cd-4d57-8979-15f8fa470705",
+  "version": "2.0",
+  "name": "Organizovanje seanse",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "977ae63f-8b0e-49b0-88eb-5d3b85f188d6",
+    "name": "Uspesno organizovanje seanse",
+    "commands": [{
+      "id": "98e476a6-d015-4fbb-aced-e760934a57d0",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ba52bad6-03b1-4259-b411-79c44646a6fe",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8772186d-db31-4760-bc6a-4f1e8dac95cf",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGIN",
+      "targets": [
+        ["linkText=LOGIN", "linkText"],
+        ["css=.overlay:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGIN')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gost/login']", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGIN')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1f47bd3-873c-47e7-a368-6ddd16843ea1",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "30aea1e5-aa6f-4807-890e-4801e0bbc974",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.field:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Dr PetrovicN"
+    }, {
+      "id": "9e0f802b-815a-4d08-8d21-1a7be2d0ee54",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "440194f2-b000-4a15-a048-ec637fdb6abd",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd266cdb-41e7-4139-ac7f-21093e3d7e75",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a536e21d-b6ac-4e09-92ca-a16fcfa1d037",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "PsihologNikola99"
+    }, {
+      "id": "e8b5738a-0fc0-4bf8-8c67-d0a0743abef0",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.field:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "a8e5d7cb-e63d-4b41-9dbf-d55f09289934",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Organizovane seanse",
+      "targets": [
+        ["linkText=Organizovane seanse", "linkText"],
+        ["css=#UserDropdownMenu > .w3-bar-item:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Organizovane seanse')]", "xpath:link"],
+        ["xpath=//div[@id='UserDropdownMenu']/a[2]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Psiholog/organizovane_seanse']", "xpath:href"],
+        ["xpath=//div[2]/div/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,' Organizovane seanse')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c01ba05-eb91-4401-9ca2-7a697a38d059",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.buttons:nth-child(2)",
+      "targets": [
+        ["css=.buttons:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick=\"document.getElementById('NovaSeansaModal').style.display = 'block'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Organizuj novu seansu')]", "xpath:innerText"]
+      ],
+      "value": "Organizuj novu seansu"
+    }, {
+      "id": "33f92fdc-7739-4305-93c0-2100e0b3427e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.buttons:nth-child(2)",
+      "targets": [
+        ["css=.buttons:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick=\"document.getElementById('NovaSeansaModal').style.display = 'block'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Organizuj novu seansu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad206353-aad0-470e-9948-882785601d74",
+      "comment": "",
+      "command": "click",
+      "target": "id=novaSeansaNaziv",
+      "targets": [
+        ["id=novaSeansaNaziv", "id"],
+        ["name=novaSeansaNaziv", "name"],
+        ["css=#novaSeansaNaziv", "css:finder"],
+        ["xpath=//input[@id='novaSeansaNaziv']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6e6a2285-8850-44ae-bb5f-3d756d288497",
+      "comment": "",
+      "command": "type",
+      "target": "id=novaSeansaNaziv",
+      "targets": [
+        ["id=novaSeansaNaziv", "id"],
+        ["name=novaSeansaNaziv", "name"],
+        ["css=#novaSeansaNaziv", "css:finder"],
+        ["xpath=//input[@id='novaSeansaNaziv']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Nova seansa"
+    }, {
+      "id": "77a4dc4c-3dd6-4e5b-a338-da7e47c151b9",
+      "comment": "",
+      "command": "click",
+      "target": "id=novaSeansaBrojLjudi",
+      "targets": [
+        ["id=novaSeansaBrojLjudi", "id"],
+        ["name=novaSeansaBrojLjudi", "name"],
+        ["css=#novaSeansaBrojLjudi", "css:finder"],
+        ["xpath=//input[@id='novaSeansaBrojLjudi']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "07a0c966-8cbf-4342-8f92-b438fe212610",
+      "comment": "",
+      "command": "type",
+      "target": "id=novaSeansaBrojLjudi",
+      "targets": [
+        ["id=novaSeansaBrojLjudi", "id"],
+        ["name=novaSeansaBrojLjudi", "name"],
+        ["css=#novaSeansaBrojLjudi", "css:finder"],
+        ["xpath=//input[@id='novaSeansaBrojLjudi']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "10"
+    }, {
+      "id": "cbf0c3cb-f4aa-417a-b220-204faf8b5f4d",
+      "comment": "",
+      "command": "click",
+      "target": "id=novaSeansaOpis",
+      "targets": [
+        ["id=novaSeansaOpis", "id"],
+        ["name=novaSeansaOpis", "name"],
+        ["css=#novaSeansaOpis", "css:finder"],
+        ["xpath=//textarea[@id='novaSeansaOpis']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "110bfb60-ea40-4df9-997e-e5e8ae425a5c",
+      "comment": "",
+      "command": "click",
+      "target": "id=novaSeansaOpis",
+      "targets": [
+        ["id=novaSeansaOpis", "id"],
+        ["name=novaSeansaOpis", "name"],
+        ["css=#novaSeansaOpis", "css:finder"],
+        ["xpath=//textarea[@id='novaSeansaOpis']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "47754af1-0575-497a-a4cd-4a1a9c365be0",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=novaSeansaOpis",
+      "targets": [
+        ["id=novaSeansaOpis", "id"],
+        ["name=novaSeansaOpis", "name"],
+        ["css=#novaSeansaOpis", "css:finder"],
+        ["xpath=//textarea[@id='novaSeansaOpis']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02465b3b-0037-46be-9a31-2be6f02f8865",
+      "comment": "",
+      "command": "type",
+      "target": "id=novaSeansaOpis",
+      "targets": [
+        ["id=novaSeansaOpis", "id"],
+        ["name=novaSeansaOpis", "name"],
+        ["css=#novaSeansaOpis", "css:finder"],
+        ["xpath=//textarea[@id='novaSeansaOpis']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "466a0d99-c794-4f6d-a00a-124668bbd14f",
+      "comment": "",
+      "command": "click",
+      "target": "id=novaSeansaDatum",
+      "targets": [
+        ["id=novaSeansaDatum", "id"],
+        ["name=novaSeansaDatum", "name"],
+        ["css=#novaSeansaDatum", "css:finder"],
+        ["xpath=//input[@id='novaSeansaDatum']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "729d45be-28d7-493c-ada7-5d3f19d8a8b6",
+      "comment": "",
+      "command": "type",
+      "target": "id=novaSeansaDatum",
+      "targets": [
+        ["id=novaSeansaDatum", "id"],
+        ["name=novaSeansaDatum", "name"],
+        ["css=#novaSeansaDatum", "css:finder"],
+        ["xpath=//input[@id='novaSeansaDatum']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "0002-04-22"
+    }, {
+      "id": "4193ef04-1d43-4804-b0b6-d93f8c2aead9",
+      "comment": "",
+      "command": "type",
+      "target": "id=novaSeansaDatum",
+      "targets": [
+        ["id=novaSeansaDatum", "id"],
+        ["name=novaSeansaDatum", "name"],
+        ["css=#novaSeansaDatum", "css:finder"],
+        ["xpath=//input[@id='novaSeansaDatum']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "0020-04-22"
+    }, {
+      "id": "318dc911-d9f9-4f11-ab2c-02f41ff273ec",
+      "comment": "",
+      "command": "type",
+      "target": "id=novaSeansaDatum",
+      "targets": [
+        ["id=novaSeansaDatum", "id"],
+        ["name=novaSeansaDatum", "name"],
+        ["css=#novaSeansaDatum", "css:finder"],
+        ["xpath=//input[@id='novaSeansaDatum']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "0202-04-22"
+    }, {
+      "id": "9b6499f3-877c-4006-a575-edf630044646",
+      "comment": "",
+      "command": "type",
+      "target": "id=novaSeansaDatum",
+      "targets": [
+        ["id=novaSeansaDatum", "id"],
+        ["name=novaSeansaDatum", "name"],
+        ["css=#novaSeansaDatum", "css:finder"],
+        ["xpath=//input[@id='novaSeansaDatum']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "2021-04-22"
+    }, {
+      "id": "27c5dd9a-5adb-4446-8bdc-ca8f1e797efa",
+      "comment": "",
+      "command": "click",
+      "target": "id=novaSeansaVreme",
+      "targets": [
+        ["id=novaSeansaVreme", "id"],
+        ["name=novaSeansaVreme", "name"],
+        ["css=#novaSeansaVreme", "css:finder"],
+        ["xpath=//input[@id='novaSeansaVreme']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/div[3]/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bda85885-4216-4f42-980d-e884a07404e2",
+      "comment": "",
+      "command": "type",
+      "target": "id=novaSeansaVreme",
+      "targets": [
+        ["id=novaSeansaVreme", "id"],
+        ["name=novaSeansaVreme", "name"],
+        ["css=#novaSeansaVreme", "css:finder"],
+        ["xpath=//input[@id='novaSeansaVreme']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/div[3]/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "05:05"
+    }, {
+      "id": "92b1b650-b868-4a3b-b538-1c09db71402b",
+      "comment": "",
+      "command": "click",
+      "target": "id=novaSeansaZoomLink",
+      "targets": [
+        ["id=novaSeansaZoomLink", "id"],
+        ["name=novaSeansaZoomLink", "name"],
+        ["css=#novaSeansaZoomLink", "css:finder"],
+        ["xpath=//input[@id='novaSeansaZoomLink']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb0a4d1a-e831-4d99-b2c7-308a0b33bb4f",
+      "comment": "",
+      "command": "type",
+      "target": "id=novaSeansaZoomLink",
+      "targets": [
+        ["id=novaSeansaZoomLink", "id"],
+        ["name=novaSeansaZoomLink", "name"],
+        ["css=#novaSeansaZoomLink", "css:finder"],
+        ["xpath=//input[@id='novaSeansaZoomLink']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "zoom.rs"
+    }, {
+      "id": "906af3b3-c50b-4474-886d-cf09b33b78fc",
+      "comment": "",
+      "command": "click",
+      "target": "id=novaSeansaSubmit",
+      "targets": [
+        ["id=novaSeansaSubmit", "id"],
+        ["name=novaSeansaSubmit", "name"],
+        ["css=#novaSeansaSubmit", "css:finder"],
+        ["xpath=//input[@id='novaSeansaSubmit']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "342c1e01-0906-4fb1-b8ea-964afcc98205",
+      "comment": "",
+      "command": "type",
+      "target": "id=novaSeansaZoomLink",
+      "targets": [
+        ["id=novaSeansaZoomLink", "id"],
+        ["name=novaSeansaZoomLink", "name"],
+        ["css=#novaSeansaZoomLink", "css:finder"],
+        ["xpath=//input[@id='novaSeansaZoomLink']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "zoom.com"
+    }, {
+      "id": "627df13d-8121-43fe-aa69-0d9b979bdb31",
+      "comment": "",
+      "command": "click",
+      "target": "id=novaSeansaSubmit",
+      "targets": [
+        ["id=novaSeansaSubmit", "id"],
+        ["name=novaSeansaSubmit", "name"],
+        ["css=#novaSeansaSubmit", "css:finder"],
+        ["xpath=//input[@id='novaSeansaSubmit']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4159e87d-aba6-4de2-816d-0ceed933abe7",
+      "comment": "",
+      "command": "click",
+      "target": "id=novaSeansaZoomLink",
+      "targets": [
+        ["id=novaSeansaZoomLink", "id"],
+        ["name=novaSeansaZoomLink", "name"],
+        ["css=#novaSeansaZoomLink", "css:finder"],
+        ["xpath=//input[@id='novaSeansaZoomLink']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "52b396aa-b439-4f8c-b1ea-270a891597d5",
+      "comment": "",
+      "command": "click",
+      "target": "id=novaSeansaZoomLink",
+      "targets": [
+        ["id=novaSeansaZoomLink", "id"],
+        ["name=novaSeansaZoomLink", "name"],
+        ["css=#novaSeansaZoomLink", "css:finder"],
+        ["xpath=//input[@id='novaSeansaZoomLink']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7447bef-25c4-48aa-b395-4982e6204280",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=novaSeansaZoomLink",
+      "targets": [
+        ["id=novaSeansaZoomLink", "id"],
+        ["name=novaSeansaZoomLink", "name"],
+        ["css=#novaSeansaZoomLink", "css:finder"],
+        ["xpath=//input[@id='novaSeansaZoomLink']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa9a85b9-6692-4a59-bb20-1a9a883d13cd",
+      "comment": "",
+      "command": "type",
+      "target": "id=novaSeansaZoomLink",
+      "targets": [
+        ["id=novaSeansaZoomLink", "id"],
+        ["name=novaSeansaZoomLink", "name"],
+        ["css=#novaSeansaZoomLink", "css:finder"],
+        ["xpath=//input[@id='novaSeansaZoomLink']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4e57416-94bf-474d-ad03-871401965f94",
+      "comment": "",
+      "command": "type",
+      "target": "id=novaSeansaZoomLink",
+      "targets": [
+        ["id=novaSeansaZoomLink", "id"],
+        ["name=novaSeansaZoomLink", "name"],
+        ["css=#novaSeansaZoomLink", "css:finder"],
+        ["xpath=//input[@id='novaSeansaZoomLink']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "https://github.com/PetrovicT/Jigglypuff/"
+    }, {
+      "id": "e1ec42b8-b977-41af-822a-fe5111155cdf",
+      "comment": "",
+      "command": "click",
+      "target": "id=novaSeansaSubmit",
+      "targets": [
+        ["id=novaSeansaSubmit", "id"],
+        ["name=novaSeansaSubmit", "name"],
+        ["css=#novaSeansaSubmit", "css:finder"],
+        ["xpath=//input[@id='novaSeansaSubmit']", "xpath:attributes"],
+        ["xpath=//div[@id='NovaSeansaModal']/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2f7fe70-8ccc-4adc-8db2-f7ba51bacfdb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.letters_dark_blue > b",
+      "targets": [
+        ["css=.letters_dark_blue > b", "css:finder"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Nova seansa')]", "xpath:innerText"]
+      ],
+      "value": "Nova seansa"
+    }, {
+      "id": "0c9f9703-eb9f-4b1d-8547-c45ba12a4898",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.w3-bar > .letters", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,' Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c69ebda1-404f-4ce0-a8b8-d5fcd61cca60",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-container:nth-child(2)",
+      "targets": [
+        ["css=.w3-container:nth-child(2)", "css:finder"],
+        ["xpath=//div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd829684-d704-44be-9242-1d70b321e247",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGOUT",
+      "targets": [
+        ["linkText=LOGOUT", "linkText"],
+        ["css=.overlay > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGOUT')]", "xpath:link"],
+        ["xpath=(//a[@href='http://localhost:8080/Psiholog/logout'])[2]", "xpath:href"],
+        ["xpath=//div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGOUT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "ec3bd716-8edf-4a69-9d6b-4753782fd04f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["977ae63f-8b0e-49b0-88eb-5d3b85f188d6"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
