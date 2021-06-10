@@ -54,3 +54,16 @@ h3{
 	background-color: #021B79 !important;
 	color:white !important;  
 }
+
+.select-input{
+    height: 100%;
+    width: 100%;
+    outline:none;
+    padding-left:15px;
+    padding-bottom:5px;
+    font-size:17px;
+    border-radius:5px;
+    border: 1px solid black;
+    border-bottom-width:1px;
+    margin-top: 15px;
+}

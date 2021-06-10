@@ -94,7 +94,7 @@
                                 <br> <br>
 
                                 <!-- UNOS TEKSTA PITANJA I ISPIS GRESKE-->
-                                <textarea style="color: #021B79; border-color: #021B79; font-size: 16px; resize: none; width: 100%;" name="TekstPitanja" id=""
+                                <textarea required style="color: #021B79; border-color: #021B79; font-size: 16px; resize: none; width: 100%;" name="TekstPitanja" id=""
                                           cols="355" rows="10" placeholder=" Tekst pitanja"></textarea>
                                 <?php  if(!empty($porukaTekstPitanja)) echo "<br> <span style='color:red; font-size:16px'>$porukaTekstPitanja</span> <br>"; ?>  
                                 <br>
