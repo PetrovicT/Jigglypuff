@@ -1,0 +1,237 @@
+{
+  "id": "9c54cada-4009-4c9d-a607-de03c429d485",
+  "version": "2.0",
+  "name": "Savetovaliste",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "40b34812-05de-4945-bf4f-3dab4b3295e9",
+    "name": "Uspesna pretraga preko kategorija u padajucem meniju",
+    "commands": [{
+      "id": "702ac161-3378-4161-8975-efcf9f8039c3",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dcc669bc-e9cb-4d4a-aad3-875e3ff1f2e2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1188x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "97a3b3f4-ef6c-4548-a71c-99898176d3ab",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Napad panike",
+      "targets": [
+        ["linkText=Napad panike", "linkText"],
+        ["css=.w3-bar-item:nth-child(7)", "css:finder"],
+        ["xpath=//a[contains(text(),'Napad panike')]", "xpath:link"],
+        ["xpath=//div[@id='CategoryDropdownMenu']/a[7]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Gost/pregled_pitanja_po_kategoriji?pretraga=Napad+panike']", "xpath:href"],
+        ["xpath=//a[7]", "xpath:position"],
+        ["xpath=//a[contains(.,'Napad panike')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8955a5a-ec5b-4c50-b23c-36e6ae1dbc0a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.letters_dark_blue:nth-child(2) > b",
+      "targets": [
+        ["css=.letters_dark_blue:nth-child(2) > b", "css:finder"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Problemi sa paničnim napadima')]", "xpath:innerText"]
+      ],
+      "value": "Problemi sa paničnim napadima"
+    }]
+  }, {
+    "id": "3a3f6d71-4631-4399-80b2-6cc3aa8905f9",
+    "name": "Uspesna pretraga preko kljucne reci",
+    "commands": [{
+      "id": "caf674d9-c165-441b-b1f2-a93fd1bdc0bd",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2618e90e-3d0f-4497-baf3-3691cd4357bc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1188x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "15502b81-ad34-4508-a52d-2805607d1af8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-container > #SearchBar #SearchField",
+      "targets": [
+        ["css=.w3-container > #SearchBar #SearchField", "css:finder"],
+        ["xpath=(//input[@id='SearchField'])[2]", "xpath:attributes"],
+        ["xpath=(//div[@id='SearchBar']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5db716a5-3223-4b8b-b6a4-f0b36a480f1d",
+      "comment": "",
+      "command": "type",
+      "target": "css=.w3-container > #SearchBar #SearchField",
+      "targets": [
+        ["css=.w3-container > #SearchBar #SearchField", "css:finder"],
+        ["xpath=(//input[@id='SearchField'])[2]", "xpath:attributes"],
+        ["xpath=(//div[@id='SearchBar']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "anksioznost"
+    }, {
+      "id": "6a6cbd3b-e3de-4b6a-9936-78e5d680c22c",
+      "comment": "",
+      "command": "click",
+      "target": "id=search_pocetna",
+      "targets": [
+        ["id=search_pocetna", "id"],
+        ["css=#search_pocetna", "css:finder"],
+        ["xpath=//button[@id='search_pocetna']", "xpath:attributes"],
+        ["xpath=//div[@id='SearchBar']/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'\n')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f068733-45e0-407e-a8ac-84c139937ad5",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.w3-container:nth-child(2) > .w3-left b",
+      "targets": [
+        ["css=.w3-container:nth-child(2) > .w3-left b", "css:finder"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Anksioznost')]", "xpath:innerText"]
+      ],
+      "value": "Anksioznost"
+    }]
+  }, {
+    "id": "5b4e9640-d0e5-40e9-a38e-2cdebf63ae59",
+    "name": "Neuspesna pretraga zbog nepostojanja sadrzaja",
+    "commands": [{
+      "id": "b469b89b-f425-44f9-95e4-5a0997551d66",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b71c4dd4-cd96-45b2-aa72-b2b103578e20",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1188x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d0ffcffb-43a3-4268-8a48-d888968c0642",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-container > #SearchBar #SearchField",
+      "targets": [
+        ["css=.w3-container > #SearchBar #SearchField", "css:finder"],
+        ["xpath=(//input[@id='SearchField'])[2]", "xpath:attributes"],
+        ["xpath=(//div[@id='SearchBar']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "86d40678-1253-4181-8a5e-655e554e47bb",
+      "comment": "",
+      "command": "type",
+      "target": "css=.w3-container > #SearchBar #SearchField",
+      "targets": [
+        ["css=.w3-container > #SearchBar #SearchField", "css:finder"],
+        ["xpath=(//input[@id='SearchField'])[2]", "xpath:attributes"],
+        ["xpath=(//div[@id='SearchBar']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "bipolarni poremecaj"
+    }, {
+      "id": "5ca71de3-24f3-4b88-b2ac-d499bea58fec",
+      "comment": "",
+      "command": "click",
+      "target": "id=search_pocetna",
+      "targets": [
+        ["id=search_pocetna", "id"],
+        ["css=#search_pocetna", "css:finder"],
+        ["xpath=//button[@id='search_pocetna']", "xpath:attributes"],
+        ["xpath=//div[@id='SearchBar']/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'\n')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c0b18d8-e446-4d71-bc94-29c9edd80c22",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.letters_dark_blue > b",
+      "targets": [
+        ["css=.letters_dark_blue > b", "css:finder"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Nije pronađen nijedan rezultat.')]", "xpath:innerText"]
+      ],
+      "value": "Nije pronađen nijedan rezultat."
+    }]
+  }, {
+    "id": "51f17ec0-b7bc-4d96-9641-59ebfd480fbe",
+    "name": "Uspesna pretraga preko dugmica na homepage",
+    "commands": [{
+      "id": "9c1a4c1f-5309-4bf3-8b8d-2bfa8a8b7d74",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7bdba444-e88c-477a-a28a-53f6b9001337",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1188x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "62dc712a-88c3-4245-9068-155acb141333",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Anksioznost",
+      "targets": [
+        ["linkText=Anksioznost", "linkText"],
+        ["css=.w3-tag:nth-child(1) > .nema_podvlacenja", "css:finder"],
+        ["xpath=(//a[contains(text(),'Anksioznost')])[2]", "xpath:link"],
+        ["xpath=(//a[@href='http://localhost:8080/Gost/pregled_pitanja_po_kategoriji?pretraga=Anksioznost'])[2]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c77e09cb-adaa-4f21-acbb-c7ad2f7f3c26",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.w3-left > .letters_dark_blue > b",
+      "targets": [
+        ["css=.w3-left > .letters_dark_blue > b", "css:finder"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Anksioznost')]", "xpath:innerText"]
+      ],
+      "value": "Anksioznost"
+    }]
+  }],
+  "suites": [{
+    "id": "de15dc80-f740-43d6-9e66-d2c759f1a523",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
