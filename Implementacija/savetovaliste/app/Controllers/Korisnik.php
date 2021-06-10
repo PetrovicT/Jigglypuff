@@ -240,7 +240,7 @@ class Korisnik extends BaseController {
                             "Parametar nije prisutan (idKorisnik = $idKorisnik; idSeansa = $idPitanje, isLike = $isLike)",
                             'Loše poslat zahtev, molimo probajte ponovo.<br/>Ako se ovaj problem desi više puta, molimo kontaktirajte administratora sajta.');
         }
-        
+
         $isLike = $isLike == "1" ? true : false;
 
         $korisnikOcenioPitanjeModel = new KorisnikOcenioPitanjeModel;
@@ -255,28 +255,28 @@ class Korisnik extends BaseController {
                 'korisnik_idKorisnik' => $idKorisnik
             ];
             $korisnikOcenioPitanjeModel->insert($novaOcena);
-            
+
             return $this->responseWithIspis(210,
                             "Uspešna nova ocena!",
                             'Uspešna nova ocena!');
         }
         // A ako postoji, onda je samo updatuj da matchuje novu
         else {
-            if($postojecaOcena->ocena == $isLike){
+            if ($postojecaOcena->ocena == $isLike) {
                 return $this->responseWithIspis(212,
-                            "Već je data ista ocena.",
-                            'Već je data ista ocena.');
+                                "Već je data ista ocena.",
+                                'Već je data ista ocena.');
             }
-            
+
             $postojecaOcena->ocena = $isLike;
             $korisnikOcenioPitanjeModel->save($postojecaOcena);
-            
+
             return $this->responseWithIspis(211,
                             "Uspešna izmena ocene!",
                             'Uspešna izmena ocene!');
         }
     }
-    
+
     // Toggluje lajk i dislajk na odgovoru
     public function like_or_dislike_odgovor() {
         // Ako nije pristupljeno funkciji klikom na dugme,
@@ -296,7 +296,7 @@ class Korisnik extends BaseController {
                             "Parametar nije prisutan (idKorisnik = $idKorisnik; idSeansa = $idOdgovor, isLike = $isLike)",
                             'Loše poslat zahtev, molimo probajte ponovo.<br/>Ako se ovaj problem desi više puta, molimo kontaktirajte administratora sajta.');
         }
-        
+
         $isLike = $isLike == "1" ? true : false;
 
         $korisnikOcenioOdgovorModel = new KorisnikOcenioOdgovorModel();
@@ -311,28 +311,28 @@ class Korisnik extends BaseController {
                 'korisnik_idKorisnik' => $idKorisnik
             ];
             $korisnikOcenioOdgovorModel->insert($novaOcena);
-            
+
             return $this->responseWithIspis(210,
                             "Uspešna nova ocena!",
                             'Uspešna nova ocena!');
         }
         // A ako postoji, onda je samo updatuj da matchuje novu
         else {
-            if($postojecaOcena->ocena == $isLike){
+            if ($postojecaOcena->ocena == $isLike) {
                 return $this->responseWithIspis(212,
-                            "Već je data ista ocena.",
-                            'Već je data ista ocena.');
+                                "Već je data ista ocena.",
+                                'Već je data ista ocena.');
             }
-            
+
             $postojecaOcena->ocena = $isLike;
             $korisnikOcenioOdgovorModel->save($postojecaOcena);
-            
+
             return $this->responseWithIspis(211,
                             "Uspešna izmena ocene!",
                             'Uspešna izmena ocene!');
         }
     }
-    
+
     // Toggluje lajk i dislajk na psihologu
     public function like_or_dislike_psiholog() {
         // Ako nije pristupljeno funkciji klikom na dugme,
@@ -344,15 +344,15 @@ class Korisnik extends BaseController {
         // Parametri iz sessiona i requesta
         $idKorisnik = $this->session->get('userid');
         $idPsiholog = $this->request->getPost('id');
-        $isLike = $this->request->getPost('isLike'); 
-        
+        $isLike = $this->request->getPost('isLike');
+
         // Ako nisu prisutni, zahtev je loš, vrati grešku 400
         if (!$idKorisnik || !$idPsiholog || $isLike == null) {
             return $this->responseWithIspis(400,
                             "Parametar nije prisutan (idKorisnik = $idKorisnik; idSeansa = $idPsiholog, isLike = $isLike)",
                             'Loše poslat zahtev, molimo probajte ponovo.<br/>Ako se ovaj problem desi više puta, molimo kontaktirajte administratora sajta.');
         }
-        
+
         $isLike = $isLike == "1" ? true : false;
 
         $korisnikOcenioPsihologaModel = new KorisnikOcenioPsihologaModel();
@@ -367,26 +367,167 @@ class Korisnik extends BaseController {
                 'korisnik_idKorisnik_ocenio' => $idKorisnik
             ];
             $korisnikOcenioPsihologaModel->insert($novaOcena);
-            
+
             return $this->responseWithIspis(210,
                             "Uspešna nova ocena!",
                             'Uspešna nova ocena!');
         }
         // A ako postoji, onda je samo updatuj da matchuje novu
         else {
-            if($postojecaOcena->ocena == $isLike){
+            if ($postojecaOcena->ocena == $isLike) {
                 return $this->responseWithIspis(212,
-                            "Već je data ista ocena.",
-                            'Već je data ista ocena.');
+                                "Već je data ista ocena.",
+                                'Već je data ista ocena.');
             }
-            
+
             $postojecaOcena->ocena = $isLike;
             $korisnikOcenioPsihologaModel->save($postojecaOcena);
-            
+
             return $this->responseWithIspis(211,
                             "Uspešna izmena ocene!",
                             'Uspešna izmena ocene!');
         }
+    }
+
+    // svi registrovani korisnici imaju mogucnost da izmene svoj profil
+    public function profilIzmena() {
+        echo view("profilIzmena");
+    }
+
+    public function izmeniProfil() {
+        // ako korisnik nije uneo staru lozinku onda mu ispisi poruku
+        $porukaNijeUnetaLozinka = null;
+        // ako je korisnik pokusao da promeni profil ali je uneo pogresnu aktuelnu lozinku
+        $porukaPogresnaLozinka = null;
+
+        // provera da li je uneta stara lozinka, ako ne potrebno je ispisati poruku
+        $lozinka = $this->request->getVar('aktuelnaLozinka');
+        if ($lozinka == null) {
+            $porukaNijeUnetaLozinka = "Morate da unesete aktuelnu lozinku da biste napravili izmene!";
+        }
+        if ($porukaNijeUnetaLozinka != null) {
+            echo view("profilIzmena",
+                    ['porukaLozinka' => $porukaNijeUnetaLozinka]);
+            return;
+        }
+
+        // da li je uneta prava lozinka?
+        $korisnikId = session()->get('userid');
+        $korisnikModel = new KorisnikModel();
+        $korisnik = $korisnikModel->find("$korisnikId");
+        $tacnalozinka = $korisnik->password;
+        $unetaLozinka = $this->request->getVar('aktuelnaLozinka');
+        if ($tacnalozinka != $unetaLozinka) {
+            $porukaPogresnaLozinka = "Morate da unesete ispravnu aktuelnu lozinku da biste napravili izmene!";
+        }
+        if ($porukaPogresnaLozinka != null) {
+            echo view("profilIzmena",
+                    ['porukaPogresnaLozinka' => $porukaPogresnaLozinka]);
+            return;
+        }
+
+        // dohvatanje grada
+        $idGrada = $korisnik->grad_idGrad;
+        // dohvatanje pola
+        $idPola = $korisnik->pol_idPol;
+        // dohvatanje username
+        $username = $korisnik->username;
+        // dohvatanje licnog imena
+        $licnoIme = $korisnik->licnoIme;
+        // dohvatanje email
+        $email = $korisnik->email;
+        // dohvatanje kategorije korisnika
+        $idKategorije = $korisnik->tipKorisnika_idTipKorisnika;
+        $tipKorisnikaModel = new TipKorisnikaModel();
+        $kategorija = $tipKorisnikaModel->find($idKategorije)->tip;
+
+        $noviUsername = $this->request->getVar('username');
+        $novoLicnoIme = $this->request->getVar('licnoIme');
+
+        // unosi se grad u tekstualnom obliku, potrebno je prebaciti u idGrada
+        $noviGrad = $this->request->getVar('grad');
+        if ($noviGrad != null) {
+            $gradModel = new GradModel();
+            $grad = $gradModel->where('naziv', $noviGrad)->first();
+            if ($grad == null) {
+                // potrebno je ubaciti novi grad u bazu
+                $gradModel->save([
+                    'naziv' => $noviGrad
+                ]);
+            } else
+                $noviGrad = $grad->idGrad;
+        } else
+            $noviGrad = $idGrada;
+
+        $novEmail = $this->request->getVar('email');
+        $noviPol = $this->request->getVar('pol');
+        if ($noviPol == null)
+            $noviPol = $idPola;
+        else if ($noviPol == "male")
+            $noviPol = 1;
+        else if ($noviPol == "female")
+            $noviPol = 2;
+        else if ($noviPol == "other")
+            $noviPol = null;
+
+        $novaLozinka = $this->request->getVar('novaLozinka');
+
+        if ($noviUsername == null)
+            $noviUsername = $username;
+        if ($novoLicnoIme == null)
+            $novoLicnoIme = $licnoIme;
+        if ($novaLozinka == null)
+            $novaLozinka = $tacnalozinka;
+        if ($novEmail == null)
+            $novEmail = $email;
+
+        echo "$korisnikId";
+        echo "$noviUsername";
+        echo "$novEmail";
+        echo "$novoLicnoIme";
+        echo "$novaLozinka";
+        echo "$noviGrad";
+        echo "$noviPol";
+
+        $db = \Config\Database::connect();
+        $builder = $db->table('korisnik');
+        $builder->where('idKorisnik', $korisnikId);
+        $data = [
+            'username' => "$noviUsername",
+            'email' => "$novEmail",
+            'licnoIme' => "$novoLicnoIme",
+            'prikaziLicnoIme' => $korisnik->prikaziLicnoIme,
+            'password' => $novaLozinka,
+            'tipKorisnika_idTipKorisnika' => $korisnik->tipKorisnika_idTipKorisnika,
+            'grad_idGrad' => $noviGrad,
+            'pol_idPol' => $noviPol
+        ];
+        $korisnikModel->update($korisnikId, $data);
+
+        /*
+          $query=$db->query("UPDATE `korisnik` SET `username` = 'MareI2', `prikaziLicnoIme` = b'1' WHERE `korisnik`.`idKorisnik` = 1");
+          $query->getResult();
+         */
+
+        /*
+          $korisnikModel->save([
+          'idKorisnik'=>$korisnikId,
+          'username'=>$noviUsername,
+          'email'=>$novEmail,
+          'licnoIme'=>$novoLicnoIme,
+          'prikaziLicnoIme'=>$korisnik->prikaziLicnoIme,
+          'password'=>$novaLozinka,
+          'tipKorisnika_idTipKorisnika'=>$korisnik->tipKorisnika_idTipKorisnika,
+          'grad_idGrad'=>$noviGrad,
+          'pol_idPol'=>$noviPol,
+          'slika'=>$korisnik->slika
+          ]);
+         */
+
+        $controller = session()->get('controller');
+        // kada zavrsi sa izmenama vraca se na pregled profila
+        //return redirect()->to(site_url("$controller/profil/$korisnikId"));	
+        return;
     }
 
 }
