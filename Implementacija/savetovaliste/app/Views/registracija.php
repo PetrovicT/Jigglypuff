@@ -31,7 +31,7 @@
             <div class="wrapper">
                 <div class="Naslov"><b>Formular za registrovanje</b></div>
 
-                <div>Sledeca polja su obavezna, molimo Vas da ih popunite. Obratite paznju da Vasa sifra mora sadrzati minimum 8 karaktera.</div>
+                <div>Sledeca polja su obavezna, molimo Vas da ih popunite. Obratite paznju da Vasa sifra mora sadrzati minimum 6 karaktera.</div>
 
                 <font color='red'>
                 <?php
@@ -47,10 +47,10 @@
                     <div class="form-inner">
                         <form action="<?= site_url("Gost/registerSubmit") ?>" class="login" method="post">
                             <div class="field">
-                                <input name="username" type="text" placeholder="Korisnicko ime" required>
+                                <input name="username" type="text" placeholder="Korisnicko ime" >
                             </div> 
                             <div class="field">
-                                <input name="password" type="password" placeholder="Sifra" required>
+                                <input name="password" type="password" placeholder="Sifra">
                             </div> 
                             <div class="field">
                                 <div>Sledeca polja nisu obavezna, tako da ih mozete ostaviti praznim. </div>

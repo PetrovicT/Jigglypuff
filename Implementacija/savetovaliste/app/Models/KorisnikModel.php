@@ -40,7 +40,7 @@ class KorisnikModel extends Model {
             'valid_email' => 'Email adresa nije u dobrom formatu.',
             'is_unique' => 'Ta e-mail adresa je vec zauzeta.',
         ],
-        'passowrd' => [
+        'password' => [
             'required' => 'Morate uneti željenu šifru.',
             'alpha_numeric_punct' => 'Šifra sadrži nedozvoljene znake.',
             'min_length' => 'Šifra mora sadržati makar 6 karaktera.',
