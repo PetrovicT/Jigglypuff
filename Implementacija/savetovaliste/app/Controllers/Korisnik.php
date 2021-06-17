@@ -394,9 +394,37 @@ class Korisnik extends BaseController {
         echo view("profilIzmena");
     }
 
+    // Menja sliku i redirectuje na izmenu profila
+    public function izmeniSliku() {
+        $korisnikModel = new KorisnikModel();
+        $korisnik = $korisnikModel->find($this->session->get('userid'));
+
+        $slika = $this->request->getFile('slikaFile');
+
+        if ($slika == null || !$slika->isValid()) {
+            return $this->profilIzmena();
+        }
+
+        $nazivSlike = $slika->getRealPath();
+
+        $slikaData = file_get_contents($nazivSlike);
+
+        $data = [
+            'idKorisnik' => $this->session->get('userid'),
+            'slika' => $slikaData
+        ];
+
+        $korisnikModel->save($data);
+
+        $controller = $this->session->get('controller');
+        $korisnikId = $this->session->get('userid');
+
+        return redirect()->to(site_url("$controller/profil/$korisnikId"));
+    }
+
     // Submit izmene profila
     public function izmeniProfil() {
-        
+
         // ako korisnik nije uneo staru lozinku onda mu ispisi poruku
         $porukaNijeUnetaLozinka = null;
         // ako je korisnik pokusao da promeni profil ali je uneo pogresnu aktuelnu lozinku
@@ -427,7 +455,7 @@ class Korisnik extends BaseController {
                     ['porukaPogresnaLozinka' => $porukaPogresnaLozinka]);
             return;
         }
-        
+
         $novoLicnoIme = $this->request->getVar('licnoIme');
 
         $noviGradId = $this->request->getVar('grad');
@@ -439,44 +467,48 @@ class Korisnik extends BaseController {
         $data = [
             'email' => $novEmail,
             'licnoIme' => $novoLicnoIme,
-            'password' => (empty($novaLozinka) ? $korisnik->password : $novaLozinka ),
             'grad_idGrad' => $noviGradId,
-            'pol_idPol' => (empty($noviPol) ? null : $noviPol)
+            'pol_idPol' => $noviPol,
         ];
+        if (!empty($novaLozinka)) {
+            $data['password'] = $novaLozinka;
+        }        
+
         $korisnikModel->update($korisnikId, $data);
 
         $controller = session()->get('controller');
-        
+
         // kada zavrsi sa izmenama vraca se na pregled profila
         return redirect()->to(site_url("$controller/profil/$korisnikId"));
     }
 
     // Xahteva izmenu, tj. salje dokumentaciju u bazu
-    public function zahtevajPromociju(){
+    public function zahtevajPromociju() {
         $korisnikModel = new KorisnikModel();
         $korisnik = $korisnikModel->find($this->session->get('userid'));
-        
+
         $dokumentacija = $this->request->getFile('promocijaFile');
-        
-        if($dokumentacija == null || !$dokumentacija->isValid()){
+
+        if ($dokumentacija == null || !$dokumentacija->isValid()) {
             return $this->profilIzmena();
         }
-        
-        $novoIme = $korisnik->username.'.'.$dokumentacija->getExtension();
-        
+
+        $novoIme = $korisnik->username . '.' . $dokumentacija->getExtension();
+
         // Move the file to it's new home
         $dokumentacija->move('C:\wamp64\uploadedFiles\savetovaliste\zahteviZaPromociju', $novoIme, true);
-        
-        $noviPath = 'C:\wamp64\uploadedFiles\savetovaliste\zahteviZaPromociju\\'.$novoIme;
-        
+
+        $noviPath = 'C:\wamp64\uploadedFiles\savetovaliste\zahteviZaPromociju\\' . $novoIme;
+
         $zahteviModel = new \App\Models\ZahteviPromocijeModel();
         $data = [
             'idKorisnika' => $this->session->get('userid'),
             'path' => $noviPath
         ];
-        
+
         $zahteviModel->save($data);
-        
+
         return $this->profilIzmena();
     }
+
 }

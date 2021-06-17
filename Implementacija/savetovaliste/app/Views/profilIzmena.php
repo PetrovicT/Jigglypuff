@@ -82,11 +82,12 @@
             <img src="<?php echo base_url(); ?>/photos/no_picture.png" alt="" style="width:25%;">  
             <?php
         } else
-            echo '<img src="data:image/jpeg;base64,' . base64_encode($korisnik->slika) . '">';
+            echo '<img style="max-width:40%;" src="data:image/jpeg;base64,' . base64_encode($korisnik->slika) . '">';
         echo '
-                    </div>
+                    </div>    
+                    <button class="w3-button buttons" style="display: block !important; margin:auto;" onclick="document.getElementById(\'novaSlika\').style.display = \'block\'">Izmeni sliku</button> 
                 </div>
-             
+                
                 <br><br>
 
                 <div class="w3-row w3-center">
@@ -104,6 +105,32 @@
                 <hr style="border-top-color: #021B79;">
                 </div> ';
         ?>
+            <div class="w3-row w3-center" >
+                <div class="w3-col s12">     
+                    <div id="novaSlika" class="w3-modal">
+                        <br><br>
+                        <div class="w3-modal-content w3-animate-top w3-card-4">
+                            <header class="w3-container color-dark-blue"> 
+                                <span onclick="document.getElementById('novaSlika').style.display = 'none'" class="w3-button w3-large w3-display-topright close-button">×</span>
+                                <h2 class="w3-text-white">Izmena slike</h2>
+                            </header>
+                            <form class="w3-container" action="<?= site_url("$controller/izmeniSliku") ?>" method = "post" enctype="multipart/form-data">
+
+                                <br>
+                                <div style="display: inline-block; ">
+                                    <label>Uploadujte vašu novu sliku u JPG ili PNG formatu:</label>
+                                    <input id="slikaFile" name="slikaFile" class="w3-input w3-button" type="file">
+                                </div>
+
+                                <br><br>
+                                <input id="slikaSubmit" name="slikaSubmit" class="w3-input w3-button buttons" type="submit" value="Pošalji sliku!">
+
+                            </form> 
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <form name="izmeniProfil"  action="<?= site_url("$controller/izmeniProfil") ?>" method="post">                
             <div class="w3-row">
