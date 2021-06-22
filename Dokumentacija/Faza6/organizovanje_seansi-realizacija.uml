@@ -97,7 +97,7 @@ on se nalazi ovde, a zatim se iz menija prevlaci na sequence dijagram
 <XPD:REF name="DiagramOwner">O63PLsMl7kWh/gW91Xt0WAAA</XPD:REF>
 <XPD:OBJ name="DiagramView" type="UMLSequenceDiagramView" guid="METAmkNXhkuEjcyZtC6rJwAA">
 <XPD:REF name="Diagram">5WpWz2m6h067MTbQooS+BQAA</XPD:REF>
-<XPD:ATTR name="#OwnedViews" type="integer">22</XPD:ATTR>
+<XPD:ATTR name="#OwnedViews" type="integer">23</XPD:ATTR>
 <XPD:OBJ name="OwnedViews[0]" type="UMLCombinedFragmentView" guid="ttb0G5lnl0Cm5HMdZxU+MgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
@@ -270,7 +270,7 @@ on se nalazi ovde, a zatim se iz menija prevlaci na sequence dijagram
 <XPD:REF name="Head">neksVJkurUaDCWj1knHZ8gAA</XPD:REF>
 <XPD:REF name="Tail">w4rRc0O/IU+iVJtK7+Y1gQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="n7j8KTwOvkmkJUVDFYuHugAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">1 : organizovane_seanse()</XPD:ATTR>
 <XPD:REF name="Model">dHKkLl506EOZfwJENc4aogAA</XPD:REF>
@@ -278,14 +278,14 @@ on se nalazi ovde, a zatim se iz menija prevlaci na sequence dijagram
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="WW6afGpoHkyfyuvP0Ni/ZAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">dHKkLl506EOZfwJENc4aogAA</XPD:REF>
 <XPD:REF name="HostEdge">du0c/i2l5UGKvYN0lDFJYQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="HYI41oM0fUCoHgMdzDkawQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">dHKkLl506EOZfwJENc4aogAA</XPD:REF>
 <XPD:REF name="HostEdge">du0c/i2l5UGKvYN0lDFJYQAA</XPD:REF>
@@ -306,7 +306,7 @@ on se nalazi ovde, a zatim se iz menija prevlaci na sequence dijagram
 <XPD:REF name="Head">tGuk4rqgAEaHeauz4qsa6wAA</XPD:REF>
 <XPD:REF name="Tail">neksVJkurUaDCWj1knHZ8gAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="aslyuElwoUyfnkE6qBWNsgAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">2 : redirect()</XPD:ATTR>
 <XPD:REF name="Model">LFNQzE08BkGnp/CU+7XAAgAA</XPD:REF>
@@ -314,14 +314,14 @@ on se nalazi ovde, a zatim se iz menija prevlaci na sequence dijagram
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="WqoX/KRAr0GHQc7QpmUH+gAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">LFNQzE08BkGnp/CU+7XAAgAA</XPD:REF>
 <XPD:REF name="HostEdge">1qYLrVcQpkaIjuXWf7wBIQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="3BotxfSBYUi/ClVHmc35LwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">LFNQzE08BkGnp/CU+7XAAgAA</XPD:REF>
 <XPD:REF name="HostEdge">1qYLrVcQpkaIjuXWf7wBIQAA</XPD:REF>
@@ -342,7 +342,7 @@ on se nalazi ovde, a zatim se iz menija prevlaci na sequence dijagram
 <XPD:REF name="Head">neksVJkurUaDCWj1knHZ8gAA</XPD:REF>
 <XPD:REF name="Tail">tGuk4rqgAEaHeauz4qsa6wAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="XDd0DgVPW0iezijqZtFnfAAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">3 : html</XPD:ATTR>
 <XPD:REF name="Model">qVROmwN+7EK0OpL3iWVaRwAA</XPD:REF>
@@ -350,14 +350,14 @@ on se nalazi ovde, a zatim se iz menija prevlaci na sequence dijagram
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="QI2IY7H0UUOk6VyvuVsAMwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">qVROmwN+7EK0OpL3iWVaRwAA</XPD:REF>
 <XPD:REF name="HostEdge">vZl1Lkh3QE6h48fa1wy1uAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="1MdISiQFrkmUuAmIl6nZIAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">qVROmwN+7EK0OpL3iWVaRwAA</XPD:REF>
 <XPD:REF name="HostEdge">vZl1Lkh3QE6h48fa1wy1uAAA</XPD:REF>
@@ -386,7 +386,7 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">192,60;192,140</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">192,60;192,150</XPD:ATTR>
 <XPD:REF name="Head">n7j8KTwOvkmkJUVDFYuHugAA</XPD:REF>
 <XPD:REF name="Tail">xWNQidheeEmUTGVUqfCODgAA</XPD:REF>
 </XPD:OBJ>
@@ -399,7 +399,7 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:REF name="Head">tGuk4rqgAEaHeauz4qsa6wAA</XPD:REF>
 <XPD:REF name="Tail">neksVJkurUaDCWj1knHZ8gAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="DKGY/7Tw7EOaoQGicYCZngAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">4 : novaSeansaSubmit()</XPD:ATTR>
 <XPD:REF name="Model">LLUFchbq/EuKoirPId2QrAAA</XPD:REF>
@@ -407,14 +407,14 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="XrTpn55220S5Q6MmM/+UyAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">LLUFchbq/EuKoirPId2QrAAA</XPD:REF>
 <XPD:REF name="HostEdge">+Z+twuWq7kSrVtt/12/WOgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="r3ISNJ5apk+4E+MKUT3KGwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">LLUFchbq/EuKoirPId2QrAAA</XPD:REF>
 <XPD:REF name="HostEdge">+Z+twuWq7kSrVtt/12/WOgAA</XPD:REF>
@@ -435,7 +435,7 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:REF name="Head">neksVJkurUaDCWj1knHZ8gAA</XPD:REF>
 <XPD:REF name="Tail">tGuk4rqgAEaHeauz4qsa6wAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="iC/HSh7Hn0aXy1rMfh7z8gAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">5 : ispravniPodaci()</XPD:ATTR>
 <XPD:REF name="Model">w3BTFurMmUS6SUWXcmvJKwAA</XPD:REF>
@@ -443,14 +443,14 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="+ElSwsJhwEG0ECcLh7RvLQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">w3BTFurMmUS6SUWXcmvJKwAA</XPD:REF>
 <XPD:REF name="HostEdge">hWkulEdDpU6nz7msfFjEwQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="8PaV7GcrQ0yrsGzj0CudhAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">w3BTFurMmUS6SUWXcmvJKwAA</XPD:REF>
 <XPD:REF name="HostEdge">hWkulEdDpU6nz7msfFjEwQAA</XPD:REF>
@@ -473,31 +473,67 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:ATTR name="Text" type="string">[ispravniPodaci==true]
 </XPD:ATTR>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[14]" type="UMLSeqStimulusView" guid="oOeQevAR7Um0ya+GtEJ94AAA">
+<XPD:OBJ name="OwnedViews[14]" type="UMLSeqStimulusView" guid="P5x0/AKm80iFAf70qv0qQAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">508,302;616,302</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">391,296;501,296</XPD:ATTR>
+<XPD:REF name="Model">VtpezBu2vEOD4wRRhpawUAAA</XPD:REF>
+<XPD:REF name="Head">gtUtCJgprk2jmD1g3Z4NHgAA</XPD:REF>
+<XPD:REF name="Tail">tGuk4rqgAEaHeauz4qsa6wAA</XPD:REF>
+<XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="RtLV/hVbG0S8WCEagxNnTAAA">
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">6 : create()</XPD:ATTR>
+<XPD:REF name="Model">VtpezBu2vEOD4wRRhpawUAAA</XPD:REF>
+<XPD:REF name="HostEdge">P5x0/AKm80iFAf70qv0qQAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="H1kH1JZ5fkunpZ1k7YpefAAA">
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">&lt;&lt;instantiate&gt;&gt;</XPD:ATTR>
+<XPD:REF name="Model">VtpezBu2vEOD4wRRhpawUAAA</XPD:REF>
+<XPD:REF name="HostEdge">P5x0/AKm80iFAf70qv0qQAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="rgi8yXcEdkiXMcsu8aHTzQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:REF name="Model">VtpezBu2vEOD4wRRhpawUAAA</XPD:REF>
+<XPD:REF name="HostEdge">P5x0/AKm80iFAf70qv0qQAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Activation" type="UMLActivationView" guid="LoA1XDc0Akq5KVOBLANB9wAA">
+<XPD:ATTR name="Left" type="integer">501</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">296</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[15]" type="UMLSeqStimulusView" guid="oOeQevAR7Um0ya+GtEJ94AAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">514,302;616,302</XPD:ATTR>
 <XPD:REF name="Model">UvpZTvFpP0mkSABvbwCzXAAA</XPD:REF>
 <XPD:REF name="Head">aRiqHSPuGka/kiBTaeIQJQAA</XPD:REF>
 <XPD:REF name="Tail">gtUtCJgprk2jmD1g3Z4NHgAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="tfwqq2t4ake2g4sS9PAEsgAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">6 : insert()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">7 : insert()</XPD:ATTR>
 <XPD:REF name="Model">UvpZTvFpP0mkSABvbwCzXAAA</XPD:REF>
 <XPD:REF name="HostEdge">oOeQevAR7Um0ya+GtEJ94AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="D4RjPbCgIkGY9SGvNWvEygAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">UvpZTvFpP0mkSABvbwCzXAAA</XPD:REF>
 <XPD:REF name="HostEdge">oOeQevAR7Um0ya+GtEJ94AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="holne9j3xke1r8AGbOVqpQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">UvpZTvFpP0mkSABvbwCzXAAA</XPD:REF>
 <XPD:REF name="HostEdge">oOeQevAR7Um0ya+GtEJ94AAA</XPD:REF>
@@ -509,7 +545,7 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[15]" type="UMLSeqStimulusView" guid="u04C7r65KEywKCk24mGYDgAA">
+<XPD:OBJ name="OwnedViews[16]" type="UMLSeqStimulusView" guid="u04C7r65KEywKCk24mGYDgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
@@ -518,22 +554,22 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:REF name="Head">tGuk4rqgAEaHeauz4qsa6wAA</XPD:REF>
 <XPD:REF name="Tail">neksVJkurUaDCWj1knHZ8gAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="L4ZBdMWkXkmHZXq+QrEqawAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">7 : redirect()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">8 : redirect()</XPD:ATTR>
 <XPD:REF name="Model">RsAN0d69ckmrefoa7ZYmsAAA</XPD:REF>
 <XPD:REF name="HostEdge">u04C7r65KEywKCk24mGYDgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="Jw5XlrgDC0aGd2meF+A29QAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">RsAN0d69ckmrefoa7ZYmsAAA</XPD:REF>
 <XPD:REF name="HostEdge">u04C7r65KEywKCk24mGYDgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="NLavPbg7/kC5xUzRqSpQTwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">RsAN0d69ckmrefoa7ZYmsAAA</XPD:REF>
 <XPD:REF name="HostEdge">u04C7r65KEywKCk24mGYDgAA</XPD:REF>
@@ -541,43 +577,6 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="DqpGmlhnQkqN3LFFXgSEBQAA">
 <XPD:ATTR name="Left" type="integer">384</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">314</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
-</XPD:OBJ>
-</XPD:OBJ>
-<XPD:OBJ name="OwnedViews[16]" type="UMLSeqStimulusView" guid="d+/pvWKcUEmx/WeSWjYCaQAA">
-<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
-<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">384,334;252,334</XPD:ATTR>
-<XPD:REF name="Model">rnHGru9W6E6xBPd32eySkQAA</XPD:REF>
-<XPD:REF name="Head">neksVJkurUaDCWj1knHZ8gAA</XPD:REF>
-<XPD:REF name="Tail">tGuk4rqgAEaHeauz4qsa6wAA</XPD:REF>
-<XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="qY/GymsBfEKUnPN14P79LQAA">
-<XPD:ATTR name="Alpha" type="real">1,19029081175179</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">10,770329614269</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">8 : html</XPD:ATTR>
-<XPD:REF name="Model">rnHGru9W6E6xBPd32eySkQAA</XPD:REF>
-<XPD:REF name="HostEdge">d+/pvWKcUEmx/WeSWjYCaQAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="g5v7leaLiEuP2jRZ0ivF+QAA">
-<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
-<XPD:REF name="Model">rnHGru9W6E6xBPd32eySkQAA</XPD:REF>
-<XPD:REF name="HostEdge">d+/pvWKcUEmx/WeSWjYCaQAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="gHPc5EA6j06yXpdKc9B3LgAA">
-<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:REF name="Model">rnHGru9W6E6xBPd32eySkQAA</XPD:REF>
-<XPD:REF name="HostEdge">d+/pvWKcUEmx/WeSWjYCaQAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Activation" type="UMLActivationView" guid="reh1GpGubk6jfciPbZ9ojAAA">
-<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">252</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">334</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
@@ -592,7 +591,44 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:ATTR name="Text" type="string">[else]
 </XPD:ATTR>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[18]" type="UMLSeqStimulusView" guid="PF9yJoLGpU+gFisiNsOY/AAA">
+<XPD:OBJ name="OwnedViews[18]" type="UMLSeqStimulusView" guid="d+/pvWKcUEmx/WeSWjYCaQAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">384,334;252,334</XPD:ATTR>
+<XPD:REF name="Model">rnHGru9W6E6xBPd32eySkQAA</XPD:REF>
+<XPD:REF name="Head">neksVJkurUaDCWj1knHZ8gAA</XPD:REF>
+<XPD:REF name="Tail">tGuk4rqgAEaHeauz4qsa6wAA</XPD:REF>
+<XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="qY/GymsBfEKUnPN14P79LQAA">
+<XPD:ATTR name="Alpha" type="real">119029081175179</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10770329614269</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">9 : html</XPD:ATTR>
+<XPD:REF name="Model">rnHGru9W6E6xBPd32eySkQAA</XPD:REF>
+<XPD:REF name="HostEdge">d+/pvWKcUEmx/WeSWjYCaQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="g5v7leaLiEuP2jRZ0ivF+QAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
+<XPD:REF name="Model">rnHGru9W6E6xBPd32eySkQAA</XPD:REF>
+<XPD:REF name="HostEdge">d+/pvWKcUEmx/WeSWjYCaQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="gHPc5EA6j06yXpdKc9B3LgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:REF name="Model">rnHGru9W6E6xBPd32eySkQAA</XPD:REF>
+<XPD:REF name="HostEdge">d+/pvWKcUEmx/WeSWjYCaQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Activation" type="UMLActivationView" guid="reh1GpGubk6jfciPbZ9ojAAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">252</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">334</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[19]" type="UMLSeqStimulusView" guid="PF9yJoLGpU+gFisiNsOY/AAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
@@ -601,22 +637,22 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:REF name="Head">tGuk4rqgAEaHeauz4qsa6wAA</XPD:REF>
 <XPD:REF name="Tail">neksVJkurUaDCWj1knHZ8gAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="OwnQkPFI/UqVDKJo0HxCfgAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">9 : redirect()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">10 : redirect()</XPD:ATTR>
 <XPD:REF name="Model">UWHHzwhrTkiHe584EwDBJgAA</XPD:REF>
 <XPD:REF name="HostEdge">PF9yJoLGpU+gFisiNsOY/AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="d0YaRs8bVkW1jJcb2ERE5gAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">UWHHzwhrTkiHe584EwDBJgAA</XPD:REF>
 <XPD:REF name="HostEdge">PF9yJoLGpU+gFisiNsOY/AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="b9vXss4g7Ey1Q1olxFF23gAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">UWHHzwhrTkiHe584EwDBJgAA</XPD:REF>
 <XPD:REF name="HostEdge">PF9yJoLGpU+gFisiNsOY/AAA</XPD:REF>
@@ -628,7 +664,25 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[19]" type="UMLSeqStimulusView" guid="x5tPKC8wmUq1xR9QOlnvrgAA">
+<XPD:OBJ name="OwnedViews[20]" type="UMLNoteView" guid="GhGNGm3p006dW94nvQKL+QAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">396</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">448</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">191</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">38</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Ako forma nije popunjena ispravno,
+ ispisace se greska
+</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[21]" type="UMLNoteLinkView" guid="f0w3sfDRCUGPQR/fPHMUewAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">329,446;396,454</XPD:ATTR>
+<XPD:REF name="Head">GhGNGm3p006dW94nvQKL+QAA</XPD:REF>
+<XPD:REF name="Tail">9FuEpzMotkOu4HJhVFuAhwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[22]" type="UMLSeqStimulusView" guid="x5tPKC8wmUq1xR9QOlnvrgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
@@ -637,22 +691,22 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:REF name="Head">neksVJkurUaDCWj1knHZ8gAA</XPD:REF>
 <XPD:REF name="Tail">tGuk4rqgAEaHeauz4qsa6wAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="9FuEpzMotkOu4HJhVFuAhwAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">10 : html</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">11 : html</XPD:ATTR>
 <XPD:REF name="Model">e1CL9363mUuaN2RUL9OWPQAA</XPD:REF>
 <XPD:REF name="HostEdge">x5tPKC8wmUq1xR9QOlnvrgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="RFN73+YIZ0K9d9L9506q8wAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">e1CL9363mUuaN2RUL9OWPQAA</XPD:REF>
 <XPD:REF name="HostEdge">x5tPKC8wmUq1xR9QOlnvrgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="0fN5Lpn1h0WnyYyCaq95RwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">e1CL9363mUuaN2RUL9OWPQAA</XPD:REF>
 <XPD:REF name="HostEdge">x5tPKC8wmUq1xR9QOlnvrgAA</XPD:REF>
@@ -665,27 +719,9 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[20]" type="UMLNoteView" guid="GhGNGm3p006dW94nvQKL+QAA">
-<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
-<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">396</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">448</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">170</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">38</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Ako forma nije lepo popunjena,
- ispisace se greska
-</XPD:ATTR>
-</XPD:OBJ>
-<XPD:OBJ name="OwnedViews[21]" type="UMLNoteLinkView" guid="f0w3sfDRCUGPQR/fPHMUewAA">
-<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
-<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">338,455;396,459</XPD:ATTR>
-<XPD:REF name="Head">GhGNGm3p006dW94nvQKL+QAA</XPD:REF>
-<XPD:REF name="Tail">9FuEpzMotkOu4HJhVFuAhwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
-</XPD:OBJ>
-<XPD:ATTR name="#ParticipatingStimuli" type="integer">10</XPD:ATTR>
+<XPD:ATTR name="#ParticipatingStimuli" type="integer">11</XPD:ATTR>
 <XPD:OBJ name="ParticipatingStimuli[0]" type="UMLStimulus" guid="dHKkLl506EOZfwJENc4aogAA">
 <XPD:ATTR name="Name" type="string">organizovane_seanse</XPD:ATTR>
 <XPD:REF name="Sender">PCIEjP+wv0+YOFW1eyIJJwAA</XPD:REF>
@@ -756,7 +792,22 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:REF name="Views[2]">+ElSwsJhwEG0ECcLh7RvLQAA</XPD:REF>
 <XPD:REF name="Views[3]">8PaV7GcrQ0yrsGzj0CudhAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[5]" type="UMLStimulus" guid="UvpZTvFpP0mkSABvbwCzXAAA">
+<XPD:OBJ name="ParticipatingStimuli[5]" type="UMLStimulus" guid="VtpezBu2vEOD4wRRhpawUAAA">
+<XPD:ATTR name="Name" type="string">create</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">instantiate</XPD:ATTR>
+<XPD:REF name="Sender">qZ1yTGoWHUebU0SzP+2T2wAA</XPD:REF>
+<XPD:REF name="Receiver">EOc7uM4PQUaYphtQnTWrVAAA</XPD:REF>
+<XPD:OBJ name="Action" type="UMLCallAction" guid="q5AmP6sQwEmjl4muLi3q5AAA">
+<XPD:REF name="Stimulus">VtpezBu2vEOD4wRRhpawUAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:REF name="InteractionInstanceSet">O63PLsMl7kWh/gW91Xt0WAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">P5x0/AKm80iFAf70qv0qQAAA</XPD:REF>
+<XPD:REF name="Views[1]">RtLV/hVbG0S8WCEagxNnTAAA</XPD:REF>
+<XPD:REF name="Views[2]">H1kH1JZ5fkunpZ1k7YpefAAA</XPD:REF>
+<XPD:REF name="Views[3]">rgi8yXcEdkiXMcsu8aHTzQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="ParticipatingStimuli[6]" type="UMLStimulus" guid="UvpZTvFpP0mkSABvbwCzXAAA">
 <XPD:ATTR name="Name" type="string">insert</XPD:ATTR>
 <XPD:REF name="Sender">EOc7uM4PQUaYphtQnTWrVAAA</XPD:REF>
 <XPD:REF name="Receiver">TDQfzH0Vd0WBTF9Jo8VyhwAA</XPD:REF>
@@ -770,7 +821,7 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:REF name="Views[2]">D4RjPbCgIkGY9SGvNWvEygAA</XPD:REF>
 <XPD:REF name="Views[3]">holne9j3xke1r8AGbOVqpQAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[6]" type="UMLStimulus" guid="RsAN0d69ckmrefoa7ZYmsAAA">
+<XPD:OBJ name="ParticipatingStimuli[7]" type="UMLStimulus" guid="RsAN0d69ckmrefoa7ZYmsAAA">
 <XPD:ATTR name="Name" type="string">redirect</XPD:ATTR>
 <XPD:REF name="Sender">GwgbTqqISEODXJVF+D4PEwAA</XPD:REF>
 <XPD:REF name="Receiver">qZ1yTGoWHUebU0SzP+2T2wAA</XPD:REF>
@@ -784,7 +835,7 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:REF name="Views[2]">Jw5XlrgDC0aGd2meF+A29QAA</XPD:REF>
 <XPD:REF name="Views[3]">NLavPbg7/kC5xUzRqSpQTwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[7]" type="UMLStimulus" guid="rnHGru9W6E6xBPd32eySkQAA">
+<XPD:OBJ name="ParticipatingStimuli[8]" type="UMLStimulus" guid="rnHGru9W6E6xBPd32eySkQAA">
 <XPD:ATTR name="Name" type="string">html</XPD:ATTR>
 <XPD:REF name="Sender">qZ1yTGoWHUebU0SzP+2T2wAA</XPD:REF>
 <XPD:REF name="Receiver">GwgbTqqISEODXJVF+D4PEwAA</XPD:REF>
@@ -798,7 +849,7 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:REF name="Views[2]">g5v7leaLiEuP2jRZ0ivF+QAA</XPD:REF>
 <XPD:REF name="Views[3]">gHPc5EA6j06yXpdKc9B3LgAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[8]" type="UMLStimulus" guid="UWHHzwhrTkiHe584EwDBJgAA">
+<XPD:OBJ name="ParticipatingStimuli[9]" type="UMLStimulus" guid="UWHHzwhrTkiHe584EwDBJgAA">
 <XPD:ATTR name="Name" type="string">redirect</XPD:ATTR>
 <XPD:REF name="Sender">GwgbTqqISEODXJVF+D4PEwAA</XPD:REF>
 <XPD:REF name="Receiver">qZ1yTGoWHUebU0SzP+2T2wAA</XPD:REF>
@@ -812,7 +863,7 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:REF name="Views[2]">d0YaRs8bVkW1jJcb2ERE5gAA</XPD:REF>
 <XPD:REF name="Views[3]">b9vXss4g7Ey1Q1olxFF23gAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[9]" type="UMLStimulus" guid="e1CL9363mUuaN2RUL9OWPQAA">
+<XPD:OBJ name="ParticipatingStimuli[10]" type="UMLStimulus" guid="e1CL9363mUuaN2RUL9OWPQAA">
 <XPD:ATTR name="Name" type="string">html</XPD:ATTR>
 <XPD:REF name="Sender">qZ1yTGoWHUebU0SzP+2T2wAA</XPD:REF>
 <XPD:REF name="Receiver">GwgbTqqISEODXJVF+D4PEwAA</XPD:REF>
@@ -882,11 +933,12 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:ATTR name="#Views" type="integer">2</XPD:ATTR>
 <XPD:REF name="Views[0]">ojlA2mXYKUKjavogdHinMAAA</XPD:REF>
 <XPD:REF name="Views[1]">tGuk4rqgAEaHeauz4qsa6wAA</XPD:REF>
-<XPD:ATTR name="#SendingStimuli" type="integer">4</XPD:ATTR>
+<XPD:ATTR name="#SendingStimuli" type="integer">5</XPD:ATTR>
 <XPD:REF name="SendingStimuli[0]">qVROmwN+7EK0OpL3iWVaRwAA</XPD:REF>
 <XPD:REF name="SendingStimuli[1]">rnHGru9W6E6xBPd32eySkQAA</XPD:REF>
 <XPD:REF name="SendingStimuli[2]">w3BTFurMmUS6SUWXcmvJKwAA</XPD:REF>
 <XPD:REF name="SendingStimuli[3]">e1CL9363mUuaN2RUL9OWPQAA</XPD:REF>
+<XPD:REF name="SendingStimuli[4]">VtpezBu2vEOD4wRRhpawUAAA</XPD:REF>
 <XPD:ATTR name="#ReceivingStimuli" type="integer">4</XPD:ATTR>
 <XPD:REF name="ReceivingStimuli[0]">LFNQzE08BkGnp/CU+7XAAgAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[1]">LLUFchbq/EuKoirPId2QrAAA</XPD:REF>
@@ -910,6 +962,8 @@ seanse koje on organizuje i dugme za organizovanje sansi koje otvara formu
 <XPD:REF name="Views[1]">gtUtCJgprk2jmD1g3Z4NHgAA</XPD:REF>
 <XPD:ATTR name="#SendingStimuli" type="integer">1</XPD:ATTR>
 <XPD:REF name="SendingStimuli[0]">UvpZTvFpP0mkSABvbwCzXAAA</XPD:REF>
+<XPD:ATTR name="#ReceivingStimuli" type="integer">1</XPD:ATTR>
+<XPD:REF name="ReceivingStimuli[0]">VtpezBu2vEOD4wRRhpawUAAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>

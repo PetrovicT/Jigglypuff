@@ -270,7 +270,7 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:REF name="Head">/m0hOrz/xUaxwUPTH2xZjAAA</XPD:REF>
 <XPD:REF name="Tail">tkwfqi5vak6qRDJqgRdqOQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="wrKlApqquUiTTqqw/yls7AAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">1 : registerSubmit()</XPD:ATTR>
 <XPD:REF name="Model">TyixSBTW9U2QrBPlrq3V5AAA</XPD:REF>
@@ -278,14 +278,14 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="v3jud+tGnU2NhkfOPGePHgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">TyixSBTW9U2QrBPlrq3V5AAA</XPD:REF>
 <XPD:REF name="HostEdge">uhAnA3Zs20aMLcTWyxm1sgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="MuV+ba1FVU+CZ1Qx9YkaNgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">TyixSBTW9U2QrBPlrq3V5AAA</XPD:REF>
 <XPD:REF name="HostEdge">uhAnA3Zs20aMLcTWyxm1sgAA</XPD:REF>
@@ -306,7 +306,7 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:REF name="Head">xzHrqsKepUGhpxLYTC3b1wAA</XPD:REF>
 <XPD:REF name="Tail">/m0hOrz/xUaxwUPTH2xZjAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="6lIc7Qk0j0GwhMvcsr5+9AAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">2 : insert()</XPD:ATTR>
 <XPD:REF name="Model">1/sa6sxCLkOJukiaQi6VSQAA</XPD:REF>
@@ -314,14 +314,14 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="oyR4WOezckKRkORwKzaL0QAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">1/sa6sxCLkOJukiaQi6VSQAA</XPD:REF>
 <XPD:REF name="HostEdge">k1raQhZFyEGY1BKpSBrSKQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="tq3ufiYFRkGW87TyrE6h0QAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">1/sa6sxCLkOJukiaQi6VSQAA</XPD:REF>
 <XPD:REF name="HostEdge">k1raQhZFyEGY1BKpSBrSKQAA</XPD:REF>
@@ -330,19 +330,19 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:ATTR name="Left" type="integer">440</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">160</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">57</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[8]" type="UMLSeqStimulusView" guid="dMTcTFdYkkSFSY/Y2Q3vCQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">440,207;305,207</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">440,180;305,180</XPD:ATTR>
 <XPD:REF name="Model">75UTlssefkubresjQr3dgAAA</XPD:REF>
 <XPD:REF name="Head">/m0hOrz/xUaxwUPTH2xZjAAA</XPD:REF>
 <XPD:REF name="Tail">xzHrqsKepUGhpxLYTC3b1wAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="zE/GfSmC3k2v9XSelOG1GQAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">3 : insertSuccess</XPD:ATTR>
 <XPD:REF name="Model">75UTlssefkubresjQr3dgAAA</XPD:REF>
@@ -350,14 +350,14 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="lcPqqadTZUSpAkYDW2WhnwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">75UTlssefkubresjQr3dgAAA</XPD:REF>
 <XPD:REF name="HostEdge">dMTcTFdYkkSFSY/Y2Q3vCQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="19KUdJzz7UKQj7J5vrq+KgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">75UTlssefkubresjQr3dgAAA</XPD:REF>
 <XPD:REF name="HostEdge">dMTcTFdYkkSFSY/Y2Q3vCQAA</XPD:REF>
@@ -365,7 +365,7 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="aB7rdSu6DUWdsiNNsEW6uwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">292</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">207</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">180</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
@@ -384,12 +384,12 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">305,244;602,244</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">305,212;602,212</XPD:ATTR>
 <XPD:REF name="Model">v3JzDBW98kCnbhV+UxX3+gAA</XPD:REF>
 <XPD:REF name="Head">hHl1Af0OQ0yg0pmoFQahQQAA</XPD:REF>
 <XPD:REF name="Tail">/m0hOrz/xUaxwUPTH2xZjAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="DYBkNm4pA02w7qCWsDZbTQAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">4 : redirect()</XPD:ATTR>
 <XPD:REF name="Model">v3JzDBW98kCnbhV+UxX3+gAA</XPD:REF>
@@ -397,21 +397,21 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="BHEMLJ2wNkeMW+ID7Ni/QwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">v3JzDBW98kCnbhV+UxX3+gAA</XPD:REF>
 <XPD:REF name="HostEdge">C5138egEb0eUVQv1DzFyIwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="tiFHbtz5wEa0FbTsy6GgSwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">v3JzDBW98kCnbhV+UxX3+gAA</XPD:REF>
 <XPD:REF name="HostEdge">C5138egEb0eUVQv1DzFyIwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="4hcVzu+hy06zOVClDHihMQAA">
 <XPD:ATTR name="Left" type="integer">602</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">244</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">212</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
@@ -420,12 +420,12 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">602,264;305,264</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">602,233;305,233</XPD:ATTR>
 <XPD:REF name="Model">ad4mNk12vEyL1BR0x/Ko8wAA</XPD:REF>
 <XPD:REF name="Head">/m0hOrz/xUaxwUPTH2xZjAAA</XPD:REF>
 <XPD:REF name="Tail">hHl1Af0OQ0yg0pmoFQahQQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="xu2Oh+S4g06ziG0xNanxVAAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">5 : html</XPD:ATTR>
 <XPD:REF name="Model">ad4mNk12vEyL1BR0x/Ko8wAA</XPD:REF>
@@ -433,14 +433,14 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="DvLtjQrXskaBD3ORi+j/JgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">ad4mNk12vEyL1BR0x/Ko8wAA</XPD:REF>
 <XPD:REF name="HostEdge">ODwy0mILjUeDgHEjpF3NMAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="uHpYJe9hxEGosB2Ob1M8WAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">ad4mNk12vEyL1BR0x/Ko8wAA</XPD:REF>
 <XPD:REF name="HostEdge">ODwy0mILjUeDgHEjpF3NMAAA</XPD:REF>
@@ -448,7 +448,7 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="uhij27abLkiUkCoPFqxCRgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">292</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">264</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">233</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
@@ -457,12 +457,12 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">292,276;115,276</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">292,257;115,257</XPD:ATTR>
 <XPD:REF name="Model">r/HLSR2bpkaUymMUIAbMIAAA</XPD:REF>
 <XPD:REF name="Head">tkwfqi5vak6qRDJqgRdqOQAA</XPD:REF>
 <XPD:REF name="Tail">/m0hOrz/xUaxwUPTH2xZjAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="P7gTGVP9h0CE4xUXcIP6TwAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">6 : html</XPD:ATTR>
 <XPD:REF name="Model">r/HLSR2bpkaUymMUIAbMIAAA</XPD:REF>
@@ -470,14 +470,14 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="BjMsVKs0QU2jVbxVfgKBqwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">r/HLSR2bpkaUymMUIAbMIAAA</XPD:REF>
 <XPD:REF name="HostEdge">J5R29/jwL0qftPDiy02LCQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="s++4moIvMkCaq1mPbQDLqwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">r/HLSR2bpkaUymMUIAbMIAAA</XPD:REF>
 <XPD:REF name="HostEdge">J5R29/jwL0qftPDiy02LCQAA</XPD:REF>
@@ -485,7 +485,7 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="3M2jFxUNzkCYI3aVALBZMQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">115</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">276</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">257</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
@@ -499,7 +499,7 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:REF name="Head">NfRgDOQ/QE2M+e/R4/bisAAA</XPD:REF>
 <XPD:REF name="Tail">/m0hOrz/xUaxwUPTH2xZjAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="zO1Yd2bPzECik5IZKbSeiwAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">7 : redirect()</XPD:ATTR>
 <XPD:REF name="Model">eP+wOmyAQUS9DwhEkTAXIQAA</XPD:REF>
@@ -507,14 +507,14 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="zq32foVlg0SfDzSy1kMBEgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">eP+wOmyAQUS9DwhEkTAXIQAA</XPD:REF>
 <XPD:REF name="HostEdge">txNSTCn+J0iH8ZNk3ZzfTwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="4IAogzTbu0qbg+Z2mMKW2gAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">eP+wOmyAQUS9DwhEkTAXIQAA</XPD:REF>
 <XPD:REF name="HostEdge">txNSTCn+J0iH8ZNk3ZzfTwAA</XPD:REF>
@@ -535,7 +535,7 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:REF name="Head">/m0hOrz/xUaxwUPTH2xZjAAA</XPD:REF>
 <XPD:REF name="Tail">NfRgDOQ/QE2M+e/R4/bisAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="/1Gs5AtOgU2TFLKAy+a4PQAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">8 : html</XPD:ATTR>
 <XPD:REF name="Model">kCN99CI1EkGXLfxSTpF60wAA</XPD:REF>
@@ -543,14 +543,14 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="nLtNRRKbzUeEmaMgq2wzQgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">kCN99CI1EkGXLfxSTpF60wAA</XPD:REF>
 <XPD:REF name="HostEdge">hGX+HZun0k2oM7HafeKLxwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="Tg/+80f/lEqRbXb3C7F36gAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">kCN99CI1EkGXLfxSTpF60wAA</XPD:REF>
 <XPD:REF name="HostEdge">hGX+HZun0k2oM7HafeKLxwAA</XPD:REF>
@@ -572,7 +572,7 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:REF name="Head">tkwfqi5vak6qRDJqgRdqOQAA</XPD:REF>
 <XPD:REF name="Tail">/m0hOrz/xUaxwUPTH2xZjAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="sTaf/NwdaEyaQlNLgnFDKgAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">9 : html</XPD:ATTR>
 <XPD:REF name="Model">y0T88WGcokyOizvQpO2ZdwAA</XPD:REF>
@@ -580,14 +580,14 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="OWFqdq8iFk6O1K1axVIJIwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:REF name="Model">y0T88WGcokyOizvQpO2ZdwAA</XPD:REF>
 <XPD:REF name="HostEdge">HcKKde+ia0+E50i/2O7YcgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="InRIXDjj4kmmehBA8bj1fQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-15707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
 <XPD:REF name="Model">y0T88WGcokyOizvQpO2ZdwAA</XPD:REF>
 <XPD:REF name="HostEdge">HcKKde+ia0+E50i/2O7YcgAA</XPD:REF>
@@ -614,7 +614,7 @@ on se nalazi ovde, a zatim se iz menija prevlaci na seqence dijagram
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">384</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">412</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">436</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">257</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">38</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">Ukoliko korisnik nije uneo sve neophodne podatke
@@ -624,7 +624,7 @@ ispisuje se informacija sta je greska
 <XPD:OBJ name="OwnedViews[18]" type="UMLNoteLinkView" guid="NQLn/4G/uEKDY2I22JAmsgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">519,368;514,412</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">511,358;512,436</XPD:ATTR>
 <XPD:REF name="Head">W9S3eTVWGky3bN8kEsa2xAAA</XPD:REF>
 <XPD:REF name="Tail">/1Gs5AtOgU2TFLKAy+a4PQAA</XPD:REF>
 </XPD:OBJ>

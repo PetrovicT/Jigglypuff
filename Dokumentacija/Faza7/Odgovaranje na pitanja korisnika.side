@@ -177,7 +177,7 @@
       "id": "53b84f56-481a-4ffd-9a2f-c888613ca163",
       "comment": "",
       "command": "assertText",
-      "target": "css=.w3-container:nth-child(3) > .w3-right b",
+      "target": "css=.w3-container:nth-last-child(1) > .w3-right b",
       "targets": [
         ["css=.w3-container:nth-child(3) > .w3-right b", "css:finder"],
         ["xpath=//div[3]/div[2]/h3/b", "xpath:position"]
@@ -187,7 +187,7 @@
       "id": "f99e40fe-66af-4faa-b392-1c004a74ac04",
       "comment": "",
       "command": "assertText",
-      "target": "css=.w3-container:nth-child(3) p",
+      "target": "css=.w3-container:nth-last-child(1) p",
       "targets": [
         ["css=.w3-container:nth-child(3) p", "css:finder"],
         ["xpath=//div[3]/div[3]/p", "xpath:position"],
@@ -475,20 +475,10 @@
       ],
       "value": ""
     }, {
-      "id": "e0deda43-e00e-4758-9085-f9a683598d6f",
-      "comment": "",
-      "command": "assertText",
-      "target": "css=.nema_podvlacenja b",
-      "targets": [
-        ["css=.nema_podvlacenja b", "css:finder"],
-        ["xpath=//a/h3/b", "xpath:position"]
-      ],
-      "value": "MareI"
-    }, {
       "id": "7bfa014c-cafc-40e1-a03b-80a079ce0a95",
       "comment": "",
       "command": "assertText",
-      "target": "css=.w3-container:nth-child(4) p",
+      "target": "css=.w3-container:nth-last-child(1) p",
       "targets": [
         ["css=.w3-container:nth-child(4) p", "css:finder"],
         ["xpath=//div[4]/div[3]/p", "xpath:position"],
