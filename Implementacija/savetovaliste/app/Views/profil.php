@@ -92,7 +92,7 @@
                 <img src="<?php echo base_url(); ?>/photos/no_picture.png" alt="" style="width:20%;">  
                 <?php
             } else
-                echo '<img style="max-width:40%;" src="data:image/jpeg;base64,' . base64_encode($korisnik->slika) . '">';
+                echo '<img src="data:image/jpeg;base64,' . base64_encode($korisnik->slika) . '">';
 
             echo '</div>
                     </div>
